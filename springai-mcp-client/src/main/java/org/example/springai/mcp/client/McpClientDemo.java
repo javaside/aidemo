@@ -44,16 +44,18 @@ public class McpClientDemo implements ApplicationRunner {
 
         //通过mcpClient获取tool,resource
         mcpAsyncClients.forEach(mcpAsyncClient -> {
-            McpSchema.ListToolsResult listToolsResultMono = mcpAsyncClient.listTools().block();
-            listToolsResultMono.tools().forEach(tool -> {
+
+            McpSchema.ListToolsResult listToolsResult = mcpAsyncClient.listTools().block();
+            listToolsResult.tools().forEach(tool -> {
                 System.out.println("tool: " + tool);
                 // 根据JsonSchema自动生成参数
                 McpSchema.JsonSchema jsonSchema = tool.inputSchema();
                 Map<String, Object> arguments = JsonSchemaArgumentGenerator.generateArgumentsFromSchema(jsonSchema);
                 McpSchema.CallToolRequest toolRequest = McpSchema.CallToolRequest.builder().name(tool.name()).arguments(arguments).build();
                 System.out.println("Generated tool request for " + tool.name() + " with arguments: " + toolRequest.arguments());
-                mcpAsyncClient.callTool(toolRequest);
+                mcpAsyncClient.callTool(toolRequest).block().content().forEach(System.out::println);
             });
+
             mcpAsyncClient.listResources().block().resources().forEach(resource -> System.out.println("resource: " + resource));
         });
 
