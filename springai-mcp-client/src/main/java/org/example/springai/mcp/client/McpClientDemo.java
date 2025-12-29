@@ -2,6 +2,7 @@ package org.example.springai.mcp.client;
 
 import io.modelcontextprotocol.client.McpAsyncClient;
 import io.modelcontextprotocol.spec.McpSchema;
+import org.example.commom.JsonSchemaArgumentGenerator;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.mcp.AsyncMcpToolCallbackProvider;
 import org.springframework.beans.factory.annotation.Autowired;
