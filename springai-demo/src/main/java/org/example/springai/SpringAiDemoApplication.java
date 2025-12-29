@@ -1,0 +1,32 @@
+package org.example.springai;
+
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringAiDemoApplication implements ApplicationRunner {
+
+    private final ChatClient chatClient;
+
+    public SpringAiDemoApplication(ChatClient.Builder chatClientBuilder) {
+        this.chatClient = chatClientBuilder.build();
+    }
+
+    public static void main(String[] args) {
+        SpringApplication application = new SpringApplication(SpringAiDemoApplication.class);
+        //配置非web项目
+        //application.setWebApplicationType(WebApplicationType.NONE);
+        application.run(args);
+    }
+
+
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        System.out.println("ddds");
+        System.out.println(chatClient.prompt().user("Who are you?").call().content());
+    }
+}
