@@ -17,10 +17,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies><dependency>
-        <groupId>io.modelcontextprotocol.sdk</groupId>
-        <artifactId>mcp</artifactId>
-    </dependency>
+    <dependencies>
+        <dependency>
+            <groupId>io.modelcontextprotocol.sdk</groupId>
+            <artifactId>mcp</artifactId>
+        </dependency>
         <dependency>
             <groupId>io.modelcontextprotocol.sdk</groupId>
             <artifactId>mcp-spring-webflux</artifactId>
@@ -28,6 +29,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>mcpsdk-commom</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
 </project>
