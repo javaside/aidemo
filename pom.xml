@@ -13,6 +13,7 @@
         <module>langchain4j-demo</module>
         <module>springai-demo</module>
         <module>mcpsdk-demo</module>
+        <module>springai-mcp-client</module>
     </modules>
 
     <properties>
