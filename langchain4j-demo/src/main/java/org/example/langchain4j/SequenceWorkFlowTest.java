@@ -6,7 +6,7 @@ import dev.langchain4j.model.openai.OpenAiChatModel;
 
 import java.util.Map;
 
-public class AgentTest {
+public class SequenceWorkFlowTest {
     public static void main(String[] args) {
         OpenAiChatModel BASE_MODEL = OpenAiChatModel.builder()
                 .baseUrl("http://langchain4j.dev/demo/openai/v1")
