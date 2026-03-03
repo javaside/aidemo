@@ -13,7 +13,7 @@ import org.springframework.ai.tool.ToolCallback;
 public class ToolsDemo {
     public static void main(String[] args) {
         DeepSeekApi deepSeekApi = DeepSeekApi.builder()
-                .apiKey("sk-d7865f3cd9954740be277771e18e7b5f")
+                .apiKey("sk-21c106ac47104557a449fd02607319f8")
                 .build();
 
         DeepSeekChatModel model = DeepSeekChatModel.builder()
