@@ -2,6 +2,10 @@
 
 一个展示各种 AI 框架和相关技术示例的 Java 项目集合。
 
+## 配套视频
+
+[观看抖音视频教程](https://www.douyin.com/user/MS4wLjABAAAAnJQkxRdJGBraMZ0SuEwyeEc6rs6tGxUaxfnRbQ3DI5hz7mGA4YDuyk6xeP1WVnZV)
+
 ## 项目概览
 
 本项目是一个多模块 Maven 项目，演示了以下技术的使用：
@@ -168,6 +172,10 @@ mvn spring-boot:run
 1. 运行某些示例可能需要配置 API 密钥（如 OpenAI、DeepSeek 等）
 2. 部分示例依赖于外部服务（如向量数据库、MCP 服务器等）
 3. 确保已正确设置 Java 21 环境
+
+## 联系作者
+<img src="wechat.jpg" alt="描述" width="100%" height="100%">
+
 
 ## 许可证
 
