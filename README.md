@@ -174,7 +174,7 @@ mvn spring-boot:run
 3. 确保已正确设置 Java 21 环境
 
 ## 联系作者
-<img src="wechat.jpg" alt="描述" width="100%" height="100%">
+<img src="wechat.jpg" alt="描述" width="50%" height="50%">
 
 
 ## 许可证
