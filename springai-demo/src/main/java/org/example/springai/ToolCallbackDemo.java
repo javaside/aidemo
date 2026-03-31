@@ -15,10 +15,11 @@ import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.ai.tool.definition.ToolDefinition;
 import org.springframework.ai.tool.function.FunctionToolCallback;
 import org.springframework.ai.tool.resolution.StaticToolCallbackResolver;
+import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.tool.resolution.ToolCallbackResolver;
 
 /**
- * 演示 ChatClient.ChatClientRequestSpec 的 toolNames、tools、toolCallbacks、toolContext 四个方法
+ * 演示 ChatClient.ChatClientRequestSpec 的 toolNames、tools、toolCallbacks(ToolCallback[])、toolCallbacks(ToolCallbackProvider[])、toolContext 五个方法
  */
 public class ToolCallbackDemo {
 
@@ -50,11 +51,15 @@ public class ToolCallbackDemo {
         // 示例2: toolCallbacks - 传入 ToolCallback 数组
         demoToolCallbacks(chatClient);
 
+        // 示例5: toolCallbacks - 传入 ToolCallbackProvider（支持动态工具发现）
+        demoToolCallbacksWithProvider(chatClient);
+
         // 示例3: toolNames - 通过工具名称从 ToolCallbackResolver 解析工具
         demoToolNames(chatClient);
 
         // 示例4: toolContext - 传入工具上下文数据
         demoToolContext(chatClient);
+
     }
 
     /**
@@ -167,6 +172,30 @@ public class ToolCallbackDemo {
                 .content();
         System.out.println("Result: " + content2);
 
+        System.out.println();
+    }
+
+    /**
+     * toolCallbacks: 传入 ToolCallbackProvider 数组
+     * ToolCallbackProvider 是工具回调的提供者接口，可以动态提供 ToolCallback[]
+     *
+     * 与 toolCallbacks(ToolCallback[]) 不同，ToolCallbackProvider 支持延迟加载和动态工具发现，
+     * 适用于 MCP client 等需要动态发现工具的场景
+     */
+    static void demoToolCallbacksWithProvider(ChatClient chatClient) {
+        System.out.println("=== demoToolCallbacksWithProvider ===");
+
+        // 创建一个 ToolCallbackProvider 实现
+        // ToolCallbackProvider 接口用于动态工具发现，如 MCP client 从远程服务器获取工具列表
+        ToolCallbackProvider toolCallbackProvider = () -> ToolCallbacks.from(new DateTimeTools());
+
+        String content = chatClient.prompt()
+                .user("What is the current date and time?")
+                .toolCallbacks(toolCallbackProvider)  // 传入 ToolCallbackProvider，而不是 ToolCallback[]
+                .call()
+                .content();
+
+        System.out.println("Result: " + content);
         System.out.println();
     }
 
