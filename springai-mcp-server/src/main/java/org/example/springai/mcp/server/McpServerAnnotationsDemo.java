@@ -12,15 +12,16 @@ import java.time.Duration;
 import java.util.List;
 
 /**
- * MCP Server Annotations Demo
+ * MCP Server 注解演示
  *
- * Demonstrates server-side functionality that triggers client handlers:
- * - @McpLogging / context.info()        → sends LoggingMessageNotification
- * - @McpProgress / context.progress()   → sends ProgressNotification
- * - @McpSampling / context.sample()     → sends CreateMessageRequest (LLM via client)
- * - @McpResource                        → static resource (annotations info)
+ * 演示服务端触发客户端处理器的能力:
+ * - @McpLogging / context.info()        → 发送 LoggingMessageNotification
+ * - @McpProgress / context.progress()   → 发送 ProgressNotification
+ * - @McpSampling / context.sample()     → 发送 CreateMessageRequest (通过客户端调用 LLM)
+ * - @McpResource                        → 静态资源 (本 demo 注解说明)
  *
- * Server must be stateful (spring.ai.mcp.server.stateful=true) for context methods.
+ * 注意: 服务端必须配置为 stateful (spring.ai.mcp.server.stateful=true)
+ *       才能使用 context.info()、context.progress()、context.sample() 等方法。
  */
 @SpringBootApplication
 public class McpServerAnnotationsDemo {
@@ -29,14 +30,16 @@ public class McpServerAnnotationsDemo {
         SpringApplication.run(McpServerAnnotationsDemo.class, args);
     }
 
-    // ==================== Trigger Tools ====================
+    // ==================== 触发工具 ====================
 
     /**
-     * Tool: triggerLogging
-     * Triggers a LoggingMessageNotification to the client via context.info().
+     * 工具: triggerLogging
+     * 通过 context.info() 向客户端发送 LoggingMessageNotification。
      *
-     * Real-world use: Server-side operations log structured messages to clients,
-     * e.g., audit trails, debugging, displaying server activity to end users.
+     * 真实用途: 服务端向客户端发送结构化日志消息，例如:
+     *   - 审计追踪: 记录用户在服务端执行的操作
+     *   - 服务端调试: 实时推送日志到客户端，无需登录服务器
+     *   - 用户通知: 服务器重要事件实时展示给客户端
      */
     @McpTool(name = "triggerLogging", description = "触发日志通知演示")
     public Mono<String> triggerLogging(McpSyncRequestContext context) {
@@ -46,11 +49,11 @@ public class McpServerAnnotationsDemo {
     }
 
     /**
-     * Tool: triggerProgress
-     * Sends three progress notifications (0%, 50%, 100%) to the client via context.progress().
+     * 工具: triggerProgress
+     * 通过 context.progress() 向客户端发送 0% → 50% → 100% 三个进度通知。
      *
-     * Real-world use: Long-running batch jobs (import, export, processing) report
-     * progress so clients can display progress bars or percentage indicators.
+     * 真实用途: 长时运行的批量任务（导入/导出/数据处理）向客户端推送进度，
+     * 客户端可据此显示进度条，改善用户体验。
      */
     @McpTool(name = "triggerProgress", description = "触发进度通知演示")
     public Mono<String> triggerProgress(McpSyncRequestContext context) {
@@ -64,13 +67,12 @@ public class McpServerAnnotationsDemo {
     }
 
     /**
-     * Tool: triggerSampling
-     * Sends a CreateMessageRequest to the client via context.sample().
-     * The client forwards this to DeepSeek LLM and returns the result.
+     * 工具: triggerSampling
+     * 通过 context.sample() 向客户端发送 CreateMessageRequest，
+     * 客户端将请求转发给 DeepSeek LLM，将结果返回给服务端。
      *
-     * Real-world use: Server acts as AI intermediary — the server doesn't need
-     * its own LLM API key; instead it requests completions through the client
-     * (multi-tenant scenarios, permission-controlled LLM access).
+     * 真实用途: 服务端作为 AI 中介 — 服务端不需要 LLM API key，
+     * 所有 LLM 调用由客户端代理，适合多租户场景或权限受控的 LLM 访问。
      */
     @McpTool(name = "triggerSampling", description = "触发采样请求演示")
     public Mono<String> triggerSampling(McpSyncRequestContext context) {
@@ -82,32 +84,32 @@ public class McpServerAnnotationsDemo {
     }
 
     /**
-     * Tool: triggerToolListChanged
-     * Reports the current tool list to the client.
+     * 工具: triggerToolListChanged
+     * 向客户端报告当前工具列表。
      *
-     * Note: The SDK does not expose a server-initiated tool list change notification API.
-     * The @McpToolListChanged annotation on the client is for receiving notifications,
-     * but the server must rely on the MCP protocol-level notifications/tools/changed
-     * message which is not directly exposed via McpSyncRequestContext.
+     * 注意: 当前 SDK 未暴露服务器主动发送工具列表变更通知的 API。
+     * 客户端的 @McpToolListChanged 注解用于接收通知，
+     * 但服务端的 MCP 协议层 notifications/tools/changed 消息
+     * 未通过 McpSyncRequestContext 直接暴露。
      *
-     * Real-world use: Servers notify clients when available tools change —
-     * e.g., after a plugin loads/unloads, or when user permissions change.
-     * Clients keep their tool registry in sync by re-calling listTools().
+     * 真实用途: 服务器通知客户端可用工具发生变化时 —
+     * 例如插件加载/卸载、用户权限变更后，
+     * 客户端重新调用 listTools() 同步工具注册表。
      */
     @McpTool(name = "triggerToolListChanged", description = "触发工具列表变更通知演示")
     public Mono<String> triggerToolListChanged(McpSyncRequestContext context) {
-        // Note: context.notifyToolListChanged() does not exist in the current SDK.
-        // The server cannot proactively send tool list change notifications via the context API.
-        // Clients should re-call listTools() to discover the current tool list.
+        // 注意: 当前 SDK 中 context.notifyToolListChanged() 方法不存在，
+        // 服务器无法通过 context API 主动发送工具列表变更通知。
+        // 客户端需要主动调用 listTools() 来发现当前工具列表。
         return Mono.just("SDK 不支持服务器主动发送工具列表变更通知。" +
             "客户端可通过调用 listTools() 获取当前工具列表。");
     }
 
-    // ==================== Resource ====================
+    // ==================== 资源 ====================
 
     /**
-     * Resource: server://annotations/info
-     * Static resource describing this demo's annotations.
+     * 资源: server://annotations/info
+     * 静态资源，描述本 demo 的注解功能。
      */
     @McpResource(uri = "server://annotations/info", name = "annotationsInfo", description = "本 demo 注解说明")
     public Mono<McpSchema.ReadResourceResult> getAnnotationsInfo() {
