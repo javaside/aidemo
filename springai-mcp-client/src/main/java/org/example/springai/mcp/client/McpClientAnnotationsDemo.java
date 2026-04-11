@@ -12,7 +12,6 @@ import org.springaicommunity.mcp.annotation.McpProgress;
 import org.springaicommunity.mcp.annotation.McpSampling;
 import org.springaicommunity.mcp.annotation.McpToolListChanged;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.mcp.AsyncMcpToolCallbackProvider;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -40,7 +39,6 @@ public class McpClientAnnotationsDemo implements ApplicationRunner {
 
     private final ChatClient chatClient;
     private List<McpAsyncClient> mcpAsyncClients;
-    private AsyncMcpToolCallbackProvider asyncMcpToolCallbackProvider;
 
     public McpClientAnnotationsDemo(ChatClient.Builder chatClientBuilder) {
         this.chatClient = chatClientBuilder.build();
@@ -176,8 +174,4 @@ public class McpClientAnnotationsDemo implements ApplicationRunner {
         this.mcpAsyncClients = mcpAsyncClients;
     }
 
-    @org.springframework.beans.factory.annotation.Autowired
-    public void setAsyncMcpToolCallbackProvider(AsyncMcpToolCallbackProvider provider) {
-        this.asyncMcpToolCallbackProvider = provider;
     }
-}
