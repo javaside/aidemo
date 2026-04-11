@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
 import java.util.List;
 
 /**
@@ -54,11 +55,12 @@ public class McpServerAnnotationsDemo {
     @McpTool(name = "triggerProgress", description = "触发进度通知演示")
     public Mono<String> triggerProgress(McpSyncRequestContext context) {
         context.progress(p -> p.progress(0.0).total(1.0).message("任务开始: 准备数据..."));
-        try { Thread.sleep(500); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
-        context.progress(p -> p.progress(0.5).total(1.0).message("任务进行中: 处理 50%..."));
-        try { Thread.sleep(500); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
-        context.progress(p -> p.progress(1.0).total(1.0).message("任务完成: 100%"));
-        return Mono.just("已向客户端发送 3 个进度通知 (0% → 50% → 100%)");
+        return Mono.just("step1")
+            .delayElement(Duration.ofMillis(500))
+            .doOnNext(s -> context.progress(p -> p.progress(0.5).total(1.0).message("任务进行中: 处理 50%...")))
+            .delayElement(Duration.ofMillis(500))
+            .doOnNext(s -> context.progress(p -> p.progress(1.0).total(1.0).message("任务完成: 100%")))
+            .thenReturn("已向客户端发送 3 个进度通知 (0% → 50% → 100%)");
     }
 
     /**
