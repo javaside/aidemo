@@ -1,4 +1,4 @@
-package org.example.springai.mcp.client;
+package org.example.springai.mcp.client.basic;
 
 import io.modelcontextprotocol.client.McpAsyncClient;
 import io.modelcontextprotocol.spec.McpSchema;
@@ -20,7 +20,7 @@ import java.util.List;
  * @McpTool      工具调用
  * @McpResource  资源读取
  * @McpComplete  URI 补全
- * @McpPrompt    提示模板
+ * @McpPrompt   提示模板
  */
 @SpringBootApplication
 public class McpClientDemo implements ApplicationRunner {
