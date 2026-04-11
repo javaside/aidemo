@@ -1,4 +1,4 @@
-package org.example.springai.mcp.client;
+package org.example.springai.mcp.client.annot;
 
 import io.modelcontextprotocol.client.McpAsyncClient;
 import io.modelcontextprotocol.spec.McpSchema;
@@ -17,22 +17,22 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 /**
- * MCP Client Annotations Demo
+ * MCP Client 注解演示（独立运行）
  *
- * Demonstrates client-side handlers for server-initiated notifications:
+ * 演示客户端如何处理服务端发起的通知:
  * - @McpLogging       接收并打印服务器的日志消息
  * - @McpProgress     接收并打印服务器的进度通知
- * - @McpSampling     接收服务器的 LLM 采样请求，转发到 DeepSeek，返回结果
+ * - @MMcpSampling     接收服务器的 LLM 采样请求，转发到 DeepSeek，返回结果
  * - @McpToolListChanged 接收服务器的工具列表变更通知
  *
  * 运行方式:
  *   1. 先启动 springai-mcp-server (端口 8080)
- *   2. 再启动本模块 (端口 9090): cd springai-mcp-client && mvn spring-boot:run
+ *   2. 再启动本模块 (端口 9090): cd springai-mcp-client && mvn spring-boot:run -Dspring.main.main-class=org.example.springai.mcp.client.annot.McpClientAnnotationsDemo
+ *   或者单独运行 main() 方法
  */
 @SpringBootApplication
 public class McpClientAnnotationsDemo implements ApplicationRunner {
@@ -130,7 +130,7 @@ public class McpClientAnnotationsDemo implements ApplicationRunner {
 
     /**
      * @McpSampling handler
-     * 接收服务器的 CreateMessageRequest，通过 DeepSeek LLM 生成回复，返回 CreateMessageResult.
+     * 接收服务器的 CreateMessageRequest，通过 DeepSeek LLM 生成回复，返回 CreateMessageResult。
      */
     @McpSampling(clients = "timemcp")
     public CreateMessageResult handleSampling(CreateMessageRequest request) {
@@ -173,5 +173,4 @@ public class McpClientAnnotationsDemo implements ApplicationRunner {
     public void setMcpAsyncClients(List<McpAsyncClient> mcpAsyncClients) {
         this.mcpAsyncClients = mcpAsyncClients;
     }
-
-    }
+}
