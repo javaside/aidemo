@@ -1,4 +1,4 @@
-package org.example.springai.mcp.server;
+package org.example.springai.mcp.server.basic;
 
 import io.modelcontextprotocol.spec.McpSchema;
 import org.springaicommunity.mcp.annotation.McpArg;
