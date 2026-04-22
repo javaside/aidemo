@@ -1,11 +1,17 @@
 package org.example.springai.mcp.server.annot;
 
+import io.modelcontextprotocol.server.McpAsyncServerExchange;
+import io.modelcontextprotocol.spec.McpSchema;
 import org.springaicommunity.mcp.annotation.McpTool;
 import org.springaicommunity.mcp.annotation.McpToolParam;
 import org.springaicommunity.mcp.context.McpAsyncRequestContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import reactor.core.publisher.Mono;
+
+import java.util.List;
+import java.util.function.BiConsumer;
 
 /**
  * MCP Server 注解演示 - 精简版
@@ -19,6 +25,12 @@ import reactor.core.publisher.Mono;
  *   <li>context.roots()     → 获取客户端注册的根目录列表</li>
  * </ul>
  *
+ * <p>处理客户端 Roots 变化：</p>
+ * <ul>
+ *   <li>通过 rootsChangeHandler(@Bean BiConsumer) 注册处理器</li>
+ *   <li>当客户端增删改 roots 时触发，服务端可记录日志或更新状态</li>
+ * </ul>
+ *
  * <p>注意事项：</p>
  * <ul>
  *   <li>服务端必须配置为 stateful（spring.ai.mcp.server.stateful=true）</li>
@@ -30,6 +42,26 @@ import reactor.core.publisher.Mono;
  */
 @SpringBootApplication
 public class McpServerAnnotDemo {
+
+    /**
+     * Roots 变化处理器 - 当客户端增删改 roots 时触发。
+     *
+     * <p>注册方式：通过 {@code @Bean} 提供 {@code BiConsumer<McpAsyncServerExchange, List<McpSchema.Root>>}。
+     * Spring AI MCP 框架会自动将其注册到服务端。</p>
+     *
+     * <p>触发时机：客户端调用 roots 有变更时（如添加/删除一个根目录）。</p>
+     *
+     * @see McpServerAutoConfiguration - 底层通过 serverBuilder.rootsChangeHandler() 注册
+     */
+    @Bean
+    public BiConsumer<McpAsyncServerExchange, List<McpSchema.Root>> rootsChangeHandler() {
+        return (exchange, roots) -> {
+            System.out.println("\n  [Roots 变化通知] 客户端 roots 发生变更，当前 roots 列表:");
+            for (McpSchema.Root root : roots) {
+                System.out.println("    - " + root.name() + ": " + root.uri());
+            }
+        };
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(McpServerAnnotDemo.class, args);

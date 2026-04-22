@@ -2,10 +2,10 @@ package org.example.springai.mcp.client.annot;
 
 import io.modelcontextprotocol.client.McpAsyncClient;
 import io.modelcontextprotocol.spec.McpSchema;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 
 /**
  * MCP Client 注解演示启动器 - 精简版
@@ -25,7 +25,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @see McpClientAnnotProviders
  */
 @SpringBootApplication
-public class McpClientAnnotDemo implements ApplicationRunner {
+public class McpClientAnnotDemo {
 
     /** 注入所有已注册的 McpAsyncClient（每个连接一个，本例为 timemcp） */
     private final java.util.List<McpAsyncClient> mcpAsyncClients;
@@ -38,8 +38,8 @@ public class McpClientAnnotDemo implements ApplicationRunner {
         SpringApplication.run(McpClientAnnotDemo.class, args);
     }
 
-    @Override
-    public void run(ApplicationArguments args) throws Exception {
+    @EventListener(ApplicationReadyEvent.class)
+    public void onApplicationReady() {
         mcpAsyncClients.forEach(mcpClient -> {
             System.out.println("\n========== 调用 demoAll ==========");
             System.out.println("调用 server demoAll() 工具...");
@@ -73,13 +73,9 @@ public class McpClientAnnotDemo implements ApplicationRunner {
                 System.out.println("  工具调用异常: " + e.getMessage());
             }
 
-            // 如果需要关闭连接，取消上面 sleep 的注释并执行
-            //sleep(1000);
-            //mcpClient.closeGracefully().block();
+            // 添加 Root - 客户端连接就绪后再调用
+            // addRoot() 返回 Mono<Void>（内部会发送 rootsListChangedNotification），必须订阅才执行
+            mcpClient.addRoot(new McpSchema.Root("file:///Users/demo/Desktop","Desktop")).subscribe();
         });
-    }
-
-    private void sleep(long ms) {
-        try { Thread.sleep(ms); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
     }
 }
