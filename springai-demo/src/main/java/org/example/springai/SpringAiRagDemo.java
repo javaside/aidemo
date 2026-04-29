@@ -20,7 +20,7 @@ public class SpringAiRagDemo {
 
         DeepSeekApi deepSeekApi = DeepSeekApi.builder()
                 .baseUrl("https://api.deepseek.com")
-                .apiKey("sk-5a02f889d26c4d179fedeb34c73a0f17")
+                .apiKey("sk-f429667b2e4a4581bc1a3bb873ffa69f")
                 .build();
 
         ChatModel chatModel = DeepSeekChatModel.builder()
