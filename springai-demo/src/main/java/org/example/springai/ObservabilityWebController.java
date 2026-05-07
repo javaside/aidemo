@@ -28,15 +28,26 @@ public class ObservabilityWebController {
      */
     @GetMapping("/chat")
     public Map<String, Object> chat(@RequestParam("msg") String msg) {
-        long start = System.currentTimeMillis();
-        String reply = chatClient.prompt().user(msg).call().content();
-        long cost = System.currentTimeMillis() - start;
-
-        Map<String, Object> result = new LinkedHashMap<>();
-        result.put("question", msg);
-        result.put("answer", reply);
-        result.put("cost_ms", cost);
-        return result;
+        if (msg == null || msg.isBlank()) {
+            Map<String, Object> error = new LinkedHashMap<>();
+            error.put("error", "msg parameter is required");
+            return error;
+        }
+        try {
+            long start = System.currentTimeMillis();
+            String reply = chatClient.prompt().user(msg).call().content();
+            long cost = System.currentTimeMillis() - start;
+            Map<String, Object> result = new LinkedHashMap<>();
+            result.put("question", msg);
+            result.put("answer", reply);
+            result.put("cost_ms", cost);
+            return result;
+        } catch (Exception e) {
+            Map<String, Object> error = new LinkedHashMap<>();
+            error.put("error", e.getMessage());
+            error.put("question", msg);
+            return error;
+        }
     }
 
     /**
@@ -44,7 +55,11 @@ public class ObservabilityWebController {
      */
     @GetMapping("/metrics")
     public List<Map<String, Object>> metrics() {
-        return traceService.getMetricsSummary();
+        try {
+            return traceService.getMetricsSummary();
+        } catch (Exception e) {
+            return List.of(Map.of("error", e.getMessage()));
+        }
     }
 
     /**
