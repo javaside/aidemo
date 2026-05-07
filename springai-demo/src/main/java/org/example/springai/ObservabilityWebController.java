@@ -1,7 +1,9 @@
 package org.example.springai;
 
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ResponseStatusException;
 
 import java.util.*;
 
@@ -29,9 +31,7 @@ public class ObservabilityWebController {
     @GetMapping("/chat")
     public Map<String, Object> chat(@RequestParam("msg") String msg) {
         if (msg == null || msg.isBlank()) {
-            Map<String, Object> error = new LinkedHashMap<>();
-            error.put("error", "msg parameter is required");
-            return error;
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "msg parameter is required");
         }
         try {
             long start = System.currentTimeMillis();
