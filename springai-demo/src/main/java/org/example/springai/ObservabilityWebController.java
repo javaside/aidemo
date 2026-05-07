@@ -2,8 +2,8 @@ package org.example.springai;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.ResponseStatusException;
 
 import java.util.*;
 
@@ -29,9 +29,11 @@ public class ObservabilityWebController {
      * 对话端点 — 每次调用产生完整 5 层指标 + Trace + 日志。
      */
     @GetMapping("/chat")
-    public Map<String, Object> chat(@RequestParam("msg") String msg) {
+    public ResponseEntity<Map<String, Object>> chat(@RequestParam("msg") String msg) {
         if (msg == null || msg.isBlank()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "msg parameter is required");
+            Map<String, Object> error = new LinkedHashMap<>();
+            error.put("error", "msg parameter is required");
+            return ResponseEntity.badRequest().body(error);
         }
         try {
             long start = System.currentTimeMillis();
@@ -41,12 +43,12 @@ public class ObservabilityWebController {
             result.put("question", msg);
             result.put("answer", reply);
             result.put("cost_ms", cost);
-            return result;
+            return ResponseEntity.ok(result);
         } catch (Exception e) {
             Map<String, Object> error = new LinkedHashMap<>();
             error.put("error", e.getMessage());
             error.put("question", msg);
-            return error;
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
         }
     }
 

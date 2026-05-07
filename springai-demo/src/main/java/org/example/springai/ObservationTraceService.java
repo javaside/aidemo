@@ -30,7 +30,7 @@ public class ObservationTraceService {
 
             Map<String, Object> entry = new LinkedHashMap<>();
             entry.put("name", name);
-            entry.put("type", meter.getType().name());
+            entry.put("type", meter.getClass().getSimpleName().replace("MeterRegistry$", ""));
             entry.put("tags", meter.getId().getTags().toString());
 
             if (meter instanceof Timer t) {
