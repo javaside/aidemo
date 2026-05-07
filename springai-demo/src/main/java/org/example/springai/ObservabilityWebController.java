@@ -58,32 +58,32 @@ public class ObservabilityWebController {
     }
 
     /**
-     * 非流式对话端点 — 等待完整响应后返回 JSON。
+     * 非流式对话端点 — 使用 stream().collectList() 避免阻塞 reactor 线程。
      */
     @GetMapping("/chat")
-    public Map<String, Object> chat(@RequestParam("msg") String msg,
-                                    @RequestParam(value = "tool", required = false, defaultValue = "false") String withTool) {
+    public Mono<Map<String, Object>> chat(@RequestParam("msg") String msg,
+                                          @RequestParam(value = "tool", required = false, defaultValue = "false") String withTool) {
         if (msg == null || msg.isBlank()) {
-            return Map.of("error", "msg parameter is required");
+            return Mono.just(Map.of("error", "msg parameter is required"));
         }
-        try {
-            long start = System.currentTimeMillis();
-            String reply;
-            if ("true".equalsIgnoreCase(withTool)) {
-                reply = chatClient.prompt().user(msg).toolCallbacks(weatherTool).call().content();
-            } else {
-                reply = chatClient.prompt().user(msg).call().content();
-            }
-            long cost = System.currentTimeMillis() - start;
-            Map<String, Object> result = new LinkedHashMap<>();
-            result.put("question", msg);
-            result.put("answer", reply);
-            result.put("cost_ms", cost);
-            result.put("tool_used", "true".equalsIgnoreCase(withTool));
-            return result;
-        } catch (Exception e) {
-            return Map.of("error", e.getMessage(), "question", msg);
-        }
+        long start = System.currentTimeMillis();
+        Flux<String> flux = chatClient.prompt().user(msg)
+            .toolCallbacks("true".equalsIgnoreCase(withTool) ? List.of(weatherTool) : List.of())
+            .stream()
+            .content();
+
+        return flux.collectList()
+            .map(contentList -> {
+                long cost = System.currentTimeMillis() - start;
+                Map<String, Object> result = new LinkedHashMap<>();
+                result.put("question", msg);
+                result.put("answer", String.join("", contentList));
+                result.put("cost_ms", cost);
+                result.put("tool_used", "true".equalsIgnoreCase(withTool));
+                return result;
+            })
+            .onErrorResume(ex -> Mono.just((Map<String, Object>) Map.of(
+                "error", ex.getMessage(), "question", msg)));
     }
 
     /**
