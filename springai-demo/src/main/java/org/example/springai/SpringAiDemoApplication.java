@@ -26,6 +26,6 @@ public class SpringAiDemoApplication implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("ddds");
-        System.out.println(chatClient.prompt().user("Who are you?").call().content());
+        System.out.println(chatClient.prompt().user("你好?").call().content());
     }
 }
