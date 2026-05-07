@@ -106,7 +106,8 @@
             .then(data => {
                 var lines = data.map(m => m.name + ' | ' + m.type + ' | ' +
                     (m.count !== undefined ? 'count=' + m.count : '') +
-                    (m.mean_ms !== undefined ? ' mean=' + m.mean_ms.toFixed(1) + 'ms' : ''));
+                    (m.mean_ms !== undefined ? ' mean=' + m.mean_ms.toFixed(1) + 'ms' : '') +
+                    (m.tags ? ' | ' + m.tags : ''));
                 document.getElementById('metricsResult').textContent = lines.join('\n') || '暂无指标';
             });
     }
