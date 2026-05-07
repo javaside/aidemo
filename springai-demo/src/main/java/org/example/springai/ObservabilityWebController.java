@@ -4,14 +4,14 @@ import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.tool.function.FunctionToolCallback;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * Spring AI 可观测性 Web 演示端点。
- *
- * <p>提供 /ai/chat（对话）、/ai/metrics（指标）、/ai/layers（五层说明）、/ai/demo（HTML 演示页）。
  */
 @RestController
 @RequestMapping("/ai")
@@ -35,43 +35,36 @@ public class ObservabilityWebController {
             .inputType(WeatherReq.class)
             .build();
 
-    /**
-     * 对话端点 — 每次调用产生完整 5 层指标 + Trace + 日志。
-     * @param msg 问题内容
-     * @param withTool 是否启用工具调用（传入 "true" 启用天气查询工具）
-     */
+    @Async
+    public CompletableFuture<String> chatAsync(String msg) {
+        return CompletableFuture.supplyAsync(() ->
+            chatClient.prompt().user(msg)
+                .toolCallbacks(weatherTool)
+                .call().content()
+        );
+    }
+
     @GetMapping("/chat")
-    public ResponseEntity<Map<String, Object>> chat(
-            @RequestParam("msg") String msg,
-            @RequestParam(value = "tool", required = false, defaultValue = "false") String withTool) {
+    public CompletableFuture<ResponseEntity<Map<String, Object>>> chat(@RequestParam("msg") String msg) {
         if (msg == null || msg.isBlank()) {
-            Map<String, Object> error = new LinkedHashMap<>();
-            error.put("error", "msg parameter is required");
-            return ResponseEntity.badRequest().body(error);
+            return CompletableFuture.completedFuture(
+                ResponseEntity.badRequest().body(Map.of("error", "msg parameter is required"))
+            );
         }
-        try {
-            long start = System.currentTimeMillis();
-            String reply;
-            if ("true".equalsIgnoreCase(withTool)) {
-                reply = chatClient.prompt().user(msg)
-                    .toolCallbacks(weatherTool)
-                    .call().content();
-            } else {
-                reply = chatClient.prompt().user(msg).call().content();
-            }
+        long start = System.currentTimeMillis();
+        return chatAsync(msg).handle((reply, ex) -> {
             long cost = System.currentTimeMillis() - start;
             Map<String, Object> result = new LinkedHashMap<>();
             result.put("question", msg);
-            result.put("answer", reply);
-            result.put("cost_ms", cost);
-            result.put("tool_used", "true".equalsIgnoreCase(withTool));
+            if (ex != null) {
+                result.put("error", ex.getCause() != null ? ex.getCause().getMessage() : ex.getMessage());
+            } else {
+                result.put("answer", reply);
+                result.put("cost_ms", cost);
+                result.put("tool_used", true);
+            }
             return ResponseEntity.ok(result);
-        } catch (Exception e) {
-            Map<String, Object> error = new LinkedHashMap<>();
-            error.put("error", e.getMessage());
-            error.put("question", msg);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
-        }
+        });
     }
 
     /**
