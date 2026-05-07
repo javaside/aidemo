@@ -25,7 +25,13 @@ public class SpringAiDemoApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        System.out.println("ddds");
-        System.out.println(chatClient.prompt().user("你好?").call().content());
+        System.out.println("开始流式调用...");
+        String content = chatClient.prompt().user("你好?")
+            .stream()
+            .content()
+            .collectList()
+            .map(list -> String.join("", list))
+            .block();
+        System.out.println("响应: " + content);
     }
 }
