@@ -1,6 +1,7 @@
 package org.example.springai;
 
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.tool.tool.callback.FunctionToolCallback;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,11 +26,24 @@ public class ObservabilityWebController {
         this.traceService = traceService;
     }
 
+    record WeatherReq(String city) {}
+
+    private final FunctionToolCallback<WeatherReq, String> weatherTool =
+        FunctionToolCallback.<WeatherReq, String>builder(
+                "getWeather", req -> req.city + "天气: 晴, 25°C, 湿度45%")
+            .description("获取指定城市的天气信息")
+            .inputType(WeatherReq.class)
+            .build();
+
     /**
      * 对话端点 — 每次调用产生完整 5 层指标 + Trace + 日志。
+     * @param msg 问题内容
+     * @param withTool 是否启用工具调用（传入 "true" 启用天气查询工具）
      */
     @GetMapping("/chat")
-    public ResponseEntity<Map<String, Object>> chat(@RequestParam("msg") String msg) {
+    public ResponseEntity<Map<String, Object>> chat(
+            @RequestParam("msg") String msg,
+            @RequestParam(value = "tool", required = false, defaultValue = "false") String withTool) {
         if (msg == null || msg.isBlank()) {
             Map<String, Object> error = new LinkedHashMap<>();
             error.put("error", "msg parameter is required");
@@ -37,12 +51,20 @@ public class ObservabilityWebController {
         }
         try {
             long start = System.currentTimeMillis();
-            String reply = chatClient.prompt().user(msg).call().content();
+            String reply;
+            if ("true".equalsIgnoreCase(withTool)) {
+                reply = chatClient.prompt().user(msg)
+                    .toolCallbacks(weatherTool)
+                    .call().content();
+            } else {
+                reply = chatClient.prompt().user(msg).call().content();
+            }
             long cost = System.currentTimeMillis() - start;
             Map<String, Object> result = new LinkedHashMap<>();
             result.put("question", msg);
             result.put("answer", reply);
             result.put("cost_ms", cost);
+            result.put("tool_used", "true".equalsIgnoreCase(withTool));
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             Map<String, Object> error = new LinkedHashMap<>();
@@ -104,30 +126,32 @@ public class ObservabilityWebController {
             <h1>Spring AI 可观测性演示 <span class="badge">5 层指标</span></h1>
 
             <div class="section">
-                <h2>5 层指标体系</h2>
-                <table>
-                    <tr><th>层</th><th>指标名</th><th>来源组件</th><th>说明</th></tr>
-                    <tr><td>①</td><td>spring.ai.chat.client</td><td>ChatClient</td><td>包含 advisor 调用链</td></tr>
-                    <tr><td>②</td><td>spring.ai.advisor</td><td>Advisor</td><td>拦截器层</td></tr>
-                    <tr><td>③</td><td>spring.ai.tool</td><td>Tool Calling</td><td>工具调用层</td></tr>
-                    <tr><td>④</td><td>gen_ai.client.operation</td><td>ChatModel</td><td>DeepSeek API 层</td></tr>
-                    <tr><td>⑤</td><td>gen_ai.client.token.usage</td><td>Token 用量</td><td>input/output/total</td></tr>
-                </table>
-            </div>
-
-            <div class="section">
                 <h2>对话测试</h2>
                 <div class="chat-area">
-                    <input type="text" id="msgInput" placeholder="输入问题，如：Spring AI 是什么？" />
+                    <input type="text" id="msgInput" placeholder="输入问题，如：北京今天天气怎么样？" />
+                    <label style="margin-left: 1em;">
+                        <input type="checkbox" id="toolCheck" /> 使用工具（天气查询）
+                    </label>
                     <button onclick="doChat()">发送</button>
                 </div>
                 <pre id="chatResult">等待输入...</pre>
             </div>
 
             <div class="section">
-                <h2>实时指标</h2>
-                <button onclick="loadMetrics()">刷新指标</button>
+                <h2>实时指标 <button onclick="loadMetrics()">刷新</button></h2>
                 <pre id="metricsResult">点击刷新以加载指标...</pre>
+            </div>
+
+            <div class="section">
+                <h2>5 层指标说明</h2>
+                <table>
+                    <tr><th>层</th><th>指标名</th><th>来源</th><th>说明</th></tr>
+                    <tr><td>①</td><td>spring.ai.chat.client</td><td>ChatClient</td><td>包含 advisor 调用链</td></tr>
+                    <tr><td>②</td><td>spring.ai.advisor</td><td>Advisor</td><td>拦截器层</td></tr>
+                    <tr><td>③</td><td>spring.ai.tool</td><td>Tool Calling</td><td>工具调用层（需开启工具）</td></tr>
+                    <tr><td>④</td><td>gen_ai.client.operation</td><td>ChatModel</td><td>DeepSeek API 层</td></tr>
+                    <tr><td>⑤</td><td>gen_ai.client.token.usage</td><td>Token 用量</td><td>input/output/total</td></tr>
+                </table>
             </div>
 
             <div class="section">
@@ -143,12 +167,16 @@ public class ObservabilityWebController {
             function doChat() {
                 var msg = document.getElementById('msgInput').value;
                 if (!msg) return;
+                var withTool = document.getElementById('toolCheck').checked;
+                var url = '/ai/chat?msg=' + encodeURIComponent(msg);
+                if (withTool) url += '&tool=true';
                 document.getElementById('chatResult').textContent = '调用中...';
-                fetch('/ai/chat?msg=' + encodeURIComponent(msg))
+                fetch(url)
                     .then(r => r.json())
                     .then(d => {
-                        document.getElementById('chatResult').textContent =
-                            'Q: ' + d.question + '\\n\\nA: ' + d.answer + '\\n\\n耗时: ' + d.cost_ms + 'ms';
+                        var info = 'Q: ' + d.question + '\\n\\nA: ' + d.answer + '\\n\\n耗时: ' + d.cost_ms + 'ms';
+                        if (d.tool_used) info += '\\n[使用工具: getWeather]';
+                        document.getElementById('chatResult').textContent = info;
                         loadMetrics();
                     })
                     .catch(e => document.getElementById('chatResult').textContent = '错误: ' + e);
@@ -157,8 +185,8 @@ public class ObservabilityWebController {
                 fetch('/ai/metrics')
                     .then(r => r.json())
                     .then(data => {
-                        var lines = data.map(m => m.name + ' | ' + m.type + ' | tags:' + m.tags +
-                            (m.count !== undefined ? ' count=' + m.count : '') +
+                        var lines = data.map(m => m.name + ' | ' + m.type + ' | ' +
+                            (m.count !== undefined ? 'count=' + m.count : '') +
                             (m.mean_ms !== undefined ? ' mean=' + m.mean_ms.toFixed(1) + 'ms' : ''));
                         document.getElementById('metricsResult').textContent = lines.join('\\n') || '暂无指标';
                     });
