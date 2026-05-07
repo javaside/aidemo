@@ -1,7 +1,7 @@
 package org.example.springai;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.tool.tool.callback.FunctionToolCallback;
+import org.springframework.ai.tool.function.FunctionToolCallback;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
