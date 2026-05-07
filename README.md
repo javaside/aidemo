@@ -52,7 +52,9 @@ Spring AI 框架的各种功能演示：
 
 | 示例 | 描述 |
 |------|------|
-| `SpringAiDemoApplication.java` | ChatClient 基础使用 |
+| `SpringAiDemoApplication.java` | ChatClient 流式调用 |
+| `ObservabilityWebController.java` | 可观测性 Web 端点（/ai/demo） |
+| `ObservationTraceService.java` | 5 层指标收集服务 |
 | `ChatClientUserDemo.java` | ChatClient 用户模式 |
 | `DeepSeekChatModelDemo.java` | DeepSeek 模型集成 |
 | `DeepSeekMemoryDemo.java` | DeepSeek 记忆机制 |
@@ -63,6 +65,11 @@ Spring AI 框架的各种功能演示：
 | `StructuredOutPutDemo.java` | 结构化输出 |
 | `PromptTemplateDemo.java` | 提示词模板 |
 | `DateTimeTools.java` | 日期时间工具 |
+
+**可观测性演示页面**：`/ai/demo`
+- 5 层指标：ChatClient → Advisor → Tool → ChatModel → Token
+- 流式对话测试（SSE EventSource）
+- 实时指标显示
 
 ### springai-alibaba-demo
 
