@@ -41,20 +41,20 @@ public class ObservabilityWebController {
     @GetMapping(value = "/chat/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<String> chatStream(@RequestParam("msg") String msg) {
         if (msg == null || msg.isBlank()) {
-            return Flux.just("data: {\"error\": \"msg parameter is required\"}\n\n");
+            return Flux.just("error: msg parameter is required\n\n");
         }
         long start = System.currentTimeMillis();
         return chatClient.prompt().user(msg)
             .toolCallbacks(weatherTool)
             .stream()
             .content()
-            .map(content -> "data: {\"answer\": \"" + content.replace("\"", "\\\"") + "\"}\n\n")
-            .startWith(Flux.just("data: {\"question\": \"" + msg.replace("\"", "\\\"") + "\"}\n\n"))
+            .map(content -> "answer: " + content + "\n\n")
+            .startWith(Flux.just("question: " + msg + "\n\n"))
             .concatWith(Flux.defer(() -> {
                 long cost = System.currentTimeMillis() - start;
-                return Flux.just("data: {\"cost_ms\": " + cost + ", \"tool_used\": true}\n\n");
+                return Flux.just("cost_ms: " + cost + ", tool_used: true\n\n");
             }))
-            .onErrorResume(ex -> Flux.just("data: {\"error\": \"" + ex.getMessage() + "\"}\n\n"));
+            .onErrorResume(ex -> Flux.just("error: " + ex.getMessage() + "\n\n"));
     }
 
     /**

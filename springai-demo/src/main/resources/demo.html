@@ -67,43 +67,31 @@
 
         var eventSource = new EventSource('/ai/chat/stream?msg=' + encodeURIComponent(msg));
         var fullResponse = '';
-        var questionReceived = false;
+        var phase = '';
 
         eventSource.onmessage = function(e) {
-            try {
-                var data = JSON.parse(e.data);
-                if (data.question && !questionReceived) {
-                    fullResponse = 'Q: ' + data.question + '\n\nA: ';
-                    questionReceived = true;
-                    resultEl.textContent = fullResponse;
-                }
-                if (data.error) {
-                    resultEl.textContent = '错误: ' + data.error;
-                    eventSource.close();
-                    return;
-                }
-                if (data.answer !== undefined) {
-                    fullResponse += data.answer;
-                    resultEl.textContent = fullResponse;
-                }
-                if (data.cost_ms !== undefined) {
-                    fullResponse += '\n\n耗时: ' + data.cost_ms + 'ms';
-                    if (data.tool_used) fullResponse += '\n[使用工具: getWeather]';
-                    resultEl.textContent = fullResponse;
-                    loadMetrics();
-                }
-            } catch (ex) {
-                // 收到初始的question数据
-                if (e.data.includes('question')) {
-                    try {
-                        var d = JSON.parse(e.data.replace('data: ', ''));
-                        if (d.question) {
-                            fullResponse = 'Q: ' + d.question + '\n\nA: ';
-                            questionReceived = true;
-                            resultEl.textContent = fullResponse;
-                        }
-                    } catch {}
-                }
+            var line = e.data.trim();
+            if (!line) return;
+
+            if (line.startsWith('question:')) {
+                var q = line.substring(9).trim();
+                fullResponse = 'Q: ' + q + '\n\nA: ';
+                resultEl.textContent = fullResponse;
+                phase = 'answer';
+            } else if (line.startsWith('answer:')) {
+                var a = line.substring(7).trim();
+                fullResponse += a;
+                resultEl.textContent = fullResponse;
+            } else if (line.startsWith('cost_ms:')) {
+                var info = line.substring(8).trim();
+                fullResponse += '\n\n耗时: ' + info.replace(',', 'ms, ');
+                if (info.includes('tool_used')) fullResponse += '[使用工具: getWeather]';
+                resultEl.textContent = fullResponse;
+                loadMetrics();
+                eventSource.close();
+            } else if (line.startsWith('error:')) {
+                resultEl.textContent = '错误: ' + line.substring(6).trim();
+                eventSource.close();
             }
         };
 
@@ -111,10 +99,6 @@
             resultEl.textContent = '连接错误';
             eventSource.close();
         };
-
-        eventSource.addEventListener('complete', function() {
-            eventSource.close();
-        });
     }
     function loadMetrics() {
         fetch('/ai/metrics')
