@@ -104,7 +104,7 @@
         fetch('/ai/metrics')
             .then(r => r.json())
             .then(data => {
-                var lines = data.map(m => m.name + ' | ' + m.type + ' | ' +
+                var lines = data.map(m => m.name + ' | ' +
                     (m.count !== undefined ? 'count=' + m.count : '') +
                     (m.mean_ms !== undefined ? ' mean=' + m.mean_ms.toFixed(1) + 'ms' : '') +
                     (m.max_ms !== undefined ? ' max=' + m.max_ms.toFixed(1) + 'ms' : '') +
