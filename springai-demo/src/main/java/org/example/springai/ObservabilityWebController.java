@@ -2,13 +2,12 @@ package org.example.springai;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.tool.function.FunctionToolCallback;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Async;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 
 import java.util.*;
-import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Spring AI 可观测性 Web 演示端点。
@@ -35,36 +34,56 @@ public class ObservabilityWebController {
             .inputType(WeatherReq.class)
             .build();
 
-    @Async
-    public CompletableFuture<String> chatAsync(String msg) {
-        return CompletableFuture.supplyAsync(() ->
-            chatClient.prompt().user(msg)
-                .toolCallbacks(weatherTool)
-                .call().content()
-        );
-    }
-
-    @GetMapping("/chat")
-    public CompletableFuture<ResponseEntity<Map<String, Object>>> chat(@RequestParam("msg") String msg) {
+    /**
+     * 流式对话端点 — 返回 SSE 格式的流式响应。
+     * 浏览器端可通过 EventSource 接收。
+     */
+    @GetMapping(value = "/chat/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<String> chatStream(@RequestParam("msg") String msg) {
         if (msg == null || msg.isBlank()) {
-            return CompletableFuture.completedFuture(
-                ResponseEntity.badRequest().body(Map.of("error", "msg parameter is required"))
-            );
+            return Flux.just("data: {\"error\": \"msg parameter is required\"}\n\n");
         }
         long start = System.currentTimeMillis();
-        return chatAsync(msg).handle((reply, ex) -> {
+        return chatClient.prompt().user(msg)
+            .toolCallbacks(weatherTool)
+            .stream()
+            .content()
+            .map(content -> "data: " + content + "\n\n")
+            .startWith(Flux.just("data: {\"question\": \"" + msg.replace("\"", "\\\"") + "\"}\n\n"))
+            .concatWith(Flux.defer(() -> {
+                long cost = System.currentTimeMillis() - start;
+                return Flux.just("data: {\"cost_ms\": " + cost + ", \"tool_used\": true}\n\n");
+            }))
+            .onErrorResume(ex -> Flux.just("data: {\"error\": \"" + ex.getMessage() + "\"}\n\n"));
+    }
+
+    /**
+     * 非流式对话端点 — 等待完整响应后返回 JSON。
+     */
+    @GetMapping("/chat")
+    public Map<String, Object> chat(@RequestParam("msg") String msg,
+                                    @RequestParam(value = "tool", required = false, defaultValue = "false") String withTool) {
+        if (msg == null || msg.isBlank()) {
+            return Map.of("error", "msg parameter is required");
+        }
+        try {
+            long start = System.currentTimeMillis();
+            String reply;
+            if ("true".equalsIgnoreCase(withTool)) {
+                reply = chatClient.prompt().user(msg).toolCallbacks(weatherTool).call().content();
+            } else {
+                reply = chatClient.prompt().user(msg).call().content();
+            }
             long cost = System.currentTimeMillis() - start;
             Map<String, Object> result = new LinkedHashMap<>();
             result.put("question", msg);
-            if (ex != null) {
-                result.put("error", ex.getCause() != null ? ex.getCause().getMessage() : ex.getMessage());
-            } else {
-                result.put("answer", reply);
-                result.put("cost_ms", cost);
-                result.put("tool_used", true);
-            }
-            return ResponseEntity.ok(result);
-        });
+            result.put("answer", reply);
+            result.put("cost_ms", cost);
+            result.put("tool_used", "true".equalsIgnoreCase(withTool));
+            return result;
+        } catch (Exception e) {
+            return Map.of("error", e.getMessage(), "question", msg);
+        }
     }
 
     /**
