@@ -107,9 +107,9 @@ public class ObservabilityWebController {
                 <h2>5 层指标体系</h2>
                 <table>
                     <tr><th>层</th><th>指标名</th><th>来源组件</th><th>说明</th></tr>
-                    <tr><td>①</td><td>spring_ai_chat_client_operation_seconds</td><td>ChatClient</td><td>包含 advisor 调用链</td></tr>
-                    <tr><td>②</td><td>spring_ai_advisor_operation_seconds</td><td>Advisor</td><td>拦截器层</td></tr>
-                    <tr><td>③</td><td>spring_ai_tool_operation_seconds</td><td>Tool Calling</td><td>工具调用层</td></tr>
+                    <tr><td>①</td><td>spring_ai_chat_client_seconds</td><td>ChatClient</td><td>包含 advisor 调用链</td></tr>
+                    <tr><td>②</td><td>spring_ai_advisor_seconds</td><td>Advisor</td><td>拦截器层</td></tr>
+                    <tr><td>③</td><td>spring_ai_tool_seconds</td><td>Tool Calling</td><td>工具调用层</td></tr>
                     <tr><td>④</td><td>gen_ai_client_operation_seconds</td><td>ChatModel</td><td>DeepSeek API 层</td></tr>
                     <tr><td>⑤</td><td>gen_ai_client_token_usage_total</td><td>Token 用量</td><td>input/output/total</td></tr>
                 </table>

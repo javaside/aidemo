@@ -50,9 +50,9 @@ public class ObservationTraceService {
      */
     public List<Map<String, String>> getLayersDescription() {
         return List.of(
-            Map.of("layer", "① spring.ai.chat.client", "metric", "spring_ai_chat_client_operation_seconds", "description", "ChatClient 层，包含 advisor 调用"),
-            Map.of("layer", "② spring.ai.advisor", "metric", "spring_ai_advisor_operation_seconds", "description", "Advisor 拦截层"),
-            Map.of("layer", "③ spring.ai.tool", "metric", "spring_ai_tool_operation_seconds", "description", "Tool calling 层"),
+            Map.of("layer", "① spring.ai.chat.client", "metric", "spring_ai_chat_client_seconds", "description", "ChatClient 层，包含 advisor 调用"),
+            Map.of("layer", "② spring.ai.advisor", "metric", "spring_ai_advisor_seconds", "description", "Advisor 拦截层"),
+            Map.of("layer", "③ spring.ai.tool", "metric", "spring_ai_tool_seconds", "description", "Tool calling 层"),
             Map.of("layer", "④ gen_ai.client.operation", "metric", "gen_ai_client_operation_seconds", "description", "ChatModel 层（DeepSeek API）"),
             Map.of("layer", "⑤ gen_ai.client.token.usage", "metric", "gen_ai_client_token_usage_total", "description", "Token 用量统计")
         );
