@@ -56,15 +56,23 @@ Spring AI 框架的各种功能演示：
 | `ObservabilityWebController.java` | 可观测性 Web 端点（/ai/demo） |
 | `ObservationTraceService.java` | 5 层指标收集服务 |
 | `ChatClientUserDemo.java` | ChatClient 用户模式 |
+| `ChatClientObservabilityDemo.java` | ChatClient 可观测性演示 |
+| `ChatMemoryDemo.java` | ChatMemory 记忆机制 |
 | `DeepSeekChatModelDemo.java` | DeepSeek 模型集成 |
+| `DeepSeekAiDemo.java` | DeepSeek AI 对接 |
+| `DeepSeekApiDemo.java` | DeepSeek API 调用 |
 | `DeepSeekMemoryDemo.java` | DeepSeek 记忆机制 |
 | `SpringAiRagDemo.java` | RAG（检索增强生成）演示 |
+| `RetrievalAugmentationAdvisorDemo.java` | RAG 查询变换与扩展 |
 | `JedisVectorStoreDemo.java` | Jedis 向量存储 |
+| `OllamaEmbeddingDemo.java` | Ollama Embedding |
 | `ToolsDemo.java` | 工具调用演示 |
+| `ToolCallbackDemo.java` | ToolCallback 回调 |
 | `AdvisorDemo.java` | Advisor 使用 |
 | `StructuredOutPutDemo.java` | 结构化输出 |
 | `PromptTemplateDemo.java` | 提示词模板 |
 | `DateTimeTools.java` | 日期时间工具 |
+| `MyController.java` | WebFlux 控制器示例 |
 
 **可观测性演示页面**：`/ai/demo`
 - 5 层指标：ChatClient → Advisor → Tool → ChatModel → Token
