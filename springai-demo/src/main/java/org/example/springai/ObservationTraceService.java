@@ -42,7 +42,29 @@ public class ObservationTraceService {
             }
             result.add(entry);
         }
+        // 按五层指标顺序排序
+        List<String> layerOrder = List.of(
+            "spring.ai.chat.client",
+            "spring.ai.advisor",
+            "spring.ai.tool",
+            "gen_ai.client.operation",
+            "gen_ai.client.token.usage"
+        );
+        result.sort((a, b) -> {
+            String nameA = (String) a.get("name");
+            String nameB = (String) b.get("name");
+            int idxA = indexOfLayer(nameA, layerOrder);
+            int idxB = indexOfLayer(nameB, layerOrder);
+            return Integer.compare(idxA, idxB);
+        });
         return result;
+    }
+
+    private int indexOfLayer(String name, List<String> layers) {
+        for (int i = 0; i < layers.size(); i++) {
+            if (name.startsWith(layers.get(i))) return i;
+        }
+        return 99;
     }
 
     /**
