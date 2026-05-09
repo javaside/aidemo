@@ -92,7 +92,24 @@ public class SimpleVectorStoreDemo {
         vectorStore.delete(List.of(docIdToDelete));
         System.out.println("已删除文档: " + docIdToDelete + "\n");
 
-        // 7. 序列化到文件
+        // 7. 按过滤条件删除（如：删除所有 version = '1.0' 的文档）
+        System.out.println("--- 按过滤条件删除（version = '1.0'） ---");
+        vectorStore.delete(new Filter.Expression(
+                Filter.ExpressionType.EQ,
+                new Filter.Key("version"),
+                new Filter.Value("1.0")));
+        System.out.println("已执行删除操作\n");
+
+        // 8. 验证删除结果
+        System.out.println("--- 验证删除结果 ---");
+        List<Document> remainingDocs = vectorStore.similaritySearch(
+                SearchRequest.builder()
+                        .query("数据库")
+                        .topK(10)
+                        .build());
+        System.out.println("剩余文档数: " + remainingDocs.size() + "\n");
+
+        // 9. 序列化到文件
         System.out.println("--- 序列化到文件 ---");
         Path tempFile = Files.createTempFile("vector_store", ".json");
         vectorStore.save(tempFile.toFile());
