@@ -8,6 +8,7 @@ import org.springframework.ai.ollama.api.OllamaEmbeddingOptions;
 import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.ai.vectorstore.filter.Filter;
 import org.springframework.ai.vectorstore.pgvector.PgVectorStore;
+import org.springframework.ai.vectorstore.pgvector.PgVectorStore.PgIndexType;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 
 import javax.sql.DataSource;
@@ -53,8 +54,11 @@ public class PgVectorStoreDemo {
                 new org.springframework.jdbc.core.JdbcTemplate(dataSource);
 
         // 4. 编程方式创建 PgVectorStore
+        // 注意：Qwen3-Embedding 输出 4096 维向量，HNSW/IVFFlat 索引最多支持 2000 维
         PgVectorStore vectorStore = PgVectorStore.builder(jdbcTemplate, embeddingModel)
-                .dimensions(1024)                    // Qwen3-Embedding 输出维度
+                .dimensions(4096)                    // Qwen3-Embedding 输出维度
+                .indexType(PgIndexType.NONE)          // 高维向量暂不使用索引
+                .maxDocumentBatchSize(100)           // 演示分批入库：每批最多 100 条
                 .initializeSchema(true)              // 自动创建表结构
                 .build();
 
@@ -63,8 +67,9 @@ public class PgVectorStoreDemo {
 
         System.out.println("=== 向量数据库演示开始 ===\n");
 
-        // 6. 添加文档
-        System.out.println("--- 添加文档 ---");
+        // 6. 批量添加文档（内部自动分批）
+        // 注意：add() 方法会自动按 maxDocumentBatchSize 分批入库
+        System.out.println("--- 批量添加文档 ---");
         List<Document> documents = List.of(
                 new Document("Spring AI 是一个 AI 框架，支持多种模型和向量数据库",
                         Map.of("category", "tech", "version", "1.0")),
