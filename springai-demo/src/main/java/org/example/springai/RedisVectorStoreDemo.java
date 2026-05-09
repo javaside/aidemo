@@ -5,14 +5,13 @@ import org.springframework.ai.ollama.OllamaEmbeddingModel;
 import org.springframework.ai.ollama.api.OllamaApi;
 import org.springframework.ai.ollama.api.OllamaEmbeddingOptions;
 import org.springframework.ai.vectorstore.SearchRequest;
-import org.springframework.ai.vectorstore.SimpleVectorStore;
 import org.springframework.ai.vectorstore.redis.RedisVectorStore;
 import redis.clients.jedis.JedisPooled;
 
 import java.util.List;
 import java.util.Map;
 
-public class JedisVectorStoreDemo {
+public class RedisVectorStoreDemo {
     public static void main(String[] args) {
         OllamaApi ollamaApi = OllamaApi.builder().baseUrl("http://localhost:11434").build();
         OllamaEmbeddingOptions options = OllamaEmbeddingOptions.builder().model("Qwen3-Embedding").build();
@@ -20,13 +19,13 @@ public class JedisVectorStoreDemo {
 
         JedisPooled jedisPooled = new JedisPooled("localhost", 6379);
 
-//        RedisVectorStore vectorStore = RedisVectorStore
-//                .builder(jedisPooled, embeddingModel)
-//                .initializeSchema(true)
-//                .build();
-//        vectorStore.afterPropertiesSet(); //必须执行，才会创建索引
+        RedisVectorStore vectorStore = RedisVectorStore
+                .builder(jedisPooled, embeddingModel)
+                .initializeSchema(true)
+                .build();
+        vectorStore.afterPropertiesSet(); //必须执行，才会创建索引
 
-        SimpleVectorStore vectorStore = SimpleVectorStore.builder(embeddingModel).build();
+        //SimpleVectorStore vectorStore = SimpleVectorStore.builder(embeddingModel).build();
 
         List <Document> documents = List.of(
                 new Document("Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!! Spring AI rocks!!", Map.of("meta1", "meta1")),
