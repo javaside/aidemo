@@ -64,7 +64,7 @@ Spring AI 框架的各种功能演示：
 | `DeepSeekMemoryDemo.java` | DeepSeek 记忆机制 |
 | `SpringAiRagDemo.java` | RAG（检索增强生成）演示 |
 | `RetrievalAugmentationAdvisorDemo.java` | RAG 查询变换与扩展 |
-| `JedisVectorStoreDemo.java` | Jedis 向量存储 |
+| `RedisVectorStoreDemo.java` | Jedis 向量存储 |
 | `OllamaEmbeddingDemo.java` | Ollama Embedding |
 | `SimpleVectorStoreDemo.java` | 简单内存向量存储（测试用） |
 | `PgVectorStoreDemo.java` | PgVector 向量存储（编程方式配置） |
