@@ -23,7 +23,7 @@
 - Maven
 - Spring Boot 3.5.6
 - LangChain4j 1.9.1
-- Spring AI 1.1.2
+- Spring AI 1.1.6
 - Reactor 2025.0.1
 - Micrometer 1.16.3
 
@@ -66,6 +66,8 @@ Spring AI 框架的各种功能演示：
 | `RetrievalAugmentationAdvisorDemo.java` | RAG 查询变换与扩展 |
 | `JedisVectorStoreDemo.java` | Jedis 向量存储 |
 | `OllamaEmbeddingDemo.java` | Ollama Embedding |
+| `SimpleVectorStoreDemo.java` | 简单内存向量存储（测试用） |
+| `PgVectorStoreDemo.java` | PgVector 向量存储（编程方式配置） |
 | `ToolsDemo.java` | 工具调用演示 |
 | `ToolCallbackDemo.java` | ToolCallback 回调 |
 | `AdvisorDemo.java` | Advisor 使用 |
