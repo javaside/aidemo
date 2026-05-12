@@ -23,7 +23,7 @@ import java.util.Map;
  *    docker run -it --rm --name postgres -p 5432:5432 \
  *      -e POSTGRES_USER=postgres \
  *      -e POSTGRES_PASSWORD=postgres \
- *      pgvector/pgvector
+ *      pgvector/pgvector:pg18
  *
  * 2. 启动 Ollama Embedding 服务：
  *    ollama run Qwen3-Embedding
