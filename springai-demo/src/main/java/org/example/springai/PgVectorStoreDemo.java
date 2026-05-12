@@ -65,6 +65,7 @@ public class PgVectorStoreDemo {
         System.out.println("PgVector 索引类型: " + indexType);
 
         // 注意：initializeSchema(true) 只会建表，不会修改已存在的表结构。
+        // 这里用独立表名，避免和默认 vector_store 混用。
         // 如果更换 embedding 模型导致维度变化，需要删除旧表，或换一个 vectorTableName。
         PgVectorStore vectorStore = PgVectorStore.builder(jdbcTemplate, embeddingModel)
                 .vectorTableName(VECTOR_TABLE_NAME)   // 使用独立演示表，避免污染默认 vector_store
@@ -127,6 +128,7 @@ public class PgVectorStoreDemo {
 
         // 10. 验证删除
         System.out.println("--- 验证删除 ---");
+        // 用数据库直接查行数验证删除，比继续用相似搜索判断更准确。
         Integer deletedDocCount = jdbcTemplate.queryForObject(
                 "select count(*) from public." + VECTOR_TABLE_NAME + " where id = cast(? as uuid)",
                 Integer.class,

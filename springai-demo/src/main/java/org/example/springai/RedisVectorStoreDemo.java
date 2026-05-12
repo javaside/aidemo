@@ -40,6 +40,8 @@ public class RedisVectorStoreDemo {
                     .builder(jedisPooled, embeddingModel)
                     .indexName("spring-ai-demo-index")
                     .prefix("spring-ai-demo:")
+                    // Redis 的 metadata 只有在这里显式注册后，才能进入 RediSearch 索引并参与过滤。
+                    // 仅把字段放进 Document.metadata 里还不够。
                     .metadataFields(
                             RedisVectorStore.MetadataField.tag("category"),
                             RedisVectorStore.MetadataField.tag("source"))
@@ -66,6 +68,7 @@ public class RedisVectorStoreDemo {
             printResults(results);
 
             System.out.println("--- 过滤搜索（category = 'redis'） ---");
+            // 这里能过滤成功，是因为上面把 category 注册成了 metadataField。
             List<Document> filteredResults = vectorStore.similaritySearch(
                     SearchRequest.builder()
                             .query("向量数据库")
