@@ -30,11 +30,15 @@ import java.util.Map;
  */
 public class PgVectorStoreDemo {
 
+    private static final String EMBEDDING_MODEL = "Qwen3-Embedding";
+
+    private static final String VECTOR_TABLE_NAME = "spring_ai_pgvector_demo";
+
     public static void main(String[] args) {
         // 1. 创建 EmbeddingModel（使用 Ollama）
         OllamaApi ollamaApi = OllamaApi.builder().baseUrl("http://localhost:11434").build();
         OllamaEmbeddingOptions options = OllamaEmbeddingOptions.builder()
-                .model("Qwen3-Embedding")
+                .model(EMBEDDING_MODEL)
                 .build();
         EmbeddingModel embeddingModel = OllamaEmbeddingModel.builder()
                 .ollamaApi(ollamaApi)
@@ -54,10 +58,18 @@ public class PgVectorStoreDemo {
                 new org.springframework.jdbc.core.JdbcTemplate(dataSource);
 
         // 4. 编程方式创建 PgVectorStore
-        // 注意：Qwen3-Embedding 输出 4096 维向量，HNSW/IVFFlat 索引最多支持 2000 维
+        int dimensions = embeddingModel.dimensions();
+        PgIndexType indexType = dimensions > 2000 ? PgIndexType.NONE : PgIndexType.HNSW;
+        System.out.println("Embedding 模型: " + EMBEDDING_MODEL);
+        System.out.println("Embedding 维度: " + dimensions);
+        System.out.println("PgVector 索引类型: " + indexType);
+
+        // 注意：initializeSchema(true) 只会建表，不会修改已存在的表结构。
+        // 如果更换 embedding 模型导致维度变化，需要删除旧表，或换一个 vectorTableName。
         PgVectorStore vectorStore = PgVectorStore.builder(jdbcTemplate, embeddingModel)
-                .dimensions(4096)                    // Qwen3-Embedding 输出维度
-                .indexType(PgIndexType.NONE)          // 高维向量暂不使用索引
+                .vectorTableName(VECTOR_TABLE_NAME)   // 使用独立演示表，避免污染默认 vector_store
+                .dimensions(dimensions)               // 使用 embedding 模型真实输出维度
+                .indexType(indexType)                 // 高维向量暂不使用索引
                 .maxDocumentBatchSize(100)           // 演示分批入库：每批最多 100 条
                 .initializeSchema(true)              // 自动创建表结构
                 .build();
@@ -114,13 +126,12 @@ public class PgVectorStoreDemo {
         System.out.println("已删除文档: " + docIdToDelete + "\n");
 
         // 10. 验证删除
-        System.out.println("--- 验证删除（查询：AI 框架） ---");
-        List<Document> afterDelete = vectorStore.similaritySearch(
-                SearchRequest.builder()
-                        .query("AI 框架")
-                        .topK(5)
-                        .build());
-        System.out.println("剩余文档数: " + afterDelete.size());
+        System.out.println("--- 验证删除 ---");
+        Integer deletedDocCount = jdbcTemplate.queryForObject(
+                "select count(*) from public." + VECTOR_TABLE_NAME + " where id = cast(? as uuid)",
+                Integer.class,
+                docIdToDelete);
+        System.out.println("被删除文档是否仍存在: " + (deletedDocCount != null && deletedDocCount > 0));
 
         // 11. 获取原生客户端
         System.out.println("\n=== 演示完成 ===");
