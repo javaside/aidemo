@@ -55,13 +55,11 @@ public class MeterDemo {
             System.out.println("  支付-1 处理中...");
             sleep(80);
         });
-        System.out.println("  支付-1 完成 → Timer 自动记录: count=1, 总耗时约80ms");
 
         orderPaymentTimer.record(() -> {
             System.out.println("  支付-2 处理中...");
             sleep(150);
         });
-        System.out.println("  支付-2 完成 → Timer 自动记录: count=2, 总耗时增加");
 
         orderPaymentTimer.record(() -> {
             System.out.println("  支付-3 处理中...");

@@ -23,7 +23,7 @@ import io.micrometer.observation.ObservationConvention;
  * <h3>核心组件</h3>
  * <pre>
  *                    ┌─────────────────────┐
- *                    │  ObservationRegistry │  ← 注册中心，所有组件的"大本营"
+ *                    │  ObservationRegistry│  ← 注册中心，所有组件的"大本营"
  *                    └────────┬────────────┘
  *                             │ 持有
  *              ┌──────────────┼──────────────┐

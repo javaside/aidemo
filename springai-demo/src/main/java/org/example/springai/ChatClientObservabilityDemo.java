@@ -219,16 +219,18 @@ public class ChatClientObservabilityDemo {
     // ========================================================================
 
     static void printMetrics(MeterRegistry registry) {
-        for (var m : registry.getMeters()) {
-            if (m instanceof Timer t)
-                System.out.printf("  %-30s count=%-2d  mean=%-6.0fms  %s%n",
-                    m.getId().getName(), t.count(),
-                    t.mean(java.util.concurrent.TimeUnit.MILLISECONDS),
-                    m.getId().getTags());
-            else if (m instanceof Counter c)
-                System.out.printf("  %-30s count=%-6.0f  %s%n",
-                    m.getId().getName(), c.count(), m.getId().getTags());
-        }
+        registry.getMeters().stream()
+            .sorted(java.util.Comparator.comparing(m -> m.getId().getName()))
+            .forEach(m -> {
+                if (m instanceof Timer t)
+                    System.out.printf("  %-30s count=%-2d  mean=%-6.0fms  %s%n",
+                        m.getId().getName(), t.count(),
+                        t.mean(java.util.concurrent.TimeUnit.MILLISECONDS),
+                        m.getId().getTags());
+                else if (m instanceof Counter c)
+                    System.out.printf("  %-30s count=%-6.0f  %s%n",
+                        m.getId().getName(), c.count(), m.getId().getTags());
+            });
     }
 
     // ========================================================================
