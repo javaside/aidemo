@@ -7,9 +7,12 @@ import org.springframework.ai.converter.BeanOutputConverter;
 import org.springframework.ai.deepseek.DeepSeekChatModel;
 import org.springframework.ai.deepseek.DeepSeekChatOptions;
 import org.springframework.ai.deepseek.api.DeepSeekApi;
+import org.springframework.ai.chat.prompt.Prompt;
+import org.springframework.ai.chat.prompt.PromptTemplate;
 import org.springframework.core.ParameterizedTypeReference;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -26,6 +29,7 @@ public class StructuredOutPutDemo {
             demoEntityWithClass(chatClient);
             demoEntityWithParameterizedType(chatClient);
             demoEntityWithConverter(chatClient);
+            demoBeanOutputConverter(chatClient);
             demoResponseEntity(chatClient);
         }
         catch (Exception e) {
@@ -37,7 +41,7 @@ public class StructuredOutPutDemo {
     private static ChatClient createChatClient() {
         DeepSeekApi deepSeekApi = DeepSeekApi.builder()
                 .baseUrl("https://api.deepseek.com")
-                .apiKey("sk-21c106ac47104557a449fd02607319f8")
+                .apiKey("sk-f429667b2e4a4581bc1a3bb873ffa69f")
                 .build();
 
         DeepSeekChatModel chatModel = DeepSeekChatModel.builder()
@@ -140,6 +144,56 @@ public class StructuredOutPutDemo {
     }
 
     /**
+     * BeanOutputConverter: 手动生成格式提示，并手动把 JSON 转成 Java 对象。
+     *
+     * <p>前面的 entity(...) 示例是 ChatClient.CallResponseSpec 的快捷写法：
+     * ChatClient 会自动创建或使用 converter，自动追加格式提示，并自动调用 convert()。
+     * 这个示例把这些步骤拆开演示，便于理解结构化输出背后的工作流程。</p>
+     *
+     * <p>学习重点：</p>
+     * <ol>
+     *     <li>new BeanOutputConverter<>(ActorsFilms.class) 根据 Java 类型生成 JSON Schema。</li>
+     *     <li>getFormat() 得到一段“请按这个 JSON Schema 返回”的格式说明。</li>
+     *     <li>PromptTemplate 把 format 填进用户提示词，约束模型只返回 JSON。</li>
+     *     <li>content() 先拿到模型返回的原始 JSON 字符串。</li>
+     *     <li>convert(json) 再把 JSON 字符串转换为 ActorsFilms 对象。</li>
+     * </ol>
+     *
+     * <p>适用场景：想看清楚格式提示长什么样、想调试模型原始 JSON、或者需要在 ChatClient
+     * 之外复用同一个转换器时，可以使用这种显式写法。</p>
+     */
+    static void demoBeanOutputConverter(ChatClient chatClient) {
+        System.out.println("\n=== 4. BeanOutputConverter：手动生成格式提示并转换结果 ===");
+        System.out.println("目的：拆开演示 getFormat()、content()、convert() 三个步骤。");
+
+        BeanOutputConverter<ActorsFilms> outputConverter = new BeanOutputConverter<>(ActorsFilms.class);
+
+        String userInputTemplate = """
+                请列出演员张曼玉的 3 部代表电影。
+                只返回 actor 和 movies 两个字段。
+                {format}
+                """;
+
+        Prompt prompt = new Prompt(
+                PromptTemplate.builder()
+                        .template(userInputTemplate)
+                        .variables(Map.of("format", outputConverter.getFormat()))
+                        .build()
+                        .createMessage());
+
+        String json = chatClient.prompt(prompt)
+                .call()
+                .content();
+
+        Objects.requireNonNull(json, "AI 未返回可解析的 JSON 字符串");
+        ActorsFilms actorsFilms = outputConverter.convert(json);
+
+        System.out.println("原始 JSON：" + json);
+        System.out.println("演员：" + actorsFilms.actor());
+        System.out.println("电影：" + actorsFilms.movies());
+    }
+
+    /**
      * responseEntity(Class<T>): 同时获取原始 ChatResponse 和结构化对象。
      *
      * <p>entity(...) 只返回转换后的业务对象；responseEntity(...) 会返回一个 ResponseEntity，
@@ -150,7 +204,7 @@ public class StructuredOutPutDemo {
      * 就使用 responseEntity(...)。</p>
      */
     static void demoResponseEntity(ChatClient chatClient) {
-        System.out.println("\n=== 4. responseEntity(Class<T>)：同时拿到原始 ChatResponse 和结构化对象 ===");
+        System.out.println("\n=== 5. responseEntity(Class<T>)：同时拿到原始 ChatResponse 和结构化对象 ===");
         System.out.println("目的：当你除了结构化对象，还要查看 token、metadata、原始结果等响应信息时，用它。");
 
         ResponseEntity<ChatResponse, MovieRecommendation> responseEntity = chatClient.prompt()
