@@ -15,22 +15,13 @@ import java.util.Objects;
 /**
  * 演示 ChatClient.CallResponseSpec 的结构化输出方法。
  *
- * <p>运行前需要配置环境变量 DEEPSEEK_API_KEY。每个 demo 都演示一个常见使用场景：
- * 简单对象、泛型集合、自定义转换器、保留原始响应。</p>
+ * <p>每个 demo 都演示一个常见使用场景：简单对象、泛型集合、自定义转换器、保留原始响应。</p>
  */
 public class StructuredOutPutDemo {
 
-    private static final String API_KEY_ENV = "DEEPSEEK_API_KEY";
-
     public static void main(String[] args) {
-        String apiKey = System.getenv(API_KEY_ENV);
-        if (apiKey == null || apiKey.isBlank()) {
-            System.out.println("请先配置环境变量 " + API_KEY_ENV + "，再运行本示例。");
-            return;
-        }
-
         try {
-            ChatClient chatClient = createChatClient(apiKey);
+            ChatClient chatClient = createChatClient();
 
             demoEntityWithClass(chatClient);
             demoEntityWithParameterizedType(chatClient);
@@ -43,10 +34,10 @@ public class StructuredOutPutDemo {
         }
     }
 
-    private static ChatClient createChatClient(String apiKey) {
+    private static ChatClient createChatClient() {
         DeepSeekApi deepSeekApi = DeepSeekApi.builder()
                 .baseUrl("https://api.deepseek.com")
-                .apiKey(apiKey)
+                .apiKey("sk-21c106ac47104557a449fd02607319f8")
                 .build();
 
         DeepSeekChatModel chatModel = DeepSeekChatModel.builder()
