@@ -14,6 +14,9 @@ import java.util.Objects;
 
 /**
  * 演示 ChatClient.CallResponseSpec 的结构化输出方法。
+ *
+ * <p>运行前需要配置环境变量 DEEPSEEK_API_KEY。每个 demo 都演示一个常见使用场景：
+ * 简单对象、泛型集合、自定义转换器、保留原始响应。</p>
  */
 public class StructuredOutPutDemo {
 
@@ -59,6 +62,7 @@ public class StructuredOutPutDemo {
 
     private static void demoEntityWithClass(ChatClient chatClient) {
         System.out.println("\n=== 1. entity(Class<T>)：返回一个对象 ===");
+        System.out.println("目的：当你只需要把 AI 回复直接转成一个 Java 对象时，用这个方法最简单。");
 
         ActorsFilms actorsFilms = chatClient.prompt()
                 .user("""
@@ -75,6 +79,7 @@ public class StructuredOutPutDemo {
 
     private static void demoEntityWithParameterizedType(ChatClient chatClient) {
         System.out.println("\n=== 2. entity(ParameterizedTypeReference<T>)：返回泛型集合 ===");
+        System.out.println("目的：当返回值是 List<T>、Map<K,V> 这类泛型类型时，用它保留完整泛型信息。");
 
         List<ActorsFilms> actorsFilmsList = chatClient.prompt()
                 .user("""
@@ -92,6 +97,7 @@ public class StructuredOutPutDemo {
 
     private static void demoEntityWithConverter(ChatClient chatClient) {
         System.out.println("\n=== 3. entity(StructuredOutputConverter<T>)：显式传入输出转换器 ===");
+        System.out.println("目的：当你想复用或定制输出转换器时，用这个重载更清楚。");
 
         BeanOutputConverter<ActorsFilms> outputConverter = new BeanOutputConverter<>(ActorsFilms.class);
 
@@ -110,6 +116,7 @@ public class StructuredOutPutDemo {
 
     private static void demoResponseEntity(ChatClient chatClient) {
         System.out.println("\n=== 4. responseEntity(Class<T>)：同时拿到原始 ChatResponse 和结构化对象 ===");
+        System.out.println("目的：当你除了结构化对象，还要查看 token、metadata、原始结果等响应信息时，用它。");
 
         ResponseEntity<ChatResponse, MovieRecommendation> responseEntity = chatClient.prompt()
                 .user("""
