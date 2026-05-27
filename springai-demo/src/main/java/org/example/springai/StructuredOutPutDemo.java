@@ -167,6 +167,9 @@ public class StructuredOutPutDemo {
         System.out.println("目的：拆开演示 getFormat()、content()、convert() 三个步骤。");
 
         BeanOutputConverter<ActorsFilms> outputConverter = new BeanOutputConverter<>(ActorsFilms.class);
+        String format = outputConverter.getFormat();
+        System.out.println("BeanOutputConverter 生成的 format 信息：");
+        System.out.println(format);
 
         String userInputTemplate = """
                 请列出演员张曼玉的 3 部代表电影。
@@ -177,7 +180,7 @@ public class StructuredOutPutDemo {
         Prompt prompt = new Prompt(
                 PromptTemplate.builder()
                         .template(userInputTemplate)
-                        .variables(Map.of("format", outputConverter.getFormat()))
+                        .variables(Map.of("format", format))
                         .build()
                         .createMessage());
 
