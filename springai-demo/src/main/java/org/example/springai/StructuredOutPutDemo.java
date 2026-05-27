@@ -60,7 +60,18 @@ public class StructuredOutPutDemo {
         return ChatClient.builder(chatModel).build();
     }
 
-    private static void demoEntityWithClass(ChatClient chatClient) {
+    /**
+     * entity(Class<T>): 将模型回复直接转换成指定 Java 类型。
+     *
+     * <p>这个重载最适合“返回一个固定结构对象”的场景，例如用户画像、电影信息、商品信息等。
+     * 调用 entity(ActorsFilms.class) 时，ChatClient 会内部创建 BeanOutputConverter，
+     * 自动把 ActorsFilms 的 JSON Schema 作为格式要求追加到用户消息后面，
+     * 再把模型返回的 JSON 反序列化为 ActorsFilms 对象。</p>
+     *
+     * <p>学习重点：业务代码不需要手写 JSON 解析，也不需要手动拼接格式说明；
+     * 只要定义好 record/class，就可以直接拿到类型安全的 Java 对象。</p>
+     */
+    static void demoEntityWithClass(ChatClient chatClient) {
         System.out.println("\n=== 1. entity(Class<T>)：返回一个对象 ===");
         System.out.println("目的：当你只需要把 AI 回复直接转成一个 Java 对象时，用这个方法最简单。");
 
@@ -77,7 +88,18 @@ public class StructuredOutPutDemo {
         System.out.println("电影：" + actorsFilms.movies());
     }
 
-    private static void demoEntityWithParameterizedType(ChatClient chatClient) {
+    /**
+     * entity(ParameterizedTypeReference<T>): 将模型回复转换成带泛型的 Java 类型。
+     *
+     * <p>Java 运行时会有泛型擦除，直接传 List.class 只能表达“这是一个 List”，
+     * 不能表达“这是 List<ActorsFilms>”。ParameterizedTypeReference 可以保留完整泛型信息，
+     * 因此适合列表、Map、嵌套泛型等结构化输出。</p>
+     *
+     * <p>学习重点：当返回结果不是单个对象，而是 List<ActorsFilms> 这类集合时，
+     * 使用 new ParameterizedTypeReference<List<ActorsFilms>>() {}，
+     * ChatClient 才知道集合元素也应该按 ActorsFilms 的结构转换。</p>
+     */
+    static void demoEntityWithParameterizedType(ChatClient chatClient) {
         System.out.println("\n=== 2. entity(ParameterizedTypeReference<T>)：返回泛型集合 ===");
         System.out.println("目的：当返回值是 List<T>、Map<K,V> 这类泛型类型时，用它保留完整泛型信息。");
 
@@ -95,10 +117,22 @@ public class StructuredOutPutDemo {
                 System.out.println(item.actor() + " -> " + item.movies()));
     }
 
-    private static void demoEntityWithConverter(ChatClient chatClient) {
+    /**
+     * entity(StructuredOutputConverter<T>): 显式传入结构化输出转换器。
+     *
+     * <p>entity(Class<T>) 和 entity(ParameterizedTypeReference<T>) 会帮你创建默认转换器；
+     * 如果你希望复用同一个转换器、查看转换器生成的格式说明、或者未来替换成自定义转换器，
+     * 就可以直接传入 StructuredOutputConverter。</p>
+     *
+     * <p>这里使用 BeanOutputConverter，它会根据 ActorsFilms 生成 JSON Schema，
+     * 并负责把模型返回的 JSON 转成 ActorsFilms。这个写法更适合教学、调试格式提示，
+     * 或者需要把 converter 单独抽出来复用的场景。</p>
+     */
+    static void demoEntityWithConverter(ChatClient chatClient) {
         System.out.println("\n=== 3. entity(StructuredOutputConverter<T>)：显式传入输出转换器 ===");
         System.out.println("目的：当你想复用或定制输出转换器时，用这个重载更清楚。");
 
+        // BeanOutputConverter 会生成格式提示，也负责把模型返回的 JSON 转成 Java 对象。
         BeanOutputConverter<ActorsFilms> outputConverter = new BeanOutputConverter<>(ActorsFilms.class);
 
         ActorsFilms actorsFilms = chatClient.prompt()
@@ -114,7 +148,17 @@ public class StructuredOutPutDemo {
         System.out.println("电影：" + actorsFilms.movies());
     }
 
-    private static void demoResponseEntity(ChatClient chatClient) {
+    /**
+     * responseEntity(Class<T>): 同时获取原始 ChatResponse 和结构化对象。
+     *
+     * <p>entity(...) 只返回转换后的业务对象；responseEntity(...) 会返回一个 ResponseEntity，
+     * 里面同时包含原始 ChatResponse 和转换后的 entity。</p>
+     *
+     * <p>学习重点：如果你只关心业务数据，用 entity(...) 更简洁；
+     * 如果你还需要排查模型原始输出、读取 metadata、查看结果数量、token 用量等响应信息，
+     * 就使用 responseEntity(...)。</p>
+     */
+    static void demoResponseEntity(ChatClient chatClient) {
         System.out.println("\n=== 4. responseEntity(Class<T>)：同时拿到原始 ChatResponse 和结构化对象 ===");
         System.out.println("目的：当你除了结构化对象，还要查看 token、metadata、原始结果等响应信息时，用它。");
 
