@@ -1,5 +1,7 @@
 package org.example.springai;
 
+import org.example.springai.config.ApiKeyConfig;
+
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
 import org.springframework.ai.chat.memory.ChatMemory;
@@ -18,7 +20,7 @@ public class DeepSeekMemoryDemo {
     public static void main(String[] args) throws IOException {
         DeepSeekApi deepSeekApi = DeepSeekApi.builder()
                 .baseUrl("https://api.deepseek.com")
-                .apiKey("sk-1399fc00e4ce43bb8ed5acefdf347569")
+                .apiKey(ApiKeyConfig.getDeepSeekApiKey())
                 .build();
 
         ChatModel chatModel = DeepSeekChatModel.builder()

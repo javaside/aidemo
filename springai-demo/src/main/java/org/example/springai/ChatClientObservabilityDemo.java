@@ -1,5 +1,7 @@
 package org.example.springai;
 
+import org.example.springai.config.ApiKeyConfig;
+
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Timer;
@@ -95,7 +97,7 @@ public class ChatClientObservabilityDemo {
         // =====================================================================
 
         DeepSeekApi deepSeekApi = DeepSeekApi.builder()
-            .apiKey("sk-f429667b2e4a4581bc1a3bb873ffa69f")
+            .apiKey(ApiKeyConfig.getDeepSeekApiKey())
             .baseUrl("https://api.deepseek.com")
             .build();
 

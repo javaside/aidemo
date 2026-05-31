@@ -1,5 +1,7 @@
 package org.example.springai;
 
+import org.example.springai.config.ApiKeyConfig;
+
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.deepseek.DeepSeekChatModel;
 import org.springframework.ai.deepseek.api.DeepSeekApi;
@@ -15,7 +17,7 @@ import java.util.Map;
 public class ChatClientUserDemo {
     public static void main(String[] args) throws IOException, InterruptedException {
         DeepSeekApi deepSeekApi = DeepSeekApi.builder()
-                .apiKey("sk-21c106ac47104557a449fd02607319f8")
+                .apiKey(ApiKeyConfig.getDeepSeekApiKey())
                 .build();
 
         DeepSeekChatModel model = DeepSeekChatModel.builder()

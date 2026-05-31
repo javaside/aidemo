@@ -1,5 +1,7 @@
 package org.example.springai;
 
+import org.example.springai.config.ApiKeyConfig;
+
 import java.util.List;
 import java.util.Map;
 
@@ -25,7 +27,7 @@ public class ToolCallbackDemo {
 
     public static void main(String[] args) {
         DeepSeekApi deepSeekApi = DeepSeekApi.builder()
-                .apiKey("sk-f429667b2e4a4581bc1a3bb873ffa69f")
+                .apiKey(ApiKeyConfig.getDeepSeekApiKey())
                 .build();
 
         // 创建 ToolCallbackResolver，用于根据工具名称解析 ToolCallback

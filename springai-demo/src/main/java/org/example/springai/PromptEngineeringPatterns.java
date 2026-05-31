@@ -1,5 +1,7 @@
 package org.example.springai;
 
+import org.example.springai.config.ApiKeyConfig;
+
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.ai.deepseek.DeepSeekChatModel;
@@ -346,7 +348,7 @@ public class PromptEngineeringPatterns {
     // ========================================================================
     public static void main(String[] args) {
         DeepSeekApi deepSeekApi = DeepSeekApi.builder()
-                .apiKey("sk-f429667b2e4a4581bc1a3bb873ffa69f")
+                .apiKey(ApiKeyConfig.getDeepSeekApiKey())
                 .build();
 
         DeepSeekChatModel model = DeepSeekChatModel.builder()

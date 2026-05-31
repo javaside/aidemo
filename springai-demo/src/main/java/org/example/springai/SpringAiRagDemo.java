@@ -1,5 +1,7 @@
 package org.example.springai;
 
+import org.example.springai.config.ApiKeyConfig;
+
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.vectorstore.QuestionAnswerAdvisor;
 import org.springframework.ai.chat.model.ChatModel;
@@ -20,7 +22,7 @@ public class SpringAiRagDemo {
 
         DeepSeekApi deepSeekApi = DeepSeekApi.builder()
                 .baseUrl("https://api.deepseek.com")
-                .apiKey("sk-f429667b2e4a4581bc1a3bb873ffa69f")
+                .apiKey(ApiKeyConfig.getDeepSeekApiKey())
                 .build();
 
         ChatModel chatModel = DeepSeekChatModel.builder()
