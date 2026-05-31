@@ -16,9 +16,20 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 演示 ChatClient.CallResponseSpec 的结构化输出方法。
+ * 演示 Spring AI 结构化输出的基础用法。
  *
- * <p>每个 demo 都演示一个常见使用场景：简单对象、泛型集合、自定义转换器、保留原始响应。</p>
+ * <p>结构化输出让 AI 返回的内容直接转换为 Java 对象，无需手动解析 JSON。
+ * 这个示例覆盖 5 种核心场景，适合新手快速入门。</p>
+ *
+ * <p>进阶内容请参考 {@link StructuredOutputAdvancedDemo}。</p>
+ *
+ * <h3>核心概念</h3>
+ * <ul>
+ *     <li><b>entity()</b>：将 AI 响应转换为 Java 对象</li>
+ *     <li><b>BeanOutputConverter</b>：自动生成 JSON Schema 并转换对象</li>
+ *     <li><b>ParameterizedTypeReference</b>：保留泛型信息（如 List&lt;T&gt;）</li>
+ *     <li><b>responseEntity()</b>：同时获取结构化对象和原始响应</li>
+ * </ul>
  */
 public class StructuredOutPutDemo {
 
