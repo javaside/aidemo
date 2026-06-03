@@ -1,4 +1,4 @@
-# Spring AI 提示词工程模式详解（口播稿）
+# Spring AI 提示词工程模式详解
 
 > 配套代码：`src/main/java/org/example/springai/PromptEngineeringPatterns.java`
 > 官方参考：
