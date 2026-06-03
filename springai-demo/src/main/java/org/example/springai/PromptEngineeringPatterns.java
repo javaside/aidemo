@@ -17,7 +17,19 @@ import java.util.Map;
  * 本类演示了11种提示词工程方法，每种方法都基于Spring AI的ChatClient实现。
  * 每种方法都设计为：清晰展示原理 + 简单易执行 + 不易超时
  *
- * 参考文档: https://spring.io/blog/2025/04/14/spring-ai-prompt-engineering-patterns
+ * 【核心洞见】提示词工程 = 提示词文本 + LLM输出参数配置。
+ * 官方文档强调：好的提示不仅是“怎么说”，还包括用 ChatOptions 控制“怎么生成”。
+ * 因此本示例为每个模式都搭配了合适的输出参数，并打印选择理由：
+ * - temperature（温度）：越低越确定/稳定，越高越随机/有创意。
+ *   分类、数学、代码 → 低温（0.0~0.2）；文案、故事、头脑风暴 → 高温（0.8~1.0）。
+ * - topP（核采样）：从累计概率前 P 的候选里采样，常与 temperature 配合控制多样性。
+ * - maxTokens（最大输出长度）：分类等极短输出可设很小，既快又省 token。
+ * 注意：官方示例还演示了 topK，但 DeepSeek API 不支持 top_k，故本示例改用 topP（这本身也是
+ * 一个教学点——不同模型供应商支持的参数不同，不可照抄）。
+ *
+ * 参考文档:
+ * - 官方参考: https://docs.spring.io/spring-ai/reference/api/chat/prompt-engineering-patterns.html
+ * - 官方博客: https://spring.io/blog/2025/04/14/spring-ai-prompt-engineering-patterns
  */
 public class PromptEngineeringPatterns {
 
@@ -47,7 +59,11 @@ public class PromptEngineeringPatterns {
     public String zeroShot() {
         System.out.println("\n========== 1. Zero-Shot Prompting (零样本提示) ==========");
         System.out.println("特点: 无示例，直接指令 → 模型依靠预训练知识自由发挥");
-        return chatClient.prompt("评论: \"这部电影太棒了！\" 分类: POSITIVE/NEGATIVE/NEUTRAL?").call().content();
+        System.out.println("配置: temperature=0.0 + maxTokens=20 → 分类要确定性结果，输出极短，省 token 且更快");
+        // 分类任务：要可复现的确定答案，所以用最低温；只需要一个标签，maxTokens 设很小即可。
+        return chatClient.prompt("评论: \"这部电影太棒了！\" 分类: POSITIVE/NEGATIVE/NEUTRAL?")
+                .options(ChatOptions.builder().temperature(0.0).maxTokens(20).build())
+                .call().content();
     }
 
     // ========================================================================
@@ -68,13 +84,17 @@ public class PromptEngineeringPatterns {
     public String fewShot() {
         System.out.println("\n========== 2. Few-Shot Prompting (多样本提示) ==========");
         System.out.println("特点: 提供1-3个示例 → 模型学习格式后照样子输出");
+        System.out.println("配置: temperature=0.1 → 要严格照着示例的 JSON 格式输出，低温保证格式保真");
         String prompt = """
             将订单转为JSON:
             订单: 小披萨加芝士 → {"size":"small","toppings":["芝士"]}
             订单: 大号海鲜披萨 → {"size":"large","toppings":["海鲜"]}
             订单: 中号榴莲披萨
             """;
-        return chatClient.prompt(prompt).call().content();
+        // 跟着示例“照猫画虎”输出固定格式：低温让模型老实模仿，不要自由发挥。
+        return chatClient.prompt(prompt)
+                .options(ChatOptions.builder().temperature(0.1).maxTokens(256).build())
+                .call().content();
     }
 
     // ========================================================================
@@ -97,9 +117,12 @@ public class PromptEngineeringPatterns {
     public String systemPrompting() {
         System.out.println("\n========== 3. System Prompting (系统提示) ==========");
         System.out.println("特点: .system()设置全局身份 → 影响整个对话的输出风格");
+        System.out.println("配置: temperature=0.9 + topP=0.9 → 文学创作要有想象力，高温让文风更生动");
+        // 创意写作：高温 + 核采样，给模型更大的发挥空间，文字更有古风韵味。
         return chatClient.prompt()
                 .system("你是一位武侠小说家，说话风格古风诗意。")
                 .user("描述: 主角走进酒馆")
+                .options(ChatOptions.builder().temperature(0.9).topP(0.9).build())
                 .call().content();
     }
 
@@ -122,9 +145,12 @@ public class PromptEngineeringPatterns {
     public String rolePrompting() {
         System.out.println("\n========== 4. Role Prompting (角色提示) ==========");
         System.out.println("特点: 扮演特定角色 → 以该角色视角和专业知识回答");
+        System.out.println("配置: temperature=0.7 → 专业建议要靠谱，但保留自然的表达语气，用中等温度");
+        // 专业角色：温度适中——既不能太死板（像念说明书），也不能太发散（编造偏方）。
         return chatClient.prompt()
                 .system("扮演一位资深老中医，有30年临床经验，说话专业且温和。")
                 .user("养生建议: 经常熬夜加班的上班族")
+                .options(ChatOptions.builder().temperature(0.7).build())
                 .call().content();
     }
 
@@ -148,9 +174,11 @@ public class PromptEngineeringPatterns {
     public String contextualPrompting() {
         System.out.println("\n========== 5. Contextual Prompting (上下文提示) ==========");
         System.out.println("特点: 通过params注入上下文 → 模板复用，背景动态切换");
+        System.out.println("配置: temperature=0.8 → 创意点子要发散多样，用较高温度");
         // 复用提示词模板，注入不同上下文
         String result = chatClient.prompt()
                 .user(u -> u.text("模板: 推荐3个{topic}主题的短视频创意\n要求: 一句话概括每个").params(Map.of("topic", "复古80年代街机游戏")))
+                .options(ChatOptions.builder().temperature(0.8).build())
                 .call().content();
         System.out.println("注入的context=复古80年代街机游戏 → 结果: " + result);
         return result;
@@ -177,9 +205,13 @@ public class PromptEngineeringPatterns {
     public String stepBackPrompting() {
         System.out.println("\n========== 6. Step-Back Prompting (回退提示) ==========");
         System.out.println("特点: 先获取高层概念 → 再用于具体问题，创意更丰富");
+        System.out.println("配置: temperature=1.0 + topP=0.8 → 抽象与创作两步都偏创意，对标官方高温配置");
+        // 官方此模式用 temperature=1.0, topK=40, topP=0.8；DeepSeek 无 top_k，这里改用 topP。
+        ChatOptions creative = ChatOptions.builder().temperature(1.0).topP(0.8).build();
 
         // 第一步：获取高层概念（退一步）
         String concepts = chatClient.prompt("列举5个经典科幻电影的核心元素，一句话概括")
+                .options(creative)
                 .call().content();
         System.out.println("Step1 - 获取抽象概念: " + concepts);
 
@@ -187,6 +219,7 @@ public class PromptEngineeringPatterns {
         return chatClient.prompt()
                 .user(u -> u.text("用以下元素写一个科幻故事开头:\n{elements}")
                         .params(Map.of("elements", concepts)))
+                .options(creative)
                 .call().content();
     }
 
@@ -210,7 +243,11 @@ public class PromptEngineeringPatterns {
     public String chainOfThought() {
         System.out.println("\n========== 7. Chain of Thought (思维链) ==========");
         System.out.println("特点: 要求展示推理过程 → 减少跳步错误，提高准确性");
-        return chatClient.prompt("问题: 停车场有50辆车，上午卖出20辆，下午买进15辆，现在多少辆？一步步思考后回答").call().content();
+        System.out.println("配置: temperature=0.0 → 数学题只有唯一正确答案，必须用最低温避免随机算错");
+        // CoT 推理题：答案唯一，要确定性。高温会让模型“想太多”反而算错。
+        return chatClient.prompt("问题: 停车场有50辆车，上午卖出20辆，下午买进15辆，现在多少辆？一步步思考后回答")
+                .options(ChatOptions.builder().temperature(0.0).build())
+                .call().content();
     }
 
     // ========================================================================
@@ -232,7 +269,9 @@ public class PromptEngineeringPatterns {
     public String selfConsistency() {
         System.out.println("\n========== 8. Self-Consistency (自洽性提示) ==========");
         System.out.println("特点: 多次采样+多数投票 → 结果比单次更稳定可靠");
-
+        System.out.println("配置: temperature=1.0（故意高温）→ 这里反而需要高温制造采样差异，再靠投票收敛");
+        // 注意：和 CoT 的低温相反！Self-Consistency 故意用高温，让多次采样产生不同推理路径，
+        // 再用多数投票收敛到最可靠的答案。温度高低没有绝对好坏，取决于你的目标。
         List<String> results = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             String result = chatClient.prompt()
@@ -271,14 +310,18 @@ public class PromptEngineeringPatterns {
     public String treeOfThoughts() {
         System.out.println("\n========== 9. Tree of Thoughts (思维树) ==========");
         System.out.println("特点: 分支探索→评估选择→深入延伸 → 模拟决策树");
+        System.out.println("配置: 分支阶段 temperature=0.8（要多样选项），评估阶段 temperature=0.2（要理性判断）");
 
-        // Step 1: 生成多个选项（分支）
-        String options = chatClient.prompt("午餐选择: 列出3个不同风格的选项(中式/西式/日式)，每个一句话").call().content();
+        // Step 1: 生成多个选项（分支）——高温，鼓励多样化的候选方案
+        String options = chatClient.prompt("午餐选择: 列出3个不同风格的选项(中式/西式/日式)，每个一句话")
+                .options(ChatOptions.builder().temperature(0.8).build())
+                .call().content();
         System.out.println("分支探索: " + options);
 
-        // Step 2: 评估选择（剪枝）
+        // Step 2: 评估选择（剪枝）——低温，要理性、可复现的判断
         String choice = chatClient.prompt()
                 .user(u -> u.text("从以下选项中选择一个，说明理由:\n{opt}").params(Map.of("opt", options)))
+                .options(ChatOptions.builder().temperature(0.2).build())
                 .call().content();
         System.out.println("评估选择: " + choice);
 
@@ -309,9 +352,12 @@ public class PromptEngineeringPatterns {
     public String automaticPromptEngineering() {
         System.out.println("\n========== 10. Auto PE (自动提示词工程) ==========");
         System.out.println("特点: 用AI生成提示词变体 → 发现多样化表达方式");
+        System.out.println("配置: temperature=0.9 → 生成变体阶段要尽量多样，用高温拉开差异");
 
-        // Step 1: AI生成变体
-        String variants = chatClient.prompt("将\"买一件蓝色T恤 M码\"用3种不同方式表达").call().content();
+        // Step 1: AI生成变体——高温，鼓励多样化表达
+        String variants = chatClient.prompt("将\"买一件蓝色T恤 M码\"用3种不同方式表达")
+                .options(ChatOptions.builder().temperature(0.9).build())
+                .call().content();
         System.out.println("AI生成变体: " + variants);
 
         // Step 2: 用变体测试
@@ -340,7 +386,11 @@ public class PromptEngineeringPatterns {
     public String codePrompting() {
         System.out.println("\n========== 11. Code Prompting (代码提示) ==========");
         System.out.println("特点: 明确指定语言和规格 → 减少歧义，输出更精准");
-        return chatClient.prompt("用Python写一个函数: 输入整数列表，返回平均值。只写核心函数，不要注释。").call().content();
+        System.out.println("配置: temperature=0.0 → 代码要正确可运行，用最低温保证精准、可复现");
+        // 代码生成：和数学题一样追求正确性，低温避免模型“发挥创意”写出跑不通的代码。
+        return chatClient.prompt("用Python写一个函数: 输入整数列表，返回平均值。只写核心函数，不要注释。")
+                .options(ChatOptions.builder().temperature(0.0).build())
+                .call().content();
     }
 
     // ========================================================================
