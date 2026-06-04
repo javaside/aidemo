@@ -490,7 +490,8 @@ public class PromptEngineeringPatterns {
 
     /**
      * 安全执行一个模式：打印标题、捕获异常、失败自动重试（最多 3 次）。
-     * 长文本生成（如回退提示）偶发底层 HTTP 读超时，重试 + 容错可保证 11 个模式都能跑完，互不影响。
+     * 长文本生成（如回退提示）偶发底层 HTTP 读超时；重试 + 容错让演示不被单点失败中断、能完整跑到最后
+     * （个别模式重试仍失败则跳过并提示），各模式互不影响。
      */
     private static void runSafely(String label, Supplier<String> demo) {
         System.out.println("\n--- " + label + " ---");
