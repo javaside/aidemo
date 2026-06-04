@@ -10,6 +10,7 @@ import org.springframework.ai.deepseek.api.DeepSeekApi;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Supplier;
 
 /**
  * Spring AI 提示词工程模式演示
@@ -282,11 +283,30 @@ public class PromptEngineeringPatterns {
             System.out.println("采样" + (i + 1) + ": " + result);
         }
 
-        // 统计投票
-        long pos = results.stream().filter(r -> r.contains("POSITIVE")).count();
-        long neg = results.stream().filter(r -> r.contains("NEGATIVE")).count();
+        // 统计投票：对每条回复判定其结论标签，再数票。
+        // 朴素写法 contains("POSITIVE") 有两个坑：
+        //   ① 一句话里同时出现两个词（如“不是 POSITIVE 而是 NEGATIVE”）会被双重计票；
+        //   ② 一个标签词都没有时，会静默落入默认分支。
+        // 这里改用 voteOf：取“更靠后出现的标签”（结论通常在末尾），并把无标签的算作弃权。
+        long pos = results.stream().filter(r -> voteOf(r).equals("POSITIVE")).count();
+        long neg = results.stream().filter(r -> voteOf(r).equals("NEGATIVE")).count();
+        long invalid = results.stream().filter(r -> voteOf(r).equals("INVALID")).count();
 
-        return "投票结果: POSITIVE=" + pos + ", NEGATIVE=" + neg + " → 最终判定: " + (neg > pos ? "NEGATIVE" : "POSITIVE");
+        String verdict = (neg > pos) ? "NEGATIVE" : (pos > neg ? "POSITIVE" : "平票/无法判定");
+        return "投票结果: POSITIVE=" + pos + ", NEGATIVE=" + neg + ", 弃权=" + invalid + " → 最终判定: " + verdict;
+    }
+
+    /**
+     * 判定单条回复的情感标签：取“更靠后出现”的标签（结论一般在末尾），都没有则弃权。
+     * 这是教学用的简化判定；生产环境建议改用结构化输出（见 docs/structured-output-guide.md）强制返回枚举。
+     */
+    private static String voteOf(String text) {
+        int pos = text.lastIndexOf("POSITIVE");
+        int neg = text.lastIndexOf("NEGATIVE");
+        if (pos < 0 && neg < 0) {
+            return "INVALID";
+        }
+        return (neg > pos) ? "NEGATIVE" : "POSITIVE";
     }
 
     // ========================================================================
@@ -398,6 +418,39 @@ public class PromptEngineeringPatterns {
     }
 
     // ========================================================================
+    // 附加演示: 温度对照（同一提示，不同温度，亲眼看差异）
+    // ========================================================================
+    /**
+     * 【目的】温度是全文最重要的参数，但“读到”不如“看到”。
+     * 这里用同一个创意提示，分别在 temperature=0.0 和 1.0 下各跑两次：
+     * - 0.0：两次结果几乎一致（确定、可复现）
+     * - 1.0：两次结果明显不同（随机、有创意）
+     * 跑一遍就能直观体会温度的作用，这正是其它模式选择高/低温的依据。
+     */
+    public String temperatureContrast() {
+        System.out.println("\n========== 附加演示: 温度对照（同一提示，不同温度）==========");
+        System.out.println("目的: 同一句创意提示，在 0.0 与 1.0 下各跑两次，对比“确定 vs 多样”");
+        String prompt = "用一句话描写“雨后的城市”，不超过30字";
+
+        System.out.println("\n[temperature=0.0] 期望：两次几乎相同");
+        for (int i = 1; i <= 2; i++) {
+            String r = chatClient.prompt(prompt)
+                    .options(ChatOptions.builder().temperature(0.0).build())
+                    .call().content();
+            System.out.println("  第" + i + "次: " + r);
+        }
+
+        System.out.println("\n[temperature=1.0] 期望：两次明显不同");
+        for (int i = 1; i <= 2; i++) {
+            String r = chatClient.prompt(prompt)
+                    .options(ChatOptions.builder().temperature(1.0).build())
+                    .call().content();
+            System.out.println("  第" + i + "次: " + r);
+        }
+        return "（温度对照见上方四行输出：0.0 几乎相同，1.0 明显不同）";
+    }
+
+    // ========================================================================
     // Main 方法
     // ========================================================================
     public static void main(String[] args) {
@@ -416,41 +469,40 @@ public class PromptEngineeringPatterns {
         System.out.println("║         Spring AI 提示词工程模式演示 (共11种)                   ║");
         System.out.println("╚═══════════════════════════════════════════════════════════════╝");
 
-        System.out.println("\n--- 1. Zero-Shot ---");
-        System.out.println(patterns.zeroShot());
-
-        System.out.println("\n--- 2. Few-Shot ---");
-        System.out.println(patterns.fewShot());
-
-        System.out.println("\n--- 3. System Prompting ---");
-        System.out.println(patterns.systemPrompting());
-
-        System.out.println("\n--- 4. Role Prompting ---");
-        System.out.println(patterns.rolePrompting());
-
-        System.out.println("\n--- 5. Contextual ---");
-        System.out.println(patterns.contextualPrompting());
-
-        System.out.println("\n--- 6. Step-Back ---");
-        System.out.println(patterns.stepBackPrompting());
-
-        System.out.println("\n--- 7. Chain of Thought ---");
-        System.out.println(patterns.chainOfThought());
-
-        System.out.println("\n--- 8. Self-Consistency ---");
-        System.out.println(patterns.selfConsistency());
-
-        System.out.println("\n--- 9. Tree of Thoughts ---");
-        System.out.println(patterns.treeOfThoughts());
-
-        System.out.println("\n--- 10. Auto PE ---");
-        System.out.println(patterns.automaticPromptEngineering());
-
-        System.out.println("\n--- 11. Code Prompting ---");
-        System.out.println(patterns.codePrompting());
+        // 用 runSafely 包装每个模式：单个模式失败（如网络读超时）不会中断整个演示，且自动重试。
+        runSafely("1. Zero-Shot", patterns::zeroShot);
+        runSafely("2. Few-Shot", patterns::fewShot);
+        runSafely("3. System Prompting", patterns::systemPrompting);
+        runSafely("4. Role Prompting", patterns::rolePrompting);
+        runSafely("5. Contextual", patterns::contextualPrompting);
+        runSafely("6. Step-Back", patterns::stepBackPrompting);
+        runSafely("7. Chain of Thought", patterns::chainOfThought);
+        runSafely("8. Self-Consistency", patterns::selfConsistency);
+        runSafely("9. Tree of Thoughts", patterns::treeOfThoughts);
+        runSafely("10. Auto PE", patterns::automaticPromptEngineering);
+        runSafely("11. Code Prompting", patterns::codePrompting);
+        runSafely("附加. 温度对照", patterns::temperatureContrast);
 
         System.out.println("\n╔═══════════════════════════════════════════════════════════════╗");
         System.out.println("║                          演示结束                               ║");
         System.out.println("╚═══════════════════════════════════════════════════════════════╝");
+    }
+
+    /**
+     * 安全执行一个模式：打印标题、捕获异常、失败自动重试（最多 3 次）。
+     * 长文本生成（如回退提示）偶发底层 HTTP 读超时，重试 + 容错可保证 11 个模式都能跑完，互不影响。
+     */
+    private static void runSafely(String label, Supplier<String> demo) {
+        System.out.println("\n--- " + label + " ---");
+        for (int attempt = 1; attempt <= 3; attempt++) {
+            try {
+                System.out.println(demo.get());
+                return;
+            }
+            catch (Exception e) {
+                System.err.println("[" + label + "] 第" + attempt + "次执行失败: " + e.getClass().getSimpleName()
+                        + (attempt < 3 ? "，重试中…" : "，已跳过（不影响后续模式）"));
+            }
+        }
     }
 }
