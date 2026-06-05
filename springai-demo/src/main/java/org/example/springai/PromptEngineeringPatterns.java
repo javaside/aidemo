@@ -68,23 +68,23 @@ public class PromptEngineeringPatterns {
     }
 
     // ========================================================================
-    // 2. Few-Shot Prompting（多样本提示）
+    // 2. One-Shot & Few-Shot Prompting（单样本 / 少样本提示）
     // ========================================================================
     /**
      * 【原理说明】
-     * 多样本提示通过提供1-3个示例，让模型学习输入输出的对应关系和格式。
-     * 示例帮助模型理解任务的具体模式，而非依赖通用知识。
+     * 通过提供示例，让模型学习输入输出的对应关系和格式，而非依赖通用知识。
+     * 给 1 个例子叫单样本(One-Shot)，给几个例子叫少样本(Few-Shot)，是同一招，只差例子数量。
      *
      * 【与Zero-Shot的区别】
      * - Zero-Shot: 无示例，模型"自由发挥"
-     * - Few-Shot: 有示例，模型"照猫画虎"
+     * - One-Shot/Few-Shot: 有示例，模型"照猫画虎"
      *
      * 【本示例演示】
-     * 提供"输入→输出"的示例对，展示如何通过示例让模型理解JSON格式要求。
+     * 提供两组"输入→输出"示例（属 Few-Shot），展示如何用示例让模型照着输出 JSON 格式。
      */
     public String fewShot() {
-        System.out.println("\n========== 2. Few-Shot Prompting (多样本提示) ==========");
-        System.out.println("特点: 提供1-3个示例 → 模型学习格式后照样子输出");
+        System.out.println("\n========== 2. One-Shot & Few-Shot Prompting (单样本/少样本提示) ==========");
+        System.out.println("特点: 给1个(单样本)或几个(少样本)示例 → 模型学格式后照样子输出");
         System.out.println("配置: temperature=0.1 → 要严格照着示例的 JSON 格式输出，低温保证格式保真");
         String prompt = """
             将订单转为JSON:
