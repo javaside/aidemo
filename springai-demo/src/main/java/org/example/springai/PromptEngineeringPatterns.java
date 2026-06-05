@@ -103,27 +103,26 @@ public class PromptEngineeringPatterns {
     // ========================================================================
     /**
      * 【原理说明】
-     * 系统提示通过.system()设置全局上下文，定义模型的身份、语气和行为框架。
-     * 系统提示在对话前就确定，影响后续所有交互。
+     * 系统提示用 .system() 设定"全局行为框架"——输出格式、语气、边界、高层目标。
+     * 它像一份贯穿整段对话的"使命说明"，框定之后每一个 user 提问该如何被回答。
      *
-     * 【核心特点】
-     * - 设置持久的全局上下文
-     * - 定义模型的身份和说话风格
-     * - 影响整个对话的行为一致性
+     * 【与角色提示的区别】
+     * - 系统提示：偏"全局规则/格式/约束"（如：只返回 JSON、不超过40字、语气正式）
+     * - 角色提示：偏"扮演一个具体身份"（如：老中医、旅行向导）
      *
      * 【本示例演示】
-     * 设置"武侠小说家"身份，让模型以该角色风格描述场景。
-     * 关键：身份设定影响输出风格，展示System Prompting的行为控制能力。
+     * 用系统提示设定一条全局回答规则（先结论、再一句话解释、不超过40字），
+     * 再随便问一个问题，回答会乖乖遵守这条规则。
      */
     public String systemPrompting() {
         System.out.println("\n========== 3. System Prompting (系统提示) ==========");
-        System.out.println("特点: .system()设置全局身份 → 影响整个对话的输出风格");
-        System.out.println("配置: temperature=0.9 + topP=0.9 → 文学创作要有想象力，高温让文风更生动");
-        // 创意写作：高温 + 核采样，给模型更大的发挥空间，文字更有古风韵味。
+        System.out.println("特点: .system()设全局规则(格式/语气/边界) → 框定之后所有回答怎么来");
+        System.out.println("配置: temperature=0.3 → 要稳稳遵守格式规则，用较低温");
+        // 系统提示 = 全局"行为框架"：定下格式/语气/约束，对之后每个 user 问题都生效。
         return chatClient.prompt()
-                .system("你是一位武侠小说家，说话风格古风诗意。")
-                .user("描述: 主角走进酒馆")
-                .options(ChatOptions.builder().temperature(0.9).topP(0.9).build())
+                .system("你是一个回答助手。规则：(1)先给结论 (2)再用一句话解释 (3)全文不超过40字。")
+                .user("周末适合去爬山吗？")
+                .options(ChatOptions.builder().temperature(0.3).build())
                 .call().content();
     }
 
@@ -160,29 +159,25 @@ public class PromptEngineeringPatterns {
     // ========================================================================
     /**
      * 【原理说明】
-     * 上下文提示通过参数注入背景信息，实现提示词模板复用。
-     * 同一个模板，不同context参数，产生不同结果。
+     * 上下文提示：在提示里额外给出一段"背景信息(Context)"，让模型的回答贴合你的具体场景，
+     * 而不必把背景和主指令搅在一起。
      *
-     * 【核心优势】
-     * - 提示词模板与上下文分离
-     * - 一套模板，多种上下文复用
-     * - 便于动态调整上下文
-     *
-     * 【本示例演示】
-     * 使用相同的模板"推荐3个{context}主题"，通过params注入不同context。
-     * 关键：展示模板复用的便利性，同一句式不同背景产生不同推荐。
+     * 【本示例演示】（对标官方示例）
+     * 主指令是"推荐3个文章选题"，再通过 param 注入背景"为复古80年代街机游戏博客写作"，
+     * 模型据此给出契合该博客的选题。换个背景，选题就跟着变。
      */
     public String contextualPrompting() {
         System.out.println("\n========== 5. Contextual Prompting (上下文提示) ==========");
-        System.out.println("特点: 通过params注入上下文 → 模板复用，背景动态切换");
-        System.out.println("配置: temperature=0.8 → 创意点子要发散多样，用较高温度");
-        // 复用提示词模板，注入不同上下文
-        String result = chatClient.prompt()
-                .user(u -> u.text("模板: 推荐3个{topic}主题的短视频创意\n要求: 一句话概括每个").params(Map.of("topic", "复古80年代街机游戏")))
+        System.out.println("特点: 在提示里给出背景(Context:) → 回答据此贴合具体场景");
+        System.out.println("配置: temperature=0.8 → 选题要发散，用较高温");
+        // 上下文提示 = 给模型一段"背景信息"，让回答契合你的场景。
+        return chatClient.prompt()
+                .user(u -> u.text("""
+                        推荐3个文章选题，每个用一句话说明写什么。
+                        背景：{context}
+                        """).param("context", "你在为一个复古80年代街机游戏博客写作"))
                 .options(ChatOptions.builder().temperature(0.8).build())
                 .call().content();
-        System.out.println("注入的context=复古80年代街机游戏 → 结果: " + result);
-        return result;
     }
 
     // ========================================================================
@@ -314,42 +309,41 @@ public class PromptEngineeringPatterns {
     // ========================================================================
     /**
      * 【原理说明】
-     * 思维树在 CoT「单线推理」基础上更进一步：先生成多个候选方案（分支），
-     * 评估比较后选出最优的一个，再沿它深入展开，整个过程形如一棵决策树。
+     * 思维树在 CoT「单线推理」之上更进一步：生成多个候选 → 评估比较选出最佳 →
+     * 再从最佳处"向前推演"后续分支，像下棋时多看几步、权衡不同走向。
      *
      * 【与CoT的区别】
-     * - CoT: 单条链式推理
-     * - ToT: 多方案对比后再决策，更适合开放性、需要权衡的问题
+     * - CoT: 一条思路走到底
+     * - ToT: 先铺开几条思路、挑最好的，再往前推演它的后续分支
      *
-     * 【本示例是简化演示，请注意与完整算法的差别】
-     * 完整 ToT 会在「多层树」上反复分支、打分、剪枝乃至回溯，复杂度高得多。
-     * 为便于入门，本示例简化为「生成候选 → 评估选择 → 深入展开」三步：
-     * 1. 分支：用一次调用让模型列出 3 个候选（而非并行运行 3 条独立推理链）；
-     * 2. 评估：选中 1 个，即相当于把其余分支「剪枝」掉；
-     * 3. 延伸：沿选中的方案深入。没有多层树，也没有回溯。
-     * 目的是让新手用三步看懂「分支→评估→深入」的核心思想，先建立直觉。
+     * 【本示例演示】（对标官方的象棋示例）
+     * 中国象棋开局：① 生成3种开局走法并打分 ② 评估选出最强 ③ 从它向前推演双方各2步的分支变化。
+     * 关键在第③步——"向前看分支"，这正是 ToT 区别于思维链之处。
      */
     public String treeOfThoughts() {
         System.out.println("\n========== 9. Tree of Thoughts (思维树) ==========");
-        System.out.println("特点: 分支探索→评估选择→深入延伸（简化版 ToT，完整算法含多层树与回溯）");
-        System.out.println("配置: 分支阶段 temperature=0.8（要多样选项），评估阶段 temperature=0.2（要理性判断）");
+        System.out.println("特点: 生成候选→评估选最佳→向前推演后续分支（像下棋看几步）");
+        System.out.println("配置: 候选阶段 temperature=0.7（要多样走法）");
 
-        // Step 1: 生成多个选项（分支）——高温，鼓励多样化的候选方案
-        String options = chatClient.prompt("午餐选择: 列出3个不同风格的选项(中式/西式/日式)，每个一句话")
-                .options(ChatOptions.builder().temperature(0.8).build())
+        // ① 生成多个候选走法（分支）
+        String moves = chatClient.prompt("""
+                中国象棋，开局阶段。给出3种不同的开局走法，每种：
+                (1) 用一句话描述走法 (2) 说明战略思路 (3) 给强度打分(1-10)
+                """)
+                .options(ChatOptions.builder().temperature(0.7).build())
                 .call().content();
-        System.out.println("分支探索: " + options);
+        System.out.println("候选走法: " + moves);
 
-        // Step 2: 评估选择（剪枝）——低温，要理性、可复现的判断
-        String choice = chatClient.prompt()
-                .user(u -> u.text("从以下选项中选择一个，说明理由:\n{opt}").params(Map.of("opt", options)))
-                .options(ChatOptions.builder().temperature(0.2).build())
+        // ② 评估并选出最强的一种
+        String best = chatClient.prompt()
+                .user(u -> u.text("分析这几种走法，选出最强的一种并说明理由：\n{m}").param("m", moves))
                 .call().content();
-        System.out.println("评估选择: " + choice);
+        System.out.println("评估选择: " + best);
 
-        // Step 3: 深入延伸
+        // ③ 向前推演：从选定走法往后推几步的分支变化
         return chatClient.prompt()
-                .user(u -> u.text("基于选择: {c}，详细说明这顿午餐的内容").params(Map.of("c", choice)))
+                .user(u -> u.text("基于选定的走法，推演接下来双方各2步的可能变化，并指出最有利的走法序列：\n{b}")
+                        .param("b", best))
                 .call().content();
     }
 
@@ -358,31 +352,32 @@ public class PromptEngineeringPatterns {
     // ========================================================================
     /**
      * 【原理说明】
-     * 自动提示词工程：让 AI 来"写/优化提示词"本身，而不是全靠人手工打磨。
-     * 说白了就是——让 AI 帮你把要发给 AI 的文字写得更好。
+     * 自动提示词工程(APE)：让 AI 自己"生成多个候选说法，再评估、挑出最优的一个"——
+     * 把"找最好的提示/说法"也自动化。官方用 BLEU 评分择优，本示例用模型自评来简化。
      *
-     * 【本示例演示】
-     * Step 1: 给 AI 一句很粗糙的要求（"写点关于狗的东西"），让它改写成一个更专业的提示词。
-     * Step 2: 用 AI 改好的提示词，真正去生成内容。
-     * 关键：重点在第一步——AI 在帮你"打磨提示词"；提示词好了，第二步产出自然更好。
+     * 【本示例演示】（对标官方"训练客服机器人"示例）
+     * ① 让 AI 把一句下单说法生成5个同义变体（temp=1.0 求多样，造训练语料）
+     * ② 让 AI 评估这些变体，挑出最适合做训练样本的一个。
      */
     public String automaticPromptEngineering() {
         System.out.println("\n========== 10. Auto PE (自动提示词工程) ==========");
-        System.out.println("特点: 让 AI 把“烂提示”改写成“好提示”，再用改好的去生成内容");
-        System.out.println("配置: temperature=0.7 → 改写要会优化，但别太放飞");
+        System.out.println("特点: AI 自己生成多个候选说法 → 再自己评估，挑出最好的一个");
+        System.out.println("配置: 生成阶段 temperature=1.0（要尽量多样）");
 
-        // Step 1: 让 AI 把一句粗糙要求，改写成一个更清晰、更专业的提示词
-        String betterPrompt = chatClient.prompt("""
-                把下面这句很粗糙的要求，改写成一个更好的提示词（明确读者、篇幅、角度、文体）：
-                "写点关于狗的东西"。
-                只输出改写后的提示词本身，不要解释。
+        // ① 生成同一需求的多个变体（用于训练客服机器人的多样化说法）
+        String variants = chatClient.prompt("""
+                我们要训练一个客服机器人。把这句下单说法：“买一件蓝色T恤 M码”，
+                生成5种语义相同、但表达不同的说法。
                 """)
-                .options(ChatOptions.builder().temperature(0.7).build())
+                .options(ChatOptions.builder().temperature(1.0).build())
                 .call().content();
-        System.out.println("AI 优化出的提示词: " + betterPrompt);
+        System.out.println("生成的变体: " + variants);
 
-        // Step 2: 用 AI 改好的提示词，真正去生成内容
-        return chatClient.prompt(betterPrompt).call().content();
+        // ② 让 AI 评估这些变体，挑出最适合做训练样本的一个
+        return chatClient.prompt()
+                .user(u -> u.text("评估下面这些说法，选出表达最自然、最适合做训练样本的一个，并说明理由：\n{v}")
+                        .param("v", variants))
+                .call().content();
     }
 
     // ========================================================================
