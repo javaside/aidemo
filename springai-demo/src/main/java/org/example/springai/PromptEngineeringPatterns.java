@@ -358,36 +358,31 @@ public class PromptEngineeringPatterns {
     // ========================================================================
     /**
      * 【原理说明】
-     * 自动提示词工程用AI生成和优化提示词变体。
-     * 可批量生成多种表达方式，发现人工想不到的变体。
+     * 自动提示词工程：让 AI 来"写/优化提示词"本身，而不是全靠人手工打磨。
+     * 说白了就是——让 AI 帮你把要发给 AI 的文字写得更好。
      *
-     * 【核心价值】
-     * - 发现多样化表达方式
-     * - 自动化生成测试用例
-     * - 评估提示词效果
-     *
-     * 【本示例是简化演示，请注意与完整算法的差别】
-     * Step 1: 将"T恤订单"生成3种不同表达方式
-     * Step 2: 用生成的变体测试模型理解能力
-     * 注意：完整的自动提示词工程还会对每个变体「逐一打分、择优、迭代优化」，
-     * 形成"生成 → 评估 → 改进"的闭环。本示例省略了打分与择优，
-     * 重在展示"用 AI 生产提示词"这一核心思路。
+     * 【本示例演示】
+     * Step 1: 给 AI 一句很粗糙的要求（"写点关于狗的东西"），让它改写成一个更专业的提示词。
+     * Step 2: 用 AI 改好的提示词，真正去生成内容。
+     * 关键：重点在第一步——AI 在帮你"打磨提示词"；提示词好了，第二步产出自然更好。
      */
     public String automaticPromptEngineering() {
         System.out.println("\n========== 10. Auto PE (自动提示词工程) ==========");
-        System.out.println("特点: 用AI生成提示词变体 → 发现多样化表达方式");
-        System.out.println("配置: temperature=0.9 → 生成变体阶段要尽量多样，用高温拉开差异");
+        System.out.println("特点: 让 AI 把“烂提示”改写成“好提示”，再用改好的去生成内容");
+        System.out.println("配置: temperature=0.7 → 改写要会优化，但别太放飞");
 
-        // Step 1: AI生成变体——高温，鼓励多样化表达
-        String variants = chatClient.prompt("将\"买一件蓝色T恤 M码\"用3种不同方式表达")
-                .options(ChatOptions.builder().temperature(0.9).build())
+        // Step 1: 让 AI 把一句粗糙要求，改写成一个更清晰、更专业的提示词
+        String betterPrompt = chatClient.prompt("""
+                把下面这句很粗糙的要求，改写成一个更好的提示词（明确读者、篇幅、角度、文体）：
+                "写点关于狗的东西"。
+                只输出改写后的提示词本身，不要解释。
+                """)
+                .options(ChatOptions.builder().temperature(0.7).build())
                 .call().content();
-        System.out.println("AI生成变体: " + variants);
+        System.out.println("AI 优化出的提示词: " + betterPrompt);
 
-        // Step 2: 用变体测试
-        return chatClient.prompt()
-                .user(u -> u.text("将以下任一表达转为JSON格式:\n{v}").params(Map.of("v", variants)))
-                .call().content();
+        // Step 2: 用 AI 改好的提示词，真正去生成内容
+        return chatClient.prompt(betterPrompt).call().content();
     }
 
     // ========================================================================
