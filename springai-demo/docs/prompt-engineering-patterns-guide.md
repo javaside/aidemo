@@ -223,71 +223,74 @@ for (int i = 0; i < 3; i++) {                    // 同一问题跑 3 次
 
 ## 9. 思维树（Tree of Thoughts）
 
-假设目标是**"帮我定个午餐方案"**。直接问，AI 张口就给一个，未必合心意。
+普通做法是直接问，AI 给一个答案就完事。**思维树让 AI 先给出几个不同方案，再挑最好的，最后才展开**——
+就像你做选择时会先想几个选项、对比一下再定，而不是想到啥就是啥。
 
-思维树是让 AI **像人做决定那样**走三步：**先摆几个不同方案 → 比较后挑一个 → 再把它做细**。
-好处是不被第一个念头带跑，多比一轮，结果更靠谱。
+和上一个思维链对比着记最清楚：**思维链是"一条思路走到底"，思维树是"先铺开几条思路，挑一条最好的走"。**
 
-**什么时候用**：开放性、有多种选择、需要权衡的决策。
+**什么时候用**：答案不唯一、有多个方向可选、值得先比较再定。
 
 ```java
-// 完整 ToT 会在多层树上反复分支、回溯；这里用最直观的"单层三步"演示核心思想。
-
-// ① 列候选：要的是"多样"，所以高温
-String candidates = chatClient.prompt("午餐给我3个不同风格的选项(中/西/日)，各一句话")
+// ① 给几个候选：要的是"多样" → 高温
+String candidates = chatClient.prompt("给我3个不同风格的午餐方案(中/西/日)，各一句话")
         .options(ChatOptions.builder().temperature(0.8).build())
         .call().content();
 
-// ② 评估选一个：要的是"理性判断"，所以低温
+// ② 评估挑一个：要的是"理性判断" → 低温
 String choice = chatClient.prompt()
-        .user(u -> u.text("从这几个里挑最合适的一个，并说明理由：\n{x}").param("x", candidates))
+        .user(u -> u.text("从这3个里挑最合适的，并说明为什么：\n{x}").param("x", candidates))
         .options(ChatOptions.builder().temperature(0.2).build())
         .call().content();
 
-// ③ 深入展开：沿选定的方案做细
+// ③ 展开：沿选中的方案做细
 String detail = chatClient.prompt()
-        .user(u -> u.text("把这个方案展开成具体的一餐：\n{x}").param("x", choice))
+        .user(u -> u.text("把选中的方案展开成具体一餐：\n{x}").param("x", choice))
         .call().content();
 ```
 
 真实输出（节选）：
 
 ```
-① 候选：番茄牛腩面 / 凯撒沙拉 / 照烧三文鱼
-② 选定：番茄牛腩面（暖胃、有情感共鸣，比沙拉更满足）
-③ 展开：番茄久熬汤底 + 慢炖牛腩 + 碱水面，配凉拌黄瓜和溏心蛋……
+① 三个候选：番茄牛腩面 / 凯撒沙拉 / 照烧三文鱼
+② 挑中：番茄牛腩面（暖胃、更满足）
+③ 展开：番茄熬汤 + 慢炖牛腩 + 碱水面，配凉拌黄瓜、溏心蛋……
 ```
 
-💡 **价值在"先列几个再挑"：逼 AI 比较权衡，而不是脱口而出第一个答案。三步温度还不一样——发散用高温、决策用低温。**
+💡 **核心是"先给几个、再挑一个"，逼 AI 别一上来就认定单一答案——这正是它和思维链的区别。**
+
+> 注：这是思维树的最简版；完整版会把"列候选 → 挑选"在多层上反复进行，入门理解到这一步就够。
 
 ---
 
 ## 10. 自动提示词工程（Automatic Prompt Engineering）
 
-**用 AI 来生成提示词**——让它把一句话改写成多种说法，帮你跳出固定思路。
+人写提示词容易钻牛角尖，这个模式干脆**让 AI 来帮你写**：把同一个意思，自动改写成好几种说法。
 
-**什么时候用**：想给一个意思找更多表达，或自动造测试用例。
+最实用的用途是**给应用自动造测试**：同一个需求，真实用户会有各种说法；先让 AI 把这些说法生成出来，
+再挨个喂回系统，看是不是都能被正确理解。
+
+**什么时候用**：拿不准怎么措辞，或想批量生成测试输入。
 
 ```java
-// 第一步：让 AI 生成多种说法
-String variants = chatClient.prompt("把\"买一件蓝色T恤 M码\"用3种不同方式表达")
+// 第一步：让 AI 把一句话扩写成 3 种不同说法
+String variants = chatClient.prompt("把\"买一件蓝色T恤 M码\"换成3种不同的说法")
         .options(ChatOptions.builder().temperature(0.9).build())   // 要多样，高温
         .call().content();
 
-// 第二步：用生成的说法测试（完整版还会给每种打分、择优，这里从简）
+// 第二步：把这些说法喂回去，检验 AI 是否都能正确理解（都解析成同一个订单 JSON）
 chatClient.prompt()
-        .user(u -> u.text("把下面任一句转成 JSON：\n{v}").param("v", variants))
+        .user(u -> u.text("把下面任意一种说法解析成订单 JSON：\n{x}").param("x", variants))
         .call().content();
 ```
 
 真实输出（节选）：
 
 ```
-变体：①我要M码蓝色T恤 ②想买蓝T恤尺码M ③帮我拿件蓝T恤M号
-转JSON：{"item":"T恤","color":"蓝色","size":"M"}
+生成的 3 种说法：①我要M码蓝色T恤 ②想买蓝T恤尺码M ③帮我拿件蓝T恤M号
+都能正确解析为：{"item":"T恤","color":"蓝色","size":"M"}
 ```
 
-💡 **想不出更好的提示词？让 AI 帮你想。**
+💡 **让 AI 替你写提示词、造数据：三种说法都能解析成同一个订单，说明你的提示对不同表达都扛得住。**
 
 ---
 
@@ -343,5 +346,5 @@ DEEPSEEK_API_KEY=sk-xxx mvn compile exec:java -Dexec.mainClass="org.example.spri
 
 ## 想深入
 
-- 想**强制** AI 返回固定结构（而不只在提示里"请求"）：见 [结构化输出指南](structured-output-guide.md)。
-- 配套代码：`PromptEngineeringPatterns.java`；官方文档：[Spring AI · Prompt Engineering Patterns](https://docs.spring.io/spring-ai/reference/api/chat/prompt-engineering-patterns.html)。
+- 配套代码：`PromptEngineeringPatterns.java`
+- 官方文档：[Spring AI · Prompt Engineering Patterns](https://docs.spring.io/spring-ai/reference/api/chat/prompt-engineering-patterns.html)
