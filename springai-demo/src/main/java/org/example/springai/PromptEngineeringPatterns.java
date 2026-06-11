@@ -50,7 +50,7 @@ public class PromptEngineeringPatterns {
      *
      * 【核心特点】
      * - 无示例，直接指令
-     * - 模型"自由发挥"依赖预训练知识
+     * - 模型依靠指令和已有知识完成任务
      * - 适合简单明确的任务
      *
      * 【本示例演示】
@@ -59,10 +59,14 @@ public class PromptEngineeringPatterns {
      */
     public String zeroShot() {
         System.out.println("\n========== 1. Zero-Shot Prompting (零样本提示) ==========");
-        System.out.println("特点: 无示例，直接指令 → 模型依靠预训练知识自由发挥");
-        System.out.println("配置: temperature=0.0 + maxTokens=20 → 分类要确定性结果，输出极短，省 token 且更快");
-        // 分类任务：要可复现的确定答案，所以用最低温；只需要一个标签，maxTokens 设很小即可。
-        return chatClient.prompt("评论: \"这部电影太棒了！\" 分类: POSITIVE/NEGATIVE/NEUTRAL?")
+        System.out.println("特点: 无示例，直接指令 → 模型依靠指令和已有知识完成任务");
+        System.out.println("配置: temperature=0.0 + maxTokens=20 → 分类希望尽量稳定，输出极短，省 token 且更快");
+        // 分类任务：希望降低随机性；只需要一个标签，maxTokens 设很小即可。
+        return chatClient.prompt("""
+                评论："这部电影太棒了！"
+                请判断情感，只返回一个标签：POSITIVE、NEGATIVE 或 NEUTRAL。
+                不要解释。
+                """)
                 .options(ChatOptions.builder().temperature(0.0).maxTokens(20).build())
                 .call().content();
     }
@@ -76,7 +80,7 @@ public class PromptEngineeringPatterns {
      * 给 1 个例子叫单样本(One-Shot)，给几个例子叫少样本(Few-Shot)，是同一招，只差例子数量。
      *
      * 【与Zero-Shot的区别】
-     * - Zero-Shot: 无示例，模型"自由发挥"
+     * - Zero-Shot: 无示例，模型直接按指令完成
      * - One-Shot/Few-Shot: 有示例，模型"照猫画虎"
      *
      * 【本示例演示】
@@ -92,7 +96,7 @@ public class PromptEngineeringPatterns {
             订单: 大号海鲜披萨 → {"size":"large","toppings":["海鲜"]}
             订单: 中号榴莲披萨
             """;
-        // 跟着示例“照猫画虎”输出固定格式：低温让模型老实模仿，不要自由发挥。
+        // 跟着示例“照猫画虎”输出固定格式：低温让模型老实模仿，不要额外发散。
         return chatClient.prompt(prompt)
                 .options(ChatOptions.builder().temperature(0.1).maxTokens(256).build())
                 .call().content();
@@ -195,7 +199,7 @@ public class PromptEngineeringPatterns {
      *
      * 【本示例演示】
      * Step 1: 获取"优秀科幻故事开头的常见元素"（高层原则）
-     * Step 2: 将抽象概念用于"写一个科幻故事开头"（具体）
+     * Step 2: 将高层原则用于"写一个科幻故事开头"（具体）
      * 关键：展示从抽象到具体的转化过程，创意更丰富。
      */
     public String stepBackPrompting() {
@@ -211,7 +215,7 @@ public class PromptEngineeringPatterns {
                 .call().content();
         System.out.println("Step1 - 获取高层原则: " + concepts);
 
-        // 第二步：将抽象概念用于具体问题（进一步）
+        // 第二步：将高层原则用于具体问题（进一步）
         return chatClient.prompt()
                 .user(u -> u.text("用以下元素写一个科幻故事开头:\n{elements}")
                         .params(Map.of("elements", concepts)))
@@ -414,7 +418,7 @@ public class PromptEngineeringPatterns {
     public String codePrompting() {
         System.out.println("\n========== 11. Code Prompting (代码提示) ==========");
         System.out.println("特点: 明确指定语言和规格 → 减少歧义，输出更精准");
-        System.out.println("配置: temperature=0.0 → 代码要正确可运行，用最低温保证精准、可复现");
+        System.out.println("配置: temperature=0.0 → 代码要正确可运行，用低温降低随机性");
         // 代码生成：和数学题一样追求正确性，低温避免模型“发挥创意”写出跑不通的代码。
         return chatClient.prompt("用Python写一个函数: 输入整数列表，返回平均值；如果列表为空，抛出 ValueError。只写函数。")
                 .options(ChatOptions.builder().temperature(0.0).build())
@@ -444,7 +448,7 @@ public class PromptEngineeringPatterns {
             System.out.println("  第" + i + "次: " + r);
         }
 
-        System.out.println("\n[temperature=1.0] 期望：两次明显不同");
+        System.out.println("\n[temperature=1.0] 期望：通常更多样，可能明显不同");
         for (int i = 1; i <= 2; i++) {
             String r = chatClient.prompt(prompt)
                     .options(ChatOptions.builder().temperature(1.0).build())

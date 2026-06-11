@@ -27,8 +27,12 @@
 **什么时候用**：任务简单、AI 本来就会——分类、翻译、摘要。
 
 ```java
-String result = chatClient.prompt("评论:\"这部电影太棒了！\" 请分类:POSITIVE/NEGATIVE/NEUTRAL?")
-        .options(ChatOptions.builder().temperature(0.0).build())  // 分类要确定结果，用最低温
+String result = chatClient.prompt("""
+        评论："这部电影太棒了！"
+        请判断情感，只返回一个标签：POSITIVE、NEGATIVE 或 NEUTRAL。
+        不要解释。
+        """)
+        .options(ChatOptions.builder().temperature(0.0).maxTokens(20).build())  // 分类要尽量稳定，输出要短
         .call()
         .content();
 ```
