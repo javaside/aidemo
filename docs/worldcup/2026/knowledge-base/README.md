@@ -27,11 +27,15 @@ docs/worldcup/2026/knowledge-base/
 └── teams/
     ├── argentina.md
     ├── brazil.md
+    ├── czechia.md
     ├── england.md
     ├── france.md
     ├── germany.md
+    ├── mexico.md
     ├── netherlands.md
     ├── portugal.md
+    ├── south-africa.md
+    ├── south-korea.md
     └── spain.md
 ```
 
@@ -49,6 +53,10 @@ docs/worldcup/2026/knowledge-base/
 | 6 | 葡萄牙 | `teams/portugal.md` | 已建骨架，已录入 27 人名单，需核对最终注册人数 |
 | 7 | 德国 | `teams/germany.md` | 已建骨架，已录入 26 人名单 |
 | 8 | 荷兰 | `teams/netherlands.md` | 已建骨架，已录入 26 人名单 |
+| 9 | 墨西哥 | `teams/mexico.md` | 开幕日球队，已录入 26 人名单 |
+| 10 | 南非 | `teams/south-africa.md` | 开幕日球队，已录入 26 人名单 |
+| 11 | 韩国 | `teams/south-korea.md` | 开幕日球队，已录入 26 人名单 |
+| 12 | 捷克 | `teams/czechia.md` | 开幕日球队，已录入 26 人名单 |
 
 ## 对比分析用法
 

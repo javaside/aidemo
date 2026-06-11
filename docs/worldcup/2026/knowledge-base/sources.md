@@ -22,6 +22,12 @@ snapshot_date: 2026-06-11
 - [FourFourTwo: Portugal World Cup 2026 squad](https://www.fourfourtwo.com/team/portugal-world-cup-2026-squad)
 - [FourFourTwo: Germany World Cup 2026 squad](https://www.fourfourtwo.com/team/germany-world-cup-2026-squad)
 - [FourFourTwo: Netherlands World Cup 2026 squad](https://www.fourfourtwo.com/team/netherlands-world-cup-2026-squad)
+- [FourFourTwo: Mexico World Cup 2026 squad](https://www.fourfourtwo.com/team/mexico-world-cup-2026-squad)
+- [FourFourTwo: South Africa World Cup 2026 squad](https://www.fourfourtwo.com/team/south-africa-world-cup-2026-squad)
+- [FourFourTwo: South Korea World Cup 2026 squad](https://www.fourfourtwo.com/team/south-korea-world-cup-2026-squad)
+- [FourFourTwo: Czech Republic World Cup 2026 squad](https://www.fourfourtwo.com/team/czech-republic-world-cup-2026-squad)
+- [Economic Times: Mexico vs South Africa predicted lineups and injury news](https://economictimes.indiatimes.com/news/sports/mexico-vs-south-africa-fifa-world-cup-2026-lineup-key-players-prediction-team-stats-and-injury-news/articleshow/131658169.cms)
+- [Sofascore: FIFA football rankings](https://www.sofascore.com/football/rankings/fifa)
 
 ## 近况与战术参考
 
