@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Spring AI Prompt Engineering Explainer</title>
+  <title>Spring AI 提示词工程讲解</title>
   <link rel="icon" href="data:," />
   <style>
     :root {
@@ -420,7 +420,7 @@
 
     <section class="scene kicker" data-scene="0">
       <div>
-        <p class="eyebrow">Spring AI / Prompt Engineering</p>
+        <p class="eyebrow">Spring AI / 提示词工程</p>
         <h1>提示词工程<br /><span class="accent">不是魔法</span></h1>
       </div>
       <p class="lead">它是把目标、格式、上下文和生成边界说清楚的一套方法。</p>
@@ -429,7 +429,7 @@
     <section class="scene" data-scene="1">
       <div class="two-col">
         <div>
-          <p class="eyebrow">Mental Model</p>
+          <p class="eyebrow">核心模型</p>
           <h2>两层：<span class="accent">怎么说</span> 与 怎么生成</h2>
           <p class="lead">提示词文本负责表达任务，ChatOptions 负责调节模型生成方式。</p>
         </div>
@@ -448,37 +448,37 @@
     </section>
 
     <section class="scene" data-scene="2">
-      <p class="eyebrow">Basic Patterns</p>
+      <p class="eyebrow">基础模式</p>
       <h2>先掌握 5 个基础问法</h2>
       <div class="pattern-strip">
-        <div class="pattern"><strong>Zero-shot</strong><span>不给例子，直接下指令。</span></div>
-        <div class="pattern"><strong>Few-shot</strong><span>给例子，让模型照格式做。</span></div>
-        <div class="pattern"><strong>System</strong><span>设定本次请求或对话规则。</span></div>
-        <div class="pattern"><strong>Role</strong><span>让模型带着稳定视角回答。</span></div>
-        <div class="pattern"><strong>Context</strong><span>补充背景，让回答贴合场景。</span></div>
+        <div class="pattern"><strong>零样本 Zero-shot</strong><span>不给例子，直接下指令。</span></div>
+        <div class="pattern"><strong>少样本 Few-shot</strong><span>给例子，让模型照格式做。</span></div>
+        <div class="pattern"><strong>系统提示 System</strong><span>设定本次请求或对话规则。</span></div>
+        <div class="pattern"><strong>角色提示 Role</strong><span>让模型带着稳定视角回答。</span></div>
+        <div class="pattern"><strong>上下文 Context</strong><span>补充背景，让回答贴合场景。</span></div>
       </div>
     </section>
 
     <section class="scene" data-scene="3">
       <div class="two-col">
         <div>
-          <p class="eyebrow">Reasoning Patterns</p>
+          <p class="eyebrow">推理模式</p>
           <h2>复杂任务要引导推理</h2>
           <p class="lead">不是只让模型回答，而是让它先拿原则、分步骤、多采样、再比较路径。</p>
         </div>
         <div class="panel">
           <ul class="bullet-list">
-            <li><span class="dot"></span><span><strong>Step-back</strong>：先问高层原则，再回到具体任务。</span></li>
-            <li><span class="dot"></span><span><strong>Chain of Thought</strong>：一步步推理，减少跳步。</span></li>
-            <li><span class="dot"></span><span><strong>Self-consistency</strong>：多跑几条推理路径，再投票。</span></li>
-            <li><span class="dot"></span><span><strong>Tree of Thoughts</strong>：分叉、评估、剪枝、继续展开。</span></li>
+            <li><span class="dot"></span><span><strong>回退提问 Step-back</strong>：先问高层原则，再回到具体任务。</span></li>
+            <li><span class="dot"></span><span><strong>思维链 CoT</strong>：一步步推理，减少跳步。</span></li>
+            <li><span class="dot"></span><span><strong>自洽性 Self-consistency</strong>：多跑几条推理路径，再投票。</span></li>
+            <li><span class="dot"></span><span><strong>思维树 ToT</strong>：分叉、评估、剪枝、继续展开。</span></li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="scene" data-scene="4">
-      <p class="eyebrow">Tree of Thoughts</p>
+      <p class="eyebrow">思维树 Tree of Thoughts</p>
       <h2>真正的树：每一层都可以继续分叉</h2>
       <div class="tree">
         <div class="branch-group">
@@ -498,7 +498,7 @@
     <section class="scene" data-scene="5">
       <div class="two-col">
         <div>
-          <p class="eyebrow">Automatic Prompt Engineering</p>
+          <p class="eyebrow">自动提示词工程 APE</p>
           <h2>让模型帮你改提示词</h2>
           <p class="lead">先生成多个候选提示词，再按格式约束、清晰度、减少歧义来评估。</p>
         </div>
@@ -516,7 +516,7 @@
     <section class="scene" data-scene="6">
       <div class="two-col">
         <div>
-          <p class="eyebrow">Code Prompting</p>
+          <p class="eyebrow">代码提示</p>
           <h2>代码提示要写清规格</h2>
           <p class="lead">语言、输入、输出、边界情况都要说清楚。别让模型猜你想要什么。</p>
         </div>
@@ -532,23 +532,23 @@ def average(nums):
     </section>
 
     <section class="scene" data-scene="7">
-      <p class="eyebrow">Choose The Pattern</p>
+      <p class="eyebrow">选择模式</p>
       <h2>不是背 11 个名字，而是看清任务</h2>
       <div class="summary-grid">
-        <div class="summary"><h3>格式明确</h3><p>用 zero-shot、few-shot、system prompt 控制输出。</p></div>
-        <div class="summary"><h3>场景明确</h3><p>用 role 和 context 让回答贴合读者与背景。</p></div>
-        <div class="summary"><h3>推理复杂</h3><p>用 step-back、CoT、self-consistency、ToT 引导思考。</p></div>
+        <div class="summary"><h3>格式明确</h3><p>用零样本、少样本、系统提示控制输出。</p></div>
+        <div class="summary"><h3>场景明确</h3><p>用角色提示和上下文提示，让回答贴合读者与背景。</p></div>
+        <div class="summary"><h3>推理复杂</h3><p>用回退提问、思维链、自洽性、思维树引导思考。</p></div>
       </div>
     </section>
 
-    <div class="caption" id="caption">Prompt engineering is not magic.</div>
+    <div class="caption" id="caption">提示词工程不是魔法。</div>
     <div class="progress"><div class="progress-fill"></div></div>
   </div>
 
   <div class="preview-controls">
-    <button type="button" id="play">Pause</button>
+    <button type="button" id="play">暂停</button>
     <span id="clock">00:00</span>
-    <input id="seek" type="range" min="0" max="360" value="0" step="0.1" aria-label="Timeline seek" />
+    <input id="seek" type="range" min="0" max="360" value="0" step="0.1" aria-label="时间轴拖动" />
     <span>6:00</span>
   </div>
 
@@ -633,7 +633,7 @@ def average(nums):
 
     play.addEventListener('click', () => {
       playing = !playing;
-      play.textContent = playing ? 'Pause' : 'Play';
+      play.textContent = playing ? '暂停' : '播放';
     });
 
     const timeline = {

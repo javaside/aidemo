@@ -1,18 +1,18 @@
-# Prompt Engineering HyperFrames Video
+# 提示词工程 HyperFrames 讲解视频
 
-This folder contains a HyperFrames-style video source for a Spring AI prompt engineering explainer.
+这个目录包含一套 HyperFrames 风格的视频源文件，用于制作 Spring AI 提示词工程讲解视频。
 
-## Files
+## 文件说明
 
-- `DESIGN.md` defines the visual identity.
-- `script.md` contains the narration and scene structure.
-- `index.html` contains the animated 16:9 composition source.
+- `DESIGN.md`：视频视觉规范。
+- `script.md`：旁白脚本和场景结构。
+- `index.html`：16:9 动画组合源文件。
 
-## Current Environment Note
+## 当前环境说明
 
-`npx hyperframes` could not run in this sandbox because npm registry DNS resolution is blocked. The source is therefore authored as a self-contained HTML composition with HyperFrames-style `data-composition-id` metadata and a timeline shim for browser preview.
+当前沙箱无法运行 `npx hyperframes`，原因是 npm registry 的 DNS 解析被阻断。因此，这里先提供一个自包含的 HTML 组合源文件：它带有 HyperFrames 风格的 `data-composition-id` 元数据，并内置了用于浏览器预览的时间轴适配逻辑。
 
-When HyperFrames CLI is available locally, run:
+当本地可以使用 HyperFrames CLI 后，可以运行：
 
 ```bash
 cd docs/videos/prompt-engineering-hyperframes
@@ -21,6 +21,6 @@ npx hyperframes inspect
 npx hyperframes render --output prompt-engineering-spring-ai.mp4 --quality high
 ```
 
-## Browser Preview
+## 浏览器预览
 
-Open `index.html` in a local browser or serve the folder with any static server. The composition autoplays a compressed preview timeline and supports seeking with the range control.
+可以直接在本地浏览器打开 `index.html`，也可以用任意静态文件服务器启动该目录。页面会自动播放压缩后的预览时间轴，并支持通过进度条拖动查看不同场景。

@@ -1,88 +1,88 @@
-# Spring AI Prompt Engineering Video Script
+# Spring AI 提示词工程讲解视频脚本
 
-**Format:** 16:9 teaching video
-**Target length:** about 6 minutes
-**Style:** technical, dark canvas, Spring green accents
-**Source material:** `springai-demo/docs/prompt-engineering-patterns-guide.md` and `PromptEngineeringPatterns.java`
+- **格式：** 16:9 教学视频
+- **目标时长：** 约 6 分钟
+- **风格：** 技术教学、暗色画布、Spring 绿色强调色
+- **参考材料：** `springai-demo/docs/prompt-engineering-patterns-guide.md` 和 `PromptEngineeringPatterns.java`
 
-## Scene 1: Hook
+## 场景 1：开场
 
-Prompt engineering is not magic. It is how we tell the model what we want, how we want it formatted, and how much freedom it has while generating.
+提示词工程不是魔法。它是在告诉模型：我们要什么、希望它按什么格式输出，以及生成时应该有多少自由度。
 
-In this video, we use Spring AI's `ChatClient` to walk through 11 practical prompt engineering patterns.
+这期视频会结合 Spring AI 的 `ChatClient`，讲解 11 个实用的提示词工程模式。
 
-## Scene 2: The Mental Model
+## 场景 2：核心模型
 
-Remember two layers.
+先记住两层。
 
-First: prompt text, or how you say it. This includes instructions, examples, roles, context, and output constraints.
+第一层是提示词文本，也就是“怎么说”。它包括指令、示例、角色、上下文和输出约束。
 
-Second: generation parameters, or how the model generates. In Spring AI, we use `ChatOptions` for settings like `temperature`, `topP`, and `maxTokens`.
+第二层是生成参数，也就是“怎么生成”。在 Spring AI 中，可以通过 `ChatOptions` 设置 `temperature`、`topP`、`maxTokens` 等参数。
 
-## Scene 3: Basic Patterns
+## 场景 3：基础模式
 
-Start simple.
+先从简单模式开始。
 
-Zero-shot means no examples, just a clear instruction. It works well for simple classification, translation, and summaries.
+零样本提示，也就是 zero-shot，不给示例，只给清晰指令。它适合简单分类、翻译和摘要。
 
-Few-shot means giving examples first, so the model learns the format.
+少样本提示，也就是 few-shot，先给几个示例，让模型学习输出格式。
 
-System prompting sets the rules for the current request or conversation.
+系统提示用于设定当前请求或当前对话的规则。
 
-Role prompting gives the model a useful perspective, like a patient Spring AI teacher.
+角色提示用于给模型一个稳定视角，比如“耐心的 Spring AI 老师”。
 
-Contextual prompting adds background so the answer fits the situation.
+上下文提示用于补充背景，让回答更贴合实际场景。
 
-## Scene 4: Reasoning Patterns
+## 场景 4：推理模式
 
-For harder tasks, we guide the model's reasoning.
+遇到更难的任务时，要引导模型推理。
 
-Step-back prompting first asks for higher-level principles, then returns to the concrete task.
+回退提问，也就是 step-back prompting，先问高层原则，再回到具体任务。
 
-Chain of Thought asks the model to reason step by step.
+思维链，也就是 Chain of Thought，让模型一步步推理。
 
-Self-consistency samples multiple reasoning paths and votes on the answer.
+自洽性，也就是 self-consistency，让模型采样多条推理路径，再对答案进行投票或比较。
 
-Tree of Thoughts goes further: branch, score, prune, then branch again.
+思维树，也就是 Tree of Thoughts，会进一步分叉、评分、剪枝，然后继续展开下一层分支。
 
-## Scene 5: Tree of Thoughts Visual
+## 场景 5：思维树视觉演示
 
-Tree of Thoughts is not just "choose one of three options."
+思维树不是“从三个选项里挑一个就结束”。
 
-First, we open several branches. For example: read docs, run a demo, or edit a prompt.
+第一步，先打开多个分支。比如：先读文档、先跑 Demo、先改提示词。
 
-Then we score those branches and keep the strongest one.
+第二步，对这些分支评分，保留当前最有价值的分支。
 
-But the tree does not stop there. Under the selected branch, we create the next layer: run the full main method, run a minimal `ChatClient` call, or run the web demo.
+但树不会在这里停止。在选中的分支下面，还要继续生成下一层：跑完整 main 方法、跑最小 `ChatClient` 调用，或者跑 Web 示例。
 
-Then we choose the next step. That is the tree: expand, evaluate, prune, continue.
+然后再选择下一步。真正的树就是这样：展开、评估、剪枝、继续。
 
-## Scene 6: Automatic Prompt Engineering And Code Prompting
+## 场景 6：自动提示词工程与代码提示
 
-Automatic Prompt Engineering asks the model to generate candidate prompts, then evaluate which one is clearer.
+自动提示词工程会让模型先生成多个候选提示词，再评估哪个表达更清晰。
 
-For code prompting, the most important thing is a clear specification: language, input, output, and edge cases.
+代码提示最重要的是规格清楚：语言、输入、输出和边界情况都要说清。
 
-The example asks Python to average a list and explicitly handle an empty list with `ValueError`.
+示例中要求 Python 计算列表平均值，并明确说明空列表要抛出 `ValueError`。
 
-## Scene 7: How To Choose
+## 场景 7：如何选择模式
 
-Use zero-shot for simple direct tasks.
+简单直接的任务，用零样本提示。
 
-Use few-shot when format matters.
+格式很重要时，用少样本提示。
 
-Use system and role prompts when behavior or voice matters.
+需要稳定行为或表达风格时，用系统提示和角色提示。
 
-Use context when the situation matters.
+任务依赖背景时，用上下文提示。
 
-Use reasoning patterns when the model needs to compare, calculate, or plan.
+需要比较、计算或规划时，用推理类模式。
 
-Use code prompting when you need implementation help.
+需要实现代码时，用代码提示。
 
-## Scene 8: Close
+## 场景 8：收尾
 
-The real skill is not memorizing 11 names.
+真正的能力不是背下 11 个模式名称。
 
-It is seeing the task clearly enough to choose the right pattern: direct instruction, examples, rules, context, reasoning, or code specification.
+真正的能力是看清任务，然后选择合适的模式：直接指令、示例、规则、上下文、推理，或者代码规格。
 
-That is prompt engineering in practice.
+这就是提示词工程的实际用法。

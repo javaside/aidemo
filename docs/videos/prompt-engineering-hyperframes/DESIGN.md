@@ -1,36 +1,36 @@
-# Prompt Engineering Video Design
+# 提示词工程讲解视频设计
 
-## Style Prompt
+## 风格说明
 
-Technical teaching video with a dark code-studio canvas, Spring green accents, crisp typography, and animated decision diagrams. The video should feel like a senior engineer explaining a concept on a polished classroom screen: calm, precise, modern, and beginner-friendly.
+这是一期技术教学视频，使用暗色代码工作台画布、Spring 绿色强调色、清晰利落的字体，以及可动画展示的决策图。整体观感应像一位资深工程师在精心打磨的课堂屏幕上讲解概念：冷静、准确、现代，并且对新手友好。
 
-## Colors
+## 颜色
 
-- Background: `#07110D`
-- Surface: `#0F1D17`
-- Surface raised: `#162820`
-- Foreground: `#EAF5EE`
-- Muted foreground: `#A9B8AE`
-- Spring accent: `#6DB33F`
-- Soft accent: `#B7E28A`
-- Warning accent: `#F6C85F`
+- 背景色：`#07110D`
+- 基础面板：`#0F1D17`
+- 强调面板：`#162820`
+- 主文字：`#EAF5EE`
+- 次级文字：`#A9B8AE`
+- Spring 强调色：`#6DB33F`
+- 柔和强调色：`#B7E28A`
+- 提醒强调色：`#F6C85F`
 
-## Typography
+## 字体
 
-- Primary UI/font stack: `Inter`, `SF Pro Display`, `Segoe UI`, `Arial`, sans-serif
-- Code font stack: `JetBrains Mono`, `SFMono-Regular`, `Menlo`, `Consolas`, monospace
+- 主界面字体：`Inter`, `SF Pro Display`, `Segoe UI`, `Arial`, sans-serif
+- 代码字体：`JetBrains Mono`, `SFMono-Regular`, `Menlo`, `Consolas`, monospace
 
-## Motion
+## 动效
 
-- Use staggered entrances for titles, labels, code lines, and nodes.
-- Use slow grid drift and subtle glow pulses in the background.
-- Use tree/path animations for the Tree of Thoughts scene.
-- Use short transitions between scenes; no abrupt visual jumps.
+- 标题、标签、代码行和节点使用错落进入的动效。
+- 背景使用缓慢网格漂移和轻微光晕脉冲。
+- 思维树场景使用路径展开和节点选择动效。
+- 场景之间使用短过渡，避免突兀跳切。
 
-## What NOT To Do
+## 避免事项
 
-- Do not use neon purple/blue gradients as the dominant look.
-- Do not fill scenes with dense full-screen code.
-- Do not use stock imagery or decorative illustrations unrelated to the lesson.
-- Do not make every concept a same-size card grid.
-- Do not imply prompts are magic or guarantee correctness.
+- 不使用霓虹紫或霓虹蓝渐变作为主视觉。
+- 不用密集的全屏代码填满画面。
+- 不使用与课程无关的图库图片或装饰插画。
+- 不把每个概念都做成同样大小的卡片网格。
+- 不暗示提示词是魔法，也不暗示它能保证答案完全正确。
