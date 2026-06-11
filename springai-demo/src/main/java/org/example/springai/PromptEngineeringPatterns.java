@@ -21,7 +21,7 @@ import java.util.function.Supplier;
  * 【核心洞见】提示词工程 = 提示词文本 + LLM输出参数配置。
  * 官方文档强调：好的提示不仅是“怎么说”，还包括用 ChatOptions 控制“怎么生成”。
  * 因此本示例为每个模式都搭配了合适的输出参数，并打印选择理由：
- * - temperature（温度）：越低越确定/稳定，越高越随机/有创意。
+ * - temperature（温度）：通常越低越稳定，越高越多样；temperature=0 也不保证所有供应商都逐字可复现。
  *   分类、数学、代码 → 低温（0.0~0.2）；文案、故事、头脑风暴 → 高温（0.8~1.0）。
  * - topP（核采样）：从累计概率前 P 的候选里采样，常与 temperature 配合控制多样性。
  * - maxTokens（最大输出长度）：分类等极短输出可设很小，既快又省 token。
@@ -104,11 +104,11 @@ public class PromptEngineeringPatterns {
     /**
      * 【原理说明】
      * 系统提示用 .system() 设定"全局行为框架"——输出格式、语气、边界、高层目标。
-     * 它像一份贯穿整段对话的"使命说明"，框定之后每一个 user 提问该如何被回答。
+     * 它像一份贯穿本次请求或当前对话上下文的"使命说明"，框定 user 提问该如何被回答。
      *
      * 【与角色提示的区别】
      * - 系统提示：偏"全局规则/格式/约束"（如：只返回 JSON、不超过40字、语气正式）
-     * - 角色提示：偏"扮演一个具体身份"（如：老中医、旅行向导）
+     * - 角色提示：偏"扮演一个具体身份"（如：入门老师、旅行向导）
      *
      * 【本示例演示】
      * 用系统提示设定一条全局回答规则（先结论、再一句话解释、不超过40字），
@@ -116,9 +116,9 @@ public class PromptEngineeringPatterns {
      */
     public String systemPrompting() {
         System.out.println("\n========== 3. System Prompting (系统提示) ==========");
-        System.out.println("特点: .system()设全局规则(格式/语气/边界) → 框定之后所有回答怎么来");
+        System.out.println("特点: .system()设全局规则(格式/语气/边界) → 框定本次请求或当前对话怎么答");
         System.out.println("配置: temperature=0.3 → 要稳稳遵守格式规则，用较低温");
-        // 系统提示 = 全局"行为框架"：定下格式/语气/约束，对之后每个 user 问题都生效。
+        // 系统提示 = 本次请求或当前对话的"行为框架"：定下格式/语气/约束。
         return chatClient.prompt()
                 .system("你是一个回答助手。规则：(1)先给结论 (2)再用一句话解释 (3)全文不超过40字。")
                 .user("周末适合去爬山吗？")
@@ -139,18 +139,18 @@ public class PromptEngineeringPatterns {
      * - Role Prompting: 强调扮演特定身份/职业
      *
      * 【本示例演示】
-     * 让模型扮演"老中医"角色，以其专业视角提供养生建议。
-     * 关键：输出应体现老中医的专业知识、口吻和思维模式。
+     * 让模型扮演"Spring AI 入门老师"角色，以教学视角解释 ChatClient。
+     * 关键：输出应体现老师的解释方式和对初学者的照顾。
      */
     public String rolePrompting() {
         System.out.println("\n========== 4. Role Prompting (角色提示) ==========");
         System.out.println("特点: 扮演特定角色 → 以该角色视角和专业知识回答");
-        System.out.println("配置: temperature=0.7 → 专业建议要靠谱，但保留自然的表达语气，用中等温度");
-        // 专业角色：温度适中——既不能太死板（像念说明书），也不能太发散（编造偏方）。
+        System.out.println("配置: temperature=0.5 → 教学解释要清楚，也要保留自然表达");
+        // 教学角色：温度适中——既要清楚稳定，也不要像机械说明书。
         return chatClient.prompt()
-                .system("扮演一位资深老中医，有30年临床经验，说话专业且温和。")
-                .user("养生建议: 经常熬夜加班的上班族")
-                .options(ChatOptions.builder().temperature(0.7).build())
+                .system("扮演一位耐心的 Spring AI 入门老师，擅长用 Java 初学者能懂的话解释概念。")
+                .user("用两句话解释 ChatClient 是什么，以及新手应该先学哪个方法。")
+                .options(ChatOptions.builder().temperature(0.5).build())
                 .call().content();
     }
 
@@ -185,16 +185,16 @@ public class PromptEngineeringPatterns {
     // ========================================================================
     /**
      * 【原理说明】
-     * 回退提示先获取高层抽象概念，再将抽象概念应用于具体问题。
+     * 回退提示先获取高层原则、背景知识或判断标准，再将它们应用于具体问题。
      * 先"退一步"获取广泛知识，再"进一步"解决具体问题。
      *
      * 【适用场景】
      * - 需要广泛背景知识的问题
      * - 直接回答过于具体或局限
-     * - 需要抽象概念引导具体创意
+     * - 需要高层原则引导具体创意
      *
      * 【本示例演示】
-     * Step 1: 获取"所有科幻经典元素"（抽象）
+     * Step 1: 获取"优秀科幻故事开头的常见元素"（高层原则）
      * Step 2: 将抽象概念用于"写一个科幻故事开头"（具体）
      * 关键：展示从抽象到具体的转化过程，创意更丰富。
      */
@@ -205,11 +205,11 @@ public class PromptEngineeringPatterns {
         // 官方此模式用 temperature=1.0, topK=40, topP=0.8；DeepSeek 无 top_k，这里改用 topP。
         ChatOptions creative = ChatOptions.builder().temperature(1.0).topP(0.8).build();
 
-        // 第一步：获取高层概念（退一步）
-        String concepts = chatClient.prompt("列举5个经典科幻电影的核心元素，一句话概括")
+        // 第一步：获取高层原则（退一步）
+        String concepts = chatClient.prompt("优秀科幻故事开头通常具备哪些元素？列举5个，各一句话")
                 .options(creative)
                 .call().content();
-        System.out.println("Step1 - 获取抽象概念: " + concepts);
+        System.out.println("Step1 - 获取高层原则: " + concepts);
 
         // 第二步：将抽象概念用于具体问题（进一步）
         return chatClient.prompt()
@@ -251,11 +251,11 @@ public class PromptEngineeringPatterns {
     // ========================================================================
     /**
      * 【原理说明】
-     * 自洽性通过多次采样（不同温度）+ 多数投票，汇总结果更可靠。
+     * 自洽性通过多次高温采样 + 多数投票，汇总结果更可靠。
      * 多次运行取最常见答案，比单次更稳定。
      *
      * 【核心流程】
-     * 1. 同一问题运行多次（每次不同采样）
+     * 1. 同一问题运行多次（用高温得到不同推理路径）
      * 2. 汇总结果，取最多票的答案
      *
      * 【本示例演示】
@@ -266,8 +266,8 @@ public class PromptEngineeringPatterns {
         System.out.println("\n========== 8. Self-Consistency (自洽性提示) ==========");
         System.out.println("特点: 多次采样+多数投票 → 结果比单次更稳定可靠");
         System.out.println("配置: temperature=1.0（故意高温）→ 这里反而需要高温制造采样差异，再靠投票收敛");
-        // 注意：和 CoT 的低温相反！Self-Consistency 故意用高温，让多次采样产生不同推理路径，
-        // 再用多数投票收敛到最可靠的答案。温度高低没有绝对好坏，取决于你的目标。
+        // Self-Consistency 常和“逐步思考”组合：故意用高温生成不同推理路径，
+        // 再用多数投票收敛到更稳的结论。温度高低没有绝对好坏，取决于你的目标。
         List<String> results = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             String result = chatClient.prompt()
@@ -319,6 +319,7 @@ public class PromptEngineeringPatterns {
      * 【本示例演示】（用新手学习 Spring AI 的路线选择，避免额外游戏规则）
      * 新手只有 2 小时时间：① 生成3条学习路线 ② 评估选出最适合的一条
      * ③ 基于选中的路线继续推演执行步骤和可能卡点。
+     * 完整 ToT 可以反复展开、评估和回溯；这里为了入门，只演示最核心的三步。
      * 关键在第③步——"向前推演几步"，这正是 ToT 区别于思维链之处。
      */
     public String treeOfThoughts() {
@@ -354,31 +355,32 @@ public class PromptEngineeringPatterns {
     // ========================================================================
     /**
      * 【原理说明】
-     * 自动提示词工程(APE)：让 AI 自己"生成多个候选说法，再评估、挑出最优的一个"——
-     * 把"找最好的提示/说法"也自动化。官方用 BLEU 评分择优，本示例用模型自评来简化。
+     * 自动提示词工程(APE)：让 AI 自己"生成多个候选提示词，再评估、挑出最优的一个"——
+     * 把"找更好提示词"这件事也自动化。本示例用模型自评来简化，生产环境建议用验证集和明确指标评估。
      *
-     * 【本示例演示】（对标官方"训练客服机器人"示例）
-     * ① 让 AI 把一句下单说法生成5个同义变体（temp=1.0 求多样，造训练语料）
-     * ② 让 AI 评估这些变体，挑出最适合做训练样本的一个。
+     * 【本示例演示】
+     * ① 让 AI 为情感分类任务生成5个候选提示词（temp=1.0 求多样）
+     * ② 让 AI 按格式约束、清晰度、减少歧义三个标准评估，挑出最适合放进示例代码的一条。
      */
     public String automaticPromptEngineering() {
         System.out.println("\n========== 10. Auto PE (自动提示词工程) ==========");
-        System.out.println("特点: AI 自己生成多个候选说法 → 再自己评估，挑出最好的一个");
+        System.out.println("特点: AI 自己生成多个候选提示词 → 再自己评估，挑出最好的一个");
         System.out.println("配置: 生成阶段 temperature=1.0（要尽量多样）");
 
-        // ① 生成同一需求的多个变体（用于训练客服机器人的多样化说法）
-        String variants = chatClient.prompt("""
-                我们要训练一个客服机器人。把这句下单说法：“买一件蓝色T恤 M码”，
-                生成5种语义相同、但表达不同的说法。
+        // ① 生成同一任务的多个候选提示词
+        String prompts = chatClient.prompt("""
+                我们要做情感分类任务，输入是一句中文评论，输出只能是 POSITIVE/NEGATIVE/NEUTRAL。
+                请生成5个不同的候选提示词，每个都要强调只能输出这3个标签之一。
                 """)
                 .options(ChatOptions.builder().temperature(1.0).build())
                 .call().content();
-        System.out.println("生成的变体: " + variants);
+        System.out.println("候选提示词: " + prompts);
 
-        // ② 让 AI 评估这些变体，挑出最适合做训练样本的一个
+        // ② 让 AI 评估这些候选提示词，挑出最适合放进示例代码的一条
         return chatClient.prompt()
-                .user(u -> u.text("评估下面这些说法，选出表达最自然、最适合做训练样本的一个，并说明理由：\n{v}")
-                        .param("v", variants))
+                .user(u -> u.text("按格式约束、清晰度、减少歧义三项评估，选出最好的一条并说明理由：\n{p}")
+                        .param("p", prompts))
+                .options(ChatOptions.builder().temperature(0.2).build())
                 .call().content();
     }
 
@@ -396,7 +398,7 @@ public class PromptEngineeringPatterns {
      * - 包含边界情况处理
      *
      * 【本示例演示】
-     * 明确要求用Python实现指定功能，并包含测试。
+     * 明确要求用Python实现指定功能，并处理空列表边界情况。
      * 关键：清晰的规格说明减少模型理解歧义。
      */
     public String codePrompting() {
@@ -404,7 +406,7 @@ public class PromptEngineeringPatterns {
         System.out.println("特点: 明确指定语言和规格 → 减少歧义，输出更精准");
         System.out.println("配置: temperature=0.0 → 代码要正确可运行，用最低温保证精准、可复现");
         // 代码生成：和数学题一样追求正确性，低温避免模型“发挥创意”写出跑不通的代码。
-        return chatClient.prompt("用Python写一个函数: 输入整数列表，返回平均值。只写核心函数，不要注释。")
+        return chatClient.prompt("用Python写一个函数: 输入整数列表，返回平均值；如果列表为空，抛出 ValueError。只写函数。")
                 .options(ChatOptions.builder().temperature(0.0).build())
                 .call().content();
     }
@@ -415,16 +417,16 @@ public class PromptEngineeringPatterns {
     /**
      * 【目的】温度是全文最重要的参数，但“读到”不如“看到”。
      * 这里用同一个创意提示，分别在 temperature=0.0 和 1.0 下各跑两次：
-     * - 0.0：两次结果几乎一致（确定、可复现）
-     * - 1.0：两次结果明显不同（随机、有创意）
+     * - 0.0：通常更稳定（但不把它理解成所有供应商都逐字可复现）
+     * - 1.0：通常更明显不同（更随机、更有创意）
      * 跑一遍就能直观体会温度的作用，这正是其它模式选择高/低温的依据。
      */
     public String temperatureContrast() {
         System.out.println("\n========== 附加演示: 温度对照（同一提示，不同温度）==========");
-        System.out.println("目的: 同一句创意提示，在 0.0 与 1.0 下各跑两次，对比“确定 vs 多样”");
+        System.out.println("目的: 同一句创意提示，在 0.0 与 1.0 下各跑两次，对比“稳定 vs 多样”");
         String prompt = "用一句话描写“雨后的城市”，不超过30字";
 
-        System.out.println("\n[temperature=0.0] 期望：两次几乎相同");
+        System.out.println("\n[temperature=0.0] 期望：通常更稳定");
         for (int i = 1; i <= 2; i++) {
             String r = chatClient.prompt(prompt)
                     .options(ChatOptions.builder().temperature(0.0).build())
@@ -439,7 +441,7 @@ public class PromptEngineeringPatterns {
                     .call().content();
             System.out.println("  第" + i + "次: " + r);
         }
-        return "（温度对照见上方四行输出：0.0 几乎相同，1.0 明显不同）";
+        return "（温度对照见上方四行输出：0.0 通常更稳定，1.0 通常更多样）";
     }
 
     // ========================================================================
