@@ -310,39 +310,41 @@ public class PromptEngineeringPatterns {
     /**
      * 【原理说明】
      * 思维树在 CoT「单线推理」之上更进一步：生成多个候选 → 评估比较选出最佳 →
-     * 再从最佳处"向前推演"后续几步，像下棋一样多看几步再决定。
+     * 再从最佳处"向前推演"后续几步，像做学习计划一样先比较路线再细化行动。
      *
      * 【与CoT的区别】
      * - CoT: 一条思路走到底
      * - ToT: 先铺开几条思路、挑最好的，再往前推演它的后续
      *
-     * 【本示例演示】（用人人都会的井字棋，演示官方思维树的核心三步）
-     * 井字棋先手第一步：① 生成3种走法(中心/角/边)并打分 ② 评估选出最好 ③ 推演对手如何应、我再怎么走。
+     * 【本示例演示】（用新手学习 Spring AI 的路线选择，避免额外游戏规则）
+     * 新手只有 2 小时时间：① 生成3条学习路线 ② 评估选出最适合的一条
+     * ③ 基于选中的路线继续推演执行步骤和可能卡点。
      * 关键在第③步——"向前推演几步"，这正是 ToT 区别于思维链之处。
      */
     public String treeOfThoughts() {
         System.out.println("\n========== 9. Tree of Thoughts (思维树) ==========");
-        System.out.println("特点: 生成候选→评估选最佳→向前推演后续几步（像下棋多看几步）");
-        System.out.println("配置: 候选阶段 temperature=0.7（要多样走法）");
+        System.out.println("特点: 生成候选→评估选最佳→向前推演后续几步（像做学习计划先选路线再拆行动）");
+        System.out.println("配置: 候选阶段 temperature=0.7（要多样学习路线）");
 
-        // ① 生成几种候选走法
-        String moves = chatClient.prompt("""
-                我们在玩井字棋（3x3），我先手执 X，棋盘还是空的。
-                给出3种不同的第一步走法（如：下在中心 / 角 / 边），每种说明好处并打分(1-10)。
+        // ① 生成几条候选学习路线
+        String plans = chatClient.prompt("""
+                我是 Spring AI 新手，只有2小时学习时间。
+                给出3条不同的学习路线：先读文档、先跑 Demo、先改 Prompt。
+                每条说明适合什么情况，并按“上手快/收获大/难度低”打分(1-10)。
                 """)
                 .options(ChatOptions.builder().temperature(0.7).build())
                 .call().content();
-        System.out.println("候选走法: " + moves);
+        System.out.println("候选学习路线: " + plans);
 
-        // ② 评估并选出最好的一种
+        // ② 评估并选出最适合新手的一条
         String best = chatClient.prompt()
-                .user(u -> u.text("从这几种走法里选最好的一种，说明理由：\n{m}").param("m", moves))
+                .user(u -> u.text("从这些学习路线里选最适合新手的一条，说明理由：\n{p}").param("p", plans))
                 .call().content();
         System.out.println("评估选择: " + best);
 
-        // ③ 向前推演：选定后，对手会怎么应、我再怎么走（要简短，避免长篇）
+        // ③ 向前推演：选定后，接下来怎么做、卡住时先查什么（要简短，避免长篇）
         return chatClient.prompt()
-                .user(u -> u.text("基于选定的走法，用3-4句话简短推演：对手最可能下哪、我接着下哪、为什么这样最稳：\n{b}")
+                .user(u -> u.text("基于选中的路线，用3-4句话推演具体执行步骤，并说明一个最可能卡住的点怎么处理：\n{b}")
                         .param("b", best))
                 .call().content();
     }
