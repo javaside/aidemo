@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spring AI Prompt Engineering Explainer</title>
+  <link rel="icon" href="data:," />
+  <style>
+    :root {
+      --bg: #07110d;
+      --surface: #0f1d17;
+      --surface-raised: #162820;
+      --fg: #eaf5ee;
+      --muted: #a9b8ae;
+      --accent: #6db33f;
+      --accent-soft: #b7e28a;
+      --warning: #f6c85f;
+      --line: rgba(183, 226, 138, 0.24);
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #020604;
+      color: var(--fg);
+      font-family: Inter, "SF Pro Display", "Segoe UI", Arial, sans-serif;
+    }
+
+    [data-composition-id="prompt-engineering-video"] {
+      position: relative;
+      width: min(100vw, calc(100vh * 16 / 9));
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 74% 18%, rgba(109, 179, 63, 0.20), transparent 30%),
+        radial-gradient(circle at 18% 76%, rgba(183, 226, 138, 0.12), transparent 26%),
+        var(--bg);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+      isolation: isolate;
+    }
+
+    .grid {
+      position: absolute;
+      inset: -8%;
+      background-image:
+        linear-gradient(rgba(183, 226, 138, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(183, 226, 138, 0.08) 1px, transparent 1px);
+      background-size: 72px 72px;
+      transform: translate3d(calc(var(--t, 0) * -8px), calc(var(--t, 0) * 6px), 0);
+      opacity: 0.55;
+      z-index: 0;
+    }
+
+    .scanline {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(234, 245, 238, 0.035),
+        rgba(234, 245, 238, 0.035) 1px,
+        transparent 1px,
+        transparent 8px
+      );
+      mix-blend-mode: overlay;
+      opacity: 0.35;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .scene {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      padding: 92px 116px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 30px;
+      opacity: 0;
+      transform: translateY(26px) scale(0.985);
+      pointer-events: none;
+    }
+
+    .scene.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .scene.kicker {
+      justify-content: space-between;
+    }
+
+    .eyebrow {
+      color: var(--accent-soft);
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      max-width: 1280px;
+      line-height: 0.98;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+
+    h1 {
+      font-size: 118px;
+    }
+
+    h2 {
+      font-size: 82px;
+    }
+
+    .lead {
+      max-width: 1120px;
+      color: var(--muted);
+      font-size: 36px;
+      line-height: 1.34;
+      margin: 0;
+    }
+
+    .accent {
+      color: var(--accent-soft);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .panel {
+      background: rgba(15, 29, 23, 0.86);
+      border: 1px solid rgba(183, 226, 138, 0.22);
+      border-radius: 8px;
+      padding: 34px;
+      box-shadow: 0 18px 44px var(--shadow);
+    }
+
+    .panel-title {
+      margin: 0 0 20px;
+      color: var(--accent-soft);
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .bullet-list {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 28px;
+      line-height: 1.24;
+      color: var(--fg);
+    }
+
+    .bullet-list li {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .dot {
+      width: 15px;
+      height: 15px;
+      margin-top: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 22px rgba(109, 179, 63, 0.65);
+    }
+
+    .code {
+      font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+      background: #09140f;
+      color: #dff1e3;
+      border: 1px solid rgba(183, 226, 138, 0.20);
+      border-radius: 8px;
+      padding: 28px;
+      font-size: 24px;
+      line-height: 1.42;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+      white-space: pre-wrap;
+    }
+
+    .pattern-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .pattern {
+      min-height: 114px;
+      padding: 18px;
+      border: 1px solid rgba(183, 226, 138, 0.20);
+      border-radius: 8px;
+      background: rgba(22, 40, 32, 0.78);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .pattern strong {
+      font-size: 24px;
+      color: var(--fg);
+    }
+
+    .pattern span {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.22;
+    }
+
+    .tree {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      min-height: 560px;
+    }
+
+    .branch-group {
+      display: grid;
+      gap: 18px;
+    }
+
+    .node {
+      position: relative;
+      padding: 24px 28px;
+      min-height: 92px;
+      border-radius: 8px;
+      background: rgba(15, 29, 23, 0.92);
+      border: 1px solid rgba(183, 226, 138, 0.26);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.26);
+      font-size: 27px;
+      line-height: 1.22;
+    }
+
+    .node small {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .node.selected {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(109, 179, 63, 0.35), 0 0 38px rgba(109, 179, 63, 0.22);
+    }
+
+    .node.final {
+      border-color: var(--warning);
+      box-shadow: 0 0 0 1px rgba(246, 200, 95, 0.32), 0 0 38px rgba(246, 200, 95, 0.16);
+    }
+
+    .connector {
+      position: absolute;
+      left: calc(50% - 40px);
+      top: 50%;
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), rgba(183, 226, 138, 0.2));
+      box-shadow: 0 0 20px rgba(109, 179, 63, 0.45);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .summary {
+      min-height: 210px;
+      padding: 28px;
+      border-radius: 8px;
+      background: rgba(22, 40, 32, 0.82);
+      border: 1px solid rgba(183, 226, 138, 0.20);
+    }
+
+    .summary h3 {
+      margin: 0 0 18px;
+      font-size: 29px;
+      color: var(--accent-soft);
+    }
+
+    .summary p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 24px;
+      line-height: 1.32;
+    }
+
+    .caption {
+      position: absolute;
+      left: 116px;
+      right: 116px;
+      bottom: 58px;
+      z-index: 4;
+      padding: 18px 24px;
+      border-radius: 8px;
+      background: rgba(7, 17, 13, 0.80);
+      border: 1px solid rgba(183, 226, 138, 0.18);
+      color: var(--fg);
+      font-size: 25px;
+      line-height: 1.28;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .progress {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 6px;
+      background: rgba(234, 245, 238, 0.08);
+      z-index: 5;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: calc(var(--progress, 0) * 100%);
+      background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+      box-shadow: 0 0 18px rgba(109, 179, 63, 0.7);
+    }
+
+    .preview-controls {
+      position: fixed;
+      left: 50%;
+      bottom: 20px;
+      z-index: 10;
+      transform: translateX(-50%);
+      width: min(900px, calc(100vw - 40px));
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 12px 16px;
+      background: rgba(2, 6, 4, 0.84);
+      border: 1px solid rgba(183, 226, 138, 0.22);
+      border-radius: 8px;
+      color: var(--fg);
+      font-size: 15px;
+    }
+
+    .preview-controls button {
+      appearance: none;
+      border: 1px solid rgba(183, 226, 138, 0.28);
+      background: rgba(22, 40, 32, 0.92);
+      color: var(--fg);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .preview-controls input {
+      flex: 1;
+      accent-color: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      .scene {
+        padding: 54px;
+      }
+
+      h1 {
+        font-size: 62px;
+      }
+
+      h2 {
+        font-size: 48px;
+      }
+
+      .lead {
+        font-size: 24px;
+      }
+
+      .two-col,
+      .tree,
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pattern-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .caption {
+        left: 54px;
+        right: 54px;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div
+    data-composition-id="prompt-engineering-video"
+    data-start="0"
+    data-width="1920"
+    data-height="1080"
+    data-duration="360"
+  >
+    <div class="grid" aria-hidden="true"></div>
+    <div class="scanline" aria-hidden="true"></div>
+
+    <section class="scene kicker" data-scene="0">
+      <div>
+        <p class="eyebrow">Spring AI / Prompt Engineering</p>
+        <h1>提示词工程<br /><span class="accent">不是魔法</span></h1>
+      </div>
+      <p class="lead">它是把目标、格式、上下文和生成边界说清楚的一套方法。</p>
+    </section>
+
+    <section class="scene" data-scene="1">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Mental Model</p>
+          <h2>两层：<span class="accent">怎么说</span> 与 怎么生成</h2>
+          <p class="lead">提示词文本负责表达任务，ChatOptions 负责调节模型生成方式。</p>
+        </div>
+        <div class="panel">
+          <p class="panel-title">Spring AI 调用骨架</p>
+          <div class="code">chatClient.prompt()
+    .system("规则")
+    .user("任务 + 上下文")
+    .options(ChatOptions.builder()
+        .temperature(0.2)
+        .maxTokens(120)
+        .build())
+    .call().content();</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="2">
+      <p class="eyebrow">Basic Patterns</p>
+      <h2>先掌握 5 个基础问法</h2>
+      <div class="pattern-strip">
+        <div class="pattern"><strong>Zero-shot</strong><span>不给例子，直接下指令。</span></div>
+        <div class="pattern"><strong>Few-shot</strong><span>给例子，让模型照格式做。</span></div>
+        <div class="pattern"><strong>System</strong><span>设定本次请求或对话规则。</span></div>
+        <div class="pattern"><strong>Role</strong><span>让模型带着稳定视角回答。</span></div>
+        <div class="pattern"><strong>Context</strong><span>补充背景，让回答贴合场景。</span></div>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="3">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Reasoning Patterns</p>
+          <h2>复杂任务要引导推理</h2>
+          <p class="lead">不是只让模型回答，而是让它先拿原则、分步骤、多采样、再比较路径。</p>
+        </div>
+        <div class="panel">
+          <ul class="bullet-list">
+            <li><span class="dot"></span><span><strong>Step-back</strong>：先问高层原则，再回到具体任务。</span></li>
+            <li><span class="dot"></span><span><strong>Chain of Thought</strong>：一步步推理，减少跳步。</span></li>
+            <li><span class="dot"></span><span><strong>Self-consistency</strong>：多跑几条推理路径，再投票。</span></li>
+            <li><span class="dot"></span><span><strong>Tree of Thoughts</strong>：分叉、评估、剪枝、继续展开。</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="4">
+      <p class="eyebrow">Tree of Thoughts</p>
+      <h2>真正的树：每一层都可以继续分叉</h2>
+      <div class="tree">
+        <div class="branch-group">
+          <div class="node">A. 先读文档<small>信息全，但反馈慢</small></div>
+          <div class="node selected">B. 先跑 Demo<small>最快看到结果，继续展开</small></div>
+          <div class="node">C. 先改 Prompt<small>有趣，但容易没上下文</small></div>
+        </div>
+        <div class="connector" aria-hidden="true"></div>
+        <div class="branch-group">
+          <div class="node">B1. 跑完整 main<small>覆盖多，但耗时更长</small></div>
+          <div class="node final">B2. 最小 ChatClient 调用<small>最适合新手马上执行</small></div>
+          <div class="node">B3. 跑 Web 示例<small>直观，但依赖更多</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="5">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Automatic Prompt Engineering</p>
+          <h2>让模型帮你改提示词</h2>
+          <p class="lead">先生成多个候选提示词，再按格式约束、清晰度、减少歧义来评估。</p>
+        </div>
+        <div class="panel">
+          <p class="panel-title">候选提示词评估</p>
+          <ul class="bullet-list">
+            <li><span class="dot"></span><span>只能输出 POSITIVE / NEGATIVE / NEUTRAL</span></li>
+            <li><span class="dot"></span><span>角色清楚：情感分类器</span></li>
+            <li><span class="dot"></span><span>约束明确：不要额外解释</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="6">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Code Prompting</p>
+          <h2>代码提示要写清规格</h2>
+          <p class="lead">语言、输入、输出、边界情况都要说清楚。别让模型猜你想要什么。</p>
+        </div>
+        <div class="code">用 Python 写一个函数：
+输入整数列表，返回平均值；
+如果列表为空，抛出 ValueError。
+
+def average(nums):
+    if not nums:
+        raise ValueError("nums不能为空")
+    return sum(nums) / len(nums)</div>
+      </div>
+    </section>
+
+    <section class="scene" data-scene="7">
+      <p class="eyebrow">Choose The Pattern</p>
+      <h2>不是背 11 个名字，而是看清任务</h2>
+      <div class="summary-grid">
+        <div class="summary"><h3>格式明确</h3><p>用 zero-shot、few-shot、system prompt 控制输出。</p></div>
+        <div class="summary"><h3>场景明确</h3><p>用 role 和 context 让回答贴合读者与背景。</p></div>
+        <div class="summary"><h3>推理复杂</h3><p>用 step-back、CoT、self-consistency、ToT 引导思考。</p></div>
+      </div>
+    </section>
+
+    <div class="caption" id="caption">Prompt engineering is not magic.</div>
+    <div class="progress"><div class="progress-fill"></div></div>
+  </div>
+
+  <div class="preview-controls">
+    <button type="button" id="play">Pause</button>
+    <span id="clock">00:00</span>
+    <input id="seek" type="range" min="0" max="360" value="0" step="0.1" aria-label="Timeline seek" />
+    <span>6:00</span>
+  </div>
+
+  <script>
+    const duration = 360;
+    const previewRate = 18;
+    const scenes = [
+      { start: 0, end: 38, caption: "提示词工程不是魔法，而是把目标、格式、上下文和边界说清楚。" },
+      { start: 38, end: 82, caption: "先记两层：提示词文本是怎么说，ChatOptions 是怎么生成。" },
+      { start: 82, end: 132, caption: "基础模式从直接指令、示例、系统规则、角色和上下文开始。" },
+      { start: 132, end: 182, caption: "推理模式让模型先找原则、分步骤、多采样、再比较路径。" },
+      { start: 182, end: 244, caption: "思维树不是选一条就结束，而是继续展开下一层分支。" },
+      { start: 244, end: 288, caption: "自动提示词工程：生成候选提示词，再评估哪个更清晰。" },
+      { start: 288, end: 326, caption: "代码提示要写清语言、输入输出和边界情况。" },
+      { start: 326, end: 360, caption: "真正的能力，是根据任务选择合适的模式。" }
+    ];
+
+    const root = document.querySelector('[data-composition-id="prompt-engineering-video"]');
+    const sceneEls = Array.from(document.querySelectorAll('.scene'));
+    const caption = document.getElementById('caption');
+    const seek = document.getElementById('seek');
+    const clock = document.getElementById('clock');
+    const play = document.getElementById('play');
+    let playing = true;
+    let current = 0;
+    let last = performance.now();
+
+    function clamp(value, min, max) {
+      return Math.min(max, Math.max(min, value));
+    }
+
+    function formatTime(seconds) {
+      const s = Math.floor(seconds);
+      const mm = String(Math.floor(s / 60)).padStart(2, '0');
+      const ss = String(s % 60).padStart(2, '0');
+      return `${mm}:${ss}`;
+    }
+
+    function sceneOpacity(t, scene) {
+      const fade = 2.0;
+      if (t < scene.start - fade || t > scene.end + fade) return 0;
+      if (scene.start === 0 && t <= scene.start + fade) return 1;
+      if (scene.end === duration && t >= scene.end - fade) return 1;
+      if (t < scene.start) return clamp((t - scene.start + fade) / fade, 0, 1);
+      if (t > scene.end) return clamp((scene.end + fade - t) / fade, 0, 1);
+      return 1;
+    }
+
+    function renderAt(t) {
+      current = clamp(t, 0, duration);
+      root.style.setProperty('--t', String(current / duration));
+      root.style.setProperty('--progress', String(current / duration));
+      seek.value = String(current);
+      clock.textContent = formatTime(current);
+
+      let activeCaption = scenes[0].caption;
+      scenes.forEach((scene, index) => {
+        const opacity = sceneOpacity(current, scene);
+        const el = sceneEls[index];
+        el.style.opacity = opacity.toFixed(3);
+        el.style.transform = `translateY(${(1 - opacity) * 26}px) scale(${0.985 + opacity * 0.015})`;
+        el.classList.toggle('active', opacity > 0.5);
+        if (current >= scene.start && current <= scene.end) {
+          activeCaption = scene.caption;
+        }
+      });
+      caption.textContent = activeCaption;
+    }
+
+    function tick(now) {
+      const delta = (now - last) / 1000;
+      last = now;
+      if (playing) {
+        renderAt((current + delta * previewRate) % duration);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    seek.addEventListener('input', () => {
+      renderAt(Number(seek.value));
+    });
+
+    play.addEventListener('click', () => {
+      playing = !playing;
+      play.textContent = playing ? 'Pause' : 'Play';
+    });
+
+    const timeline = {
+      duration: () => duration,
+      time: (t) => {
+        renderAt(Number(t) || 0);
+        return timeline;
+      },
+      progress: (p) => {
+        renderAt((Number(p) || 0) * duration);
+        return timeline;
+      },
+      pause: () => timeline
+    };
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["prompt-engineering-video"] = timeline;
+
+    renderAt(0);
+    requestAnimationFrame(tick);
+  </script>
+</body>
+</html>
