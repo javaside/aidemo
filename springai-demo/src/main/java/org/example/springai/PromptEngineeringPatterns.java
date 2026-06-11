@@ -309,25 +309,25 @@ public class PromptEngineeringPatterns {
     // ========================================================================
     /**
      * 【原理说明】
-     * 思维树在 CoT「单线推理」之上更进一步：生成多个候选 → 评估比较选出最佳 →
-     * 再从最佳处"向前推演"后续几步，像做学习计划一样先比较路线再细化行动。
+     * 思维树在 CoT「单线推理」之上更进一步：生成多个候选 → 评估比较选出高潜力分支 →
+     * 再在选中的分支下继续展开子分支，像画决策树一样逐层评估、剪枝、推进。
      *
      * 【与CoT的区别】
      * - CoT: 一条思路走到底
-     * - ToT: 先铺开几条思路、挑最好的，再往前推演它的后续
+     * - ToT: 每一层都先铺开几条思路，评估后剪掉弱分支，再继续展开高潜力分支
      *
      * 【本示例演示】（用新手学习 Spring AI 的路线选择，避免额外游戏规则）
      * 新手只有 2 小时时间：① 生成3条学习路线 ② 评估选出最适合的一条
-     * ③ 基于选中的路线继续推演执行步骤和可能卡点。
-     * 完整 ToT 可以反复展开、评估和回溯；这里为了入门，只演示最核心的三步。
-     * 关键在第③步——"向前推演几步"，这正是 ToT 区别于思维链之处。
+     * ③ 在选中的路线下继续展开3个子方案 ④ 再评估并选出最终执行路径。
+     * 完整 ToT 可以反复展开、评估和回溯；这里为了入门，演示两层分支。
+     * 关键在第③步——不是选中一条就结束，而是在分支下继续生成下一层分支。
      */
     public String treeOfThoughts() {
         System.out.println("\n========== 9. Tree of Thoughts (思维树) ==========");
-        System.out.println("特点: 生成候选→评估选最佳→向前推演后续几步（像做学习计划先选路线再拆行动）");
-        System.out.println("配置: 候选阶段 temperature=0.7（要多样学习路线）");
+        System.out.println("特点: 生成候选→评估剪枝→继续展开子分支→再评估最终路径（真正体现树形分支）");
+        System.out.println("配置: 分支生成 temperature=0.7（要多样路线），评估阶段用较低温让选择更稳定");
 
-        // ① 生成几条候选学习路线
+        // ① 第一层：生成几条候选学习路线。
         String plans = chatClient.prompt("""
                 我是 Spring AI 新手，只有2小时学习时间。
                 给出3条不同的学习路线：先读文档、先跑 Demo、先改 Prompt。
@@ -335,18 +335,28 @@ public class PromptEngineeringPatterns {
                 """)
                 .options(ChatOptions.builder().temperature(0.7).build())
                 .call().content();
-        System.out.println("候选学习路线: " + plans);
+        System.out.println("第一层候选学习路线: " + plans);
 
-        // ② 评估并选出最适合新手的一条
+        // ② 剪枝：评估第一层分支，选出最适合继续展开的一条。
         String best = chatClient.prompt()
-                .user(u -> u.text("从这些学习路线里选最适合新手的一条，说明理由：\n{p}").param("p", plans))
+                .user(u -> u.text("从这些学习路线里选最适合继续展开的一条，说明理由：\n{p}").param("p", plans))
+                .options(ChatOptions.builder().temperature(0.2).build())
                 .call().content();
-        System.out.println("评估选择: " + best);
+        System.out.println("第一层评估选择: " + best);
 
-        // ③ 向前推演：选定后，接下来怎么做、卡住时先查什么（要简短，避免长篇）
-        return chatClient.prompt()
-                .user(u -> u.text("基于选中的路线，用3-4句话推演具体执行步骤，并说明一个最可能卡住的点怎么处理：\n{b}")
+        // ③ 第二层：在选中的路线下面继续生成子方案，而不是选完就结束。
+        String branchDetails = chatClient.prompt()
+                .user(u -> u.text("基于选中的路线，继续展开3个下一步子方案，每个说明优缺点并打分：\n{b}")
                         .param("b", best))
+                .options(ChatOptions.builder().temperature(0.7).build())
+                .call().content();
+        System.out.println("第二层子方案: " + branchDetails);
+
+        // ④ 再次评估：从子方案里选最终执行路径。
+        return chatClient.prompt()
+                .user(u -> u.text("从这些子方案里选最适合新手马上执行的一条，并说明最终路径：\n{s}")
+                        .param("s", branchDetails))
+                .options(ChatOptions.builder().temperature(0.2).build())
                 .call().content();
     }
 

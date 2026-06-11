@@ -233,17 +233,17 @@ for (int i = 0; i < 3; i++) {                    // 同一问题跑 3 次
 
 ## 9. 思维树（Tree of Thoughts）
 
-**像做学习计划一样思考**：不急着认定一种学法，而是先列出几条可选路线 → 比较哪条最适合新手 →
-再把选中的路线继续拆成下一步行动。
+**像画一棵决策树一样思考**：不急着认定一种学法，而是先列出几条可选路线 → 比较哪条最有潜力 →
+在选中的路线下面继续展开几个子方案 → 再评估下一层该走哪条。
 
-和上一个思维链对比着记：**思维链是"沿着一条路线往下想"；思维树是"先展开几条路线，选一条，再继续细化它"。**
+和上一个思维链对比着记：**思维链是"沿着一条路线一直往下想"；思维树是"每一层都先分叉，再评估、剪枝、继续展开"。**
 
 **什么时候用**：需要在多个方案之间做选择，并且选完后还要继续规划下一步时。
 
-完整 ToT 可以反复展开、评估和回溯；这里为了入门，只演示最核心的三步。
+完整 ToT 可以反复展开、评估和回溯；这里为了入门，演示两层分支：先选大方向，再在大方向下面选下一步。
 
 ```java
-// ① 生成几条候选学习路线（要多样 → 高温）
+// ① 第一层：生成几条候选学习路线（要多样 → 高温）
 String plans = chatClient.prompt("""
         我是 Spring AI 新手，只有2小时学习时间。
         给出3条不同的学习路线：先读文档、先跑 Demo、先改 Prompt。
@@ -252,28 +252,44 @@ String plans = chatClient.prompt("""
         .options(ChatOptions.builder().temperature(0.7).build())
         .call().content();
 
-// ② 评估并选出最适合新手的一条
+// ② 剪枝：评估第一层分支，选出最适合继续展开的一条
 String best = chatClient.prompt()
-        .user(u -> u.text("从这些学习路线里选最适合新手的一条，说明理由：\n{p}").param("p", plans))
+        .user(u -> u.text("从这些学习路线里选最适合继续展开的一条，说明理由：\n{p}").param("p", plans))
+        .options(ChatOptions.builder().temperature(0.2).build())  // 评估要稳定，低温
         .call().content();
 
-// ③ 向前推演：选定后，接下来怎么做、卡住时先查什么
-String nextSteps = chatClient.prompt()
-        .user(u -> u.text("基于选中的路线，用3-4句话推演具体执行步骤，并说明一个最可能卡住的点怎么处理：\n{b}")
+// ③ 第二层：在选中的路线下面继续生成子方案
+String branchDetails = chatClient.prompt()
+        .user(u -> u.text("基于选中的路线，继续展开3个下一步子方案，每个说明优缺点并打分：\n{b}")
                 .param("b", best))
+        .options(ChatOptions.builder().temperature(0.7).build())  // 继续展开，要多样
+        .call().content();
+
+// ④ 再次评估：从子方案里选最终执行路径
+String finalChoice = chatClient.prompt()
+        .user(u -> u.text("从这些子方案里选最适合新手马上执行的一条，并说明最终路径：\n{s}")
+                .param("s", branchDetails))
+        .options(ChatOptions.builder().temperature(0.2).build())  // 最终选择要稳定
         .call().content();
 ```
 
 示例输出（节选）：
 
 ```
-① 三条路线：读文档 / 跑 Demo / 改 Prompt
-② 推荐：先跑 Demo，再改 Prompt——新手能最快看到结果，再通过小改动理解提示词效果
-③ 推演：先运行一个最小示例，确认能拿到模型回复；然后只改一处 Prompt，对比回答变化；
-        如果失败，优先检查 API Key、启动命令和当前模块路径。
+第一层：
+├─ A. 先读文档
+├─ B. 先跑 Demo  ← 评分最高，继续展开
+└─ C. 先改 Prompt
+
+第二层（展开 B）：
+├─ B1. 跑完整 main 方法
+├─ B2. 只跑最小 ChatClient 调用  ← 最适合新手马上执行
+└─ B3. 跑 Web 示例
+
+最终路径：B → B2。先确认 API Key 和模块路径，再运行最小 ChatClient 示例；跑通后只改一句 Prompt 对比输出。
 ```
 
-💡 **价值在第③步"向前推演"：不是选完路线就结束，而是继续想"下一步怎么做、哪里可能卡住、卡住先查什么"——这就是"树"。**
+💡 **价值在"继续展开"：不是三条路里选一条就结束，而是在选中的分支下面继续长出下一层分支，再评估、剪枝、往下走——这才是"树"。**
 
 ---
 
