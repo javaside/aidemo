@@ -1,0 +1,68 @@
+---
+title: 2026 World Cup National Team Knowledge Base
+snapshot_date: 2026-06-11
+format: markdown
+scope: national-teams
+---
+
+# 世界杯国家队知识库
+
+本目录用于沉淀国家队维度的世界杯分析资料，支持后续对任意两支球队做结构化对比。
+
+## 重要口径
+
+- 用户原始目标提到“全部 32 支参赛队”，但 2026 年男足世界杯为 48 支参赛队。本文档按 48 队知识库设计，扩展追踪表中保留“32 队目标”备注，便于兼容旧赛制分析。
+- 本知识库当前是 2026-06-11 的赛前快照。球员俱乐部、球衣号码、伤病、停赛、预计首发、FIFA 排名会变化。
+- 无法从当前公开资料确认的字段统一写“待补充”，不使用猜测值。
+- 球员年龄统一以 2026-06-11，世界杯开幕日为基准。
+
+## 文件结构
+
+```text
+docs/worldcup/2026/knowledge-base/
+├── README.md
+├── team-template.md
+├── expansion-tracker.md
+├── sources.md
+└── teams/
+    ├── argentina.md
+    ├── brazil.md
+    ├── england.md
+    ├── france.md
+    ├── germany.md
+    ├── netherlands.md
+    ├── portugal.md
+    └── spain.md
+```
+
+## 首批球队
+
+优先顺序：卫冕冠军 + 当前热门球队。
+
+| 顺序 | 国家队 | 文件 | 当前状态 |
+| --- | --- | --- | --- |
+| 1 | 阿根廷 | `teams/argentina.md` | 已建骨架，已录入 26 人名单 |
+| 2 | 法国 | `teams/france.md` | 已建骨架，已录入 26 人名单 |
+| 3 | 西班牙 | `teams/spain.md` | 已建骨架，已录入 26 人名单 |
+| 4 | 英格兰 | `teams/england.md` | 已建骨架，已录入 26 人名单 |
+| 5 | 巴西 | `teams/brazil.md` | 已建骨架，已录入 26 人名单 |
+| 6 | 葡萄牙 | `teams/portugal.md` | 已建骨架，已录入 27 人名单，需核对最终注册人数 |
+| 7 | 德国 | `teams/germany.md` | 已建骨架，已录入 26 人名单 |
+| 8 | 荷兰 | `teams/netherlands.md` | 已建骨架，已录入 26 人名单 |
+
+## 对比分析用法
+
+任意两队对比时，优先读取同名章节：
+
+1. `基础信息`：比较历史成绩、FIFA 排名、常用阵型、整体强弱项。
+2. `教练组`：比较主教练经验、战术偏好、临场保守/激进程度。
+3. `球员`：按门将、后卫、中场、前锋逐线比较深度。
+4. `补充分析数据`：比较近况、定位球、节奏、心理韧性、伤停风险、强强对话记录。
+
+## 更新原则
+
+1. 官方来源优先：FIFA、各国足协、赛事官方名单。
+2. 媒体来源只作为补充：FourFourTwo、BBC、Guardian、Sky Sports、Al Jazeera、DAZN 等。
+3. 伤病、停赛、预计首发必须标注时间点。
+4. 每次更新国家队文件时，更新 `last_updated` 与 `data_status`。
+5. 新增球队时从 `team-template.md` 复制结构，保留所有字段位。
