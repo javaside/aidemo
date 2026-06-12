@@ -4,7 +4,7 @@ team_name_zh: 美国
 team_name_en: United States
 snapshot_date: 2026-06-12
 last_updated: 2026-06-12
-data_status: seed_squad_loaded_matchday
+data_status: matchday_p0_partially_completed
 ---
 
 # 美国 United States
@@ -33,12 +33,12 @@ data_status: seed_squad_loaded_matchday
 | --- | --- |
 | 主教练 | Mauricio Pochettino |
 | 国籍 | 阿根廷 |
-| 年龄 | 待补充 |
+| 年龄 | 54（出生于 1972-03-02，以 2026-06-12 计） |
 | 执教该队起始时间 | 2024 |
 | 执教履历 | Espanyol、Southampton、Tottenham Hotspur、Paris Saint-Germain、Chelsea、United States |
-| 主要荣誉 | 法甲冠军等俱乐部荣誉待补充 |
+| 主要荣誉 | 法甲冠军、法国杯冠军、法国超级杯冠军（Paris Saint-Germain） |
 | 战术偏好 | 高强度、前场压迫、强调心理放松和球员自由度 |
-| 关键教练组成员 | 待补充 |
+| 关键教练组成员 | 公开源未取得 |
 
 ## 3. 球员
 
@@ -46,63 +46,64 @@ data_status: seed_squad_loaded_matchday
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Matt Turner | Matt Turner | 待补充 | 待补充 | New England Revolution / MLS | 待补充 | 2022 主力 | 首发候选 | 门线；扑救；大赛经验 | 高 |
-| 待补充 | Matt Freese | Matt Freese | 待补充 | 待补充 | New York City FC / MLS | 待补充 | 待补充 | 首发竞争候选 | 反应；出击；MLS 状态 | 中 |
-| 待补充 | Chris Brady | Chris Brady | 待补充 | 待补充 | Chicago Fire / MLS | 待补充 | 待补充 | 待补充 | 年轻门将；门线；替补 | 低 |
+| 1 | Matt Turner | Matt Turner | 1994-06-24 / 31 | 待补充 | New England Revolution / MLS | 54/0 | 2022 主力；2026 注册名单 | 首发候选 | 门线；扑救；大赛经验 | 高 |
+| 24 | Matt Freese | Matt Freese | 1998-09-02 / 27 | 待补充 | New York City FC / MLS | 15/0 | 2026 注册名单 | 首发竞争候选 | 反应；出击；MLS 状态 | 中 |
+| 25 | Chris Brady | Chris Brady | 2004-03-03 / 22 | 待补充 | Chicago Fire FC / MLS | 1/0 | 2026 注册名单 | 入选 26 人名单 | 年轻门将；门线；替补 | 低 |
 
 ### 后卫
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Sergino Dest | Sergino Dest | 待补充 | 待补充 | PSV / Eredivisie | 待补充 | 2022 主力 | 右路核心候选 | 盘带；推进；内收 | 高 |
-| 待补充 | Tim Ream | Tim Ream | 待补充 | 待补充 | Charlotte FC / MLS | 待补充 | 2022 主力 | 年龄与速度需关注 | 出球；经验；防线指挥 | 高 |
-| 待补充 | Antonee Robinson | Antonee Robinson | 待补充 | 待补充 | Fulham / Premier League | 待补充 | 2022 主力 | 左路核心 | 速度；传中；回追 | 高 |
-| 待补充 | Miles Robinson | Miles Robinson | 待补充 | 待补充 | FC Cincinnati / MLS | 待补充 | 待补充 | 待补充 | 防空；对抗；中卫轮换 | 中 |
-| 待补充 | Chris Richards | Chris Richards | 待补充 | 待补充 | Crystal Palace / Premier League | 待补充 | 待补充 | 中卫核心候选 | 速度；防空；英超对抗 | 中 |
-| 待补充 | Mark McKenzie | Mark McKenzie | 待补充 | 待补充 | Toulouse / Ligue 1 | 待补充 | 待补充 | 待补充 | 出球；中卫深度；欧洲经验 | 中 |
-| 待补充 | Joe Scally | Joe Scally | 待补充 | 待补充 | Borussia Monchengladbach / Bundesliga | 待补充 | 2022 成员 | 待补充 | 边卫多面手；对抗；回追 | 中 |
-| 待补充 | Max Arfsten | Max Arfsten | 待补充 | 待补充 | Columbus Crew / MLS | 待补充 | 待补充 | 待补充 | 左路推进；传中；轮换 | 低 |
-| 待补充 | Alex Freeman | Alex Freeman | 待补充 | 待补充 | Villarreal / LaLiga | 待补充 | 待补充 | 年轻球员，可能首秀 | 速度；右路推进；潜力 | 低 |
-| 待补充 | Auston Trusty | Auston Trusty | 待补充 | 待补充 | Celtic / Scottish Premiership | 待补充 | 待补充 | 待补充 | 左脚中卫；防空；身体 | 中 |
+| 2 | Sergino Dest | Sergino Dest | 2000-11-03 / 25 | 待补充 | PSV Eindhoven / Eredivisie | 39/3 | 2022 主力；2026 注册名单 | 右路核心候选 | 盘带；推进；内收 | 高 |
+| 13 | Tim Ream | Tim Ream | 1987-10-05 / 38 | 待补充 | Charlotte FC / MLS | 82/1 | 2022 主力；2026 注册名单 | 队长，年龄与速度需关注 | 出球；经验；防线指挥 | 高 |
+| 5 | Antonee Robinson | Antonee Robinson | 1997-08-08 / 28 | 待补充 | Fulham / Premier League | 54/5 | 2022 主力；2026 注册名单 | 左路核心 | 速度；传中；回追 | 高 |
+| 12 | Miles Robinson | Miles Robinson | 1997-03-14 / 29 | 待补充 | FC Cincinnati / MLS | 40/3 | 2026 注册名单 | 入选 26 人名单 | 防空；对抗；中卫轮换 | 中 |
+| 3 | Chris Richards | Chris Richards | 2000-03-28 / 26 | 待补充 | Crystal Palace / Premier League | 36/3 | 2026 注册名单 | 中卫核心候选 | 速度；防空；英超对抗 | 中 |
+| 22 | Mark McKenzie | Mark McKenzie | 1999-02-25 / 27 | 待补充 | Toulouse / Ligue 1 | 29/0 | 2026 注册名单 | 入选 26 人名单 | 出球；中卫深度；欧洲经验 | 中 |
+| 23 | Joe Scally | Joe Scally | 2002-12-31 / 23 | 待补充 | Borussia Monchengladbach / Bundesliga | 26/0 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 边卫多面手；对抗；回追 | 中 |
+| 18 | Max Arfsten | Max Arfsten | 2001-04-19 / 25 | 待补充 | Columbus Crew / MLS | 20/1 | 2026 注册名单 | 入选 26 人名单 | 左路推进；传中；轮换 | 低 |
+| 16 | Alex Freeman | Alex Freeman | 2004-08-09 / 21 | 待补充 | Villarreal / LaLiga | 17/2 | 2026 注册名单 | 年轻球员，可能世界杯首秀 | 速度；右路推进；潜力 | 低 |
+| 6 | Auston Trusty | Auston Trusty | 1998-08-12 / 27 | 待补充 | Celtic / Scottish Premiership | 8/0 | 2026 注册名单 | 入选 26 人名单 | 左脚中卫；防空；身体 | 中 |
 
 ### 中场
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Weston McKennie | Weston McKennie | 待补充 | 待补充 | Juventus / Serie A | 待补充 | 2022 主力 | 中场核心 | 覆盖；前插；空中球 | 高 |
-| 待补充 | Tyler Adams | Tyler Adams | 待补充 | 待补充 | Bournemouth / Premier League | 待补充 | 2022 队长/主力 | 身体负荷需确认 | 拦截；领导力；压迫 | 高 |
-| 待补充 | Cristian Roldan | Cristian Roldan | 待补充 | 待补充 | Seattle Sounders / MLS | 待补充 | 待补充 | 待补充 | 经验；跑动；轮换 | 中 |
-| 待补充 | Giovanni Reyna | Giovanni Reyna | 待补充 | 待补充 | Borussia Monchengladbach / Bundesliga | 待补充 | 2022 成员 | 状态稳定性需关注 | 创造；盘带；直塞 | 高 |
-| 待补充 | Malik Tillman | Malik Tillman | 待补充 | 待补充 | Bayer Leverkusen / Bundesliga | 待补充 | 待补充 | 前腰/中场候选 | 前插；射门；技术 | 中 |
-| 待补充 | Sebastian Berhalter | Sebastian Berhalter | 待补充 | 待补充 | Vancouver Whitecaps / MLS | 待补充 | 待补充 | 可能世界杯首秀 | 传球；定位球；中场轮换 | 低 |
-| 待补充 | Brenden Aaronson | Brenden Aaronson | 待补充 | 待补充 | Leeds United / EFL Championship | 待补充 | 2022 成员 | 待补充 | 压迫；跑动；前场连接 | 高 |
+| 8 | Weston McKennie | Weston McKennie | 1998-08-28 / 27 | 待补充 | Juventus / Serie A | 66/12 | 2022 主力；2026 注册名单 | 中场核心 | 覆盖；前插；空中球 | 高 |
+| 4 | Tyler Adams | Tyler Adams | 1999-02-14 / 27 | 待补充 | Bournemouth / Premier League | 54/2 | 2022 队长/主力；2026 注册名单 | 身体负荷需确认 | 拦截；领导力；压迫 | 高 |
+| 15 | Cristian Roldan | Cristian Roldan | 1995-06-03 / 31 | 待补充 | Seattle Sounders FC / MLS | 47/0 | 2026 注册名单 | 入选 26 人名单 | 经验；跑动；轮换 | 中 |
+| 7 | Giovanni Reyna | Giovanni Reyna | 2002-11-13 / 23 | 待补充 | Borussia Monchengladbach / Bundesliga | 38/9 | 2022 成员；2026 注册名单 | 状态稳定性需关注 | 创造；盘带；直塞 | 高 |
+| 17 | Malik Tillman | Malik Tillman | 2002-05-28 / 24 | 待补充 | Bayer Leverkusen / Bundesliga | 30/3 | 2026 注册名单 | 前腰/中场候选 | 前插；射门；技术 | 中 |
+| 14 | Sebastian Berhalter | Sebastian Berhalter | 2001-05-10 / 25 | 待补充 | Vancouver Whitecaps FC / MLS | 13/1 | 2026 注册名单 | 可能世界杯首秀 | 传球；定位球；中场轮换 | 低 |
 
 ### 前锋
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Christian Pulisic | Christian Pulisic | 待补充 | 待补充 | AC Milan / Serie A | 待补充 | 2022 核心 | 队内进攻核心 | 盘带；内切；关键球 | 高 |
-| 待补充 | Timothy Weah | Timothy Weah | 待补充 | 待补充 | Marseille / Ligue 1 | 待补充 | 2022 主力 | 待补充 | 速度；右路突破；反击 | 高 |
-| 待补充 | Ricardo Pepi | Ricardo Pepi | 待补充 | 待补充 | PSV Eindhoven / Eredivisie | 待补充 | 待补充 | 中锋竞争 | 禁区终结；跑位；冲击 | 中 |
-| 待补充 | Folarin Balogun | Folarin Balogun | 待补充 | 待补充 | Monaco / Ligue 1 | 待补充 | 待补充 | 中锋竞争 | 纵深；射门；身体 | 中 |
-| 待补充 | Haji Wright | Haji Wright | 待补充 | 待补充 | Coventry City / EFL Championship | 待补充 | 2022 成员 | 待补充 | 身体；终结；边中摇摆 | 中 |
-| 待补充 | Alex Zendejas | Alex Zendejas | 待补充 | 待补充 | Club America / Liga MX | 待补充 | 待补充 | 待补充 | 左脚内切；边路创造；射门 | 中 |
+| 10 | Christian Pulisic | Christian Pulisic | 1998-09-18 / 27 | 待补充 | AC Milan / Serie A | 86/33 | 2022 核心；2026 注册名单 | 队内进攻核心 | 盘带；内切；关键球 | 高 |
+| 21 | Timothy Weah | Timothy Weah | 2000-02-22 / 26 | 待补充 | Marseille / Ligue 1 | 51/7 | 2022 主力；2026 注册名单 | 入选 26 人名单 | 速度；右路突破；反击 | 高 |
+| 9 | Ricardo Pepi | Ricardo Pepi | 2003-01-09 / 23 | 待补充 | PSV Eindhoven / Eredivisie | 37/13 | 2026 注册名单 | 中锋竞争 | 禁区终结；跑位；冲击 | 中 |
+| 20 | Folarin Balogun | Folarin Balogun | 2001-07-03 / 24 | 待补充 | Monaco / Ligue 1 | 27/9 | 2026 注册名单 | 中锋竞争 | 纵深；射门；身体 | 中 |
+| 19 | Haji Wright | Haji Wright | 1998-03-27 / 28 | 待补充 | Coventry City / EFL Championship | 20/7 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 身体；终结；边中摇摆 | 中 |
+| 26 | Alex Zendejas | Alejandro Zendejas | 1998-02-07 / 28 | 待补充 | Club America / Liga MX | 14/2 | 2026 注册名单 | 入选 26 人名单 | 左脚内切；边路创造；射门 | 中 |
+| 11 | Brenden Aaronson | Brenden Aaronson | 2000-10-22 / 25 | 待补充 | Leeds United / EFL Championship | 58/9 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 压迫；跑动；前场连接 | 高 |
 
 ## 4. 补充分析数据
 
 | 维度 | 内容 |
 | --- | --- |
-| 近 10 场正式比赛 | 待补充 |
+| 近 10 场正式比赛 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/US Soccer 比赛页逐场补录 |
 | 关键球员依赖度 | Christian Pulisic、Tyler Adams、Weston McKennie |
-| 定位球攻防数据 | 待补充 |
+| 定位球攻防数据 | 公开源未取得；需 FIFA/Opta/StatsBomb 等结构化统计确认 |
 | 比赛节奏特征 | 主场可能主动压迫，但 Pochettino 强调放松和自由；转换进攻是关键 |
 | 心理/韧性记录 | 1994 后首次主场世界杯，压力与关注度极高 |
-| 伤病/停赛风险名单 | Guardian 赛前报道称 26 人均可选；Adams、Reyna 等长期负荷风险仍需临场再核；停赛情况待补充 |
-| 同大洲/强队历史战绩摘要 | Group D 对手：Paraguay、Australia、Turkiye；交锋摘要待补充 |
+| 伤病/停赛风险名单 | Guardian 赛前报道称 26 人均可选；Adams、Reyna 等长期负荷风险仍需临场再核；停赛情况公开源未取得 |
+| 同大洲/强队历史战绩摘要 | Group D 对手：Paraguay、Australia、Turkiye；交锋摘要公开源未取得 |
 
 ## 5. 来源
 
 - FourFourTwo: United States World Cup 2026 squad
+- Wikipedia: 2026 FIFA World Cup squads
 - FIFA ranking team page: USA
 - Sofascore FIFA ranking mirror
 - Guardian: Pochettino and USMNT preview

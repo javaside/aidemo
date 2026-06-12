@@ -4,7 +4,7 @@ team_name_zh: 波黑
 team_name_en: Bosnia and Herzegovina
 snapshot_date: 2026-06-12
 last_updated: 2026-06-12
-data_status: seed_squad_loaded_matchday
+data_status: matchday_p0_partially_completed
 ---
 
 # 波黑 Bosnia and Herzegovina
@@ -33,12 +33,12 @@ data_status: seed_squad_loaded_matchday
 | --- | --- |
 | 主教练 | Sergej Barbarez |
 | 国籍 | 波黑 |
-| 年龄 | 待补充 |
+| 年龄 | 54（出生于 1971-09-17，以 2026-06-12 计） |
 | 执教该队起始时间 | 2024 |
-| 执教履历 | Bosnia and Herzegovina；其他履历待补充 |
-| 主要荣誉 | 待补充 |
-| 战术偏好 | 待补充；当前资料显示更依赖经验中轴、支点与整体防守 |
-| 关键教练组成员 | 待补充 |
+| 执教履历 | Bosnia and Herzegovina；国家队前队长，2024 年起执教国家队 |
+| 主要荣誉 | 主要执教荣誉公开源未取得 |
+| 战术偏好 | 依赖经验中轴、支点前锋、整体防守和定位球 |
+| 关键教练组成员 | 公开源未取得 |
 
 ## 3. 球员
 
@@ -46,63 +46,64 @@ data_status: seed_squad_loaded_matchday
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Nikola Vasilj | Nikola Vasilj | 待补充 | 待补充 | FC St. Pauli / Bundesliga | 待补充 | 待补充 | 首发候选 | 门线；德甲经验；出击 | 中 |
-| 待补充 | Martin Zlomislic | Martin Zlomislic | 待补充 | 待补充 | Rijeka / Croatian HNL | 待补充 | 待补充 | 待补充 | 反应；替补深度；经验 | 中 |
-| 待补充 | Osman Hadzikic | Osman Hadzikic | 待补充 | 待补充 | Slaven Belupo / Croatian HNL | 待补充 | 待补充 | 待补充 | 替补门将；反应；轮换 | 低 |
+| 1 | Nikola Vasilj | Nikola Vasilj | 1995-12-02 / 30 | 待补充 | FC St. Pauli / Bundesliga | 23/0 | 2026 注册名单 | 首发候选 | 门线；德甲经验；出击 | 中 |
+| 12 | Martin Zlomislic | Martin Zlomislic | 1998-08-16 / 27 | 待补充 | Rijeka / Croatian HNL | 4/0 | 2026 注册名单 | 入选 26 人名单 | 反应；替补深度；经验 | 中 |
+| 23 | Mladen Jurkas | Mladen Jurkas | 2002-05-06 / 24 | 待补充 | Slaven Belupo / Croatian HNL | 0/0 | 2026 注册名单；6 月 3 日递补入选 | 顶替 Osman Hadzikic | 替补门将；反应；轮换 | 低 |
 
 ### 后卫
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Sead Kolasinac | Sead Kolasinac | 待补充 | 待补充 | Atalanta / Serie A | 待补充 | 2014 成员 | 后防核心 | 对抗；左路/中卫；经验 | 高 |
-| 待补充 | Dennis Hadzikadunic | Dennis Hadzikadunic | 待补充 | 待补充 | Sampdoria / Serie B | 待补充 | 待补充 | 待补充 | 中卫；防空；站位 | 中 |
-| 待补充 | Amar Dedic | Amar Dedic | 待补充 | 待补充 | Benfica / Primeira Liga | 待补充 | 待补充 | 边路核心候选 | 右路推进；速度；传中 | 中 |
-| 待补充 | Nikola Katic | Nikola Katic | 待补充 | 待补充 | Schalke 04 / 2. Bundesliga | 待补充 | 待补充 | 待补充 | 防空；身体；中卫深度 | 中 |
-| 待补充 | Tarik Muharemovic | Tarik Muharemovic | 待补充 | 待补充 | Sassuolo / Serie A | 待补充 | 待补充 | 待补充 | 左脚中卫；出球；年轻 | 低 |
-| 待补充 | Nihad Mujakic | Nihad Mujakic | 待补充 | 待补充 | Gaziantep / Super Lig | 待补充 | 待补充 | 待补充 | 中卫；对抗；轮换 | 中 |
-| 待补充 | Stjepan Radeljic | Stjepan Radeljic | 待补充 | 待补充 | Rijeka / Croatian HNL | 待补充 | 待补充 | 待补充 | 防空；中卫深度；身体 | 低 |
-| 待补充 | Nidal Celik | Nidal Celik | 待补充 | 待补充 | Lens / Ligue 1 | 待补充 | 待补充 | 待补充 | 年轻后卫；速度；潜力 | 低 |
+| 5 | Sead Kolasinac | Sead Kolasinac | 1993-06-20 / 32 | 待补充 | Atalanta / Serie A | 68/0 | 2014 成员；2026 注册名单 | 后防核心 | 对抗；左路/中卫；经验 | 高 |
+| 3 | Dennis Hadzikadunic | Dennis Hadzikadunic | 1998-07-09 / 27 | 待补充 | Sampdoria / Serie B | 26/0 | 2026 注册名单 | 入选 26 人名单 | 中卫；防空；站位 | 中 |
+| 7 | Amar Dedic | Amar Dedic | 2002-08-18 / 23 | 待补充 | Benfica / Primeira Liga | 24/1 | 2026 注册名单 | 边路核心候选 | 右路推进；速度；传中 | 中 |
+| 4 | Nikola Katic | Nikola Katic | 1996-10-10 / 29 | 待补充 | Schalke 04 / 2. Bundesliga | 15/1 | 2026 注册名单 | 入选 26 人名单 | 防空；身体；中卫深度 | 中 |
+| 18 | Tarik Muharemovic | Tarik Muharemovic | 2003-02-28 / 23 | 待补充 | Sassuolo / Serie A | 14/0 | 2026 注册名单 | 入选 26 人名单 | 左脚中卫；出球；年轻 | 低 |
+| 6 | Nihad Mujakic | Nihad Mujakic | 1998-04-15 / 28 | 待补充 | Gaziantep / Super Lig | 8/0 | 2026 注册名单 | 入选 26 人名单 | 中卫；对抗；轮换 | 中 |
+| 2 | Stjepan Radeljic | Stjepan Radeljic | 1997-09-05 / 28 | 待补充 | Rijeka / Croatian HNL | 8/0 | 2026 注册名单 | 入选 26 人名单 | 防空；中卫深度；身体 | 低 |
+| 15 | Arjan Malic | Arjan Malic | 2005-08-28 / 20 | 待补充 | Sturm Graz / Austrian Bundesliga | 7/0 | 2026 注册名单；6 月 7 日递补入选 | 顶替 Nidal Celik | 年轻后卫；速度；潜力 | 低 |
 
 ### 中场
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Amir Hadziahmetovic | Amir Hadziahmetovic | 待补充 | 待补充 | Hull City / EFL Championship | 待补充 | 待补充 | 中场主力候选 | 组织；节奏；远射 | 中 |
-| 待补充 | Benjamin Tahirovic | Benjamin Tahirovic | 待补充 | 待补充 | Brondby / Danish Superliga | 待补充 | 待补充 | 待补充 | 后腰；传球；年轻 | 中 |
-| 待补充 | Dzenis Burnic | Dzenis Burnic | 待补充 | 待补充 | Karlsruher SC / 2. Bundesliga | 待补充 | 待补充 | 待补充 | 覆盖；传接；轮换 | 中 |
-| 待补充 | Armin Gigovic | Armin Gigovic | 待补充 | 待补充 | Young Boys / Swiss Super League | 待补充 | 待补充 | 待补充 | 对抗；推进；防守覆盖 | 中 |
-| 待补充 | Ivan Basic | Ivan Basic | 待补充 | 待补充 | Astana / Kazakhstan Premier League | 待补充 | 待补充 | 待补充 | 中场轮换；对抗；经验 | 低 |
-| 待补充 | Esmir Bajraktarevic | Esmir Bajraktarevic | 待补充 | 待补充 | PSV / Eredivisie | 待补充 | 待补充 | 前场创造候选 | 盘带；速度；创造 | 低 |
-| 待补充 | Amar Memic | Amar Memic | 待补充 | 待补充 | Viktoria Plzen / Czech First League | 待补充 | 待补充 | 待补充 | 前场连接；跑动；轮换 | 低 |
-| 待补充 | Ivan Sunjic | Ivan Sunjic | 待补充 | 待补充 | Pafos / Cypriot First Division | 待补充 | 待补充 | 待补充 | 防守中场；身体；经验 | 中 |
-| 待补充 | Kerim Alajbegovic | Kerim Alajbegovic | 待补充 | 待补充 | Red Bull Salzburg / Austrian Bundesliga | 待补充 | 待补充 | 待补充 | 年轻创造；技术；前场变量 | 低 |
-| 待补充 | Ermin Mahmic | Ermin Mahmic | 待补充 | 待补充 | Slovan Liberec / Czech First League | 待补充 | 待补充 | 待补充 | 中场轮换；跑动；覆盖 | 低 |
+| 8 | Amir Hadziahmetovic | Amir Hadziahmetovic | 1997-03-08 / 29 | 待补充 | Hull City / EFL Championship | 36/0 | 2026 注册名单 | 中场主力候选 | 组织；节奏；远射 | 中 |
+| 14 | Benjamin Tahirovic | Benjamin Tahirovic | 2003-03-03 / 23 | 待补充 | Brondby / Danish Superliga | 19/0 | 2026 注册名单 | 入选 26 人名单 | 后腰；传球；年轻 | 中 |
+| 16 | Dzenis Burnic | Dzenis Burnic | 1998-05-22 / 28 | 待补充 | Karlsruher SC / 2. Bundesliga | 10/0 | 2026 注册名单 | 入选 26 人名单 | 覆盖；传接；轮换 | 中 |
+| 13 | Armin Gigovic | Armin Gigovic | 2002-04-06 / 24 | 待补充 | Young Boys / Swiss Super League | 9/1 | 2026 注册名单 | 入选 26 人名单 | 对抗；推进；防守覆盖 | 中 |
+| 22 | Ivan Basic | Ivan Basic | 2002-04-30 / 24 | 待补充 | Astana / Kazakhstan Premier League | 8/0 | 2026 注册名单 | 入选 26 人名单 | 中场轮换；对抗；经验 | 低 |
+| 10 | Esmir Bajraktarevic | Esmir Bajraktarevic | 2005-03-10 / 21 | 待补充 | PSV Eindhoven / Eredivisie | 7/2 | 2026 注册名单 | 前场创造候选 | 盘带；速度；创造 | 低 |
+| 17 | Amar Memic | Amar Memic | 2001-01-20 / 25 | 待补充 | Viktoria Plzen / Czech First League | 6/1 | 2026 注册名单 | 入选 26 人名单 | 前场连接；跑动；轮换 | 低 |
+| 21 | Ivan Sunjic | Ivan Sunjic | 1996-10-09 / 29 | 待补充 | Pafos / Cypriot First Division | 4/0 | 2026 注册名单 | 入选 26 人名单 | 防守中场；身体；经验 | 中 |
+| 26 | Kerim Alajbegovic | Kerim Alajbegovic | 2007-09-21 / 18 | 待补充 | Red Bull Salzburg / Austrian Bundesliga | 2/0 | 2026 注册名单 | 入选 26 人名单 | 年轻创造；技术；前场变量 | 低 |
+| 25 | Ermin Mahmic | Ermin Mahmic | 2004-03-19 / 22 | 待补充 | Slovan Liberec / Czech First League | 2/0 | 2026 注册名单 | 入选 26 人名单 | 中场轮换；跑动；覆盖 | 低 |
 
 ### 前锋
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Edin Dzeko | Edin Dzeko | 待补充 | 待补充 | Schalke 04 / 2. Bundesliga | 待补充 | 2014 核心 | 队长/核心，年龄与负荷需关注 | 支点；头球；终结 | 高 |
-| 待补充 | Ermedin Demirovic | Ermedin Demirovic | 待补充 | 待补充 | VfB Stuttgart / Bundesliga | 待补充 | 待补充 | 锋线核心候选 | 跑位；对抗；禁区终结 | 中 |
-| 待补充 | Samed Bazdar | Samed Bazdar | 待补充 | 待补充 | Jagiellonia Bialystok / Ekstraklasa | 待补充 | 待补充 | 待补充 | 年轻前锋；速度；冲击 | 低 |
-| 待补充 | Haris Tabakovic | Haris Tabakovic | 待补充 | 待补充 | Borussia Monchengladbach / Bundesliga | 待补充 | 待补充 | 待补充 | 高点；支点；终结 | 中 |
-| 待补充 | Jovo Lukic | Jovo Lukic | 待补充 | 待补充 | Universitatea Cluj / Liga I | 待补充 | 待补充 | 待补充 | 禁区终结；身体；轮换 | 低 |
+| 11 | Edin Dzeko | Edin Dzeko | 1986-03-17 / 40 | 待补充 | Schalke 04 / 2. Bundesliga | 146/72 | 2014 核心；2026 注册名单 | 队长/核心，年龄与负荷需关注 | 支点；头球；终结 | 高 |
+| 9 | Ermedin Demirovic | Ermedin Demirovic | 1998-03-25 / 28 | 待补充 | VfB Stuttgart / Bundesliga | 40/12 | 2026 注册名单 | 锋线核心候选 | 跑位；对抗；禁区终结 | 中 |
+| 19 | Samed Bazdar | Samed Bazdar | 2004-01-31 / 22 | 待补充 | Jagiellonia Bialystok / Ekstraklasa | 7/0 | 2026 注册名单 | 入选 26 人名单 | 年轻前锋；速度；冲击 | 低 |
+| 20 | Haris Tabakovic | Haris Tabakovic | 1994-06-20 / 31 | 待补充 | Borussia Monchengladbach / Bundesliga | 6/0 | 2026 注册名单 | 入选 26 人名单 | 高点；支点；终结 | 中 |
+| 24 | Jovo Lukic | Jovo Lukic | 1998-11-28 / 27 | 待补充 | Universitatea Cluj / Liga I | 2/1 | 2026 注册名单 | 入选 26 人名单 | 禁区终结；身体；轮换 | 低 |
 
 ## 4. 补充分析数据
 
 | 维度 | 内容 |
 | --- | --- |
-| 近 10 场正式比赛 | 待补充 |
+| 近 10 场正式比赛 | 公开源未取得完整结构化列表；需从 FIFA/UEFA 比赛页逐场补录 |
 | 关键球员依赖度 | Edin Dzeko、Sead Kolasinac、Ermedin Demirovic |
-| 定位球攻防数据 | 待补充；高点和定位球是重点分析维度 |
+| 定位球攻防数据 | 公开源未取得；高点和定位球是重点分析维度 |
 | 比赛节奏特征 | 可能更重视中路身体对抗和支点进攻，面对加拿大速度时需控制边路空间 |
 | 心理/韧性记录 | 第二次参加世界杯，资格赛淘汰意大利的心理加成需复盘 |
-| 伤病/停赛风险名单 | Dzeko、Kolasinac、Demirovic 状态需赛前确认 |
-| 同大洲/强队历史战绩摘要 | Group B 对手：Canada、Qatar、Switzerland；交锋摘要待补充 |
+| 伤病/停赛风险名单 | Osman Hadzikic、Nidal Celik 已退出 26 人名单；Mladen Jurkas、Arjan Malic 递补；Dzeko、Kolasinac、Demirovic 状态仍需赛前确认 |
+| 同大洲/强队历史战绩摘要 | Group B 对手：Canada、Qatar、Switzerland；交锋摘要公开源未取得 |
 
 ## 5. 来源
 
 - FourFourTwo: Bosnia and Herzegovina World Cup 2026 squad
+- Wikipedia: 2026 FIFA World Cup squads
 - FIFA ranking team page: Bosnia and Herzegovina
 - Sofascore FIFA ranking mirror
 - RotoWire: Canada vs Bosnia and Herzegovina preview

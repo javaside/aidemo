@@ -35,6 +35,7 @@ snapshot_date: 2026-06-12
 - [FIFA: Bosnia and Herzegovina squad announcement](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/bosnia-and-herzegovina-sergej-barbarez-names-squad)
 - [FIFA: USA squad announcement](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/usa-squad-announcement-mauricio-pochettino)
 - [FIFA: Paraguay squad announcement](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/paraguay-squad-announcement-gustavo-alfaro)
+- [Wikipedia: 2026 FIFA World Cup squads](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_squads)：用于二次核对球衣号码、出生日期/年龄、俱乐部、国家队出场/进球、递补名单等基础字段；使用时需与官方来源交叉核验。
 - [Economic Times: Mexico vs South Africa predicted lineups and injury news](https://economictimes.indiatimes.com/news/sports/mexico-vs-south-africa-fifa-world-cup-2026-lineup-key-players-prediction-team-stats-and-injury-news/articleshow/131658169.cms)
 - [Sofascore: FIFA football rankings](https://www.sofascore.com/football/rankings/fifa)
 
@@ -54,6 +55,7 @@ snapshot_date: 2026-06-12
 - [Guardian: Paraguay team guide](https://www.theguardian.com/football/2026/may/31/paraguay-world-cup-2026-team-guide)
 - [Guardian: Pochettino pre-match press conference](https://www.theguardian.com/football/2026/jun/11/usmnt-pochettino-press-conference-paraguay-world-cup)
 - [U.S. Soccer: USMNT vs Paraguay opponent profile](https://www.ussoccer.com/stories/2026/06/usmnt/opponent-profile-paraguay-los-angeles-world-cup-match-preview)
+- [MLSsoccer.com: Austin FC's Jayden Nelson added to Canada's 2026 World Cup roster](https://www.mlssoccer.com/news/austin-fc-s-jayden-nelson-added-to-canada-s-2026-world-cup-roster)
 
 ## 待补充来源
 

@@ -21,9 +21,12 @@ scope: national-teams
 ```text
 docs/worldcup/2026/knowledge-base/
 ├── README.md
+├── completion-rules.md
 ├── team-template.md
 ├── expansion-tracker.md
 ├── sources.md
+├── scripts/
+│   └── audit_gaps.py
 └── teams/
     ├── argentina.md
     ├── bosnia-and-herzegovina.md
@@ -91,3 +94,5 @@ docs/worldcup/2026/knowledge-base/
 3. 伤病、停赛、预计首发必须标注时间点。
 4. 每次更新国家队文件时，更新 `last_updated` 与 `data_status`。
 5. 新增球队时从 `team-template.md` 复制结构，保留所有字段位。
+6. 补全“待补充”字段时遵循 `completion-rules.md`，先补 P0/P1，无法确认的信息保持缺口说明。
+7. 每批补全前后运行 `scripts/audit_gaps.py` 记录缺口变化。
