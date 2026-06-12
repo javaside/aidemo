@@ -23,7 +23,7 @@ data_status: matchday_p1_recent_form_loaded
 | 常用阵型 | 4-3-3、4-2-3-1 |
 | 战术风格 | 主场主动、边路速度、前场压迫、Pochettino 强调心态与自由度 |
 | 今晚比赛 | 美国 vs 巴拉圭；2026-06-13 09:00 北京时间；SoFi Stadium, Inglewood（赛程源显示 2026-06-13 01:00 UTC） |
-| 预计首发阵容 | Turner/Freese; Dest, Richards, Ream/Trusty, Robinson; Adams, McKennie, Reyna/Tillman; Pulisic, Balogun/Pepi, Weah（非官方，待赛前确认） |
+| 预计首发阵容 | Turner/Freese; Dest, Richards/McKenzie, Ream, Antonee Robinson; Adams, McKennie, Tillman/Reyna; Weah, Balogun, Pulisic（RotoWire 2026-06-11 预测，官方首发未公布；Richards 为唯一主要伤疑） |
 | 整体优势 | 主场；Pulisic、McKennie、Adams 等欧洲联赛核心；边路与转换速度强 |
 | 整体劣势 | Pochettino 周期内稳定性仍需证明；门将和中锋首发选择存在不确定性 |
 
@@ -103,7 +103,7 @@ data_status: matchday_p1_recent_form_loaded
 | 比赛节奏特征 | 5/7/9 综合 | 主场可能主动压迫，但 Pochettino 强调放松和自由；转换进攻是关键 |
 | 关键球员依赖度 | 3 阵容可用性 | Christian Pulisic、Tyler Adams、Weston McKennie |
 | 心理/韧性记录 | 11 教练与临场调整 | 1994 后首次主场世界杯，压力与关注度极高 |
-| 伤病/停赛风险名单 | 3 阵容可用性 | Guardian 赛前报道称 26 人均可选；Chris Richards 伤情、医疗组建议不打首战待确认；Adams、Reyna 等长期负荷风险仍需临场再核。停赛：本场为小组赛首战，预选赛黄牌不带入世界杯，无累计黄牌停赛（FIFA 2026 纪律规则） |
+| 伤病/停赛风险名单 | 3 阵容可用性 | RotoWire 2026-06-11 称 Chris Richards 脚踝韧带伤是美国队唯一主要伤疑，若无法出战 Miles Robinson 或 Mark McKenzie 将与 Ream 搭档；美国其他球员不在伤病表，进攻线健康，Reyna 更可能作为替补选项。停赛：本场为小组赛首战，预选赛黄牌不带入世界杯，无累计黄牌停赛（FIFA 2026 纪律规则） |
 | 同大洲/强队历史战绩摘要 | 1 场地与适应性 / 历史交锋 | Group D 对手：Paraguay、Australia、Turkiye；交锋摘要公开源未取得 |
 
 ## 5. 来源
@@ -114,6 +114,7 @@ data_status: matchday_p1_recent_form_loaded
 - FIFA ranking team page: USA
 - Sofascore FIFA ranking mirror
 - Guardian: Pochettino and USMNT preview
+- RotoWire: USA vs Paraguay preview（预测首发、伤停，2026-06-11）
 - U.S. Soccer: USMNT vs Paraguay opponent profile
 - ESPN: USA 2026 results（近 10 场赛果，截至 2026-06-06）
 - FootyStats: 球队级 xG/xGA/零封率（非标准 xG 算法，截至 2026-06-12）

@@ -23,7 +23,7 @@ data_status: matchday_p1_recent_form_loaded
 | 常用阵型 | 4-2-3-1、4-4-2、4-3-3 |
 | 战术风格 | 防守韧性、身体对抗、定位球、快速反击 |
 | 今晚比赛 | 美国 vs 巴拉圭；2026-06-13 09:00 北京时间；SoFi Stadium, Inglewood（赛程源显示 2026-06-13 01:00 UTC） |
-| 预计首发阵容 | Gatito Fernandez/Olveira; Velazquez, Gustavo Gomez, Alderete, Alonso/Caceres; Cubas, Diego Gomez, Bobadilla; Almiron, Enciso/Sosa, Sanabria/Arce（非官方，待赛前确认） |
+| 预计首发阵容 | Roberto Fernandez; Velazquez, Gustavo Gomez, Alderete, Alonso; Cubas, Bobadilla, Diego Gomez; Almiron, Sanabria, Ramon Sosa/Mauricio（RotoWire 2026-06-11 预测，官方首发未公布；Enciso 预计缺席或替补待定） |
 | 整体优势 | 南美对抗强度；Gustavo Gomez 领衔后防；Almiron/Enciso 具备反击爆点 |
 | 整体劣势 | 客场对东道主压力大；阵地进攻创造力不稳定；进球效率需观察 |
 
@@ -84,7 +84,7 @@ data_status: matchday_p1_recent_form_loaded
 | 9 | Antonio Sanabria | Antonio Sanabria | 1996-03-04 / 30 | 180 cm / 公开源未取得 | Cremonese / Serie A | 48/7 | 多届大赛；2026 注册名单 | 中锋候选 | 支点；禁区终结；经验 | 高 |
 | 17 | Kaku | Alejandro Romero Gamarra | 1995-01-11 / 31 | 165 cm / 公开源未取得 | Al-Ain / UAE Pro League | 34/6 | 2026 注册名单 | 入选 26 人名单 | 创造；传球；前场连接 | 中 |
 | 18 | Alex Arce | Alex Arce | 1995-06-16 / 30 | 188 cm / 公开源未取得 | Independiente Rivadavia / Argentine Primera Division | 15/1 | 2026 注册名单 | 入选 26 人名单 | 禁区终结；身体；轮换 | 中 |
-| 19 | Julio Enciso | Julio Enciso | 2004-01-23 / 22 | 168 cm / 公开源未取得 | Strasbourg / Ligue 1 | 32/4 | 2026 注册名单 | 进攻爆点 | 远射；盘带；前场创造 | 中 |
+| 19 | Julio Enciso | Julio Enciso | 2004-01-23 / 22 | 168 cm / 公开源未取得 | Strasbourg / Ligue 1 | 32/4 | 2026 注册名单 | 大腿伤恢复中，RotoWire 2026-06-11 称预计缺席美国战但已带球训练 | 远射；盘带；前场创造 | 中 |
 | 21 | Gabriel Avalos | Gabriel Avalos | 1991-07-09 / 34 | 185 cm / 公开源未取得 | Independiente / Argentine Primera Division | 23/2 | 2026 注册名单 | 入选 26 人名单 | 支点；跑位；终结 | 中 |
 | 25 | Isidro Pitta | Isidro Pitta | 1999-08-14 / 26 | 185 cm / 公开源未取得 | Red Bull Bragantino / Brasileirao | 5/0 | 2026 注册名单 | 入选 26 人名单 | 身体；禁区冲击；高点 | 中 |
 
@@ -103,7 +103,7 @@ data_status: matchday_p1_recent_form_loaded
 | 比赛节奏特征 | 5/7/9 综合 | 面对美国主场压力，可能低位更稳，重视反击和定位球 |
 | 关键球员依赖度 | 3 阵容可用性 | Gustavo Gomez、Miguel Almiron、Julio Enciso/Diego Gomez |
 | 心理/韧性记录 | 11 教练与临场调整 | 16 年后重返世界杯，南美对抗属性强；淘汰赛历史韧性待复盘 |
-| 伤病/停赛风险名单 | 3 阵容可用性 | Julio Enciso 于 6/5 对尼加拉瓜热身赛伤退（右腿，伤情待确认）；Almiron、Sanabria 状态需赛前确认。停赛：本场为小组赛首战，预选赛黄牌不带入世界杯，无累计黄牌停赛（FIFA 2026 纪律规则） |
+| 伤病/停赛风险名单 | 3 阵容可用性 | RotoWire 2026-06-11 称 Damian Bobadilla 膝伤后已恢复合练，应可成为中场选择；Julio Enciso 在对尼加拉瓜热身赛大腿伤后恢复进展不错，但预计缺席美国战或只能作为替补变量。Almiron、Sanabria 未列为主要伤疑。停赛：本场为小组赛首战，预选赛黄牌不带入世界杯，无累计黄牌停赛（FIFA 2026 纪律规则） |
 | 同大洲/强队历史战绩摘要 | 1 场地与适应性 / 历史交锋 | Group D 对手：United States、Australia、Turkiye；交锋摘要公开源未取得 |
 
 ## 5. 来源
@@ -115,5 +115,8 @@ data_status: matchday_p1_recent_form_loaded
 - Sofascore FIFA ranking mirror
 - FIFA: Paraguay squad announcement
 - U.S. Soccer: USMNT vs Paraguay opponent profile
+- RotoWire: USA vs Paraguay preview（预测首发、伤停，2026-06-11）
+- RotoWire: Damian Bobadilla injury update（2026-06-11）
+- RotoWire: Julio Enciso injury update（2026-06-11）
 - ESPN: Paraguay 2026 results（近 10 场赛果，截至 2026-06-05）
 - FootyStats: 球队级 xG/xGA/零封率（非标准 xG 算法，截至 2026-06-12）

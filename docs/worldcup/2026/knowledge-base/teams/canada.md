@@ -4,7 +4,7 @@ team_name_zh: 加拿大
 team_name_en: Canada
 snapshot_date: 2026-06-12
 last_updated: 2026-06-12
-data_status: matchday_p1_recent_form_loaded
+data_status: matchday_p1_xg_loaded
 ---
 
 # 加拿大 Canada
@@ -23,7 +23,7 @@ data_status: matchday_p1_recent_form_loaded
 | 常用阵型 | 4-2-3-1、4-4-2、3-4-3 |
 | 战术风格 | 高强度压迫、边路速度、转换进攻、依赖 Davies/David/Eustaquio 轴线 |
 | 今晚比赛 | 加拿大 vs 波黑；2026-06-13 03:00 北京时间；Toronto Stadium / BMO Field（赛程源显示 2026-06-12 19:00 UTC） |
-| 预计首发阵容 | St. Clair/Crepeau; Johnston, Bombito, Cornelius, Laryea/Davies; Eustaquio, Kone/Choiniere; Buchanan, Osorio/Nelson, Shaffelburg; Jonathan David/Larin（非官方，Davies 首战出场待赛前确认） |
+| 预计首发阵容 | Crepeau; Johnston, Cornelius, De Fougerolles, Laryea; Eustaquio, Kone; Buchanan, Osorio/Ahmed, Shaffelburg; Jonathan David（RotoWire 2026-06-10 预测，官方首发未公布；Davies/Bombito/Shaffelburg 伤后状态需临场确认） |
 | 整体优势 | 东道主主场；Davies 与 David 个人能力强；中前场速度和压迫强 |
 | 整体劣势 | 世界杯正赛取分经验不足；锋线近期效率和后场稳定性需确认 |
 
@@ -93,17 +93,17 @@ data_status: matchday_p1_recent_form_loaded
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
 | 近 10 场正式比赛 | 4 近期状态 | 近 10 场（均为友谊赛，东道主无预选赛，友谊赛降权）5 胜 5 平 0 负、进 10 失 3，10 场不败：6/5 vs 爱尔兰 1-1、6/1 vs 乌兹别克斯坦 2-0、3/31 vs 突尼斯 0-0、3/28 vs 冰岛 2-2、1/17 vs 危地马拉 1-0、2025/11/18 vs 委内瑞拉 2-0、11/13 vs 厄瓜多尔 0-0、10/14 vs 哥伦比亚 0-0、10/10 vs 澳大利亚 1-0、9/9 vs 威尔士 1-0。防守稳但进球偏少、对手多为非顶级（来源 ESPN，截至 2026-06-05） |
-| 进攻创造特征 | 5 进攻创造 | FootyStats 国际赛样本不足、xG 未取得；以 Davies/Buchanan 边路速度突破与 David 前场连接为主（参见战术风格） |
+| 进攻创造特征 | 5 进攻创造 | FootyStats xG 场均 1.33（非标准算法，仅供横向粗比）；场均进球 0.9。以 Davies/Buchanan 边路速度突破与 David 前场连接为主（参见战术风格） |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；David 国家队 77/39 进球率高，支点 Larin 与高点 Promise David 补充 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；Eustaquio 组织+Kone 覆盖，高压体系下更重纵向出球 |
-| 防守组织特征 | 8 防守组织 | FootyStats 国际赛样本不足、xGA 未取得；代理:后防核心 Bombito/Cornelius/Johnston，近10场仅失3球但对手偏弱 |
+| 防守组织特征 | 8 防守组织 | FootyStats xGA 场均 0.68、零封率约 70%；场均失球 0.4。后防核心 Bombito/Cornelius/Johnston，近10场仅失3球但对手偏弱（来源 FootyStats） |
 | 转换攻防特征 | 9 转换攻防 | 结构化反击数据公开源未取得；Marsch 体系强调快速纵向转换，边路速度是反击主武器 |
 | 定位球攻防数据 | 10 定位球攻防 | 公开源未取得；需 FIFA/Opta/StatsBomb 等结构化统计确认 |
 | 教练/临场调整记录 | 11 教练与临场调整 | 结构化换人影响数据公开源未取得；Marsch 偏高压激进，主场可能主动提速（见教练组与比赛节奏特征） |
 | 比赛节奏特征 | 5/7/9 综合 | Marsch 体系下更强调高压和快速纵向推进；主场可能主动提速 |
 | 关键球员依赖度 | 3 阵容可用性 | Alphonso Davies、Jonathan David、Stephen Eustaquio |
 | 心理/韧性记录 | 11 教练与临场调整 | 2022 未取分，本届主场首战心理压力与动力都高 |
-| 伤病/停赛风险名单 | 3 阵容可用性 | Alphonso Davies 仍在腿筋伤恢复期，首战出场待确认；Moise Bombito、Ismael Kone 赛前报道称可出战；Marcelo Flores ACL 伤退并由 Jayden Nelson 顶替。停赛：本场为小组赛首战，预选赛黄牌不带入世界杯，无累计黄牌停赛（FIFA 2026 纪律规则） |
+| 伤病/停赛风险名单 | 3 阵容可用性 | RotoWire 2026-06-10 称 Bombito、Ali Ahmed、Alfie Jones、Davies、Shaffelburg 此前缺席对爱尔兰热身赛但多数预计可赶上首战；Bombito 腿部伤势恢复中、有机会出战，Shaffelburg 腿伤也可能可用；Davies 腿筋伤仍需临场确认。Marcelo Flores ACL 伤退并由 Jayden Nelson 顶替。停赛：本场为小组赛首战，预选赛黄牌不带入世界杯，无累计黄牌停赛（FIFA 2026 纪律规则） |
 | 同大洲/强队历史战绩摘要 | 1 场地与适应性 / 历史交锋 | Group B 对手：Bosnia and Herzegovina、Qatar、Switzerland；交锋摘要公开源未取得 |
 
 ## 5. 来源
@@ -116,3 +116,5 @@ data_status: matchday_p1_recent_form_loaded
 - Sofascore FIFA ranking mirror
 - Guardian: Jesse Marsch pre-match comments
 - ESPN: Canada 2026 results（近 10 场赛果，截至 2026-06-05）
+- RotoWire: Canada vs Bosnia and Herzegovina preview（预测首发、伤停，2026-06-10）
+- FootyStats: Canada team xG/xGA/零封率（非标准 xG 算法，截至 2026-06-12）

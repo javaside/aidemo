@@ -48,6 +48,10 @@ snapshot_date: 2026-06-12
 - [FIFA: Canada v Bosnia and Herzegovina match preview](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/canada-bosnia-and-herzegovina-live-stream-team-news-tickets)
 - [FIFA: USA v Paraguay match preview](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/usa-paraguay-preview-live-stream-team-news-tickets)
 - [RotoWire: Canada vs Bosnia and Herzegovina preview](https://www.rotowire.com/soccer/article/canada-vs-bosnia-and-herzegovina-preview-prediction-lineups-odds-2026-world-cup-group-b-117672)
+- [RotoWire: Haris Tabakovic injury update](https://www.rotowire.com/soccer/player/haris-tabakovic-34965)
+- [RotoWire: USA vs Paraguay preview](https://www.rotowire.com/soccer/article/usa-vs-paraguay-preview-predicted-lineups-team-news-tactical-analysis-2026-world-cup-group-d-117529)
+- [RotoWire: Damian Bobadilla injury update](https://www.rotowire.com/soccer/player/damian-bobadilla-46006)
+- [RotoWire: Julio Enciso injury update](https://www.rotowire.com/soccer/player/julio-enciso-37520)
 - [Guardian: Canada team guide](https://www.theguardian.com/football/2026/may/28/canada-world-cup-2026-team-guide)
 - [Guardian: Canada opening-game feature](https://www.theguardian.com/football/2026/jun/11/canada-world-cup-opening-game-jesse-marsch)
 - [Guardian: Jesse Marsch pre-match comments](https://www.theguardian.com/football/2026/jun/11/jesse-masrch-canada-us-national-anthem-world-cup)
@@ -57,6 +61,7 @@ snapshot_date: 2026-06-12
 - [Guardian: Pochettino pre-match press conference](https://www.theguardian.com/football/2026/jun/11/usmnt-pochettino-press-conference-paraguay-world-cup)
 - [U.S. Soccer: USMNT vs Paraguay opponent profile](https://www.ussoccer.com/stories/2026/06/usmnt/opponent-profile-paraguay-los-angeles-world-cup-match-preview)
 - [MLSsoccer.com: Austin FC's Jayden Nelson added to Canada's 2026 World Cup roster](https://www.mlssoccer.com/news/austin-fc-s-jayden-nelson-added-to-canada-s-2026-world-cup-roster)
+- FootyStats team pages: Bosnia and Herzegovina, Canada, England, France, Germany, South Africa（xG/xGA/零封率；非标准 xG 算法，仅横向粗比，截至 2026-06-12）
 
 ## 待补充来源
 
