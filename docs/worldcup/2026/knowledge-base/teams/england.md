@@ -3,8 +3,8 @@ team_id: ENG
 team_name_zh: 英格兰
 team_name_en: England
 snapshot_date: 2026-06-11
-last_updated: 2026-06-11
-data_status: seed_squad_loaded
+last_updated: 2026-06-12
+data_status: hot_team_p0_official_pdf_loaded
 ---
 
 # 英格兰 England
@@ -35,9 +35,9 @@ data_status: seed_squad_loaded
 | 年龄 | 52（以 2026-06-11 计） |
 | 执教该队起始时间 | 2025 |
 | 执教履历 | 多特蒙德、巴黎圣日耳曼、切尔西、拜仁慕尼黑、英格兰 |
-| 主要荣誉 | 2020-21 欧冠冠军；俱乐部杯赛荣誉待补充 |
+| 主要荣誉 | 2020-21 欧冠冠军；俱乐部杯赛荣誉公开源未取得 |
 | 战术偏好 | 重视结构、压迫触发点和临场调整；可在 4 后卫与 3 中卫间切换 |
-| 关键教练组成员 | 待补充 |
+| 关键教练组成员 | 公开源未取得 |
 
 ## 3. 球员
 
@@ -45,62 +45,63 @@ data_status: seed_squad_loaded
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Jordan Pickford | Jordan Pickford | 待补充 | 待补充 | Everton / Premier League | 待补充 | 2018、2022 主力 | 待补充 | 大脚发动；点球；门线反应 | 高 |
-| 13 | James Trafford | James Trafford | 待补充 | 待补充 | Manchester City / Premier League | 待补充 | 待补充 | 待补充 | 年轻门将；出球；反应 | 低 |
-| 23 | Dean Henderson | Dean Henderson | 待补充 | 待补充 | Crystal Palace / Premier League | 待补充 | 待补充 | 待补充 | 扑救；出击；英超经验 | 中 |
+| 1 | Jordan Pickford | Jordan Pickford | 1994-03-07 / 32 | 185 cm / 公开源未取得 | Everton FC / Premier League | 84/0 | 2018、2022 主力；2026 注册名单 | 入选 26 人名单 | 大脚发动；点球；门线反应 | 高 |
+| 13 | Dean Henderson | Dean Henderson | 1997-03-12 / 29 | 188 cm / 公开源未取得 | Crystal Palace FC / Premier League | 4/0 | 2026 注册名单 | 入选 26 人名单 | 扑救；出击；英超经验 | 中 |
+| 23 | James Trafford | James Trafford | 2002-10-10 / 23 | 197 cm / 公开源未取得 | Manchester City FC / Premier League | 2/0 | 2026 注册名单 | 入选 26 人名单 | 年轻门将；出球；反应 | 低 |
 
 ### 后卫
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2 | Reece James | Reece James | 待补充 | 待补充 | Chelsea / Premier League | 待补充 | 待补充 | 伤病史需重点关注 | 传中；身体；定位球 | 中 |
-| 3 | Myles Lewis-Skelly | Myles Lewis-Skelly | 待补充 | 待补充 | Arsenal / Premier League | 待补充 | 待补充 | 待补充 | 左路技术；内收；年轻活力 | 低 |
-| 5 | John Stones | John Stones | 待补充 | 待补充 | Manchester City / Premier League | 待补充 | 2018、2022 主力 | 伤病史需关注 | 出球；防线组织；中后卫/后腰 | 高 |
-| 6 | Marc Guehi | Marc Guehi | 待补充 | 待补充 | Crystal Palace / Premier League | 待补充 | 待补充 | 待补充 | 预判；一对一；稳定性 | 中 |
-| 12 | Ezri Konsa | Ezri Konsa | 待补充 | 待补充 | Aston Villa / Premier League | 待补充 | 待补充 | 待补充 | 多位置；速度；防守覆盖 | 中 |
-| 14 | Jarrad Branthwaite | Jarrad Branthwaite | 待补充 | 待补充 | Everton / Premier League | 待补充 | 待补充 | 待补充 | 左脚中卫；防空；身体 | 低 |
-| 15 | Trevoh Chalobah | Trevoh Chalobah | 待补充 | 待补充 | Chelsea / Premier League | 待补充 | 待补充 | 待补充 | 多面手；对抗；中卫深度 | 低 |
-| 21 | Tino Livramento | Tino Livramento | 待补充 | 待补充 | Newcastle United / Premier League | 待补充 | 待补充 | 待补充 | 速度；边路推进；回追 | 低 |
+| 2 | Ezri Konsa | Ezri Konsa | 1997-10-23 / 28 | 180 cm / 公开源未取得 | Aston Villa FC / Premier League | 20/1 | 2026 注册名单 | 入选 26 人名单 | 多位置；速度；防守覆盖 | 中 |
+| 3 | Nico O'Reilly | Nico O'Reilly | 2005-03-21 / 21 | 177 cm / 公开源未取得 | Manchester City FC / Premier League | 5/0 | 2026 注册名单 | 官方名单新增，替代种子名单中的 Myles Lewis-Skelly 等口径 | 左路技术；内收；年轻活力 | 低 |
+| 5 | John Stones | John Stones | 1994-05-28 / 32 | 188 cm / 公开源未取得 | Manchester City FC / Premier League | 89/3 | 2018、2022 主力；2026 注册名单 | 伤病史需关注 | 出球；防线组织；中后卫/后腰 | 高 |
+| 6 | Marc Guehi | Marc Guehi | 2000-07-13 / 25 | 183 cm / 公开源未取得 | Manchester City FC / Premier League | 29/1 | 2026 注册名单 | 入选 26 人名单 | 预判；一对一；稳定性 | 中 |
+| 12 | Tino Livramento | Tino Livramento | 2002-11-12 / 23 | 182 cm / 公开源未取得 | Newcastle United FC / Premier League | 6/0 | 2026 注册名单 | 入选 26 人名单 | 速度；边路推进；回追 | 低 |
+| 15 | Dan Burn | Dan Burn | 1992-05-09 / 34 | 201 cm / 公开源未取得 | Newcastle United FC / Premier League | 8/0 | 2026 注册名单 | 官方名单新增，替代种子名单中的 Jarrad Branthwaite/Trevoh Chalobah 口径 | 左脚中卫；防空；身体 | 中 |
+| 24 | Reece James | Reece James | 1999-12-08 / 26 | 180 cm / 公开源未取得 | Chelsea FC / Premier League | 24/1 | 2026 注册名单 | 伤病史需重点关注 | 传中；身体；定位球 | 中 |
+| 25 | Djed Spence | Djed Spence | 2000-08-09 / 25 | 184 cm / 公开源未取得 | Tottenham Hotspur FC / Premier League | 6/0 | 2026 注册名单 | 官方名单新增 | 速度；边路推进；回追 | 低 |
+| 26 | Jarell Quansah | Jarell Quansah | 2003-01-29 / 23 | 190 cm / 公开源未取得 | Bayer 04 Leverkusen / Bundesliga | 3/0 | 2026 注册名单 | 官方名单新增 | 中卫深度；防空；出球 | 低 |
 
 ### 中场
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 4 | Declan Rice | Declan Rice | 待补充 | 待补充 | Arsenal / Premier League | 待补充 | 2022 主力 | 待补充 | 拦截；推进；覆盖 | 高 |
-| 8 | Jude Bellingham | Jude Bellingham | 待补充 | 待补充 | Real Madrid / LaLiga | 待补充 | 2022 主力 | 待补充 | 前插；对抗；大场面 | 高 |
-| 16 | Adam Wharton | Adam Wharton | 待补充 | 待补充 | Crystal Palace / Premier League | 待补充 | 待补充 | 待补充 | 出球；节奏；左脚组织 | 低 |
-| 18 | Kobbie Mainoo | Kobbie Mainoo | 待补充 | 待补充 | Manchester United / Premier League | 待补充 | 待补充 | 待补充 | 摆脱；推进；冷静 | 中 |
-| 19 | Morgan Rogers | Morgan Rogers | 待补充 | 待补充 | Aston Villa / Premier League | 待补充 | 待补充 | 待补充 | 身体；推进；前场多位置 | 低 |
-| 22 | Elliot Anderson | Elliot Anderson | 待补充 | 待补充 | Nottingham Forest / Premier League | 待补充 | 待补充 | 待补充 | 覆盖；对抗；中场轮换 | 低 |
-| 24 | Morgan Gibbs-White | Morgan Gibbs-White | 待补充 | 待补充 | Nottingham Forest / Premier League | 待补充 | 待补充 | 待补充 | 创造；前腰；定位球 | 低 |
+| 4 | Declan Rice | Declan Rice | 1999-01-14 / 27 | 185 cm / 公开源未取得 | Arsenal FC / Premier League | 73/7 | 2022 主力；2026 注册名单 | 入选 26 人名单 | 拦截；推进；覆盖 | 高 |
+| 10 | Jude Bellingham | Jude Bellingham | 2003-06-29 / 22 | 183 cm / 公开源未取得 | Real Madrid C. F. / LaLiga | 48/6 | 2022 主力；2026 注册名单 | 入选 26 人名单 | 前插；对抗；大场面 | 高 |
+| 8 | Elliot Anderson | Elliot Anderson | 2002-11-06 / 23 | 179 cm / 公开源未取得 | Nottingham Forest FC / Premier League | 9/0 | 2026 注册名单 | 入选 26 人名单 | 覆盖；对抗；中场轮换 | 低 |
+| 14 | Jordan Henderson | Jordan Henderson | 1990-06-17 / 35 | 183 cm / 公开源未取得 | Brentford FC / Premier League | 91/3 | 多届大赛；2026 注册名单 | 官方名单新增 | 经验；领导力；中场保护 | 高 |
+| 16 | Kobbie Mainoo | Kobbie Mainoo | 2005-04-19 / 21 | 183 cm / 公开源未取得 | Manchester United FC / Premier League | 14/0 | 2026 注册名单 | 入选 26 人名单 | 摆脱；推进；冷静 | 中 |
+| 17 | Morgan Rogers | Morgan Rogers | 2002-07-26 / 23 | 187 cm / 公开源未取得 | Aston Villa FC / Premier League | 15/1 | 2026 注册名单 | 入选 26 人名单 | 身体；推进；前场多位置 | 低 |
+| 21 | Eberechi Eze | Eberechi Eze | 1998-06-29 / 27 | 178 cm / 公开源未取得 | Arsenal FC / Premier League | 17/3 | 2026 注册名单 | 入选 26 人名单 | 盘带；创造；定位球 | 中 |
 
 ### 前锋
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 7 | Bukayo Saka | Bukayo Saka | 待补充 | 待补充 | Arsenal / Premier League | 待补充 | 2022 主力 | 待补充 | 右路突破；内切；传射 | 高 |
-| 9 | Harry Kane | Harry Kane | 待补充 | 待补充 | Bayern Munich / Bundesliga | 待补充 | 2018、2022 核心 | 待补充 | 终结；回撤组织；点球 | 高 |
-| 10 | Marcus Rashford | Marcus Rashford | 待补充 | 待补充 | Manchester United / Premier League | 待补充 | 2018、2022 成员 | 状态波动需关注 | 速度；反击；内切射门 | 高 |
-| 11 | Anthony Gordon | Anthony Gordon | 待补充 | 待补充 | Newcastle United / Premier League | 待补充 | 待补充 | 待补充 | 速度；压迫；左路突破 | 中 |
-| 17 | Eberechi Eze | Eberechi Eze | 待补充 | 待补充 | Arsenal / Premier League | 待补充 | 待补充 | 待补充 | 盘带；创造；定位球 | 中 |
-| 20 | Cole Palmer | Cole Palmer | 待补充 | 待补充 | Chelsea / Premier League | 待补充 | 待补充 | 待补充 | 左脚创造；点球；终结 | 中 |
-| 25 | Jarrod Bowen | Jarrod Bowen | 待补充 | 待补充 | West Ham United / Premier League | 待补充 | 待补充 | 待补充 | 斜插；压迫；终结 | 中 |
-| 26 | Ollie Watkins | Ollie Watkins | 待补充 | 待补充 | Aston Villa / Premier League | 待补充 | 待补充 | 待补充 | 跑动；纵深；禁区终结 | 中 |
+| 7 | Bukayo Saka | Bukayo Saka | 2001-09-05 / 24 | 178 cm / 公开源未取得 | Arsenal FC / Premier League | 49/14 | 2022 主力；2026 注册名单 | 入选 26 人名单 | 右路突破；内切；传射 | 高 |
+| 9 | Harry Kane | Harry Kane | 1993-07-28 / 32 | 190 cm / 公开源未取得 | FC Bayern Munchen / Bundesliga | 114/79 | 2018、2022 核心；2026 注册名单 | 入选 26 人名单 | 终结；回撤组织；点球 | 高 |
+| 11 | Marcus Rashford | Marcus Rashford | 1997-10-31 / 28 | 180 cm / 公开源未取得 | FC Barcelona / LaLiga | 72/18 | 2018、2022 成员；2026 注册名单 | 状态波动需关注 | 速度；反击；内切射门 | 高 |
+| 18 | Anthony Gordon | Anthony Gordon | 2001-02-24 / 25 | 182 cm / 公开源未取得 | Newcastle United FC / Premier League | 19/3 | 2026 注册名单 | 入选 26 人名单 | 速度；压迫；左路突破 | 中 |
+| 19 | Ollie Watkins | Ollie Watkins | 1995-12-30 / 30 | 180 cm / 公开源未取得 | Aston Villa FC / Premier League | 22/7 | 2026 注册名单 | 入选 26 人名单 | 跑动；纵深；禁区终结 | 中 |
+| 20 | Noni Madueke | Noni Madueke | 2002-03-10 / 24 | 182 cm / 公开源未取得 | Arsenal FC / Premier League | 11/1 | 2026 注册名单 | 官方名单新增，替代种子名单中的 Cole Palmer/Jarrod Bowen 口径 | 右路突破；一对一；内切 | 中 |
+| 22 | Ivan Toney | Ivan Toney | 1996-03-16 / 30 | 185 cm / 公开源未取得 | Al Ahli FC / Saudi Pro League | 8/1 | 2026 注册名单 | 官方名单新增 | 支点；点球；禁区终结 | 中 |
 
 ## 4. 补充分析数据
 
 | 维度 | 内容 |
 | --- | --- |
-| 近 10 场正式比赛 | 待补充 |
+| 近 10 场正式比赛 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/英足总比赛页逐场补录 |
 | 关键球员依赖度 | Harry Kane、Jude Bellingham、Bukayo Saka |
-| 定位球攻防数据 | 待补充 |
-| 比赛节奏特征 | 可控球也可快速打边路；Tuchel 上任后结构和纪律是重点；具体数值待补充 |
+| 定位球攻防数据 | 公开源未取得；需 FIFA/Opta/StatsBomb 等结构化统计确认 |
+| 比赛节奏特征 | 可控球也可快速打边路；Tuchel 上任后结构和纪律是重点；具体数值公开源未取得 |
 | 心理/韧性记录 | 近几届大赛稳定进入后段，但淘汰赛心理压力仍是分析点 |
 | 伤病/停赛风险名单 | Reece James、John Stones 等伤病史需赛前确认 |
-| 同大洲/强队历史战绩摘要 | 待补充 |
+| 同大洲/强队历史战绩摘要 | 公开源未取得完整结构化摘要 |
 
 ## 5. 来源
 
 - England Football: England squad named by Thomas Tuchel
 - England Football: England World Cup squad numbers
+- FIFA: Squad Lists English PDF
 - FIFA Men's World Ranking
