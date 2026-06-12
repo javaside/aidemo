@@ -3,8 +3,8 @@ team_id: GER
 team_name_zh: 德国
 team_name_en: Germany
 snapshot_date: 2026-06-11
-last_updated: 2026-06-11
-data_status: seed_squad_loaded
+last_updated: 2026-06-12
+data_status: hot_team_p0_official_pdf_loaded
 ---
 
 # 德国 Germany
@@ -17,7 +17,7 @@ data_status: seed_squad_loaded
 | 昵称 | Die Mannschaft；德国战车 |
 | 所属足联 | UEFA |
 | 世界杯参赛次数 | 21 次（含德国/西德与 2026，待官方最终口径核对） |
-| 世界杯最好成绩 | 冠军：1954、1974、1990、2014；亚军与季军年份待补充 |
+| 世界杯最好成绩 | 冠军：1954、1974、1990、2014；亚军与季军年份公开源未取得 |
 | 当前 FIFA 排名及积分 | 第 10，1730.37 分（需 FIFA 官方页面核对） |
 | 排名截止日期 | 2026-06-11 |
 | 常用阵型 | 4-2-3-1、4-3-3 |
@@ -35,9 +35,9 @@ data_status: seed_squad_loaded
 | 年龄 | 38（以 2026-06-11 计） |
 | 执教该队起始时间 | 2023 |
 | 执教履历 | Hoffenheim、RB Leipzig、Bayern Munich、Germany |
-| 主要荣誉 | 德甲冠军等俱乐部荣誉待补充 |
+| 主要荣誉 | 德甲冠军等俱乐部荣誉公开源未取得 |
 | 战术偏好 | 灵活变阵，高位压迫，重视中前场技术点和空间占领 |
-| 关键教练组成员 | 待补充 |
+| 关键教练组成员 | 公开源未取得 |
 
 ## 3. 球员
 
@@ -45,61 +45,62 @@ data_status: seed_squad_loaded
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Manuel Neuer | Manuel Neuer | 待补充 | 待补充 | Bayern Munich / Bundesliga | 待补充 | 多届世界杯；2014 冠军 | 年龄与伤病史需关注 | 出击；脚下球；领导力 | 高 |
-| 待补充 | Oliver Baumann | Oliver Baumann | 待补充 | 待补充 | TSG Hoffenheim / Bundesliga | 待补充 | 待补充 | 待补充 | 反应；德甲经验；替补 | 中 |
-| 待补充 | Alexander Nubel | Alexander Nubel | 待补充 | 待补充 | VfB Stuttgart / Bundesliga | 待补充 | 待补充 | 待补充 | 出球；身材；门线 | 中 |
+| 1 | Manuel Neuer | Manuel Neuer | 1986-03-27 / 40 | 193 cm / 公开源未取得 | FC Bayern Munchen / Bundesliga | 124/0 | 多届世界杯；2014 冠军；2026 注册名单 | 年龄与伤病史需关注 | 出击；脚下球；领导力 | 高 |
+| 12 | Oliver Baumann | Oliver Baumann | 1990-06-02 / 36 | 187 cm / 公开源未取得 | TSG Hoffenheim / Bundesliga | 13/0 | 2026 注册名单 | 入选 26 人名单 | 反应；德甲经验；替补 | 中 |
+| 21 | Alexander Nubel | Alexander Nubel | 1996-09-30 / 29 | 193 cm / 公开源未取得 | VfB Stuttgart / Bundesliga | 3/0 | 2026 注册名单 | 入选 26 人名单 | 出球；身材；门线 | 中 |
 
 ### 后卫
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Antonio Rudiger | Antonio Rudiger | 待补充 | 待补充 | Real Madrid / LaLiga | 待补充 | 多届世界杯 | 待补充 | 对抗；速度；防线领袖 | 高 |
-| 待补充 | Jonathan Tah | Jonathan Tah | 待补充 | 待补充 | Bayern Munich / Bundesliga | 待补充 | 待补充 | 待补充 | 防空；对抗；中卫稳定性 | 高 |
-| 待补充 | David Raum | David Raum | 待补充 | 待补充 | RB Leipzig / Bundesliga | 待补充 | 2022 成员 | 待补充 | 传中；边路推进；定位球 | 高 |
-| 待补充 | Nico Schlotterbeck | Nico Schlotterbeck | 待补充 | 待补充 | Borussia Dortmund / Bundesliga | 待补充 | 2022 成员 | 待补充 | 左脚出球；对抗；长传 | 高 |
-| 待补充 | Waldemar Anton | Waldemar Anton | 待补充 | 待补充 | Borussia Dortmund / Bundesliga | 待补充 | 待补充 | 待补充 | 防守纪律；对抗；轮换 | 中 |
-| 待补充 | Malick Thiaw | Malick Thiaw | 待补充 | 待补充 | Newcastle United / Premier League | 待补充 | 待补充 | 待补充 | 身体；防空；中卫深度 | 中 |
-| 待补充 | Nathaniel Brown | Nathaniel Brown | 待补充 | 待补充 | Eintracht Frankfurt / Bundesliga | 待补充 | 待补充 | 待补充 | 左路；年轻；推进 | 低 |
-| 待补充 | Felix Nmecha | Felix Nmecha | 待补充 | 待补充 | Borussia Dortmund / Bundesliga | 待补充 | 待补充 | 待补充 | 多位置；身体；推进 | 中 |
+| 2 | Antonio Rudiger | Antonio Rudiger | 1993-03-03 / 33 | 190 cm / 公开源未取得 | Real Madrid C. F. / LaLiga | 82/3 | 多届世界杯；2026 注册名单 | 入选 26 人名单 | 对抗；速度；防线领袖 | 高 |
+| 4 | Jonathan Tah | Jonathan Tah | 1996-02-11 / 30 | 195 cm / 公开源未取得 | FC Bayern Munchen / Bundesliga | 47/1 | 2026 注册名单 | 入选 26 人名单 | 防空；对抗；中卫稳定性 | 高 |
+| 22 | David Raum | David Raum | 1998-04-22 / 28 | 180 cm / 公开源未取得 | RB Leipzig / Bundesliga | 37/1 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 传中；边路推进；定位球 | 高 |
+| 15 | Nico Schlotterbeck | Nico Schlotterbeck | 1999-12-01 / 26 | 191 cm / 公开源未取得 | Borussia Dortmund / Bundesliga | 27/0 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 左脚出球；对抗；长传 | 高 |
+| 3 | Waldemar Anton | Waldemar Anton | 1996-07-20 / 29 | 189 cm / 公开源未取得 | Borussia Dortmund / Bundesliga | 13/0 | 2026 注册名单 | 入选 26 人名单 | 防守纪律；对抗；轮换 | 中 |
+| 24 | Malick Thiaw | Malick Thiaw | 2001-08-08 / 24 | 194 cm / 公开源未取得 | Newcastle United FC / Premier League | 5/0 | 2026 注册名单 | 入选 26 人名单 | 身体；防空；中卫深度 | 中 |
+| 18 | Nathaniel Brown | Nathaniel Brown | 2003-06-16 / 22 | 176 cm / 公开源未取得 | Eintracht Frankfurt / Bundesliga | 5/0 | 2026 注册名单 | 入选 26 人名单 | 左路；年轻；推进 | 低 |
+| 23 | Felix Nmecha | Felix Nmecha | 2000-10-10 / 25 | 190 cm / 公开源未取得 | Borussia Dortmund / Bundesliga | 8/1 | 2026 注册名单 | 入选 26 人名单 | 多位置；身体；推进 | 中 |
 
 ### 中场
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Joshua Kimmich | Joshua Kimmich | 待补充 | 待补充 | Bayern Munich / Bundesliga | 待补充 | 多届大赛 | 待补充 | 组织；定位球；多位置 | 高 |
-| 待补充 | Leroy Sane | Leroy Sane | 待补充 | 待补充 | Galatasaray / Super Lig | 待补充 | 多届大赛 | 状态波动需关注 | 速度；内切；左脚射门 | 高 |
-| 待补充 | Leon Goretzka | Leon Goretzka | 待补充 | 待补充 | Bayern Munich / Bundesliga | 待补充 | 多届大赛 | 待补充 | 前插；身体；远射 | 高 |
-| 待补充 | Kai Havertz | Kai Havertz | 待补充 | 待补充 | Arsenal / Premier League | 待补充 | 2022 成员 | 待补充 | 前场支点；跑位；多面手 | 高 |
-| 待补充 | Jamal Musiala | Jamal Musiala | 待补充 | 待补充 | Bayern Munich / Bundesliga | 待补充 | 2022 成员 | 待补充 | 盘带；摆脱；肋部突破 | 高 |
-| 待补充 | Florian Wirtz | Florian Wirtz | 待补充 | 待补充 | Liverpool / Premier League | 待补充 | 待补充 | 待补充 | 创造；最后一传；前插 | 高 |
-| 待补充 | Pascal Gross | Pascal Gross | 待补充 | 待补充 | Brighton & Hove Albion / Premier League | 待补充 | 待补充 | 待补充 | 传球；定位球；经验 | 中 |
-| 待补充 | Nadiem Amiri | Nadiem Amiri | 待补充 | 待补充 | Mainz 05 / Bundesliga | 待补充 | 待补充 | 待补充 | 传球；控球；轮换 | 中 |
-| 待补充 | Aleksandar Pavlovic | Aleksandar Pavlovic | 待补充 | 待补充 | Bayern Munich / Bundesliga | 待补充 | 待补充 | 待补充 | 后腰；出球；年轻 | 中 |
-| 待补充 | Angelo Stiller | Angelo Stiller | 待补充 | 待补充 | VfB Stuttgart / Bundesliga | 待补充 | 待补充 | 待补充 | 节奏；左脚传球；防守站位 | 中 |
-| 待补充 | Jamie Leweling | Jamie Leweling | 待补充 | 待补充 | VfB Stuttgart / Bundesliga | 待补充 | 待补充 | 待补充 | 速度；边路；反击 | 低 |
-| 待补充 | Assan Ouedraogo | Assan Ouedraogo | 待补充 | 待补充 | RB Leipzig / Bundesliga | 待补充 | 待补充 | 待补充 | 年轻中场；身体；推进 | 低 |
+| 6 | Joshua Kimmich | Joshua Kimmich | 1995-02-08 / 31 | 177 cm / 公开源未取得 | FC Bayern Munchen / Bundesliga | 110/10 | 多届大赛；2026 注册名单 | 入选 26 人名单 | 组织；定位球；多位置 | 高 |
+| 19 | Leroy Sane | Leroy Sane | 1996-01-11 / 30 | 183 cm / 公开源未取得 | Galatasaray SK / Super Lig | 76/17 | 多届大赛；2026 注册名单 | 状态波动需关注 | 速度；内切；左脚射门 | 高 |
+| 8 | Leon Goretzka | Leon Goretzka | 1995-02-06 / 31 | 189 cm / 公开源未取得 | FC Bayern Munchen / Bundesliga | 70/15 | 多届大赛；2026 注册名单 | 入选 26 人名单 | 前插；身体；远射 | 高 |
+| 7 | Kai Havertz | Kai Havertz | 1999-06-11 / 27 | 190 cm / 公开源未取得 | Arsenal FC / Premier League | 58/22 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 前场支点；跑位；多面手 | 高 |
+| 10 | Jamal Musiala | Jamal Musiala | 2003-02-26 / 23 | 180 cm / 公开源未取得 | FC Bayern Munchen / Bundesliga | 42/9 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 盘带；摆脱；肋部突破 | 高 |
+| 17 | Florian Wirtz | Florian Wirtz | 2003-05-03 / 23 | 176 cm / 公开源未取得 | Liverpool FC / Premier League | 41/11 | 2026 注册名单 | 入选 26 人名单 | 创造；最后一传；前插 | 高 |
+| 13 | Pascal Gross | Pascal Gross | 1991-06-15 / 34 | 181 cm / 公开源未取得 | Brighton & Hove Albion FC / Premier League | 18/1 | 2026 注册名单 | 入选 26 人名单 | 传球；定位球；经验 | 中 |
+| 20 | Nadiem Amiri | Nadiem Amiri | 1996-10-27 / 29 | 178 cm / 公开源未取得 | Mainz 05 / Bundesliga | 11/1 | 2026 注册名单 | 入选 26 人名单 | 传球；控球；轮换 | 中 |
+| 5 | Aleksandar Pavlovic | Aleksandar Pavlovic | 2004-05-03 / 22 | 188 cm / 公开源未取得 | FC Bayern Munchen / Bundesliga | 11/1 | 2026 注册名单 | 入选 26 人名单 | 后腰；出球；年轻 | 中 |
+| 16 | Angelo Stiller | Angelo Stiller | 2001-04-04 / 25 | 183 cm / 公开源未取得 | VfB Stuttgart / Bundesliga | 8/0 | 2026 注册名单 | 入选 26 人名单 | 节奏；左脚传球；防守站位 | 中 |
+| 9 | Jamie Leweling | Jamie Leweling | 2001-02-26 / 25 | 185 cm / 公开源未取得 | VfB Stuttgart / Bundesliga | 5/1 | 2026 注册名单 | 入选 26 人名单 | 速度；边路；反击 | 低 |
+| 25 | Assan Ouedraogo | Assan Ouedraogo | 2006-05-09 / 20 | 191 cm / 公开源未取得 | RB Leipzig / Bundesliga | 1/1 | 2026 注册名单 | 入选 26 人名单 | 年轻中场；身体；推进 | 低 |
 
 ### 前锋
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Nick Woltemade | Nick Woltemade | 待补充 | 待补充 | Newcastle United / Premier League | 待补充 | 待补充 | 待补充 | 身高；支点；脚下技术 | 低 |
-| 待补充 | Deniz Undav | Deniz Undav | 待补充 | 待补充 | VfB Stuttgart / Bundesliga | 待补充 | 待补充 | 待补充 | 禁区终结；跑位；配合 | 中 |
-| 待补充 | Maximilian Beier | Maximilian Beier | 待补充 | 待补充 | Borussia Dortmund / Bundesliga | 待补充 | 待补充 | 待补充 | 速度；反击；年轻前锋 | 中 |
+| 11 | Nick Woltemade | Nick Woltemade | 2002-02-14 / 24 | 198 cm / 公开源未取得 | Newcastle United FC / Premier League | 11/4 | 2026 注册名单 | 入选 26 人名单 | 身高；支点；脚下技术 | 低 |
+| 26 | Deniz Undav | Deniz Undav | 1996-07-19 / 29 | 179 cm / 公开源未取得 | VfB Stuttgart / Bundesliga | 9/6 | 2026 注册名单 | 入选 26 人名单 | 禁区终结；跑位；配合 | 中 |
+| 14 | Maximilian Beier | Maximilian Beier | 2002-10-17 / 23 | 185 cm / 公开源未取得 | Borussia Dortmund / Bundesliga | 9/0 | 2026 注册名单 | 入选 26 人名单 | 速度；反击；年轻前锋 | 中 |
 
 ## 4. 补充分析数据
 
 | 维度 | 内容 |
 | --- | --- |
-| 近 10 场正式比赛 | 待补充 |
+| 近 10 场正式比赛 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/德国足协比赛页逐场补录 |
 | 关键球员依赖度 | Jamal Musiala、Florian Wirtz、Antonio Rudiger/Joshua Kimmich |
-| 定位球攻防数据 | 待补充 |
+| 定位球攻防数据 | 公开源未取得；需 FIFA/Opta/StatsBomb 等结构化统计确认 |
 | 比赛节奏特征 | 高位压迫与前场技术结合；防守转换质量待观察 |
 | 心理/韧性记录 | 历史底蕴强，但近几届世界杯小组赛风险需重点分析 |
 | 伤病/停赛风险名单 | Neuer、Sane、Musiala 等需赛前确认 |
-| 同大洲/强队历史战绩摘要 | 待补充 |
+| 同大洲/强队历史战绩摘要 | 公开源未取得完整结构化摘要 |
 
 ## 5. 来源
 
 - FourFourTwo: Germany World Cup 2026 squad
+- FIFA: Squad Lists English PDF
 - FIFA Men's World Ranking

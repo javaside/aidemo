@@ -3,8 +3,8 @@ team_id: BRA
 team_name_zh: 巴西
 team_name_en: Brazil
 snapshot_date: 2026-06-11
-last_updated: 2026-06-11
-data_status: seed_squad_loaded
+last_updated: 2026-06-12
+data_status: hot_team_p0_official_pdf_loaded
 ---
 
 # 巴西 Brazil
@@ -35,9 +35,9 @@ data_status: seed_squad_loaded
 | 年龄 | 67（以 2026-06-11 计） |
 | 执教该队起始时间 | 2025（待官方精确日期核对） |
 | 执教履历 | AC Milan、Chelsea、Paris Saint-Germain、Real Madrid、Bayern Munich、Napoli、Everton、Brazil |
-| 主要荣誉 | 多次欧冠冠军、五大联赛冠军；国家队荣誉待补充 |
+| 主要荣誉 | 多次欧冠冠军、五大联赛冠军；国家队荣誉公开源未取得 |
 | 战术偏好 | 重视球星自由度和攻守平衡；杯赛经验极强；临场调整成熟 |
-| 关键教练组成员 | 待补充 |
+| 关键教练组成员 | 公开源未取得 |
 
 ## 3. 球员
 
@@ -45,61 +45,62 @@ data_status: seed_squad_loaded
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Alisson | Alisson Becker | 待补充 | 待补充 | Liverpool / Premier League | 待补充 | 2018、2022 主力 | 待补充 | 门线；一对一；脚下球 | 高 |
-| 待补充 | Ederson | Ederson | 待补充 | 待补充 | Fenerbahce / Super Lig | 待补充 | 2018、2022 成员 | 待补充 | 长传；出球；覆盖范围 | 高 |
-| 待补充 | Weverton | Weverton | 待补充 | 待补充 | Gremio / Brasileirao | 待补充 | 待补充 | 待补充 | 经验；扑救；替补稳定性 | 中 |
+| 1 | Alisson | Alisson Becker | 1992-10-02 / 33 | 193 cm / 公开源未取得 | Liverpool FC / Premier League | 78/0 | 2018、2022 主力；2026 注册名单 | 入选 26 人名单 | 门线；一对一；脚下球 | 高 |
+| 23 | Ederson | Ederson Santana de Moraes | 1993-08-17 / 32 | 188 cm / 公开源未取得 | Fenerbahce SK / Super Lig | 32/0 | 2018、2022 成员；2026 注册名单 | 入选 26 人名单 | 长传；出球；覆盖范围 | 高 |
+| 12 | Weverton | Weverton Pereira da Silva | 1987-12-13 / 38 | 189 cm / 公开源未取得 | Gremio FBPA / Brasileirao | 11/0 | 2026 注册名单 | 入选 26 人名单 | 经验；扑救；替补稳定性 | 中 |
 
 ### 后卫
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Marquinhos | Marquinhos | 待补充 | 待补充 | Paris Saint-Germain / Ligue 1 | 待补充 | 多届世界杯 | 待补充 | 防线指挥；出球；防空 | 高 |
-| 待补充 | Danilo Luiz | Danilo Luiz | 待补充 | 待补充 | Flamengo / Brasileirao | 待补充 | 多届世界杯 | 年龄风险需关注 | 多面手；经验；站位 | 高 |
-| 待补充 | Alex Sandro | Alex Sandro | 待补充 | 待补充 | Flamengo / Brasileirao | 待补充 | 多届世界杯 | 年龄风险需关注 | 左路防守；经验；传中 | 高 |
-| 待补充 | Gabriel Magalhaes | Gabriel Magalhaes | 待补充 | 待补充 | Arsenal / Premier League | 待补充 | 待补充 | 待补充 | 防空；对抗；左脚中卫 | 高 |
-| 待补充 | Bremer | Gleison Bremer | 待补充 | 待补充 | Juventus / Serie A | 待补充 | 待补充 | 伤病史需确认 | 对抗；防空；上抢 | 高 |
-| 待补充 | Roger Ibanez | Roger Ibanez | 待补充 | 待补充 | Al-Ahli / Saudi Pro League | 待补充 | 待补充 | 待补充 | 速度；对抗；轮换 | 中 |
-| 待补充 | Douglas Santos | Douglas Santos | 待补充 | 待补充 | Zenit Saint Petersburg / Russian Premier League | 待补充 | 待补充 | 待补充 | 左路传中；经验；推进 | 中 |
-| 待补充 | Leo Pereira | Leo Pereira | 待补充 | 待补充 | Flamengo / Brasileirao | 待补充 | 待补充 | 待补充 | 中卫深度；身体；防空 | 中 |
+| 4 | Marquinhos | Marquinhos | 1994-05-14 / 32 | 183 cm / 公开源未取得 | Paris Saint-Germain / Ligue 1 | 105/7 | 多届世界杯；2026 注册名单 | 入选 26 人名单 | 防线指挥；出球；防空 | 高 |
+| 13 | Danilo Luiz | Danilo Luiz | 1991-07-15 / 34 | 184 cm / 公开源未取得 | CR Flamengo / Brasileirao | 70/1 | 多届世界杯；2026 注册名单 | 年龄风险需关注 | 多面手；经验；站位 | 高 |
+| 6 | Alex Sandro | Alex Sandro | 1991-01-26 / 35 | 180 cm / 公开源未取得 | CR Flamengo / Brasileirao | 45/2 | 多届世界杯；2026 注册名单 | 年龄风险需关注 | 左路防守；经验；传中 | 高 |
+| 3 | Gabriel Magalhaes | Gabriel Magalhaes | 1997-12-19 / 28 | 190 cm / 公开源未取得 | Arsenal FC / Premier League | 17/1 | 2026 注册名单 | 入选 26 人名单 | 防空；对抗；左脚中卫 | 高 |
+| 14 | Bremer | Gleison Bremer | 1997-03-18 / 29 | 188 cm / 公开源未取得 | Juventus FC / Serie A | 8/1 | 2026 注册名单 | 伤病史需确认 | 对抗；防空；上抢 | 高 |
+| 24 | Roger Ibanez | Roger Ibanez | 1998-11-23 / 27 | 186 cm / 公开源未取得 | Al Ahli FC / Saudi Pro League | 7/0 | 2026 注册名单 | 入选 26 人名单 | 速度；对抗；轮换 | 中 |
+| 16 | Douglas Santos | Douglas Santos | 1994-03-22 / 32 | 173 cm / 公开源未取得 | FC Zenit St. Petersburg / Russian Premier League | 7/0 | 2026 注册名单 | 入选 26 人名单 | 左路传中；经验；推进 | 中 |
+| 15 | Leo Pereira | Leo Pereira | 1996-01-31 / 30 | 189 cm / 公开源未取得 | CR Flamengo / Brasileirao | 4/0 | 2026 注册名单 | 入选 26 人名单 | 中卫深度；身体；防空 | 中 |
 
 ### 中场
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Casemiro | Casemiro | 待补充 | 待补充 | Manchester United / Premier League | 待补充 | 2018、2022 主力 | 年龄与速度风险需关注 | 拦截；经验；定位球防守 | 高 |
-| 待补充 | Ederson | Ederson | 待补充 | 待补充 | Atalanta / Serie A | 待补充 | 待补充 | 待补充 | 覆盖；对抗；中场推进 | 中 |
-| 待补充 | Lucas Paqueta | Lucas Paqueta | 待补充 | 待补充 | Flamengo / Brasileirao | 待补充 | 2022 主力级 | 待补充 | 创造；左脚；前场连接 | 高 |
-| 待补充 | Bruno Guimaraes | Bruno Guimaraes | 待补充 | 待补充 | Newcastle United / Premier League | 待补充 | 2022 成员 | 待补充 | 组织；对抗；推进 | 高 |
-| 待补充 | Fabinho | Fabinho | 待补充 | 待补充 | Al-Ittihad / Saudi Pro League | 待补充 | 待补充 | 年龄与机动性需关注 | 防守站位；经验；后腰 | 高 |
-| 待补充 | Danilo Santos | Danilo Santos | 待补充 | 待补充 | Botafogo / Brasileirao | 待补充 | 待补充 | 待补充 | 防守中场；覆盖；年轻变量 | 低 |
+| 5 | Casemiro | Casemiro | 1992-02-23 / 34 | 185 cm / 公开源未取得 | Manchester United FC / Premier League | 86/9 | 2018、2022 主力；2026 注册名单 | 年龄与速度风险需关注 | 拦截；经验；定位球防守 | 高 |
+| 2 | Ederson | Ederson Jose dos Santos Lourenco da Silva | 1999-07-07 / 26 | 184 cm / 公开源未取得 | Atalanta Bergamo / Serie A | 3/0 | 2026 注册名单 | 入选 26 人名单 | 覆盖；对抗；中场推进 | 中 |
+| 20 | Lucas Paqueta | Lucas Paqueta | 1997-08-27 / 28 | 183 cm / 公开源未取得 | CR Flamengo / Brasileirao | 63/13 | 2022 主力级；2026 注册名单 | 入选 26 人名单 | 创造；左脚；前场连接 | 高 |
+| 8 | Bruno Guimaraes | Bruno Guimaraes | 1997-11-16 / 28 | 182 cm / 公开源未取得 | Newcastle United FC / Premier League | 43/3 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 组织；对抗；推进 | 高 |
+| 17 | Fabinho | Fabinho | 1993-10-23 / 32 | 188 cm / 公开源未取得 | Al Ittihad / Saudi Pro League | 33/0 | 2026 注册名单 | 年龄与机动性需关注 | 防守站位；经验；后腰 | 高 |
+| 18 | Danilo Santos | Danilo Santos | 2001-04-29 / 25 | 177 cm / 公开源未取得 | Botafogo / Brasileirao | 4/2 | 2026 注册名单 | 入选 26 人名单 | 防守中场；覆盖；年轻变量 | 低 |
 
 ### 前锋
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Neymar | Neymar | 待补充 | 待补充 | Santos / Brasileirao | 待补充 | 多届世界杯 | 健康与负荷为关键风险 | 盘带；创造；定位球 | 高 |
-| 待补充 | Vinicius Junior | Vinicius Junior | 待补充 | 待补充 | Real Madrid / LaLiga | 待补充 | 2022 成员 | 待补充 | 左路爆点；速度；突破 | 高 |
-| 待补充 | Raphinha | Raphinha | 待补充 | 待补充 | Barcelona / LaLiga | 待补充 | 2022 成员 | 待补充 | 右路内切；传中；压迫 | 高 |
-| 待补充 | Gabriel Martinelli | Gabriel Martinelli | 待补充 | 待补充 | Arsenal / Premier League | 待补充 | 2022 成员 | 待补充 | 速度；冲刺；压迫 | 中 |
-| 待补充 | Matheus Cunha | Matheus Cunha | 待补充 | 待补充 | Manchester United / Premier League | 待补充 | 待补充 | 待补充 | 回撤连接；对抗；终结 | 中 |
-| 待补充 | Endrick | Endrick | 待补充 | 待补充 | Lyon / Ligue 1 | 待补充 | 待补充 | 待补充 | 爆发；射门；年轻天赋 | 低 |
-| 待补充 | Luiz Henrique | Luiz Henrique | 待补充 | 待补充 | Zenit Saint Petersburg / Russian Premier League | 待补充 | 待补充 | 待补充 | 边路突破；速度；左脚 | 低 |
-| 待补充 | Igor Thiago | Igor Thiago | 待补充 | 待补充 | Brentford / Premier League | 待补充 | 待补充 | 待补充 | 支点；禁区终结；对抗 | 低 |
-| 待补充 | Rayan | Rayan | 待补充 | 待补充 | Bournemouth / Premier League | 待补充 | 待补充 | 待补充 | 年轻边锋；速度；冲击 | 低 |
+| 10 | Neymar | Neymar | 1992-02-05 / 34 | 175 cm / 公开源未取得 | Santos FC / Brasileirao | 128/79 | 多届世界杯；2026 注册名单 | 健康与负荷为关键风险 | 盘带；创造；定位球 | 高 |
+| 7 | Vinicius Junior | Vinicius Junior | 2000-07-12 / 25 | 176 cm / 公开源未取得 | Real Madrid C. F. / LaLiga | 49/9 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 左路爆点；速度；突破 | 高 |
+| 11 | Raphinha | Raphinha | 1996-12-14 / 29 | 176 cm / 公开源未取得 | FC Barcelona / LaLiga | 39/11 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 右路内切；传中；压迫 | 高 |
+| 22 | Gabriel Martinelli | Gabriel Martinelli | 2001-06-18 / 24 | 178 cm / 公开源未取得 | Arsenal FC / Premier League | 23/4 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 速度；冲刺；压迫 | 中 |
+| 9 | Matheus Cunha | Matheus Cunha | 1999-05-27 / 27 | 183 cm / 公开源未取得 | Manchester United FC / Premier League | 23/1 | 2026 注册名单 | 入选 26 人名单 | 回撤连接；对抗；终结 | 中 |
+| 19 | Endrick | Endrick | 2006-07-21 / 19 | 172 cm / 公开源未取得 | Olympique Lyonnais / Ligue 1 | 17/4 | 2026 注册名单 | 入选 26 人名单 | 爆发；射门；年轻天赋 | 低 |
+| 21 | Luiz Henrique | Luiz Henrique | 2001-01-02 / 25 | 182 cm / 公开源未取得 | FC Zenit St. Petersburg / Russian Premier League | 15/2 | 2026 注册名单 | 入选 26 人名单 | 边路突破；速度；左脚 | 低 |
+| 25 | Igor Thiago | Igor Thiago | 2001-06-26 / 24 | 190 cm / 公开源未取得 | Brentford FC / Premier League | 4/2 | 2026 注册名单 | 入选 26 人名单 | 支点；禁区终结；对抗 | 低 |
+| 26 | Rayan | Rayan | 2006-08-03 / 19 | 187 cm / 公开源未取得 | AFC Bournemouth / Premier League | 2/1 | 2026 注册名单 | 入选 26 人名单 | 年轻边锋；速度；冲击 | 低 |
 
 ## 4. 补充分析数据
 
 | 维度 | 内容 |
 | --- | --- |
-| 近 10 场正式比赛 | 待补充 |
+| 近 10 场正式比赛 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/巴西足协比赛页逐场补录 |
 | 关键球员依赖度 | Vinicius Junior、Neymar、Marquinhos/Alisson |
-| 定位球攻防数据 | 待补充 |
+| 定位球攻防数据 | 公开源未取得；需 FIFA/Opta/StatsBomb 等结构化统计确认 |
 | 比赛节奏特征 | 前场个人能力强，转换速度快；Ancelotti 下可能更重视中场平衡 |
 | 心理/韧性记录 | 五冠底蕴强，但 2002 后淘汰赛对欧洲强队战绩需单独复盘 |
 | 伤病/停赛风险名单 | Neymar、Bremer、Casemiro 等需赛前确认 |
-| 同大洲/强队历史战绩摘要 | 待补充 |
+| 同大洲/强队历史战绩摘要 | 公开源未取得完整结构化摘要 |
 
 ## 5. 来源
 
 - FourFourTwo: Brazil World Cup 2026 squad
+- FIFA: Squad Lists English PDF
 - FIFA Men's World Ranking

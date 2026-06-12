@@ -3,8 +3,8 @@ team_id: POR
 team_name_zh: 葡萄牙
 team_name_en: Portugal
 snapshot_date: 2026-06-11
-last_updated: 2026-06-11
-data_status: seed_squad_loaded_needs_final_count_check
+last_updated: 2026-06-12
+data_status: hot_team_p0_official_pdf_loaded
 ---
 
 # 葡萄牙 Portugal
@@ -35,9 +35,9 @@ data_status: seed_squad_loaded_needs_final_count_check
 | 年龄 | 52（以 2026-06-11 计） |
 | 执教该队起始时间 | 2023 |
 | 执教履历 | Swansea City、Wigan Athletic、Everton、Belgium、Portugal |
-| 主要荣誉 | 2013 FA Cup；国家队成绩待补充 |
+| 主要荣誉 | 2013 FA Cup；国家队成绩公开源未取得 |
 | 战术偏好 | 偏控球和前场多点进攻；可三中卫也可四后卫；倾向保留老将核心 |
-| 关键教练组成员 | 待补充 |
+| 关键教练组成员 | 公开源未取得 |
 
 ## 3. 球员
 
@@ -45,64 +45,64 @@ data_status: seed_squad_loaded_needs_final_count_check
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Diogo Costa | Diogo Costa | 待补充 | 待补充 | Porto / Primeira Liga | 待补充 | 2022 主力 | 待补充 | 点球；出球；门线 | 高 |
-| 待补充 | Jose Sa | Jose Sa | 待补充 | 待补充 | Wolverhampton Wanderers / Premier League | 待补充 | 待补充 | 待补充 | 扑救；英超经验；替补 | 中 |
-| 待补充 | Rui Silva | Rui Silva | 待补充 | 待补充 | Sporting CP / Primeira Liga | 待补充 | 待补充 | 待补充 | 门线；出击；替补深度 | 中 |
-| 待补充 | Ricardo Velho | Ricardo Velho | 待补充 | 待补充 | Genclerbirligi / Super Lig | 待补充 | 待补充 | 待补充 | 待补充 | 低 |
+| 1 | Diogo Costa | Diogo Costa | 1999-09-19 / 26 | 188 cm / 公开源未取得 | FC Porto / Primeira Liga | 43/0 | 2022 主力；2026 注册名单 | 入选 26 人名单 | 点球；出球；门线 | 高 |
+| 12 | Jose Sa | Jose Sa | 1993-01-17 / 33 | 192 cm / 公开源未取得 | Wolverhampton Wanderers FC / Premier League | 5/0 | 2026 注册名单 | 入选 26 人名单 | 扑救；英超经验；替补 | 中 |
+| 22 | Rui Silva | Rui Silva | 1994-02-07 / 32 | 191 cm / 公开源未取得 | Sporting CP / Primeira Liga | 3/0 | 2026 注册名单 | 入选 26 人名单 | 门线；出击；替补深度 | 中 |
 
 ### 后卫
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Ruben Dias | Ruben Dias | 待补充 | 待补充 | Manchester City / Premier League | 待补充 | 2022 主力 | 待补充 | 防线指挥；对抗；防空 | 高 |
-| 待补充 | Joao Cancelo | Joao Cancelo | 待补充 | 待补充 | Barcelona / LaLiga | 待补充 | 多届大赛 | 待补充 | 内收组织；传中；边路技术 | 高 |
-| 待补充 | Nelson Semedo | Nelson Semedo | 待补充 | 待补充 | Fenerbahce / Super Lig | 待补充 | 多届大赛 | 待补充 | 速度；右路防守；经验 | 高 |
-| 待补充 | Nuno Mendes | Nuno Mendes | 待补充 | 待补充 | Paris Saint-Germain / Ligue 1 | 待补充 | 2022 成员 | 伤病史需关注 | 爆发；左路推进；回追 | 高 |
-| 待补充 | Diogo Dalot | Diogo Dalot | 待补充 | 待补充 | Manchester United / Premier League | 待补充 | 2022 成员 | 待补充 | 多面手；传中；防守覆盖 | 高 |
-| 待补充 | Goncalo Inacio | Goncalo Inacio | 待补充 | 待补充 | Sporting CP / Primeira Liga | 待补充 | 待补充 | 待补充 | 左脚中卫；出球；防空 | 中 |
-| 待补充 | Renato Veiga | Renato Veiga | 待补充 | 待补充 | Villarreal / LaLiga | 待补充 | 待补充 | 待补充 | 左脚；多位置；身体 | 低 |
-| 待补充 | Tomas Araujo | Tomas Araujo | 待补充 | 待补充 | Benfica / Primeira Liga | 待补充 | 待补充 | 待补充 | 中卫深度；出球；身体 | 低 |
+| 3 | Ruben Dias | Ruben Dias | 1997-05-14 / 29 | 187 cm / 公开源未取得 | Manchester City FC / Premier League | 76/3 | 2022 主力；2026 注册名单 | 入选 26 人名单 | 防线指挥；对抗；防空 | 高 |
+| 20 | Joao Cancelo | Joao Cancelo | 1994-05-27 / 32 | 173 cm / 公开源未取得 | FC Barcelona / LaLiga | 68/12 | 多届大赛；2026 注册名单 | 入选 26 人名单 | 内收组织；传中；边路技术 | 高 |
+| 2 | Nelson Semedo | Nelson Semedo | 1993-11-16 / 32 | 179 cm / 公开源未取得 | Fenerbahce SK / Super Lig | 50/0 | 多届大赛；2026 注册名单 | 入选 26 人名单 | 速度；右路防守；经验 | 高 |
+| 25 | Nuno Mendes | Nuno Mendes | 2002-06-19 / 23 | 177 cm / 公开源未取得 | Paris Saint-Germain / Ligue 1 | 44/1 | 2022 成员；2026 注册名单 | 伤病史需关注 | 爆发；左路推进；回追 | 高 |
+| 5 | Diogo Dalot | Diogo Dalot | 1999-03-18 / 27 | 184 cm / 公开源未取得 | Manchester United FC / Premier League | 35/3 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 多面手；传中；防守覆盖 | 高 |
+| 14 | Goncalo Inacio | Goncalo Inacio | 2001-08-25 / 24 | 185 cm / 公开源未取得 | Sporting CP / Primeira Liga | 22/2 | 2026 注册名单 | 入选 26 人名单 | 左脚中卫；出球；防空 | 中 |
+| 13 | Renato Veiga | Renato Veiga | 2003-07-29 / 22 | 188 cm / 公开源未取得 | Villarreal CF / LaLiga | 13/1 | 2026 注册名单 | 入选 26 人名单 | 左脚；多位置；身体 | 低 |
+| 4 | Tomas Araujo | Tomas Araujo | 2002-05-16 / 24 | 187 cm / 公开源未取得 | SL Benfica / Primeira Liga | 5/0 | 2026 注册名单 | 入选 26 人名单 | 中卫深度；出球；身体 | 低 |
 
 ### 中场
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Bernardo Silva | Bernardo Silva | 待补充 | 待补充 | Manchester City / Premier League | 待补充 | 多届大赛 | 待补充 | 控球；肋部创造；压迫 | 高 |
-| 待补充 | Bruno Fernandes | Bruno Fernandes | 待补充 | 待补充 | Manchester United / Premier League | 待补充 | 2018、2022 成员 | 待补充 | 直塞；远射；定位球 | 高 |
-| 待补充 | Ruben Neves | Ruben Neves | 待补充 | 待补充 | Al-Hilal / Saudi Pro League | 待补充 | 多届大赛 | 待补充 | 长传；远射；节奏 | 高 |
-| 待补充 | Vitinha | Vitinha | 待补充 | 待补充 | Paris Saint-Germain / Ligue 1 | 待补充 | 2022 成员 | 待补充 | 控球；小范围摆脱；推进 | 高 |
-| 待补充 | Joao Neves | Joao Neves | 待补充 | 待补充 | Paris Saint-Germain / Ligue 1 | 待补充 | 待补充 | 待补充 | 覆盖；抢断；活力 | 中 |
-| 待补充 | Matheus Nunes | Matheus Nunes | 待补充 | 待补充 | Manchester City / Premier League | 待补充 | 2022 成员 | 待补充 | 推进；身体；转换 | 中 |
-| 待补充 | Francisco Trincao | Francisco Trincao | 待补充 | 待补充 | Sporting CP / Primeira Liga | 待补充 | 待补充 | 待补充 | 左脚内切；创造；边路 | 中 |
-| 待补充 | Samu Costa | Samu Costa | 待补充 | 待补充 | Mallorca / LaLiga | 待补充 | 待补充 | 待补充 | 防守中场；对抗；轮换 | 低 |
+| 10 | Bernardo Silva | Bernardo Silva | 1994-08-10 / 31 | 173 cm / 公开源未取得 | Manchester City FC / Premier League | 109/14 | 多届大赛；2026 注册名单 | 入选 26 人名单 | 控球；肋部创造；压迫 | 高 |
+| 8 | Bruno Fernandes | Bruno Fernandes | 1994-09-08 / 31 | 183 cm / 公开源未取得 | Manchester United FC / Premier League | 89/29 | 2018、2022 成员；2026 注册名单 | 入选 26 人名单 | 直塞；远射；定位球 | 高 |
+| 21 | Ruben Neves | Ruben Neves | 1997-03-13 / 29 | 183 cm / 公开源未取得 | Al Hilal SC / Saudi Pro League | 67/1 | 多届大赛；2026 注册名单 | 入选 26 人名单 | 长传；远射；节奏 | 高 |
+| 23 | Vitinha | Vitinha | 2000-02-13 / 26 | 170 cm / 公开源未取得 | Paris Saint-Germain / Ligue 1 | 38/0 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 控球；小范围摆脱；推进 | 高 |
+| 15 | Joao Neves | Joao Neves | 2004-09-27 / 21 | 171 cm / 公开源未取得 | Paris Saint-Germain / Ligue 1 | 22/3 | 2026 注册名单 | 入选 26 人名单 | 覆盖；抢断；活力 | 中 |
+| 6 | Matheus Nunes | Matheus Nunes | 1998-08-27 / 27 | 183 cm / 公开源未取得 | Manchester City FC / Premier League | 20/2 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 推进；身体；转换 | 中 |
+| 16 | Francisco Trincao | Francisco Trincao | 1999-12-29 / 26 | 184 cm / 公开源未取得 | Sporting CP / Primeira Liga | 18/3 | 2026 注册名单 | 入选 26 人名单 | 左脚内切；创造；边路 | 中 |
+| 24 | Samu Costa | Samu Costa | 2000-11-27 / 25 | 185 cm / 公开源未取得 | RCD Mallorca / LaLiga | 6/0 | 2026 注册名单 | 入选 26 人名单 | 防守中场；对抗；轮换 | 低 |
 
 ### 前锋
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 待补充 | Cristiano Ronaldo | Cristiano Ronaldo | 待补充 | 待补充 | Al-Nassr / Saudi Pro League | 待补充 | 多届世界杯 | 年龄与压迫强度需管理 | 头球；终结；点球 | 高 |
-| 待补充 | Joao Felix | Joao Felix | 待补充 | 待补充 | Al-Nassr / Saudi Pro League | 待补充 | 2022 成员 | 状态稳定性需关注 | 盘带；创造；二前锋 | 高 |
-| 待补充 | Rafael Leao | Rafael Leao | 待补充 | 待补充 | Milan / Serie A | 待补充 | 2022 成员 | 待补充 | 左路爆速；一对一；反击 | 高 |
-| 待补充 | Goncalo Guedes | Goncalo Guedes | 待补充 | 待补充 | Real Sociedad / LaLiga | 待补充 | 待补充 | 待补充 | 速度；射门；边中摇摆 | 中 |
-| 待补充 | Goncalo Ramos | Goncalo Ramos | 待补充 | 待补充 | Paris Saint-Germain / Ligue 1 | 待补充 | 2022 成员 | 待补充 | 禁区终结；跑位；压迫 | 高 |
-| 待补充 | Pedro Neto | Pedro Neto | 待补充 | 待补充 | Chelsea / Premier League | 待补充 | 待补充 | 伤病史需关注 | 速度；传中；突破 | 中 |
-| 待补充 | Francisco Conceicao | Francisco Conceicao | 待补充 | 待补充 | Juventus / Serie A | 待补充 | 待补充 | 待补充 | 右路突破；低重心；内切 | 中 |
+| 7 | Cristiano Ronaldo | Cristiano Ronaldo | 1985-02-05 / 41 | 185 cm / 公开源未取得 | Al Nassr FC / Saudi Pro League | 228/143 | 多届世界杯；2026 注册名单 | 年龄与压迫强度需管理 | 头球；终结；点球 | 高 |
+| 11 | Joao Felix | Joao Felix | 1999-11-10 / 26 | 179 cm / 公开源未取得 | Al Nassr FC / Saudi Pro League | 54/12 | 2022 成员；2026 注册名单 | 状态稳定性需关注 | 盘带；创造；二前锋 | 高 |
+| 17 | Rafael Leao | Rafael Leao | 1999-06-10 / 27 | 188 cm / 公开源未取得 | AC Milan / Serie A | 44/5 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 左路爆速；一对一；反击 | 高 |
+| 19 | Goncalo Guedes | Goncalo Guedes | 1996-11-29 / 29 | 179 cm / 公开源未取得 | Real Sociedad / LaLiga | 35/8 | 2026 注册名单 | 入选 26 人名单 | 速度；射门；边中摇摆 | 中 |
+| 9 | Goncalo Ramos | Goncalo Ramos | 2001-06-20 / 24 | 185 cm / 公开源未取得 | Paris Saint-Germain / Ligue 1 | 25/10 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 禁区终结；跑位；压迫 | 高 |
+| 18 | Pedro Neto | Pedro Neto | 2000-03-09 / 26 | 174 cm / 公开源未取得 | Chelsea FC / Premier League | 25/3 | 2026 注册名单 | 伤病史需关注 | 速度；传中；突破 | 中 |
+| 26 | Francisco Conceicao | Francisco Conceicao | 2002-12-14 / 23 | 166 cm / 公开源未取得 | Juventus FC / Serie A | 17/4 | 2026 注册名单 | 入选 26 人名单 | 右路突破；低重心；内切 | 中 |
 
 ## 4. 补充分析数据
 
 | 维度 | 内容 |
 | --- | --- |
-| 近 10 场正式比赛 | 待补充 |
+| 近 10 场正式比赛 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/葡萄牙足协比赛页逐场补录 |
 | 关键球员依赖度 | Cristiano Ronaldo、Bruno Fernandes、Vitinha/Bernardo Silva |
-| 定位球攻防数据 | 待补充 |
-| 比赛节奏特征 | 控球质量高，边中结合强；具体数值待补充 |
+| 定位球攻防数据 | 公开源未取得；需 FIFA/Opta/StatsBomb 等结构化统计确认 |
+| 比赛节奏特征 | 控球质量高，边中结合强；具体数值公开源未取得 |
 | 心理/韧性记录 | 2016 欧洲杯冠军经验仍有老将延续；世界杯淘汰赛突破能力需复盘 |
 | 伤病/停赛风险名单 | Ronaldo、Nuno Mendes、Pedro Neto 需赛前确认状态 |
-| 同大洲/强队历史战绩摘要 | 待补充 |
+| 同大洲/强队历史战绩摘要 | 公开源未取得完整结构化摘要 |
 
 ## 5. 来源
 
 - FourFourTwo: Portugal World Cup 2026 squad
+- FIFA: Squad Lists English PDF
 - FIFA Men's World Ranking
 
-备注：公开抓取页面列出 27 人，需用 FIFA 官方最终注册名单核对最终人数。
+备注：FIFA 官方 Squad Lists PDF 口径为 26 人；种子页中的 Ricardo Velho 未列入本版本注册名单。
