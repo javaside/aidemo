@@ -1,6 +1,6 @@
 ---
 title: 2026 World Cup National Team Knowledge Base
-snapshot_date: 2026-06-11
+snapshot_date: 2026-06-12
 format: markdown
 scope: national-teams
 ---
@@ -12,7 +12,7 @@ scope: national-teams
 ## 重要口径
 
 - 用户原始目标提到“全部 32 支参赛队”，但 2026 年男足世界杯为 48 支参赛队。本文档按 48 队知识库设计，扩展追踪表中保留“32 队目标”备注，便于兼容旧赛制分析。
-- 本知识库当前是 2026-06-11 的赛前快照。球员俱乐部、球衣号码、伤病、停赛、预计首发、FIFA 排名会变化。
+- 本知识库当前是 2026-06-12 的赛前快照。球员俱乐部、球衣号码、伤病、停赛、预计首发、FIFA 排名会变化。
 - 无法从当前公开资料确认的字段统一写“待补充”，不使用猜测值。
 - 球员年龄统一以 2026-06-11，世界杯开幕日为基准。
 
@@ -26,7 +26,9 @@ docs/worldcup/2026/knowledge-base/
 ├── sources.md
 └── teams/
     ├── argentina.md
+    ├── bosnia-and-herzegovina.md
     ├── brazil.md
+    ├── canada.md
     ├── czechia.md
     ├── england.md
     ├── france.md
@@ -34,14 +36,16 @@ docs/worldcup/2026/knowledge-base/
     ├── mexico.md
     ├── netherlands.md
     ├── portugal.md
+    ├── paraguay.md
     ├── south-africa.md
     ├── south-korea.md
-    └── spain.md
+    ├── spain.md
+    └── united-states.md
 ```
 
-## 首批球队
+## 已建球队
 
-优先顺序：卫冕冠军 + 当前热门球队。
+优先顺序：卫冕冠军 + 当前热门球队 + 开幕日/比赛日球队。
 
 | 顺序 | 国家队 | 文件 | 当前状态 |
 | --- | --- | --- | --- |
@@ -57,6 +61,19 @@ docs/worldcup/2026/knowledge-base/
 | 10 | 南非 | `teams/south-africa.md` | 开幕日球队，已录入 26 人名单 |
 | 11 | 韩国 | `teams/south-korea.md` | 开幕日球队，已录入 26 人名单 |
 | 12 | 捷克 | `teams/czechia.md` | 开幕日球队，已录入 26 人名单 |
+| 13 | 加拿大 | `teams/canada.md` | 2026-06-12 比赛日球队，已录入 26 人名单 |
+| 14 | 波黑 | `teams/bosnia-and-herzegovina.md` | 2026-06-12 比赛日球队，已录入 26 人名单 |
+| 15 | 美国 | `teams/united-states.md` | 2026-06-12 比赛日球队，已录入 26 人名单 |
+| 16 | 巴拉圭 | `teams/paraguay.md` | 2026-06-12 比赛日球队，已录入 26 人名单 |
+
+## 今日比赛日补充
+
+赛程来源：竞彩网足球竞猜赛程，页面更新时间 2026-06-12 12:11:01。
+
+| 赛事编号 | 比赛 | 开赛时间（北京时间） | 知识库文件 |
+| --- | --- | --- | --- |
+| 周五003 | 加拿大 vs 波黑 | 2026-06-13 03:00 | `teams/canada.md`、`teams/bosnia-and-herzegovina.md` |
+| 周五004 | 美国 vs 巴拉圭 | 2026-06-13 09:00 | `teams/united-states.md`、`teams/paraguay.md` |
 
 ## 对比分析用法
 
