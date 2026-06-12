@@ -90,15 +90,21 @@ data_status: matchday_p0_official_pdf_loaded
 
 ## 4. 补充分析数据
 
-| 维度 | 内容 |
-| --- | --- |
-| 近 10 场正式比赛 | 公开源未取得完整结构化列表；已知世界杯前热身赛 2-0 胜 Uzbekistan（Jayden Nelson 进球） |
-| 关键球员依赖度 | Alphonso Davies、Jonathan David、Stephen Eustaquio |
-| 定位球攻防数据 | 公开源未取得；需 FIFA/Opta/StatsBomb 等结构化统计确认 |
-| 比赛节奏特征 | Marsch 体系下更强调高压和快速纵向推进；主场可能主动提速 |
-| 心理/韧性记录 | 2022 未取分，本届主场首战心理压力与动力都高 |
-| 伤病/停赛风险名单 | Alphonso Davies 仍在腿筋伤恢复期，首战出场待确认；Moise Bombito、Ismael Kone 赛前报道称可出战；Marcelo Flores ACL 伤退并由 Jayden Nelson 顶替；停赛情况公开源未取得 |
-| 同大洲/强队历史战绩摘要 | Group B 对手：Bosnia and Herzegovina、Qatar、Switzerland；交锋摘要公开源未取得 |
+| 维度 | 对应分析维度 | 内容 |
+| --- | --- | --- |
+| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；已知世界杯前热身赛 2-0 胜 Uzbekistan（Jayden Nelson 进球） |
+| 进攻创造特征 | 5 进攻创造 | 结构化创造数据公开源未取得；以 Davies/Buchanan 边路速度突破与 David 前场连接为主（参见战术风格） |
+| 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；David 国家队 77/39 进球率高，支点 Larin 与高点 Promise David 补充 |
+| 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；Eustaquio 组织+Kone 覆盖，高压体系下更重纵向出球 |
+| 防守组织特征 | 8 防守组织 | 结构化失球数据公开源未取得；后防核心 Bombito/Cornelius/Johnston，整体稳定性近期需确认 |
+| 转换攻防特征 | 9 转换攻防 | 结构化反击数据公开源未取得；Marsch 体系强调快速纵向转换，边路速度是反击主武器 |
+| 定位球攻防数据 | 10 定位球攻防 | 公开源未取得；需 FIFA/Opta/StatsBomb 等结构化统计确认 |
+| 教练/临场调整记录 | 11 教练与临场调整 | 结构化换人影响数据公开源未取得；Marsch 偏高压激进，主场可能主动提速（见教练组与比赛节奏特征） |
+| 比赛节奏特征 | 5/7/9 综合 | Marsch 体系下更强调高压和快速纵向推进；主场可能主动提速 |
+| 关键球员依赖度 | 3 阵容可用性 | Alphonso Davies、Jonathan David、Stephen Eustaquio |
+| 心理/韧性记录 | 11 教练与临场调整 | 2022 未取分，本届主场首战心理压力与动力都高 |
+| 伤病/停赛风险名单 | 3 阵容可用性 | Alphonso Davies 仍在腿筋伤恢复期，首战出场待确认；Moise Bombito、Ismael Kone 赛前报道称可出战；Marcelo Flores ACL 伤退并由 Jayden Nelson 顶替；停赛情况公开源未取得 |
+| 同大洲/强队历史战绩摘要 | 1 场地与适应性 / 历史交锋 | Group B 对手：Bosnia and Herzegovina、Qatar、Switzerland；交锋摘要公开源未取得 |
 
 ## 5. 来源
 
