@@ -4,7 +4,7 @@ team_name_zh: 波黑
 team_name_en: Bosnia and Herzegovina
 snapshot_date: 2026-06-12
 last_updated: 2026-06-12
-data_status: matchday_p0_official_pdf_loaded
+data_status: matchday_p1_recent_form_loaded
 ---
 
 # 波黑 Bosnia and Herzegovina
@@ -92,7 +92,7 @@ data_status: matchday_p0_official_pdf_loaded
 
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
-| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；需从 FIFA/UEFA 比赛页逐场补录 |
+| 近 10 场正式比赛 | 4 近期状态 | 近 10 场含世预赛与附加赛：6/6 vs 巴拿马 1-1(友)、5/29 vs 北马其顿 0-0(友)、3/31 vs 意大利 1-1(4-1 点胜，附加赛)、3/26 vs 威尔士 1-1(4-2 点胜，附加赛)、2025/11/18 vs 奥地利 1-1(世预)、11/15 vs 罗马尼亚 3-1(世预)、10/12 vs 马耳他 4-1(友)、10/9 vs 塞浦路斯 2-2(世预)、9/9 vs 奥地利 1-2(世预)、9/6 vs 圣马力诺 6-0(世预)。经附加赛两轮点球淘汰威尔士、意大利出线，大赛抗压与点球能力强(来源 Wikipedia，截至 2026-06-06) |
 | 进攻创造特征 | 5 进攻创造 | 结构化创造数据公开源未取得；以中路支点 Dzeko 做球与 Demirovic 联系前场为主 |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据公开源未取得；老将 Dzeko 为头号支点射手，Demirovic 为第二点 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；偏身体对抗型中场，节奏管理待确认 |
@@ -102,7 +102,7 @@ data_status: matchday_p0_official_pdf_loaded
 | 教练/临场调整记录 | 11 教练与临场调整 | 结构化数据公开源未取得；资格赛淘汰意大利显示韧性（见心理/韧性记录） |
 | 比赛节奏特征 | 5/7/9 综合 | 可能更重视中路身体对抗和支点进攻，面对加拿大速度时需控制边路空间 |
 | 关键球员依赖度 | 3 阵容可用性 | Edin Dzeko、Sead Kolasinac、Ermedin Demirovic |
-| 心理/韧性记录 | 11 教练与临场调整 | 第二次参加世界杯，资格赛淘汰意大利的心理加成需复盘 |
+| 心理/韧性记录 | 11 教练与临场调整 | 第二次参加世界杯；2026 附加赛连续两轮点球淘汰威尔士(4-2)与意大利(4-1)晋级，抗压与点球韧性已获实证(来源 Wikipedia) |
 | 伤病/停赛风险名单 | 3 阵容可用性 | Osman Hadzikic、Nidal Celik 已退出 26 人名单；Mladen Jurkas、Arjan Malic 递补；Dzeko、Kolasinac、Demirovic 状态仍需赛前确认 |
 | 同大洲/强队历史战绩摘要 | 1 场地与适应性 / 历史交锋 | Group B 对手：Canada、Qatar、Switzerland；交锋摘要公开源未取得 |
 
@@ -114,3 +114,4 @@ data_status: matchday_p0_official_pdf_loaded
 - FIFA ranking team page: Bosnia and Herzegovina
 - Sofascore FIFA ranking mirror
 - RotoWire: Canada vs Bosnia and Herzegovina preview
+- Wikipedia: Bosnia and Herzegovina national football team（近 10 场赛果与附加赛，截至 2026-06-06）

@@ -4,7 +4,7 @@ team_name_zh: 美国
 team_name_en: United States
 snapshot_date: 2026-06-12
 last_updated: 2026-06-12
-data_status: matchday_p0_official_pdf_loaded
+data_status: matchday_p1_recent_form_loaded
 ---
 
 # 美国 United States
@@ -92,7 +92,7 @@ data_status: matchday_p0_official_pdf_loaded
 
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
-| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/US Soccer 比赛页逐场补录 |
+| 近 10 场正式比赛 | 4 近期状态 | 近 10 场（均为友谊赛，东道主无预选赛，友谊赛降权）5 胜 1 平 4 负、进 18 失 17：6/6 vs 德国 1-2、5/31 vs 塞内加尔 3-2、3/31 vs 葡萄牙 0-2、3/28 vs 比利时 2-5、2025/11/18 vs 乌拉圭 5-1、11/15 vs 巴拉圭 2-1、10/14 vs 澳大利亚 2-1、10/10 vs 厄瓜多尔 1-1、9/9 vs 日本 2-0、9/6 vs 韩国 0-2。攻强守弱、对强队失球偏多(比利时/葡萄牙)，近两场状态回暖(来源 ESPN，截至 2026-06-06) |
 | 进攻创造特征 | 5 进攻创造 | 结构化数据公开源未取得；可结合基础信息.战术风格与对应位置球员技术特点归纳 |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；可用前锋国家队进球率与锋线配置代理 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；可用中场球员俱乐部层级与阵型代理 |
@@ -115,3 +115,4 @@ data_status: matchday_p0_official_pdf_loaded
 - Sofascore FIFA ranking mirror
 - Guardian: Pochettino and USMNT preview
 - U.S. Soccer: USMNT vs Paraguay opponent profile
+- ESPN: USA 2026 results（近 10 场赛果，截至 2026-06-06）

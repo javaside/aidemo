@@ -4,7 +4,7 @@ team_name_zh: 巴拉圭
 team_name_en: Paraguay
 snapshot_date: 2026-06-12
 last_updated: 2026-06-12
-data_status: matchday_p0_official_pdf_loaded
+data_status: matchday_p1_recent_form_loaded
 ---
 
 # 巴拉圭 Paraguay
@@ -92,7 +92,7 @@ data_status: matchday_p0_official_pdf_loaded
 
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
-| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；需从 FIFA/CONMEBOL 比赛页逐场补录 |
+| 近 10 场正式比赛 | 4 近期状态 | 近 10 场 4 胜 2 平 4 负：6/5 vs 尼加拉瓜 4-0、3/31 vs 摩洛哥 1-2、3/27 vs 希腊 1-0、2025/11/18 vs 墨西哥 2-1、11/15 vs 美国 1-2、10/14 vs 韩国 0-2、10/10 vs 日本 2-2、9/9 vs 秘鲁 1-0(世预赛)、9/4 vs 厄瓜多尔 0-0(世预赛)、6/10 vs 巴西 0-1(世预赛)。世预赛阶段防守扎实成功出线，热身赛对强队(摩洛哥/美国/韩国)偏吃力(来源 ESPN，截至 2026-06-05) |
 | 进攻创造特征 | 5 进攻创造 | 结构化数据公开源未取得；可结合基础信息.战术风格与对应位置球员技术特点归纳 |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；可用前锋国家队进球率与锋线配置代理 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；可用中场球员俱乐部层级与阵型代理 |
@@ -115,3 +115,4 @@ data_status: matchday_p0_official_pdf_loaded
 - Sofascore FIFA ranking mirror
 - FIFA: Paraguay squad announcement
 - U.S. Soccer: USMNT vs Paraguay opponent profile
+- ESPN: Paraguay 2026 results（近 10 场赛果，截至 2026-06-05）

@@ -4,7 +4,7 @@ team_name_zh: 加拿大
 team_name_en: Canada
 snapshot_date: 2026-06-12
 last_updated: 2026-06-12
-data_status: matchday_p0_official_pdf_loaded
+data_status: matchday_p1_recent_form_loaded
 ---
 
 # 加拿大 Canada
@@ -92,7 +92,7 @@ data_status: matchday_p0_official_pdf_loaded
 
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
-| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；已知世界杯前热身赛 2-0 胜 Uzbekistan（Jayden Nelson 进球） |
+| 近 10 场正式比赛 | 4 近期状态 | 近 10 场（均为友谊赛，东道主无预选赛，友谊赛降权）5 胜 5 平 0 负、进 10 失 3，10 场不败：6/5 vs 爱尔兰 1-1、6/1 vs 乌兹别克斯坦 2-0、3/31 vs 突尼斯 0-0、3/28 vs 冰岛 2-2、1/17 vs 危地马拉 1-0、2025/11/18 vs 委内瑞拉 2-0、11/13 vs 厄瓜多尔 0-0、10/14 vs 哥伦比亚 0-0、10/10 vs 澳大利亚 1-0、9/9 vs 威尔士 1-0。防守稳但进球偏少、对手多为非顶级（来源 ESPN，截至 2026-06-05） |
 | 进攻创造特征 | 5 进攻创造 | 结构化创造数据公开源未取得；以 Davies/Buchanan 边路速度突破与 David 前场连接为主（参见战术风格） |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；David 国家队 77/39 进球率高，支点 Larin 与高点 Promise David 补充 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；Eustaquio 组织+Kone 覆盖，高压体系下更重纵向出球 |
@@ -115,3 +115,4 @@ data_status: matchday_p0_official_pdf_loaded
 - FIFA ranking team page: Canada
 - Sofascore FIFA ranking mirror
 - Guardian: Jesse Marsch pre-match comments
+- ESPN: Canada 2026 results（近 10 场赛果，截至 2026-06-05）
