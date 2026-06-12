@@ -58,7 +58,7 @@ docs/worldcup/2026/knowledge-base/
 | 3 | 西班牙 | `teams/spain.md` | 已建骨架，已录入 26 人名单 |
 | 4 | 英格兰 | `teams/england.md` | 已建骨架，已录入 26 人名单 |
 | 5 | 巴西 | `teams/brazil.md` | 已建骨架，已录入 26 人名单 |
-| 6 | 葡萄牙 | `teams/portugal.md` | 已建骨架，已录入 27 人名单，需核对最终注册人数 |
+| 6 | 葡萄牙 | `teams/portugal.md` | 已建骨架，已录入 26 人名单 |
 | 7 | 德国 | `teams/germany.md` | 已建骨架，已录入 26 人名单 |
 | 8 | 荷兰 | `teams/netherlands.md` | 已建骨架，已录入 26 人名单 |
 | 9 | 墨西哥 | `teams/mexico.md` | 开幕日球队，已录入 26 人名单 |
@@ -107,5 +107,5 @@ docs/worldcup/2026/knowledge-base/
 4. 每次更新国家队文件时，更新 `last_updated` 与 `data_status`。
 5. 新增球队时从 `team-template.md` 复制结构，保留所有字段位。
 6. 补全“待补充”字段时遵循 `completion-rules.md`，先补 P0/P1，无法确认的信息保持缺口说明。
-7. 每批补全前后运行 `scripts/audit_gaps.py` 记录缺口变化。
+7. 每批补全前后运行 `scripts/audit_gaps.py` 记录缺口变化与分析可用性（补充字段、P1 待确认、xG/xGA、零封率）。
 8. 数据成熟度边界见 `analysis-dimensions.md` 第 5.1 节：维度 7/9/10 因免费源限制为永久代理，不强行填充。
