@@ -21,6 +21,7 @@ scope: national-teams
 ```text
 docs/worldcup/2026/knowledge-base/
 ├── README.md
+├── analysis-dimensions.md
 ├── completion-rules.md
 ├── team-template.md
 ├── expansion-tracker.md
@@ -80,7 +81,7 @@ docs/worldcup/2026/knowledge-base/
 
 ## 对比分析用法
 
-任意两队对比时，优先读取同名章节：
+任意两队赛前对比时，先读取 `analysis-dimensions.md`，固定使用“关键维度柱状图 + 赛果倾向指数柱状图 + 读图结论”的格式。球队资料读取顺序如下：
 
 1. `基础信息`：比较历史成绩、FIFA 排名、常用阵型、整体强弱项。
 2. `教练组`：比较主教练经验、战术偏好、临场保守/激进程度。
