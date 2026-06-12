@@ -103,7 +103,7 @@ data_status: matchday_p1_recent_form_loaded
 | 比赛节奏特征 | 5/7/9 综合 | 主场可能主动压迫，但 Pochettino 强调放松和自由；转换进攻是关键 |
 | 关键球员依赖度 | 3 阵容可用性 | Christian Pulisic、Tyler Adams、Weston McKennie |
 | 心理/韧性记录 | 11 教练与临场调整 | 1994 后首次主场世界杯，压力与关注度极高 |
-| 伤病/停赛风险名单 | 3 阵容可用性 | Guardian 赛前报道称 26 人均可选；Adams、Reyna 等长期负荷风险仍需临场再核；停赛情况公开源未取得 |
+| 伤病/停赛风险名单 | 3 阵容可用性 | Guardian 赛前报道称 26 人均可选；Chris Richards 伤情、医疗组建议不打首战待确认；Adams、Reyna 等长期负荷风险仍需临场再核。停赛：本场为小组赛首战，预选赛黄牌不带入世界杯，无累计黄牌停赛（FIFA 2026 纪律规则） |
 | 同大洲/强队历史战绩摘要 | 1 场地与适应性 / 历史交锋 | Group D 对手：Paraguay、Australia、Turkiye；交锋摘要公开源未取得 |
 
 ## 5. 来源

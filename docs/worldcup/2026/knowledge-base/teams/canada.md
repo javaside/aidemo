@@ -103,7 +103,7 @@ data_status: matchday_p1_recent_form_loaded
 | 比赛节奏特征 | 5/7/9 综合 | Marsch 体系下更强调高压和快速纵向推进；主场可能主动提速 |
 | 关键球员依赖度 | 3 阵容可用性 | Alphonso Davies、Jonathan David、Stephen Eustaquio |
 | 心理/韧性记录 | 11 教练与临场调整 | 2022 未取分，本届主场首战心理压力与动力都高 |
-| 伤病/停赛风险名单 | 3 阵容可用性 | Alphonso Davies 仍在腿筋伤恢复期，首战出场待确认；Moise Bombito、Ismael Kone 赛前报道称可出战；Marcelo Flores ACL 伤退并由 Jayden Nelson 顶替；停赛情况公开源未取得 |
+| 伤病/停赛风险名单 | 3 阵容可用性 | Alphonso Davies 仍在腿筋伤恢复期，首战出场待确认；Moise Bombito、Ismael Kone 赛前报道称可出战；Marcelo Flores ACL 伤退并由 Jayden Nelson 顶替。停赛：本场为小组赛首战，预选赛黄牌不带入世界杯，无累计黄牌停赛（FIFA 2026 纪律规则） |
 | 同大洲/强队历史战绩摘要 | 1 场地与适应性 / 历史交锋 | Group B 对手：Bosnia and Herzegovina、Qatar、Switzerland；交锋摘要公开源未取得 |
 
 ## 5. 来源

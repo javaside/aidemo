@@ -103,7 +103,7 @@ data_status: matchday_p1_recent_form_loaded
 | 比赛节奏特征 | 5/7/9 综合 | 面对美国主场压力，可能低位更稳，重视反击和定位球 |
 | 关键球员依赖度 | 3 阵容可用性 | Gustavo Gomez、Miguel Almiron、Julio Enciso/Diego Gomez |
 | 心理/韧性记录 | 11 教练与临场调整 | 16 年后重返世界杯，南美对抗属性强；淘汰赛历史韧性待复盘 |
-| 伤病/停赛风险名单 | 3 阵容可用性 | Almiron、Enciso、Sanabria 状态需赛前确认；停赛情况公开源未取得 |
+| 伤病/停赛风险名单 | 3 阵容可用性 | Julio Enciso 于 6/5 对尼加拉瓜热身赛伤退（右腿，伤情待确认）；Almiron、Sanabria 状态需赛前确认。停赛：本场为小组赛首战，预选赛黄牌不带入世界杯，无累计黄牌停赛（FIFA 2026 纪律规则） |
 | 同大洲/强队历史战绩摘要 | 1 场地与适应性 / 历史交锋 | Group D 对手：United States、Australia、Turkiye；交锋摘要公开源未取得 |
 
 ## 5. 来源

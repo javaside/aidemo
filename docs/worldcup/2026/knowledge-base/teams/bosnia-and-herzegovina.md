@@ -103,7 +103,7 @@ data_status: matchday_p1_recent_form_loaded
 | 比赛节奏特征 | 5/7/9 综合 | 可能更重视中路身体对抗和支点进攻，面对加拿大速度时需控制边路空间 |
 | 关键球员依赖度 | 3 阵容可用性 | Edin Dzeko、Sead Kolasinac、Ermedin Demirovic |
 | 心理/韧性记录 | 11 教练与临场调整 | 第二次参加世界杯；2026 附加赛连续两轮点球淘汰威尔士(4-2)与意大利(4-1)晋级，抗压与点球韧性已获实证(来源 Wikipedia) |
-| 伤病/停赛风险名单 | 3 阵容可用性 | Osman Hadzikic、Nidal Celik 已退出 26 人名单；Mladen Jurkas、Arjan Malic 递补；Dzeko、Kolasinac、Demirovic 状态仍需赛前确认 |
+| 伤病/停赛风险名单 | 3 阵容可用性 | Osman Hadzikic、Nidal Celik 已退出 26 人名单；Mladen Jurkas、Arjan Malic 递补；Dzeko、Kolasinac、Demirovic 状态仍需赛前确认。停赛：本场为小组赛首战，预选赛/附加赛黄牌不带入世界杯，无累计黄牌停赛（FIFA 2026 纪律规则） |
 | 同大洲/强队历史战绩摘要 | 1 场地与适应性 / 历史交锋 | Group B 对手：Canada、Qatar、Switzerland；交锋摘要公开源未取得 |
 
 ## 5. 来源
