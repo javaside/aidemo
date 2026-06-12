@@ -4,7 +4,7 @@ team_name_zh: 波黑
 team_name_en: Bosnia and Herzegovina
 snapshot_date: 2026-06-12
 last_updated: 2026-06-12
-data_status: matchday_p0_partially_completed
+data_status: matchday_p0_official_pdf_loaded
 ---
 
 # 波黑 Bosnia and Herzegovina
@@ -46,47 +46,47 @@ data_status: matchday_p0_partially_completed
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Nikola Vasilj | Nikola Vasilj | 1995-12-02 / 30 | 待补充 | FC St. Pauli / Bundesliga | 23/0 | 2026 注册名单 | 首发候选 | 门线；德甲经验；出击 | 中 |
-| 12 | Martin Zlomislic | Martin Zlomislic | 1998-08-16 / 27 | 待补充 | Rijeka / Croatian HNL | 4/0 | 2026 注册名单 | 入选 26 人名单 | 反应；替补深度；经验 | 中 |
-| 23 | Mladen Jurkas | Mladen Jurkas | 2002-05-06 / 24 | 待补充 | Slaven Belupo / Croatian HNL | 0/0 | 2026 注册名单；6 月 3 日递补入选 | 顶替 Osman Hadzikic | 替补门将；反应；轮换 | 低 |
+| 1 | Nikola Vasilj | Nikola Vasilj | 1995-12-02 / 30 | 193 cm / 公开源未取得 | FC St. Pauli / Bundesliga | 26/0 | 2026 注册名单 | 首发候选 | 门线；德甲经验；出击 | 中 |
+| 22 | Martin Zlomislic | Martin Zlomislic | 1998-08-16 / 27 | 189 cm / 公开源未取得 | Rijeka / Croatian HNL | 3/0 | 2026 注册名单 | 入选 26 人名单 | 反应；替补深度；经验 | 中 |
+| 12 | Mladen Jurkas | Mladen Jurkas | 2007-10-07 / 18 | 193 cm / 公开源未取得 | FK Borac Banja Luka / Bosnian Premier League | 0/0 | 2026 注册名单；6 月 3 日递补入选 | 顶替 Osman Hadzikic | 替补门将；反应；轮换 | 低 |
 
 ### 后卫
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 5 | Sead Kolasinac | Sead Kolasinac | 1993-06-20 / 32 | 待补充 | Atalanta / Serie A | 68/0 | 2014 成员；2026 注册名单 | 后防核心 | 对抗；左路/中卫；经验 | 高 |
-| 3 | Dennis Hadzikadunic | Dennis Hadzikadunic | 1998-07-09 / 27 | 待补充 | Sampdoria / Serie B | 26/0 | 2026 注册名单 | 入选 26 人名单 | 中卫；防空；站位 | 中 |
-| 7 | Amar Dedic | Amar Dedic | 2002-08-18 / 23 | 待补充 | Benfica / Primeira Liga | 24/1 | 2026 注册名单 | 边路核心候选 | 右路推进；速度；传中 | 中 |
-| 4 | Nikola Katic | Nikola Katic | 1996-10-10 / 29 | 待补充 | Schalke 04 / 2. Bundesliga | 15/1 | 2026 注册名单 | 入选 26 人名单 | 防空；身体；中卫深度 | 中 |
-| 18 | Tarik Muharemovic | Tarik Muharemovic | 2003-02-28 / 23 | 待补充 | Sassuolo / Serie A | 14/0 | 2026 注册名单 | 入选 26 人名单 | 左脚中卫；出球；年轻 | 低 |
-| 6 | Nihad Mujakic | Nihad Mujakic | 1998-04-15 / 28 | 待补充 | Gaziantep / Super Lig | 8/0 | 2026 注册名单 | 入选 26 人名单 | 中卫；对抗；轮换 | 中 |
-| 2 | Stjepan Radeljic | Stjepan Radeljic | 1997-09-05 / 28 | 待补充 | Rijeka / Croatian HNL | 8/0 | 2026 注册名单 | 入选 26 人名单 | 防空；中卫深度；身体 | 低 |
-| 15 | Arjan Malic | Arjan Malic | 2005-08-28 / 20 | 待补充 | Sturm Graz / Austrian Bundesliga | 7/0 | 2026 注册名单；6 月 7 日递补入选 | 顶替 Nidal Celik | 年轻后卫；速度；潜力 | 低 |
+| 5 | Sead Kolasinac | Sead Kolasinac | 1993-06-20 / 32 | 183 cm / 公开源未取得 | Atalanta / Serie A | 65/0 | 2014 成员；2026 注册名单 | 后防核心 | 对抗；左路/中卫；经验 | 高 |
+| 3 | Dennis Hadzikadunic | Dennis Hadzikadunic | 1998-07-09 / 27 | 191 cm / 公开源未取得 | Sampdoria / Serie B | 32/0 | 2026 注册名单 | 入选 26 人名单 | 中卫；防空；站位 | 中 |
+| 7 | Amar Dedic | Amar Dedic | 2002-08-18 / 23 | 180 cm / 公开源未取得 | Benfica / Primeira Liga | 28/1 | 2026 注册名单 | 边路核心候选 | 右路推进；速度；传中 | 中 |
+| 18 | Nikola Katic | Nikola Katic | 1996-10-10 / 29 | 194 cm / 公开源未取得 | Schalke 04 / 2. Bundesliga | 17/2 | 2026 注册名单 | 入选 26 人名单 | 防空；身体；中卫深度 | 中 |
+| 4 | Tarik Muharemovic | Tarik Muharemovic | 2003-02-28 / 23 | 192 cm / 公开源未取得 | Sassuolo / Serie A | 14/1 | 2026 注册名单 | 入选 26 人名单 | 左脚中卫；出球；年轻 | 低 |
+| 2 | Nihad Mujakic | Nihad Mujakic | 1998-04-15 / 28 | 189 cm / 公开源未取得 | Gaziantep / Super Lig | 12/1 | 2026 注册名单 | 入选 26 人名单 | 中卫；对抗；轮换 | 中 |
+| 21 | Stjepan Radeljic | Stjepan Radeljic | 1997-09-05 / 28 | 201 cm / 公开源未取得 | Rijeka / Croatian HNL | 5/0 | 2026 注册名单 | 入选 26 人名单 | 防空；中卫深度；身体 | 低 |
+| 24 | Arjan Malic | Arjan Malic | 2005-08-28 / 20 | 188 cm / 公开源未取得 | Sturm Graz / Austrian Bundesliga | 8/0 | 2026 注册名单；6 月 7 日递补入选 | 顶替 Nidal Celik | 年轻后卫；速度；潜力 | 低 |
 
 ### 中场
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 8 | Amir Hadziahmetovic | Amir Hadziahmetovic | 1997-03-08 / 29 | 待补充 | Hull City / EFL Championship | 36/0 | 2026 注册名单 | 中场主力候选 | 组织；节奏；远射 | 中 |
-| 14 | Benjamin Tahirovic | Benjamin Tahirovic | 2003-03-03 / 23 | 待补充 | Brondby / Danish Superliga | 19/0 | 2026 注册名单 | 入选 26 人名单 | 后腰；传球；年轻 | 中 |
-| 16 | Dzenis Burnic | Dzenis Burnic | 1998-05-22 / 28 | 待补充 | Karlsruher SC / 2. Bundesliga | 10/0 | 2026 注册名单 | 入选 26 人名单 | 覆盖；传接；轮换 | 中 |
-| 13 | Armin Gigovic | Armin Gigovic | 2002-04-06 / 24 | 待补充 | Young Boys / Swiss Super League | 9/1 | 2026 注册名单 | 入选 26 人名单 | 对抗；推进；防守覆盖 | 中 |
-| 22 | Ivan Basic | Ivan Basic | 2002-04-30 / 24 | 待补充 | Astana / Kazakhstan Premier League | 8/0 | 2026 注册名单 | 入选 26 人名单 | 中场轮换；对抗；经验 | 低 |
-| 10 | Esmir Bajraktarevic | Esmir Bajraktarevic | 2005-03-10 / 21 | 待补充 | PSV Eindhoven / Eredivisie | 7/2 | 2026 注册名单 | 前场创造候选 | 盘带；速度；创造 | 低 |
-| 17 | Amar Memic | Amar Memic | 2001-01-20 / 25 | 待补充 | Viktoria Plzen / Czech First League | 6/1 | 2026 注册名单 | 入选 26 人名单 | 前场连接；跑动；轮换 | 低 |
-| 21 | Ivan Sunjic | Ivan Sunjic | 1996-10-09 / 29 | 待补充 | Pafos / Cypriot First Division | 4/0 | 2026 注册名单 | 入选 26 人名单 | 防守中场；身体；经验 | 中 |
-| 26 | Kerim Alajbegovic | Kerim Alajbegovic | 2007-09-21 / 18 | 待补充 | Red Bull Salzburg / Austrian Bundesliga | 2/0 | 2026 注册名单 | 入选 26 人名单 | 年轻创造；技术；前场变量 | 低 |
-| 25 | Ermin Mahmic | Ermin Mahmic | 2004-03-19 / 22 | 待补充 | Slovan Liberec / Czech First League | 2/0 | 2026 注册名单 | 入选 26 人名单 | 中场轮换；跑动；覆盖 | 低 |
+| 16 | Amir Hadziahmetovic | Amir Hadziahmetovic | 1997-03-08 / 29 | 179 cm / 公开源未取得 | Hull City / EFL Championship | 36/0 | 2026 注册名单 | 中场主力候选 | 组织；节奏；远射 | 中 |
+| 6 | Benjamin Tahirovic | Benjamin Tahirovic | 2003-03-03 / 23 | 191 cm / 公开源未取得 | Brondby / Danish Superliga | 28/2 | 2026 注册名单 | 入选 26 人名单 | 后腰；传球；年轻 | 中 |
+| 17 | Dzenis Burnic | Dzenis Burnic | 1998-05-22 / 28 | 182 cm / 公开源未取得 | Karlsruher SC / 2. Bundesliga | 20/0 | 2026 注册名单 | 入选 26 人名单 | 覆盖；传接；轮换 | 中 |
+| 8 | Armin Gigovic | Armin Gigovic | 2002-04-06 / 24 | 187 cm / 公开源未取得 | Young Boys / Swiss Super League | 20/1 | 2026 注册名单 | 入选 26 人名单 | 对抗；推进；防守覆盖 | 中 |
+| 13 | Ivan Basic | Ivan Basic | 2002-04-30 / 24 | 178 cm / 公开源未取得 | Astana / Kazakhstan Premier League | 17/0 | 2026 注册名单 | 入选 26 人名单 | 中场轮换；对抗；经验 | 低 |
+| 20 | Esmir Bajraktarevic | Esmir Bajraktarevic | 2005-03-10 / 21 | 175 cm / 公开源未取得 | PSV Eindhoven / Eredivisie | 16/1 | 2026 注册名单 | 前场创造候选 | 盘带；速度；创造 | 低 |
+| 15 | Amar Memic | Amar Memic | 2001-01-20 / 25 | 176 cm / 公开源未取得 | Viktoria Plzen / Czech First League | 13/1 | 2026 注册名单 | 入选 26 人名单 | 前场连接；跑动；轮换 | 低 |
+| 14 | Ivan Sunjic | Ivan Sunjic | 1996-10-09 / 29 | 183 cm / 公开源未取得 | Pafos / Cypriot First Division | 11/0 | 2026 注册名单 | 入选 26 人名单 | 防守中场；身体；经验 | 中 |
+| 19 | Kerim Alajbegovic | Kerim Alajbegovic | 2007-09-21 / 18 | 186 cm / 公开源未取得 | Red Bull Salzburg / Austrian Bundesliga | 10/1 | 2026 注册名单 | 入选 26 人名单 | 年轻创造；技术；前场变量 | 低 |
+| 26 | Ermin Mahmic | Ermin Mahmic | 2005-03-14 / 21 | 182 cm / 公开源未取得 | Slovan Liberec / Czech First League | 2/0 | 2026 注册名单 | 入选 26 人名单 | 中场轮换；跑动；覆盖 | 低 |
 
 ### 前锋
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 11 | Edin Dzeko | Edin Dzeko | 1986-03-17 / 40 | 待补充 | Schalke 04 / 2. Bundesliga | 146/72 | 2014 核心；2026 注册名单 | 队长/核心，年龄与负荷需关注 | 支点；头球；终结 | 高 |
-| 9 | Ermedin Demirovic | Ermedin Demirovic | 1998-03-25 / 28 | 待补充 | VfB Stuttgart / Bundesliga | 40/12 | 2026 注册名单 | 锋线核心候选 | 跑位；对抗；禁区终结 | 中 |
-| 19 | Samed Bazdar | Samed Bazdar | 2004-01-31 / 22 | 待补充 | Jagiellonia Bialystok / Ekstraklasa | 7/0 | 2026 注册名单 | 入选 26 人名单 | 年轻前锋；速度；冲击 | 低 |
-| 20 | Haris Tabakovic | Haris Tabakovic | 1994-06-20 / 31 | 待补充 | Borussia Monchengladbach / Bundesliga | 6/0 | 2026 注册名单 | 入选 26 人名单 | 高点；支点；终结 | 中 |
-| 24 | Jovo Lukic | Jovo Lukic | 1998-11-28 / 27 | 待补充 | Universitatea Cluj / Liga I | 2/1 | 2026 注册名单 | 入选 26 人名单 | 禁区终结；身体；轮换 | 低 |
+| 11 | Edin Dzeko | Edin Dzeko | 1986-03-17 / 40 | 192 cm / 公开源未取得 | Schalke 04 / 2. Bundesliga | 148/73 | 2014 核心；2026 注册名单 | 队长/核心，年龄与负荷需关注 | 支点；头球；终结 | 高 |
+| 10 | Ermedin Demirovic | Ermedin Demirovic | 1998-03-25 / 28 | 185 cm / 公开源未取得 | VfB Stuttgart / Bundesliga | 40/4 | 2026 注册名单 | 锋线核心候选 | 跑位；对抗；禁区终结 | 中 |
+| 9 | Samed Bazdar | Samed Bazdar | 2004-01-31 / 22 | 189 cm / 公开源未取得 | Jagiellonia Bialystok / Ekstraklasa | 13/1 | 2026 注册名单 | 入选 26 人名单 | 年轻前锋；速度；冲击 | 低 |
+| 23 | Haris Tabakovic | Haris Tabakovic | 1994-06-20 / 31 | 196 cm / 公开源未取得 | Borussia Monchengladbach / Bundesliga | 10/4 | 2026 注册名单 | 入选 26 人名单 | 高点；支点；终结 | 中 |
+| 25 | Jovo Lukic | Jovo Lukic | 1998-11-28 / 27 | 190 cm / 公开源未取得 | Universitatea Cluj / Liga I | 3/0 | 2026 注册名单 | 入选 26 人名单 | 禁区终结；身体；轮换 | 低 |
 
 ## 4. 补充分析数据
 
@@ -103,6 +103,7 @@ data_status: matchday_p0_partially_completed
 ## 5. 来源
 
 - FourFourTwo: Bosnia and Herzegovina World Cup 2026 squad
+- FIFA: Squad Lists English PDF
 - Wikipedia: 2026 FIFA World Cup squads
 - FIFA ranking team page: Bosnia and Herzegovina
 - Sofascore FIFA ranking mirror

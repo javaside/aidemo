@@ -35,6 +35,7 @@ snapshot_date: 2026-06-12
 - [FIFA: Bosnia and Herzegovina squad announcement](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/bosnia-and-herzegovina-sergej-barbarez-names-squad)
 - [FIFA: USA squad announcement](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/usa-squad-announcement-mauricio-pochettino)
 - [FIFA: Paraguay squad announcement](https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/paraguay-squad-announcement-gustavo-alfaro)
+- [FIFA: Squad Lists English PDF](https://fdp.fifa.org/assetspublic/ce281/pdf/SquadLists-English.pdf)：官方 48 队注册名单 PDF，用于号码、出生日期、俱乐部、身高、国家队出场/进球、教练姓名等 P0 字段；本轮以 2026-06-12 04:24 UTC 版本为准。
 - [Wikipedia: 2026 FIFA World Cup squads](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_squads)：用于二次核对球衣号码、出生日期/年龄、俱乐部、国家队出场/进球、递补名单等基础字段；使用时需与官方来源交叉核验。
 - [Economic Times: Mexico vs South Africa predicted lineups and injury news](https://economictimes.indiatimes.com/news/sports/mexico-vs-south-africa-fifa-world-cup-2026-lineup-key-players-prediction-team-stats-and-injury-news/articleshow/131658169.cms)
 - [Sofascore: FIFA football rankings](https://www.sofascore.com/football/rankings/fifa)

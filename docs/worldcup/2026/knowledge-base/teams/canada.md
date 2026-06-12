@@ -4,7 +4,7 @@ team_name_zh: 加拿大
 team_name_en: Canada
 snapshot_date: 2026-06-12
 last_updated: 2026-06-12
-data_status: matchday_p0_partially_completed
+data_status: matchday_p0_official_pdf_loaded
 ---
 
 # 加拿大 Canada
@@ -46,47 +46,47 @@ data_status: matchday_p0_partially_completed
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Dayne St. Clair | Dayne St. Clair | 1997-05-09 / 29 | 待补充 | Inter Miami CF / MLS | 20/0 | 2026 注册名单 | 首发候选 | 反应；出击；MLS 状态 | 中 |
-| 16 | Maxime Crepeau | Maxime Crepeau | 1994-05-11 / 32 | 待补充 | Orlando City SC / MLS | 32/0 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 经验；扑救；沟通 | 高 |
-| 18 | Owen Goodman | Owen Goodman | 2003-11-27 / 22 | 待补充 | Barnsley / EFL | 0/0 | 2026 注册名单 | 入选 26 人名单 | 年轻门将；替补深度；反应 | 低 |
+| 1 | Dayne St. Clair | Dayne St. Clair | 1997-05-09 / 29 | 191 cm / 公开源未取得 | Inter Miami CF / MLS | 20/0 | 2026 注册名单 | 首发候选 | 反应；出击；MLS 状态 | 中 |
+| 16 | Maxime Crepeau | Maxime Crepeau | 1994-05-11 / 32 | 185 cm / 公开源未取得 | Orlando City SC / MLS | 32/0 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 经验；扑救；沟通 | 高 |
+| 18 | Owen Goodman | Owen Goodman | 2003-11-27 / 22 | 193 cm / 公开源未取得 | Barnsley / EFL | 0/0 | 2026 注册名单 | 入选 26 人名单 | 年轻门将；替补深度；反应 | 低 |
 
 ### 后卫
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 15 | Moise Bombito | Moise Bombito | 2000-03-30 / 26 | 待补充 | Nice / Ligue 1 | 20/0 | 2026 注册名单 | 中卫主力候选，赛前报道称可出战 | 速度；对抗；回追 | 中 |
-| 13 | Derek Cornelius | Derek Cornelius | 1997-11-25 / 28 | 待补充 | Rangers / Scottish Premiership | 44/1 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 左脚中卫；防空；出球 | 高 |
-| 19 | Alphonso Davies | Alphonso Davies | 2000-11-02 / 25 | 待补充 | Bayern Munich / Bundesliga | 58/15 | 2022 主力；2026 注册名单 | 核心球员，腿筋伤恢复中，首战出场待确认 | 爆速；左路推进；反击 | 高 |
-| 4 | Luc De Fougerolles | Luc De Fougerolles | 2005-10-12 / 20 | 待补充 | Dender / Belgian Pro League | 13/0 | 2026 注册名单 | 入选 26 人名单 | 年轻后卫；身体；轮换 | 低 |
-| 2 | Alistair Johnston | Alistair Johnston | 1998-10-08 / 27 | 待补充 | Celtic / Scottish Premiership | 58/1 | 2022 主力；2026 注册名单 | 入选 26 人名单 | 右路防守；对抗；传中 | 高 |
-| 3 | Alfie Jones | Alfie Jones | 1997-10-07 / 28 | 待补充 | Middlesbrough / EFL Championship | 2/0 | 2026 注册名单 | 入选 26 人名单 | 中卫深度；身体；防空 | 低 |
-| 22 | Richie Laryea | Richie Laryea | 1995-01-07 / 31 | 待补充 | Toronto FC / MLS | 75/1 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 边路推进；速度；经验 | 高 |
-| 23 | Niko Sigur | Niko Sigur | 2003-09-09 / 22 | 待补充 | Hajduk Split / Croatian HNL | 19/2 | 2026 注册名单 | 入选 26 人名单 | 多位置；防守纪律；年轻 | 低 |
-| 5 | Joel Waterman | Joel Waterman | 1996-01-24 / 30 | 待补充 | Chicago Fire FC / MLS | 17/0 | 2026 注册名单 | 入选 26 人名单 | 中卫轮换；防空；MLS 经验 | 中 |
+| 15 | Moise Bombito | Moise Bombito | 2000-03-30 / 26 | 190 cm / 公开源未取得 | Nice / Ligue 1 | 20/0 | 2026 注册名单 | 中卫主力候选，赛前报道称可出战 | 速度；对抗；回追 | 中 |
+| 13 | Derek Cornelius | Derek Cornelius | 1997-11-25 / 28 | 186 cm / 公开源未取得 | Rangers / Scottish Premiership | 44/1 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 左脚中卫；防空；出球 | 高 |
+| 19 | Alphonso Davies | Alphonso Davies | 2000-11-02 / 25 | 183 cm / 公开源未取得 | Bayern Munich / Bundesliga | 58/15 | 2022 主力；2026 注册名单 | 核心球员，腿筋伤恢复中，首战出场待确认 | 爆速；左路推进；反击 | 高 |
+| 4 | Luc De Fougerolles | Luc De Fougerolles | 2005-10-12 / 20 | 183 cm / 公开源未取得 | Dender / Belgian Pro League | 13/0 | 2026 注册名单 | 入选 26 人名单 | 年轻后卫；身体；轮换 | 低 |
+| 2 | Alistair Johnston | Alistair Johnston | 1998-10-08 / 27 | 180 cm / 公开源未取得 | Celtic / Scottish Premiership | 58/1 | 2022 主力；2026 注册名单 | 入选 26 人名单 | 右路防守；对抗；传中 | 高 |
+| 3 | Alfie Jones | Alfie Jones | 1997-10-07 / 28 | 191 cm / 公开源未取得 | Middlesbrough / EFL Championship | 2/0 | 2026 注册名单 | 入选 26 人名单 | 中卫深度；身体；防空 | 低 |
+| 22 | Richie Laryea | Richie Laryea | 1995-01-07 / 31 | 175 cm / 公开源未取得 | Toronto FC / MLS | 76/1 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 边路推进；速度；经验 | 高 |
+| 23 | Niko Sigur | Niko Sigur | 2003-09-09 / 22 | 178 cm / 公开源未取得 | Hajduk Split / Croatian HNL | 19/2 | 2026 注册名单 | 入选 26 人名单 | 多位置；防守纪律；年轻 | 低 |
+| 5 | Joel Waterman | Joel Waterman | 1996-01-24 / 30 | 185 cm / 公开源未取得 | Chicago Fire FC / MLS | 17/0 | 2026 注册名单 | 入选 26 人名单 | 中卫轮换；防空；MLS 经验 | 中 |
 
 ### 中场
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 20 | Ali Ahmed | Ali Ahmed | 2000-10-10 / 25 | 待补充 | Norwich City / EFL Championship | 24/1 | 2026 注册名单 | 入选 26 人名单 | 推进；左路/中场；活力 | 中 |
-| 17 | Tajon Buchanan | Tajon Buchanan | 1999-02-08 / 27 | 待补充 | Villarreal / LaLiga | 60/8 | 2022 主力；2026 注册名单 | 入选 26 人名单 | 速度；边路突破；反击 | 高 |
-| 6 | Mathieu Choiniere | Mathieu Choiniere | 1999-02-07 / 27 | 待补充 | Los Angeles FC / MLS | 23/0 | 2026 注册名单 | 入选 26 人名单 | 覆盖；跑动；中场轮换 | 中 |
-| 7 | Stephen Eustaquio | Stephen Eustaquio | 1996-12-21 / 29 | 待补充 | Los Angeles FC / MLS | 56/4 | 2022 主力；2026 注册名单 | 中场核心 | 组织；定位球；节奏 | 高 |
-| 8 | Ismael Kone | Ismael Kone | 2002-06-16 / 23 | 待补充 | Sassuolo / Serie A | 40/4 | 2022 成员；2026 注册名单 | 赛前报道称可出战 | 推进；身体；中场覆盖 | 中 |
-| 11 | Liam Millar | Liam Millar | 1999-09-27 / 26 | 待补充 | Hull City / EFL Championship | 41/1 | 2026 注册名单 | 入选 26 人名单 | 边路速度；传中；跑动 | 中 |
-| 21 | Jonathan Osorio | Jonathan Osorio | 1992-06-12 / 33 | 待补充 | Toronto FC / MLS | 90/10 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 经验；前场连接；跑位 | 高 |
-| 25 | Nathan Saliba | Nathan Saliba | 2004-02-07 / 22 | 待补充 | Anderlecht / Belgian Pro League | 15/2 | 2026 注册名单 | 入选 26 人名单 | 年轻中场；覆盖；传接 | 低 |
-| 14 | Jacob Shaffelburg | Jacob Shaffelburg | 1999-11-26 / 26 | 待补充 | Los Angeles FC / MLS | 31/6 | 2026 注册名单 | 入选 26 人名单 | 左路速度；传中；反击 | 中 |
+| 20 | Ali Ahmed | Ali Ahmed | 2000-10-10 / 25 | 180 cm / 公开源未取得 | Norwich City / EFL Championship | 24/1 | 2026 注册名单 | 入选 26 人名单 | 推进；左路/中场；活力 | 中 |
+| 17 | Tajon Buchanan | Tajon Buchanan | 1999-02-08 / 27 | 183 cm / 公开源未取得 | Villarreal / LaLiga | 60/8 | 2022 主力；2026 注册名单 | 入选 26 人名单 | 速度；边路突破；反击 | 高 |
+| 6 | Mathieu Choiniere | Mathieu Choiniere | 1999-02-07 / 27 | 173 cm / 公开源未取得 | Los Angeles FC / MLS | 24/0 | 2026 注册名单 | 入选 26 人名单 | 覆盖；跑动；中场轮换 | 中 |
+| 7 | Stephen Eustaquio | Stephen Eustaquio | 1996-12-21 / 29 | 175 cm / 公开源未取得 | Los Angeles FC / MLS | 56/4 | 2022 主力；2026 注册名单 | 中场核心 | 组织；定位球；节奏 | 高 |
+| 8 | Ismael Kone | Ismael Kone | 2002-06-16 / 23 | 188 cm / 公开源未取得 | Sassuolo / Serie A | 40/4 | 2022 成员；2026 注册名单 | 赛前报道称可出战 | 推进；身体；中场覆盖 | 中 |
+| 11 | Liam Millar | Liam Millar | 1999-09-27 / 26 | 176 cm / 公开源未取得 | Hull City / EFL Championship | 41/1 | 2026 注册名单 | 入选 26 人名单 | 边路速度；传中；跑动 | 中 |
+| 21 | Jonathan Osorio | Jonathan Osorio | 1992-06-12 / 33 | 175 cm / 公开源未取得 | Toronto FC / MLS | 91/10 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 经验；前场连接；跑位 | 高 |
+| 25 | Nathan Saliba | Nathan Saliba | 2004-02-07 / 22 | 174 cm / 公开源未取得 | Anderlecht / Belgian Pro League | 15/2 | 2026 注册名单 | 入选 26 人名单 | 年轻中场；覆盖；传接 | 低 |
+| 14 | Jacob Shaffelburg | Jacob Shaffelburg | 1999-11-26 / 26 | 181 cm / 公开源未取得 | Los Angeles FC / MLS | 31/6 | 2026 注册名单 | 入选 26 人名单 | 左路速度；传中；反击 | 中 |
 
 ### 前锋
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 10 | Jonathan David | Jonathan David | 2000-01-14 / 26 | 待补充 | Juventus / Serie A | 77/39 | 2022 主力；2026 注册名单 | 头号射手/核心 | 跑位；终结；前场连接 | 高 |
-| 24 | Promise David | Promise David | 2001-07-03 / 24 | 待补充 | Union Saint-Gilloise / Belgian Pro League | 10/3 | 2026 注册名单 | 入选 26 人名单 | 身体；终结；禁区冲击 | 低 |
-| 9 | Cyle Larin | Cyle Larin | 1995-04-17 / 31 | 待补充 | Southampton / EFL Championship | 90/30 | 2022 主力级；2026 注册名单 | 入选 26 人名单 | 支点；头球；国家队进球经验 | 高 |
-| 12 | Tani Oluwaseyi | Tani Oluwaseyi | 2000-05-15 / 26 | 待补充 | Villarreal / LaLiga | 24/2 | 2026 注册名单 | 入选 26 人名单 | 速度；冲击；轮换 | 低 |
-| 26 | Jayden Nelson | Jayden Nelson | 2002-09-26 / 23 | 待补充 | Austin FC / MLS | 14/3 | 2026 注册名单；6 月 9 日递补入选 | 顶替 ACL 伤退的 Marcelo Flores | 速度；边路冲击；替补变量 | 中 |
+| 10 | Jonathan David | Jonathan David | 2000-01-14 / 26 | 175 cm / 公开源未取得 | Juventus / Serie A | 77/39 | 2022 主力；2026 注册名单 | 头号射手/核心 | 跑位；终结；前场连接 | 高 |
+| 24 | Promise David | Promise David | 2001-07-03 / 24 | 195 cm / 公开源未取得 | Union Saint-Gilloise / Belgian Pro League | 10/3 | 2026 注册名单 | 入选 26 人名单 | 身体；终结；禁区冲击 | 低 |
+| 9 | Cyle Larin | Cyle Larin | 1995-04-17 / 31 | 188 cm / 公开源未取得 | Southampton / EFL Championship | 90/30 | 2022 主力级；2026 注册名单 | 入选 26 人名单 | 支点；头球；国家队进球经验 | 高 |
+| 12 | Tani Oluwaseyi | Tani Oluwaseyi | 2000-05-15 / 26 | 187 cm / 公开源未取得 | Villarreal / LaLiga | 24/2 | 2026 注册名单 | 入选 26 人名单 | 速度；冲击；轮换 | 低 |
+| 26 | Jayden Nelson | Jayden Nelson | 2002-09-26 / 23 | 170 cm / 公开源未取得 | Austin FC / MLS | 15/2 | 2026 注册名单；6 月 9 日递补入选 | 顶替 ACL 伤退的 Marcelo Flores | 速度；边路冲击；替补变量 | 中 |
 
 ## 4. 补充分析数据
 
@@ -103,6 +103,7 @@ data_status: matchday_p0_partially_completed
 ## 5. 来源
 
 - FourFourTwo: Canada World Cup 2026 squad
+- FIFA: Squad Lists English PDF
 - Wikipedia: 2026 FIFA World Cup squads
 - MLSsoccer.com: Austin FC's Jayden Nelson added to Canada's 2026 World Cup roster
 - FIFA ranking team page: Canada

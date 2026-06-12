@@ -4,7 +4,7 @@ team_name_zh: 美国
 team_name_en: United States
 snapshot_date: 2026-06-12
 last_updated: 2026-06-12
-data_status: matchday_p0_partially_completed
+data_status: matchday_p0_official_pdf_loaded
 ---
 
 # 美国 United States
@@ -46,47 +46,47 @@ data_status: matchday_p0_partially_completed
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Matt Turner | Matt Turner | 1994-06-24 / 31 | 待补充 | New England Revolution / MLS | 54/0 | 2022 主力；2026 注册名单 | 首发候选 | 门线；扑救；大赛经验 | 高 |
-| 24 | Matt Freese | Matt Freese | 1998-09-02 / 27 | 待补充 | New York City FC / MLS | 15/0 | 2026 注册名单 | 首发竞争候选 | 反应；出击；MLS 状态 | 中 |
-| 25 | Chris Brady | Chris Brady | 2004-03-03 / 22 | 待补充 | Chicago Fire FC / MLS | 1/0 | 2026 注册名单 | 入选 26 人名单 | 年轻门将；门线；替补 | 低 |
+| 1 | Matt Turner | Matt Turner | 1994-06-24 / 31 | 190 cm / 公开源未取得 | New England Revolution / MLS | 54/0 | 2022 主力；2026 注册名单 | 首发候选 | 门线；扑救；大赛经验 | 高 |
+| 24 | Matt Freese | Matt Freese | 1998-09-02 / 27 | 198 cm / 公开源未取得 | New York City FC / MLS | 15/0 | 2026 注册名单 | 首发竞争候选 | 反应；出击；MLS 状态 | 中 |
+| 25 | Chris Brady | Chris Brady | 2004-03-03 / 22 | 193 cm / 公开源未取得 | Chicago Fire FC / MLS | 1/0 | 2026 注册名单 | 入选 26 人名单 | 年轻门将；门线；替补 | 低 |
 
 ### 后卫
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2 | Sergino Dest | Sergino Dest | 2000-11-03 / 25 | 待补充 | PSV Eindhoven / Eredivisie | 39/3 | 2022 主力；2026 注册名单 | 右路核心候选 | 盘带；推进；内收 | 高 |
-| 13 | Tim Ream | Tim Ream | 1987-10-05 / 38 | 待补充 | Charlotte FC / MLS | 82/1 | 2022 主力；2026 注册名单 | 队长，年龄与速度需关注 | 出球；经验；防线指挥 | 高 |
-| 5 | Antonee Robinson | Antonee Robinson | 1997-08-08 / 28 | 待补充 | Fulham / Premier League | 54/5 | 2022 主力；2026 注册名单 | 左路核心 | 速度；传中；回追 | 高 |
-| 12 | Miles Robinson | Miles Robinson | 1997-03-14 / 29 | 待补充 | FC Cincinnati / MLS | 40/3 | 2026 注册名单 | 入选 26 人名单 | 防空；对抗；中卫轮换 | 中 |
-| 3 | Chris Richards | Chris Richards | 2000-03-28 / 26 | 待补充 | Crystal Palace / Premier League | 36/3 | 2026 注册名单 | 中卫核心候选 | 速度；防空；英超对抗 | 中 |
-| 22 | Mark McKenzie | Mark McKenzie | 1999-02-25 / 27 | 待补充 | Toulouse / Ligue 1 | 29/0 | 2026 注册名单 | 入选 26 人名单 | 出球；中卫深度；欧洲经验 | 中 |
-| 23 | Joe Scally | Joe Scally | 2002-12-31 / 23 | 待补充 | Borussia Monchengladbach / Bundesliga | 26/0 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 边卫多面手；对抗；回追 | 中 |
-| 18 | Max Arfsten | Max Arfsten | 2001-04-19 / 25 | 待补充 | Columbus Crew / MLS | 20/1 | 2026 注册名单 | 入选 26 人名单 | 左路推进；传中；轮换 | 低 |
-| 16 | Alex Freeman | Alex Freeman | 2004-08-09 / 21 | 待补充 | Villarreal / LaLiga | 17/2 | 2026 注册名单 | 年轻球员，可能世界杯首秀 | 速度；右路推进；潜力 | 低 |
-| 6 | Auston Trusty | Auston Trusty | 1998-08-12 / 27 | 待补充 | Celtic / Scottish Premiership | 8/0 | 2026 注册名单 | 入选 26 人名单 | 左脚中卫；防空；身体 | 中 |
+| 2 | Sergino Dest | Sergino Dest | 2000-11-03 / 25 | 173 cm / 公开源未取得 | PSV Eindhoven / Eredivisie | 39/3 | 2022 主力；2026 注册名单 | 右路核心候选 | 盘带；推进；内收 | 高 |
+| 13 | Tim Ream | Tim Ream | 1987-10-05 / 38 | 186 cm / 公开源未取得 | Charlotte FC / MLS | 81/1 | 2022 主力；2026 注册名单 | 队长，年龄与速度需关注 | 出球；经验；防线指挥 | 高 |
+| 5 | Antonee Robinson | Antonee Robinson | 1997-08-08 / 28 | 183 cm / 公开源未取得 | Fulham / Premier League | 54/5 | 2022 主力；2026 注册名单 | 左路核心 | 速度；传中；回追 | 高 |
+| 12 | Miles Robinson | Miles Robinson | 1997-03-14 / 29 | 187 cm / 公开源未取得 | FC Cincinnati / MLS | 40/3 | 2026 注册名单 | 入选 26 人名单 | 防空；对抗；中卫轮换 | 中 |
+| 3 | Chris Richards | Chris Richards | 2000-03-28 / 26 | 189 cm / 公开源未取得 | Crystal Palace / Premier League | 36/3 | 2026 注册名单 | 中卫核心候选 | 速度；防空；英超对抗 | 中 |
+| 22 | Mark McKenzie | Mark McKenzie | 1999-02-25 / 27 | 186 cm / 公开源未取得 | Toulouse / Ligue 1 | 29/0 | 2026 注册名单 | 入选 26 人名单 | 出球；中卫深度；欧洲经验 | 中 |
+| 23 | Joe Scally | Joe Scally | 2002-12-31 / 23 | 184 cm / 公开源未取得 | Borussia Monchengladbach / Bundesliga | 26/0 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 边卫多面手；对抗；回追 | 中 |
+| 18 | Max Arfsten | Max Arfsten | 2001-04-19 / 25 | 185 cm / 公开源未取得 | Columbus Crew / MLS | 20/1 | 2026 注册名单 | 入选 26 人名单 | 左路推进；传中；轮换 | 低 |
+| 16 | Alex Freeman | Alex Freeman | 2004-08-09 / 21 | 188 cm / 公开源未取得 | Villarreal / LaLiga | 17/2 | 2026 注册名单 | 年轻球员，可能世界杯首秀 | 速度；右路推进；潜力 | 低 |
+| 6 | Auston Trusty | Auston Trusty | 1998-08-12 / 27 | 190 cm / 公开源未取得 | Celtic / Scottish Premiership | 8/0 | 2026 注册名单 | 入选 26 人名单 | 左脚中卫；防空；身体 | 中 |
 
 ### 中场
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 8 | Weston McKennie | Weston McKennie | 1998-08-28 / 27 | 待补充 | Juventus / Serie A | 66/12 | 2022 主力；2026 注册名单 | 中场核心 | 覆盖；前插；空中球 | 高 |
-| 4 | Tyler Adams | Tyler Adams | 1999-02-14 / 27 | 待补充 | Bournemouth / Premier League | 54/2 | 2022 队长/主力；2026 注册名单 | 身体负荷需确认 | 拦截；领导力；压迫 | 高 |
-| 15 | Cristian Roldan | Cristian Roldan | 1995-06-03 / 31 | 待补充 | Seattle Sounders FC / MLS | 47/0 | 2026 注册名单 | 入选 26 人名单 | 经验；跑动；轮换 | 中 |
-| 7 | Giovanni Reyna | Giovanni Reyna | 2002-11-13 / 23 | 待补充 | Borussia Monchengladbach / Bundesliga | 38/9 | 2022 成员；2026 注册名单 | 状态稳定性需关注 | 创造；盘带；直塞 | 高 |
-| 17 | Malik Tillman | Malik Tillman | 2002-05-28 / 24 | 待补充 | Bayer Leverkusen / Bundesliga | 30/3 | 2026 注册名单 | 前腰/中场候选 | 前插；射门；技术 | 中 |
-| 14 | Sebastian Berhalter | Sebastian Berhalter | 2001-05-10 / 25 | 待补充 | Vancouver Whitecaps FC / MLS | 13/1 | 2026 注册名单 | 可能世界杯首秀 | 传球；定位球；中场轮换 | 低 |
+| 8 | Weston McKennie | Weston McKennie | 1998-08-28 / 27 | 180 cm / 公开源未取得 | Juventus / Serie A | 66/12 | 2022 主力；2026 注册名单 | 中场核心 | 覆盖；前插；空中球 | 高 |
+| 4 | Tyler Adams | Tyler Adams | 1999-02-14 / 27 | 175 cm / 公开源未取得 | Bournemouth / Premier League | 54/2 | 2022 队长/主力；2026 注册名单 | 身体负荷需确认 | 拦截；领导力；压迫 | 高 |
+| 15 | Cristian Roldan | Cristian Roldan | 1995-06-03 / 31 | 173 cm / 公开源未取得 | Seattle Sounders FC / MLS | 47/0 | 2026 注册名单 | 入选 26 人名单 | 经验；跑动；轮换 | 中 |
+| 7 | Giovanni Reyna | Giovanni Reyna | 2002-11-13 / 23 | 187 cm / 公开源未取得 | Borussia Monchengladbach / Bundesliga | 38/9 | 2022 成员；2026 注册名单 | 状态稳定性需关注 | 创造；盘带；直塞 | 高 |
+| 17 | Malik Tillman | Malik Tillman | 2002-05-28 / 24 | 187 cm / 公开源未取得 | Bayer Leverkusen / Bundesliga | 30/3 | 2026 注册名单 | 前腰/中场候选 | 前插；射门；技术 | 中 |
+| 14 | Sebastian Berhalter | Sebastian Berhalter | 2001-05-10 / 25 | 175 cm / 公开源未取得 | Vancouver Whitecaps FC / MLS | 13/1 | 2026 注册名单 | 可能世界杯首秀 | 传球；定位球；中场轮换 | 低 |
 
 ### 前锋
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 10 | Christian Pulisic | Christian Pulisic | 1998-09-18 / 27 | 待补充 | AC Milan / Serie A | 86/33 | 2022 核心；2026 注册名单 | 队内进攻核心 | 盘带；内切；关键球 | 高 |
-| 21 | Timothy Weah | Timothy Weah | 2000-02-22 / 26 | 待补充 | Marseille / Ligue 1 | 51/7 | 2022 主力；2026 注册名单 | 入选 26 人名单 | 速度；右路突破；反击 | 高 |
-| 9 | Ricardo Pepi | Ricardo Pepi | 2003-01-09 / 23 | 待补充 | PSV Eindhoven / Eredivisie | 37/13 | 2026 注册名单 | 中锋竞争 | 禁区终结；跑位；冲击 | 中 |
-| 20 | Folarin Balogun | Folarin Balogun | 2001-07-03 / 24 | 待补充 | Monaco / Ligue 1 | 27/9 | 2026 注册名单 | 中锋竞争 | 纵深；射门；身体 | 中 |
-| 19 | Haji Wright | Haji Wright | 1998-03-27 / 28 | 待补充 | Coventry City / EFL Championship | 20/7 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 身体；终结；边中摇摆 | 中 |
-| 26 | Alex Zendejas | Alejandro Zendejas | 1998-02-07 / 28 | 待补充 | Club America / Liga MX | 14/2 | 2026 注册名单 | 入选 26 人名单 | 左脚内切；边路创造；射门 | 中 |
-| 11 | Brenden Aaronson | Brenden Aaronson | 2000-10-22 / 25 | 待补充 | Leeds United / EFL Championship | 58/9 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 压迫；跑动；前场连接 | 高 |
+| 10 | Christian Pulisic | Christian Pulisic | 1998-09-18 / 27 | 177 cm / 公开源未取得 | AC Milan / Serie A | 86/33 | 2022 核心；2026 注册名单 | 队内进攻核心 | 盘带；内切；关键球 | 高 |
+| 21 | Timothy Weah | Timothy Weah | 2000-02-22 / 26 | 183 cm / 公开源未取得 | Marseille / Ligue 1 | 51/7 | 2022 主力；2026 注册名单 | 入选 26 人名单 | 速度；右路突破；反击 | 高 |
+| 9 | Ricardo Pepi | Ricardo Pepi | 2003-01-09 / 23 | 185 cm / 公开源未取得 | PSV Eindhoven / Eredivisie | 37/13 | 2026 注册名单 | 中锋竞争 | 禁区终结；跑位；冲击 | 中 |
+| 20 | Folarin Balogun | Folarin Balogun | 2001-07-03 / 24 | 179 cm / 公开源未取得 | Monaco / Ligue 1 | 27/9 | 2026 注册名单 | 中锋竞争 | 纵深；射门；身体 | 中 |
+| 19 | Haji Wright | Haji Wright | 1998-03-27 / 28 | 191 cm / 公开源未取得 | Coventry City / EFL Championship | 20/7 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 身体；终结；边中摇摆 | 中 |
+| 26 | Alex Zendejas | Alejandro Zendejas | 1998-02-07 / 28 | 167 cm / 公开源未取得 | Club America / Liga MX | 14/2 | 2026 注册名单 | 入选 26 人名单 | 左脚内切；边路创造；射门 | 中 |
+| 11 | Brenden Aaronson | Brenden Aaronson | 2000-10-22 / 25 | 177 cm / 公开源未取得 | Leeds United / EFL Championship | 58/9 | 2022 成员；2026 注册名单 | 入选 26 人名单 | 压迫；跑动；前场连接 | 高 |
 
 ## 4. 补充分析数据
 
@@ -103,6 +103,7 @@ data_status: matchday_p0_partially_completed
 ## 5. 来源
 
 - FourFourTwo: United States World Cup 2026 squad
+- FIFA: Squad Lists English PDF
 - Wikipedia: 2026 FIFA World Cup squads
 - FIFA ranking team page: USA
 - Sofascore FIFA ranking mirror

@@ -4,7 +4,7 @@ team_name_zh: 巴拉圭
 team_name_en: Paraguay
 snapshot_date: 2026-06-12
 last_updated: 2026-06-12
-data_status: matchday_p0_partially_completed
+data_status: matchday_p0_official_pdf_loaded
 ---
 
 # 巴拉圭 Paraguay
@@ -46,47 +46,47 @@ data_status: matchday_p0_partially_completed
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Gatito Fernandez | Roberto Fernandez | 1988-03-29 / 38 | 待补充 | Cerro Porteno / Paraguayan Primera Division | 34/0 | 2026 注册名单 | 首发候选 | 经验；门线；点球 | 高 |
-| 12 | Orlando Gill | Orlando Gill | 2000-06-11 / 26 | 待补充 | San Lorenzo / Argentine Primera Division | 8/0 | 2026 注册名单 | 入选 26 人名单 | 反应；替补深度；出击 | 中 |
-| 22 | Gaston Olveira | Gaston Olveira | 1993-04-21 / 33 | 待补充 | Olimpia / Paraguayan Primera Division | 6/0 | 2026 注册名单 | 首发竞争候选 | 门线；高球；经验 | 中 |
+| 1 | Gatito Fernandez | Roberto Fernandez | 1988-03-29 / 38 | 191 cm / 公开源未取得 | Cerro Porteno / Paraguayan Primera Division | 30/0 | 2026 注册名单 | 首发候选 | 经验；门线；点球 | 高 |
+| 12 | Orlando Gill | Orlando Gill | 2000-06-11 / 26 | 190 cm / 公开源未取得 | San Lorenzo / Argentine Primera Division | 6/0 | 2026 注册名单 | 入选 26 人名单 | 反应；替补深度；出击 | 中 |
+| 22 | Gaston Olveira | Gaston Olveira | 1993-04-21 / 33 | 191 cm / 公开源未取得 | Olimpia / Paraguayan Primera Division | 1/0 | 2026 注册名单 | 首发竞争候选 | 门线；高球；经验 | 中 |
 
 ### 后卫
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 25 | Gustavo Velazquez | Gustavo Velazquez | 1991-04-17 / 35 | 待补充 | Cerro Porteno / Paraguayan Primera Division | 42/1 | 2026 注册名单 | 右路/中卫候选 | 对抗；防守纪律；本土经验 | 中 |
-| 3 | Omar Alderete | Omar Alderete | 1996-12-26 / 29 | 待补充 | Sunderland / Premier League | 49/1 | 2026 注册名单 | 后防核心候选 | 左脚中卫；防空；英超对抗 | 高 |
-| 23 | Juan Jose Caceres | Juan Jose Caceres | 2000-06-01 / 26 | 待补充 | Dynamo Moscow / Russian Premier League | 27/0 | 2026 注册名单 | 入选 26 人名单 | 右路防守；速度；对抗 | 中 |
-| 5 | Fabian Balbuena | Fabian Balbuena | 1991-08-23 / 34 | 待补充 | Gremio / Brasileirao | 47/1 | 多届大赛；2026 注册名单 | 入选 26 人名单 | 防空；经验；中卫指挥 | 高 |
-| 6 | Junior Alonso | Junior Alonso | 1993-02-09 / 33 | 待补充 | Atletico Mineiro / Brasileirao | 66/2 | 多届大赛；2026 注册名单 | 入选 26 人名单 | 左脚；防守稳定；经验 | 高 |
-| 20 | Jose Canale | Jose Canale | 1996-07-20 / 29 | 待补充 | Lanus / Argentine Primera Division | 7/0 | 2026 注册名单 | 入选 26 人名单 | 中卫深度；身体；防空 | 中 |
-| 15 | Gustavo Gomez | Gustavo Gomez | 1993-05-06 / 33 | 待补充 | Palmeiras / Brasileirao | 82/4 | 多届大赛；2026 注册名单 | 队长/后防核心 | 防空；领导力；定位球进攻 | 高 |
-| 13 | Alexandro Maidana | Alexandro Maidana | 1999-03-24 / 27 | 待补充 | Talleres / Argentine Primera Division | 1/0 | 2026 注册名单 | 入选 26 人名单 | 后防轮换；身体；对抗 | 低 |
+| 2 | Gustavo Velazquez | Gustavo Velazquez | 1991-04-17 / 35 | 189 cm / 公开源未取得 | Cerro Porteno / Paraguayan Primera Division | 13/1 | 2026 注册名单 | 右路/中卫候选 | 对抗；防守纪律；本土经验 | 中 |
+| 3 | Omar Alderete | Omar Alderete | 1996-12-26 / 29 | 190 cm / 公开源未取得 | Sunderland / Premier League | 36/3 | 2026 注册名单 | 后防核心候选 | 左脚中卫；防空；英超对抗 | 高 |
+| 4 | Juan Jose Caceres | Juan Jose Caceres | 2000-06-01 / 26 | 187 cm / 公开源未取得 | Dynamo Moscow / Russian Premier League | 17/0 | 2026 注册名单 | 入选 26 人名单 | 右路防守；速度；对抗 | 中 |
+| 5 | Fabian Balbuena | Fabian Balbuena | 1991-08-23 / 34 | 188 cm / 公开源未取得 | Gremio / Brasileirao | 47/2 | 多届大赛；2026 注册名单 | 入选 26 人名单 | 防空；经验；中卫指挥 | 高 |
+| 6 | Junior Alonso | Junior Alonso | 1993-02-09 / 33 | 184 cm / 公开源未取得 | Atletico Mineiro / Brasileirao | 71/3 | 多届大赛；2026 注册名单 | 入选 26 人名单 | 左脚；防守稳定；经验 | 高 |
+| 13 | Jose Canale | Jose Canale | 1996-07-20 / 29 | 192 cm / 公开源未取得 | Lanus / Argentine Primera Division | 2/0 | 2026 注册名单 | 入选 26 人名单 | 中卫深度；身体；防空 | 中 |
+| 15 | Gustavo Gomez | Gustavo Gomez | 1993-05-06 / 33 | 179 cm / 公开源未取得 | Palmeiras / Brasileirao | 89/4 | 多届大赛；2026 注册名单 | 队长/后防核心 | 防空；领导力；定位球进攻 | 高 |
+| 26 | Alexandro Maidana | Alexandro Maidana | 2005-07-26 / 20 | 173 cm / 公开源未取得 | Talleres / Argentine Primera Division | 2/1 | 2026 注册名单 | 入选 26 人名单 | 后防轮换；身体；对抗 | 低 |
 
 ### 中场
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 10 | Ramon Sosa | Ramon Sosa | 1999-08-31 / 26 | 待补充 | Palmeiras / Brasileirao | 31/5 | 2026 注册名单 | 边路爆点候选 | 速度；突破；反击 | 中 |
-| 8 | Diego Gomez | Diego Gomez | 2003-03-27 / 23 | 待补充 | Brighton & Hove Albion / Premier League | 28/4 | 2026 注册名单 | 中场核心候选 | 推进；远射；覆盖 | 中 |
-| 7 | Miguel Almiron | Miguel Almiron | 1994-02-10 / 32 | 待补充 | Atlanta United FC / MLS | 77/9 | 多届大赛；2026 注册名单 | 进攻核心 | 速度；带球推进；反击 | 高 |
-| 19 | Mauricio | Mauricio | 2001-06-22 / 24 | 待补充 | Palmeiras / Brasileirao | 19/0 | 2026 注册名单 | 入选 26 人名单 | 创造；传球；前场连接 | 中 |
-| 14 | Andres Cubas | Andres Cubas | 1996-05-11 / 30 | 待补充 | Vancouver Whitecaps FC / MLS | 25/0 | 多届大赛；2026 注册名单 | 防守中场核心候选 | 拦截；对抗；覆盖 | 高 |
-| 16 | Damian Bobadilla | Damian Bobadilla | 2001-07-11 / 24 | 待补充 | Sao Paulo / Brasileirao | 16/1 | 2026 注册名单 | 入选 26 人名单 | 中场覆盖；身体；推进 | 中 |
-| 18 | Braian Ojeda | Braian Ojeda | 2000-06-27 / 25 | 待补充 | Orlando City SC / MLS | 15/0 | 2026 注册名单 | 入选 26 人名单 | 防守中场；跑动；轮换 | 中 |
-| 26 | Matias Galarza | Matias Galarza | 2002-03-04 / 24 | 待补充 | Atlanta United FC / MLS | 13/0 | 2026 注册名单 | 入选 26 人名单 | 推进；覆盖；轮换 | 中 |
-| 24 | Gustavo Caballero | Gustavo Caballero | 2001-09-21 / 24 | 待补充 | Portsmouth / EFL Championship | 3/0 | 2026 注册名单 | 入选 26 人名单 | 边路/中场；速度；轮换 | 低 |
+| 7 | Ramon Sosa | Ramon Sosa | 1999-08-31 / 26 | 178 cm / 公开源未取得 | Palmeiras / Brasileirao | 29/1 | 2026 注册名单 | 边路爆点候选 | 速度；突破；反击 | 中 |
+| 8 | Diego Gomez | Diego Gomez | 2003-03-27 / 23 | 183 cm / 公开源未取得 | Brighton & Hove Albion / Premier League | 24/3 | 2026 注册名单 | 中场核心候选 | 推进；远射；覆盖 | 中 |
+| 10 | Miguel Almiron | Miguel Almiron | 1994-02-10 / 32 | 178 cm / 公开源未取得 | Atlanta United FC / MLS | 76/10 | 多届大赛；2026 注册名单 | 进攻核心 | 速度；带球推进；反击 | 高 |
+| 11 | Mauricio | Mauricio | 2001-06-22 / 24 | 175 cm / 公开源未取得 | Palmeiras / Brasileirao | 3/0 | 2026 注册名单 | 入选 26 人名单 | 创造；传球；前场连接 | 中 |
+| 14 | Andres Cubas | Andres Cubas | 1996-05-11 / 30 | 166 cm / 公开源未取得 | Vancouver Whitecaps FC / MLS | 33/0 | 多届大赛；2026 注册名单 | 防守中场核心候选 | 拦截；对抗；覆盖 | 高 |
+| 16 | Damian Bobadilla | Damian Bobadilla | 2001-07-11 / 24 | 180 cm / 公开源未取得 | Sao Paulo / Brasileirao | 19/1 | 2026 注册名单 | 入选 26 人名单 | 中场覆盖；身体；推进 | 中 |
+| 20 | Braian Ojeda | Braian Ojeda | 2000-06-27 / 25 | 173 cm / 公开源未取得 | Orlando City SC / MLS | 17/0 | 2026 注册名单 | 入选 26 人名单 | 防守中场；跑动；轮换 | 中 |
+| 23 | Matias Galarza | Matias Galarza | 2002-02-11 / 24 | 175 cm / 公开源未取得 | Atlanta United FC / MLS | 15/3 | 2026 注册名单 | 入选 26 人名单 | 推进；覆盖；轮换 | 中 |
+| 24 | Gustavo Caballero | Gustavo Caballero | 2001-09-21 / 24 | 189 cm / 公开源未取得 | Portsmouth / EFL Championship | 2/1 | 2026 注册名单 | 入选 26 人名单 | 边路/中场；速度；轮换 | 低 |
 
 ### 前锋
 
 | 号码 | 姓名 | 全名 | 出生日期/年龄 | 身高/惯用脚 | 俱乐部/联赛 | 国家队出场/进球 | 世界杯经历 | 当前状态 | 技术特点 | 大赛经验 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 9 | Antonio Sanabria | Antonio Sanabria | 1996-03-04 / 30 | 待补充 | Cremonese / Serie A | 41/8 | 多届大赛；2026 注册名单 | 中锋候选 | 支点；禁区终结；经验 | 高 |
-| 11 | Kaku | Alejandro Romero Gamarra | 1995-01-11 / 31 | 待补充 | Al-Ain / UAE Pro League | 17/0 | 2026 注册名单 | 入选 26 人名单 | 创造；传球；前场连接 | 中 |
-| 21 | Alex Arce | Alex Arce | 1995-06-16 / 30 | 待补充 | Independiente Rivadavia / Argentine Primera Division | 12/1 | 2026 注册名单 | 入选 26 人名单 | 禁区终结；身体；轮换 | 中 |
-| 17 | Julio Enciso | Julio Enciso | 2004-01-23 / 22 | 待补充 | Strasbourg / Ligue 1 | 31/4 | 2026 注册名单 | 进攻爆点 | 远射；盘带；前场创造 | 中 |
-| 待补充 | Gabriel Avalos | Gabriel Avalos | 待补充 | 待补充 | Independiente / Argentine Primera Division | 待补充 | 2026 注册名单 | 入选 26 人名单 | 支点；跑位；终结 | 中 |
-| 待补充 | Isidro Pitta | Isidro Pitta | 待补充 | 待补充 | Red Bull Bragantino / Brasileirao | 待补充 | 2026 注册名单 | 入选 26 人名单 | 身体；禁区冲击；高点 | 中 |
+| 9 | Antonio Sanabria | Antonio Sanabria | 1996-03-04 / 30 | 180 cm / 公开源未取得 | Cremonese / Serie A | 48/7 | 多届大赛；2026 注册名单 | 中锋候选 | 支点；禁区终结；经验 | 高 |
+| 17 | Kaku | Alejandro Romero Gamarra | 1995-01-11 / 31 | 165 cm / 公开源未取得 | Al-Ain / UAE Pro League | 34/6 | 2026 注册名单 | 入选 26 人名单 | 创造；传球；前场连接 | 中 |
+| 18 | Alex Arce | Alex Arce | 1995-06-16 / 30 | 188 cm / 公开源未取得 | Independiente Rivadavia / Argentine Primera Division | 15/1 | 2026 注册名单 | 入选 26 人名单 | 禁区终结；身体；轮换 | 中 |
+| 19 | Julio Enciso | Julio Enciso | 2004-01-23 / 22 | 168 cm / 公开源未取得 | Strasbourg / Ligue 1 | 32/4 | 2026 注册名单 | 进攻爆点 | 远射；盘带；前场创造 | 中 |
+| 21 | Gabriel Avalos | Gabriel Avalos | 1991-07-09 / 34 | 185 cm / 公开源未取得 | Independiente / Argentine Primera Division | 23/2 | 2026 注册名单 | 入选 26 人名单 | 支点；跑位；终结 | 中 |
+| 25 | Isidro Pitta | Isidro Pitta | 1999-08-14 / 26 | 185 cm / 公开源未取得 | Red Bull Bragantino / Brasileirao | 5/0 | 2026 注册名单 | 入选 26 人名单 | 身体；禁区冲击；高点 | 中 |
 
 ## 4. 补充分析数据
 
@@ -103,6 +103,7 @@ data_status: matchday_p0_partially_completed
 ## 5. 来源
 
 - FourFourTwo: Paraguay World Cup 2026 squad
+- FIFA: Squad Lists English PDF
 - Wikipedia: 2026 FIFA World Cup squads
 - FIFA ranking team page: Paraguay
 - Sofascore FIFA ranking mirror

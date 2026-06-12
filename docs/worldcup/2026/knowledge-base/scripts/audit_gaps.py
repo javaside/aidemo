@@ -30,6 +30,8 @@ class TeamAudit:
     player_rows: int
     todo_count: int
     public_unavailable_count: int
+    physical_todo_count: int
+    physical_public_unavailable_count: int
     source_conflict_count: int
     missing_sections: list[str]
 
@@ -41,6 +43,8 @@ class TeamAudit:
             return "球员不足"
         if self.todo_count:
             return "待补充"
+        if self.public_unavailable_count:
+            return "公开源缺口"
         return "已补齐"
 
 
@@ -60,26 +64,43 @@ def team_files(selected: Iterable[str] | None) -> list[Path]:
 def audit_file(path: Path) -> TeamAudit:
     text = path.read_text(encoding="utf-8")
     missing_sections = [section for section in REQUIRED_SECTIONS if section not in text]
-    player_rows = sum(1 for line in text.splitlines() if PLAYER_ROW_RE.match(line))
+    player_rows = 0
+    physical_todo_count = 0
+    physical_public_unavailable_count = 0
+    for line in text.splitlines():
+        if not PLAYER_ROW_RE.match(line):
+            continue
+        player_rows += 1
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) >= 5:
+            physical_cell = cells[4]
+            if "待补充" in physical_cell:
+                physical_todo_count += 1
+            if "公开源未取得" in physical_cell:
+                physical_public_unavailable_count += 1
     return TeamAudit(
         team=path.stem,
         file=str(path.relative_to(ROOT)),
         player_rows=player_rows,
         todo_count=text.count("待补充"),
         public_unavailable_count=text.count("公开源未取得"),
+        physical_todo_count=physical_todo_count,
+        physical_public_unavailable_count=physical_public_unavailable_count,
         source_conflict_count=text.count("来源冲突"),
         missing_sections=missing_sections,
     )
 
 
 def print_table(audits: list[TeamAudit]) -> None:
-    headers = ["team", "players", "待补充", "公开源未取得", "来源冲突", "status"]
+    headers = ["team", "players", "待补充", "公开源未取得", "身高脚待补", "身高脚公开缺", "来源冲突", "status"]
     rows = [
         [
             audit.team,
             str(audit.player_rows),
             str(audit.todo_count),
             str(audit.public_unavailable_count),
+            str(audit.physical_todo_count),
+            str(audit.physical_public_unavailable_count),
             str(audit.source_conflict_count),
             audit.status,
         ]
@@ -90,6 +111,8 @@ def print_table(audits: list[TeamAudit]) -> None:
         str(sum(a.player_rows for a in audits)),
         str(sum(a.todo_count for a in audits)),
         str(sum(a.public_unavailable_count for a in audits)),
+        str(sum(a.physical_todo_count for a in audits)),
+        str(sum(a.physical_public_unavailable_count for a in audits)),
         str(sum(a.source_conflict_count for a in audits)),
         "",
     ]

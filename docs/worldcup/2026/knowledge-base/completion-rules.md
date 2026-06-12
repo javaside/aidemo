@@ -21,7 +21,7 @@ scope: national-team-knowledge-base
 
 | 等级 | 来源 | 适用字段 |
 | --- | --- | --- |
-| S1 | FIFA 官方赛事页、比赛页、球队页、各国足协官网 | 官方名单、球衣号码、伤病/停赛、教练任命、赛程 |
+| S1 | FIFA 官方赛事页、比赛页、球队页、Squad Lists PDF、各国足协官网 | 官方名单、球衣号码、身高、俱乐部、国家队出场/进球、伤病/停赛、教练任命、赛程 |
 | S2 | 俱乐部官网、联赛官网、球员注册页 | 俱乐部、联赛、身高、惯用脚、伤病公告 |
 | S3 | FourFourTwo、Guardian、BBC、Sky Sports、U.S. Soccer、RotoWire 等可靠媒体/机构 | 预计首发、战术风格、近期状态、比赛预览 |
 | S4 | Wikidata、Wikipedia、Transfermarkt、FBref、Sofascore 等公开数据库 | 出生日期、身高、国家队履历、基础统计；需注意更新时间 |
