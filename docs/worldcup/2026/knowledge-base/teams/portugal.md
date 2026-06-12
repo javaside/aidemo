@@ -4,7 +4,7 @@ team_name_zh: 葡萄牙
 team_name_en: Portugal
 snapshot_date: 2026-06-11
 last_updated: 2026-06-12
-data_status: hot_team_p0_official_pdf_loaded
+data_status: recent_form_loaded
 ---
 
 # 葡萄牙 Portugal
@@ -91,7 +91,7 @@ data_status: hot_team_p0_official_pdf_loaded
 
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
-| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/葡萄牙足协比赛页逐场补录 |
+| 近 10 场正式比赛 | 4 近期状态 | 近 10 场 7 胜 1 平 2 负、进 26 失 8：6/10 vs 尼日利亚 2-1、6/6 vs 智利 2-1、3/31 vs 美国 2-0、3/28 vs 墨西哥 0-0、2025/11/16 vs 亚美尼亚 9-1(世预)、11/13 vs 爱尔兰 0-2(世预)、10/14 vs 匈牙利 2-2(世预)、10/11 vs 爱尔兰 1-0(世预)、9/9 vs 匈牙利 3-2(世预)、9/6 vs 亚美尼亚 5-0(世预)。火力强但偶有失分(负爱尔兰)，世预成功出线(来源 ESPN/Wikipedia，截至 2026-06-10) |
 | 进攻创造特征 | 5 进攻创造 | 结构化数据公开源未取得；可结合基础信息.战术风格与对应位置球员技术特点归纳 |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；可用前锋国家队进球率与锋线配置代理 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；可用中场球员俱乐部层级与阵型代理 |
@@ -112,3 +112,4 @@ data_status: hot_team_p0_official_pdf_loaded
 - FIFA Men's World Ranking
 
 备注：FIFA 官方 Squad Lists PDF 口径为 26 人；种子页中的 Ricardo Velho 未列入本版本注册名单。
+- ESPN / Wikipedia: 国家队近 10 场赛果（截至 2026-06 各队快照）

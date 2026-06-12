@@ -4,7 +4,7 @@ team_name_zh: 巴西
 team_name_en: Brazil
 snapshot_date: 2026-06-11
 last_updated: 2026-06-12
-data_status: hot_team_p0_official_pdf_loaded
+data_status: recent_form_loaded
 ---
 
 # 巴西 Brazil
@@ -91,7 +91,7 @@ data_status: hot_team_p0_official_pdf_loaded
 
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
-| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/巴西足协比赛页逐场补录 |
+| 近 10 场正式比赛 | 4 近期状态 | 近 10 场 6 胜 1 平 3 负、进 25 失 13：6/6 vs 埃及 2-1、5/31 vs 巴拿马 6-2、3/31 vs 克罗地亚 3-1、3/26 vs 法国 1-2、2025/11/18 vs 突尼斯 1-1、11/15 vs 塞内加尔 2-0、10/14 vs 日本 2-3、10/10 vs 韩国 5-0、9/9 vs 玻利维亚 0-1(世预)、9/4 vs 智利 3-0(世预)。进攻火力强但防守不稳(负法国/日本/玻利维亚)(来源 ESPN，截至 2026-06-06) |
 | 进攻创造特征 | 5 进攻创造 | 结构化数据公开源未取得；可结合基础信息.战术风格与对应位置球员技术特点归纳 |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；可用前锋国家队进球率与锋线配置代理 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；可用中场球员俱乐部层级与阵型代理 |
@@ -110,3 +110,4 @@ data_status: hot_team_p0_official_pdf_loaded
 - FourFourTwo: Brazil World Cup 2026 squad
 - FIFA: Squad Lists English PDF
 - FIFA Men's World Ranking
+- ESPN / Wikipedia: 国家队近 10 场赛果（截至 2026-06 各队快照）

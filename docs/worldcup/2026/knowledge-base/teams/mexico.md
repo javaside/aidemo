@@ -4,7 +4,7 @@ team_name_zh: 墨西哥
 team_name_en: Mexico
 snapshot_date: 2026-06-11
 last_updated: 2026-06-12
-data_status: opening_day_p0_official_pdf_loaded
+data_status: recent_form_loaded
 ---
 
 # 墨西哥 Mexico
@@ -91,7 +91,7 @@ data_status: opening_day_p0_official_pdf_loaded
 
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
-| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/墨西哥足协比赛页逐场补录 |
+| 近 10 场正式比赛 | 4 近期状态 | 近 10 场 7 胜 2 平 1 负、进 18 失 7：6/11 vs 南非 2-0(世界杯揭幕战)、6/4 vs 塞尔维亚 5-1、5/30 vs 澳大利亚 1-0、5/22 vs 加纳 2-0、3/31 vs 比利时 1-1、3/28 vs 葡萄牙 0-0、2/25 vs 冰岛 4-0、1/25 vs 玻利维亚 1-0、1/22 vs 巴拿马 1-0、2025/11/18 vs 巴拉圭 1-2。东道主揭幕战取胜开门红、近况佳，对强队偏保守(来源 ESPN/Wikipedia，截至 2026-06-11) |
 | 进攻创造特征 | 5 进攻创造 | 结构化数据公开源未取得；可结合基础信息.战术风格与对应位置球员技术特点归纳 |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；可用前锋国家队进球率与锋线配置代理 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；可用中场球员俱乐部层级与阵型代理 |
@@ -112,3 +112,4 @@ data_status: opening_day_p0_official_pdf_loaded
 - Guardian: World Cup opening match guide
 - Economic Times: Mexico vs South Africa injuries and predicted lineups
 - Sofascore FIFA ranking mirror
+- ESPN / Wikipedia: 国家队近 10 场赛果（截至 2026-06 各队快照）

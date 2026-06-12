@@ -4,7 +4,7 @@ team_name_zh: 英格兰
 team_name_en: England
 snapshot_date: 2026-06-11
 last_updated: 2026-06-12
-data_status: hot_team_p0_official_pdf_loaded
+data_status: recent_form_loaded
 ---
 
 # 英格兰 England
@@ -91,7 +91,7 @@ data_status: hot_team_p0_official_pdf_loaded
 
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
-| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/英足总比赛页逐场补录 |
+| 近 10 场正式比赛 | 4 近期状态 | 近 10 场 8 胜 1 平 1 负、进 24 失 2：6/10 vs 哥斯达黎加 3-0、6/6 vs 新西兰 1-0、3/31 vs 日本 0-1、3/27 vs 乌拉圭 1-1、2025/11/16 vs 阿尔巴尼亚 2-0(世预)、11/13 vs 塞尔维亚 2-0(世预)、10/14 vs 拉脱维亚 5-0(世预)、10/9 vs 威尔士 3-0(友)、9/9 vs 塞尔维亚 5-0(世预)、9/6 vs 安道尔 2-0(世预)。防守极稳(10场仅失2球)，6月两场友谊赛于美国中立场进行(来源 ESPN/Wikipedia，截至 2026-06-10) |
 | 进攻创造特征 | 5 进攻创造 | 结构化数据公开源未取得；可结合基础信息.战术风格与对应位置球员技术特点归纳 |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；可用前锋国家队进球率与锋线配置代理 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；可用中场球员俱乐部层级与阵型代理 |
@@ -111,3 +111,4 @@ data_status: hot_team_p0_official_pdf_loaded
 - England Football: England World Cup squad numbers
 - FIFA: Squad Lists English PDF
 - FIFA Men's World Ranking
+- ESPN / Wikipedia: 国家队近 10 场赛果（截至 2026-06 各队快照）

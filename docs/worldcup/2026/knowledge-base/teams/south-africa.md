@@ -4,7 +4,7 @@ team_name_zh: 南非
 team_name_en: South Africa
 snapshot_date: 2026-06-11
 last_updated: 2026-06-12
-data_status: opening_day_p0_official_pdf_loaded
+data_status: recent_form_loaded
 ---
 
 # 南非 South Africa
@@ -91,7 +91,7 @@ data_status: opening_day_p0_official_pdf_loaded
 
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
-| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/南非足协比赛页逐场补录 |
+| 近 10 场正式比赛 | 4 近期状态 | 近 10 场约 3 胜 3 平 4 负、进 12 失 15(含 2025 非洲杯):6/11 vs 墨西哥 0-2(世界杯揭幕战)、6/6 vs 牙买加 1-1(中立场，来源冲突：部分早报 1-0，以南非足协口径 1-1 为准)、5/29 vs 尼加拉瓜 0-0、3/31 vs 巴拿马 1-2、3/27 vs 巴拿马 1-1、1/4 vs 喀麦隆 1-2(非洲杯)、2025/12/29 vs 津巴布韦 3-2(非洲杯)、12/26 vs 埃及 0-1(非洲杯)、12/22 vs 安哥拉 2-1(非洲杯)、11/15 vs 赞比亚 3-1。近况波动大、防守不稳，世界杯揭幕战不敌墨西哥(来源 ESPN/Wikipedia，截至 2026-06-11；牙买加场比分待官方最终确认) |
 | 进攻创造特征 | 5 进攻创造 | 结构化数据公开源未取得；可结合基础信息.战术风格与对应位置球员技术特点归纳 |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；可用前锋国家队进球率与锋线配置代理 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；可用中场球员俱乐部层级与阵型代理 |
@@ -112,3 +112,4 @@ data_status: opening_day_p0_official_pdf_loaded
 - Guardian: World Cup opening match guide
 - Economic Times: Mexico vs South Africa injuries and predicted lineups
 - Sofascore FIFA ranking mirror
+- ESPN / Wikipedia: 国家队近 10 场赛果（截至 2026-06 各队快照）

@@ -4,7 +4,7 @@ team_name_zh: 西班牙
 team_name_en: Spain
 snapshot_date: 2026-06-11
 last_updated: 2026-06-12
-data_status: hot_team_p0_official_pdf_loaded
+data_status: recent_form_loaded
 ---
 
 # 西班牙 Spain
@@ -91,7 +91,7 @@ data_status: hot_team_p0_official_pdf_loaded
 
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
-| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/西班牙足协比赛页逐场补录 |
+| 近 10 场正式比赛 | 4 近期状态 | 近 10 场 7 胜 3 平 0 负、进 28 失 3：6/8 vs 秘鲁 3-1、6/4 vs 伊拉克 1-1、3/31 vs 埃及 0-0、3/27 vs 塞尔维亚 3-0、2025/11/18 vs 土耳其 2-2(世预)、11/15 vs 格鲁吉亚 4-0(世预)、10/14 vs 保加利亚 4-0(世预)、10/11 vs 格鲁吉亚 2-0(世预)、9/7 vs 土耳其 6-0(世预)、9/4 vs 保加利亚 3-0(世预)。近10场不败、攻强守稳，整体保持长期不败势头(来源 Wikipedia，截至 2026-06-08) |
 | 进攻创造特征 | 5 进攻创造 | 结构化数据公开源未取得；可结合基础信息.战术风格与对应位置球员技术特点归纳 |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；可用前锋国家队进球率与锋线配置代理 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；可用中场球员俱乐部层级与阵型代理 |
@@ -110,3 +110,4 @@ data_status: hot_team_p0_official_pdf_loaded
 - FourFourTwo: Spain World Cup 2026 squad
 - FIFA: Squad Lists English PDF
 - FIFA Men's World Ranking
+- ESPN / Wikipedia: 国家队近 10 场赛果（截至 2026-06 各队快照）

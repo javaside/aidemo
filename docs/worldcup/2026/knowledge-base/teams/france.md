@@ -4,7 +4,7 @@ team_name_zh: 法国
 team_name_en: France
 snapshot_date: 2026-06-11
 last_updated: 2026-06-12
-data_status: hot_team_p0_official_pdf_loaded
+data_status: recent_form_loaded
 ---
 
 # 法国 France
@@ -91,7 +91,7 @@ data_status: hot_team_p0_official_pdf_loaded
 
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
-| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/法国足协比赛页逐场补录 |
+| 近 10 场正式比赛 | 4 近期状态 | 近 10 场 7 胜 1 平 2 负、进 26 失 10：6/8 vs 北爱尔兰 3-1、6/4 vs 科特迪瓦 1-2、3/29 vs 哥伦比亚 3-1、3/26 vs 巴西 2-1、2025/11/16 vs 阿塞拜疆 3-1(世预)、11/13 vs 乌克兰 4-0(世预)、10/13 vs 冰岛 2-2(世预)、10/10 vs 阿塞拜疆 3-0(世预)、9/9 vs 冰岛 2-1(世预)、9/5 vs 乌克兰 2-0(世预)。世预顺利出线、火力足，个别热身赛有失常(负科特迪瓦)(来源 ESPN，截至 2026-06-08) |
 | 进攻创造特征 | 5 进攻创造 | 结构化数据公开源未取得；可结合基础信息.战术风格与对应位置球员技术特点归纳 |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；可用前锋国家队进球率与锋线配置代理 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；可用中场球员俱乐部层级与阵型代理 |
@@ -110,3 +110,4 @@ data_status: hot_team_p0_official_pdf_loaded
 - FourFourTwo: France World Cup 2026 squad
 - FIFA: Squad Lists English PDF
 - FIFA Men's World Ranking
+- ESPN / Wikipedia: 国家队近 10 场赛果（截至 2026-06 各队快照）

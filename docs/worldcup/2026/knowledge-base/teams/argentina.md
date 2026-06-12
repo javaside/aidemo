@@ -4,7 +4,7 @@ team_name_zh: 阿根廷
 team_name_en: Argentina
 snapshot_date: 2026-06-11
 last_updated: 2026-06-12
-data_status: hot_team_p0_official_pdf_loaded
+data_status: recent_form_loaded
 ---
 
 # 阿根廷 Argentina
@@ -91,7 +91,7 @@ data_status: hot_team_p0_official_pdf_loaded
 
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
-| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/阿根廷足协比赛页逐场补录 |
+| 近 10 场正式比赛 | 4 近期状态 | 近 10 场 8 胜 1 平 1 负、进 25 失 3：6/9 vs 冰岛 3-0、6/6 vs 洪都拉斯 2-0、3/31 vs 赞比亚 5-0、3/27 vs 毛里塔尼亚 2-1、2025/11/14 vs 安哥拉 2-0、10/14 vs 波多黎各 6-0、10/10 vs 委内瑞拉 1-0、9/9 vs 厄瓜多尔 0-1(世预)、9/4 vs 委内瑞拉 3-0(世预)、6/10 vs 哥伦比亚 1-1(世预)。状态极佳、攻强守稳，热身赛对手偏弱(来源 ESPN，截至 2026-06-09) |
 | 进攻创造特征 | 5 进攻创造 | 结构化数据公开源未取得；可结合基础信息.战术风格与对应位置球员技术特点归纳 |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；可用前锋国家队进球率与锋线配置代理 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；可用中场球员俱乐部层级与阵型代理 |
@@ -110,3 +110,4 @@ data_status: hot_team_p0_official_pdf_loaded
 - FourFourTwo: Argentina World Cup 2026 squad
 - FIFA: Squad Lists English PDF
 - FIFA Men's World Ranking
+- ESPN / Wikipedia: 国家队近 10 场赛果（截至 2026-06 各队快照）

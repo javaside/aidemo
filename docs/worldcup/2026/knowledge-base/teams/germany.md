@@ -4,7 +4,7 @@ team_name_zh: 德国
 team_name_en: Germany
 snapshot_date: 2026-06-11
 last_updated: 2026-06-12
-data_status: hot_team_p0_official_pdf_loaded
+data_status: recent_form_loaded
 ---
 
 # 德国 Germany
@@ -91,7 +91,7 @@ data_status: hot_team_p0_official_pdf_loaded
 
 | 维度 | 对应分析维度 | 内容 |
 | --- | --- | --- |
-| 近 10 场正式比赛 | 4 近期状态 | 公开源未取得完整结构化列表；赛前可先使用 FIFA/德国足协比赛页逐场补录 |
+| 近 10 场正式比赛 | 4 近期状态 | 近 10 场 8 胜 0 平 2 负、进 29 失 9：6/6 vs 美国 2-1、5/31 vs 芬兰 4-0、3/30 vs 加纳 2-1、3/27 vs 瑞士 4-3、2025/11/17 vs 斯洛伐克 6-0(世预)、11/14 vs 卢森堡 2-0(世预)、10/13 vs 北爱尔兰 1-0(世预)、10/10 vs 卢森堡 4-0(世预)、9/7 vs 北爱尔兰 3-1(世预)、9/4 vs 斯洛伐克 0-2(世预)。火力强、近况回暖，仅世预首轮爆冷负斯洛伐克(来源 ESPN，截至 2026-06-06) |
 | 进攻创造特征 | 5 进攻创造 | 结构化数据公开源未取得；可结合基础信息.战术风格与对应位置球员技术特点归纳 |
 | 终结/锋线特征 | 6 终结能力 | 结构化数据（xG/射正）公开源未取得；可用前锋国家队进球率与锋线配置代理 |
 | 中场控制特征 | 7 中场控制 | 结构化控球/压迫数据公开源未取得；可用中场球员俱乐部层级与阵型代理 |
@@ -110,3 +110,4 @@ data_status: hot_team_p0_official_pdf_loaded
 - FourFourTwo: Germany World Cup 2026 squad
 - FIFA: Squad Lists English PDF
 - FIFA Men's World Ranking
+- ESPN / Wikipedia: 国家队近 10 场赛果（截至 2026-06 各队快照）
